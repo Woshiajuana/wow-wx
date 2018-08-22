@@ -1,0 +1,49 @@
+{
+    "pages": [
+        "/pages/account/account",
+        "/pages/add/add",
+        "/pages/bill/bill",
+        "/pages/chart/chart",
+        "/pages/index/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WoW",
+        "navigationBarTextStyle": "black",
+        "navigationStyle": "custom"
+    },
+    "tabBar": {
+        "color": "#999",
+        "selectedColor": "#58b7ff",
+        "backgroundColor": "#fff",
+        "borderStyle": "black",
+        "position": "bottom",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "assets/images/tab-nav-ye.png",
+                "selectedIconPath": "assets/images/tab-nav-ye-selected.png"
+            },
+            {
+                "pagePath": "pages/account/account",
+                "text": "记账",
+                "iconPath": "assets/images/tab-nav-jz.png",
+                "selectedIconPath": "assets/images/tab-nav-jz-selected.png"
+            },
+            {
+                "pagePath": "pages/bill/bill",
+                "text": "账单",
+                "iconPath": "assets/images/tab-nav-zd.png",
+                "selectedIconPath": "assets/images/tab-nav-zd-selected.png"
+            },
+            {
+                "pagePath": "pages/chart/chart",
+                "text": "分析",
+                "iconPath": "assets/images/tab-nav-fx.png",
+                "selectedIconPath": "assets/images/tab-nav-fx-selected.png"
+            }
+        ]
+    }
+}

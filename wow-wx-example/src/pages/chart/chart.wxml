@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class="container">
+    <text class="user-motto">分析</text>
+</view>
