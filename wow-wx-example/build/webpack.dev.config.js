@@ -1,12 +1,10 @@
 
 const path = require('path');
 const fs = require('fs-extra');
-const CopyPlugin = require('./copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 const webpackConfig = require('../config');
 const entry = {};
-const copy = require('../cmd/copy-es5.cmd');
 let walkFun = '';
 
 /**
@@ -54,21 +52,28 @@ const config = {
                     use: 'css-loader'
                 }),
             },
+            // {
+            //     test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+            //     loader: 'url-loader',
+            //     exclude: /node_modules/,
+            //     options: {
+            //         name: 'media/[name].[ext]'
+            //     }
+            // },
             {
                 test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
-                loader: 'url-loader',
+                loader: './build/copy-loader.js',
                 exclude: /node_modules/,
-                options: {
-                    name: 'media/[name].[ext]'
-                }
             },
             {
                 test: /\.wxml/,
                 loader: './build/copy-loader.js',
                 exclude: /node_modules/,
-                options: {
-                    copy,
-                }
+            },
+            {
+                test: /\.json/,
+                loader: './build/copy-loader.js',
+                exclude: /node_modules/,
             },
         ]
     },
@@ -76,7 +81,6 @@ const config = {
         fs: 'empty'
     },
     plugins: [
-        new CopyPlugin(),
         new ExtractTextPlugin('[name].wxss'),
     ]
 };
