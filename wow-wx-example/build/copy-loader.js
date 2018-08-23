@@ -43,7 +43,6 @@ var copy = {
         this.writable && this.writable.close();
     },
     start (from, to) {
-        console.log(from, to);
         this.copy(from, to)
     },
 };
