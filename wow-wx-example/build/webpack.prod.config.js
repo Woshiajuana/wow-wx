@@ -1,11 +1,9 @@
 
 const path = require('path');
 const fs = require('fs-extra');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 const webpackConfig = require('../config');
-
 const entry = {};
 let walkFun = '';
 let uglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({
@@ -53,12 +51,47 @@ const config = {
                 loaders: ['babel-loader'],
                 exclude: /node_modules/
             },
+            //处理css文件
+            {
+                test: /\.wxss/,
+                exclude: /node_modules/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: 'css-loader'
+                }),
+            },
+            // {
+            //     test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+            //     loader: 'url-loader',
+            //     exclude: /node_modules/,
+            //     options: {
+            //         name: 'media/[name].[ext]'
+            //     }
+            // },
+            {
+                test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+                loader: './build/copy-loader.js',
+                exclude: /node_modules/,
+            },
+            {
+                test: /\.wxml/,
+                loader: './build/copy-loader.js',
+                exclude: /node_modules/,
+            },
+            {
+                test: /\.json/,
+                loader: './build/copy-loader.js',
+                exclude: /node_modules/,
+            },
         ]
     },
     node: {
         fs: 'empty'
     },
-    plugins: [uglifyJsPlugin]
+    plugins: [
+        uglifyJsPlugin,
+        new ExtractTextPlugin('[name].wxss'),
+    ]
 };
 
 module.exports = config;
