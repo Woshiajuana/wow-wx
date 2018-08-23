@@ -23,6 +23,12 @@ export default((arr_parameter) => new Promise((resolve, reject) => {
 }));
 
 function emptyDir(fileUrl) {
-    fs.emptyDirSync(fileUrl)
+    try {
+        fs.emptyDirSync(fileUrl)
+    } catch(e) {
+        log(e, '004');
+        log(`重新清除${fileUrl}目录`);
+        emptyDir(fileUrl);
+    }
 }
 

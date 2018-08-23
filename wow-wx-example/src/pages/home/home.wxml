@@ -1,5 +1,6 @@
 <!--index.wxml-->
 <wow-view>
-    <text class="user-motto">首页1</text>
-    <text>{{userInfo}}</text>
+    <text class="user-motto">首页</text>
+    <!--<text>{{userInfo}}</text>-->
+    <!--<image style="width: 200px; height: 200px; background-color: #eeeeee;" mode="scaleToFill" src="../../assets/images/tab-nav-fx.png"></image>-->
 </wow-view>

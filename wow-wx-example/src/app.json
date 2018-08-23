@@ -6,9 +6,8 @@
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "WoW",
-        "navigationBarTextStyle": "black",
-        "navigationStyle": "custom"
+        "navigationBarTitleText": "罗氏血糖管家",
+        "navigationBarTextStyle": "black"
     },
     "tabBar": {
         "color": "#999",

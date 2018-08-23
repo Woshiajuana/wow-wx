@@ -7,6 +7,6 @@
     </view>
     <text>{{num_padding_top}}</text>
     <text>{{is_iphone_x}}</text>
-    <solt></solt>
+    <slot></slot>
 </view>
 

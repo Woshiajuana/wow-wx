@@ -48,11 +48,15 @@ class Generate {
     start () {
         AppJson.pages = this.pages;
         log(`即将生成app.json`);
-        FsExtra.createWriteStream('./src/app.json',{defaultEncoding:'utf8'});
-        FsExtra.writeFileSync('./src/app.json', JSON.stringify(AppJson, null, 4));
-        FsExtra.ensureDirSync(`./src/config`);
-        FsExtra.createWriteStream('./src/config/router.config.js',{defaultEncoding:'utf8'});
-        FsExtra.writeFileSync(`./src/config/router.config.js`, 'module.exports = ' + JSON.stringify(this.router, null, 4));
+        try {
+            FsExtra.createWriteStream('./src/app.json',{defaultEncoding:'utf8'});
+            FsExtra.writeFileSync('./src/app.json', JSON.stringify(AppJson, null, 4));
+            FsExtra.ensureDirSync(`./src/config`);
+            FsExtra.createWriteStream('./src/config/router.config.js',{defaultEncoding:'utf8'});
+            FsExtra.writeFileSync(`./src/config/router.config.js`, 'module.exports = ' + JSON.stringify(this.router, null, 4));
+        } catch (e) {
+            log(e);
+        }
         log(`生成app.json操作完成`);
         return this;
     }
