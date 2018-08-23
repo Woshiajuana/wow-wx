@@ -1,6 +1,5 @@
 {
     "navigationBarTitleText": "WoW",
-    "navigationStyle": "custom",
     "usingComponents": {
         "wow-view": "/components/wow-wx/wow-wx-ui/wow-view/index"
     }

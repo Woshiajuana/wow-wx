@@ -1,4 +1,0 @@
-<!--index.wxml-->
-<view class="container">
-    <text class="user-motto">账单</text>
-</view>

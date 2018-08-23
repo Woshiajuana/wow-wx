@@ -1,4 +1,8 @@
 //index.js
+import './home.json'
+import './home.wxss'
+import './home.wxml'
+
 //获取应用实例
 const app = getApp()
 

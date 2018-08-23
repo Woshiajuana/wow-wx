@@ -1,7 +1,4 @@
 module.exports = {
-    "account": "/pages/account/account",
-    "add": "/pages/add/add",
-    "bill": "/pages/bill/bill",
-    "chart": "/pages/chart/chart",
-    "index": "/pages/index/index"
+    "home": "/pages/home/home",
+    "mine": "/pages/mine/mine"
 }

@@ -63,7 +63,6 @@ class Copy {
 
 
     start (from, to) {
-        console.log(from, to);
         this.copy(from, to)
     }
 }

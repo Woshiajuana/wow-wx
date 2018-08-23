@@ -3,6 +3,7 @@ import copy             from './copy.cmd'
 import page             from './page.cmd'
 import ip               from './ip.cmd'
 import release          from './release.cmd'
+import deletes          from './delete.cmd'
 
 const parameters = process.argv.splice(2);
 const arr = [
@@ -10,6 +11,7 @@ const arr = [
     copy,
     ip,
     release,
+    deletes,
 ];
 
 (function fireFun(index) {

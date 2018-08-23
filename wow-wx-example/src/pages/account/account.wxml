@@ -1,6 +1,0 @@
-<!--index.wxml-->
-<view class="container">
-    <text class="user-motto">记账</text>
-    <text class="user-motto" bindtap="bindViewTap">入账</text>
-    <text class="user-motto" bindtap="bindViewTap">支出</text>
-</view>
