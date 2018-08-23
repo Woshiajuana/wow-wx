@@ -7,5 +7,4 @@ module.exports = {
     copyArr: [
         { from: '../src', to: '../dist' },
     ]
-
 };

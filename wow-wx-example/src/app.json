@@ -1,8 +1,8 @@
 {
     "pages": [
+        "pages/bill/bill",
         "pages/account/account",
         "pages/add/add",
-        "pages/bill/bill",
         "pages/chart/chart",
         "pages/index/index"
     ],
@@ -20,6 +20,12 @@
         "borderStyle": "black",
         "position": "bottom",
         "list": [
+            {
+                "pagePath": "pages/bill/bill",
+                "text": "记账",
+                "iconPath": "assets/images/tab-nav-zd.png",
+                "selectedIconPath": "assets/images/tab-nav-zd-selected.png"
+            },
             {
                 "pagePath": "pages/index/index",
                 "text": "首页",
