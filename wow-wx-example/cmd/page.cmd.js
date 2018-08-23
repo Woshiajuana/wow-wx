@@ -25,9 +25,9 @@ class Generate {
                     let file_path_arr = file_path.replace(/\\/g, '/').split('\/');
                     let file_path_name_arr = _that._unique(file_path_arr);
                     let name = file_path_name_arr.join('_');
-                    let p = '/pages/' +file_path_arr.join('/');
+                    let p = 'pages/' +file_path_arr.join('/');
                     _that.pages.push(p);
-                    _that.router[name] = p;
+                    _that.router[name] = '/' + p;
                 } else if (stat.isDirectory()) {
                     let sub_dir = Path.join(dir, file);
                     walk(sub_dir);

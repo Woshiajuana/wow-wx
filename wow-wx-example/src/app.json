@@ -1,10 +1,10 @@
 {
     "pages": [
-        "/pages/account/account",
-        "/pages/add/add",
-        "/pages/bill/bill",
-        "/pages/chart/chart",
-        "/pages/index/index"
+        "pages/account/account",
+        "pages/add/add",
+        "pages/bill/bill",
+        "pages/chart/chart",
+        "pages/index/index"
     ],
     "window": {
         "backgroundTextStyle": "light",
