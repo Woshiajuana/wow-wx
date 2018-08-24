@@ -44,6 +44,11 @@ const config = {
         filename: '[name].js',
         path: path.join(__dirname, '..' + webpackConfig.outputPath)
     },
+    resolve: {
+        alias: {
+            'utils': path.resolve(__dirname, '../src/utils/'),
+        }
+    },
     module: {
         rules: [
             {
