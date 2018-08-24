@@ -18,7 +18,7 @@ Page({
     },
     // 生命周期回调—监听页面加载
     onLoad () {
-
+        getApp().editTabBar();
     },
     // 生命周期回调—监听页面显示
     onShow () {

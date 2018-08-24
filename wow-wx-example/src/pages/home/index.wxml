@@ -3,4 +3,5 @@
     <text class="user-motto">首页</text>
     <!--<text>{{userInfo}}</text>-->
     <image style="width: 200px; height: 200px; background-color: #eeeeee;" mode="scaleToFill" src="../../assets/images/tab-nav-fx.png"></image>
+    <view class="bg"></view>
 </wow-view>

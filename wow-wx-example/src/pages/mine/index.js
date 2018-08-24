@@ -20,7 +20,7 @@ Page({
         })
     },
     onLoad: function () {
-
+        getApp().editTabBar();
     },
     getUserInfo: function(e) {
 

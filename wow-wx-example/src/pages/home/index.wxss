@@ -3,3 +3,8 @@
     width: 200px;
     height: 200px;
 }
+.bg{
+    width: 200px;
+    height: 200px;
+    /*background: url("http://www.owulia.com/static/temp/2.jpg");*/
+}
