@@ -1,7 +1,6 @@
 import WowCool                          from 'wow-cool'
 import FsExtra                          from 'fs-extra'
 import Path                             from 'path'
-import AppJson                          from './../src/app.json'
 import log                              from './../tools/log.tool'
 
 class Generate {
@@ -46,6 +45,7 @@ class Generate {
     }
 
     start () {
+        let AppJson = require('./../src/app.json');
         AppJson.pages = this.pages;
         log(`即将生成app.json`);
         try {

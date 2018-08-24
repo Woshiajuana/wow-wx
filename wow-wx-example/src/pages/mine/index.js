@@ -1,7 +1,7 @@
 //index.js
-import './mine.json'
-import './mine.wxss'
-import './mine.wxml'
+import './index.json'
+import './index.wxss'
+import './index.wxml'
 
 //获取应用实例
 const app = getApp()
