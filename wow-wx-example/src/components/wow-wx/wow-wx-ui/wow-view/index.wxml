@@ -1,12 +1,6 @@
 
 <view class="wrap">
-    <view class="header" style="height: 150rpx">
-        <view class="left">返回</view>
-        <view class="center">中间</view>
-        <view class="right">右边</view>
-    </view>
-    <text>{{num_padding_top}}</text>
-    <text>{{is_iphone_x}}</text>
+    <text>组件</text>
     <slot></slot>
 </view>
 

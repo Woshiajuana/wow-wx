@@ -3,6 +3,7 @@ import './index.json'
 import './index.wxss'
 import './index.wxml'
 
+
 //获取应用实例
 const app = getApp();
 
@@ -25,7 +26,7 @@ Page({
     },
     // 生命周期回调—监听页面初次渲染完成
     onReady () {
-
+        
     },
     // 生命周期回调—监听页面隐藏
     onHide () {

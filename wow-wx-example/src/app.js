@@ -1,6 +1,6 @@
 import './app.json'
 import './app.wxss'
-import './utils/es6-promise.util'
+import 'utils/es6-promise.util'
 
 // app.js
 App({
