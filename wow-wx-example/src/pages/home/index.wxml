@@ -17,7 +17,9 @@
 
     <!--蓝牙-->
     <view class="blue-tooth">
-        <image class="blue-tooth-icon"></image>
+        <image class="blue-tooth-icon"
+               mode="aspectFit" src="../../assets/images/blue-tooth-icon.png"></image>
+        <view class="blue-tooth-bar"></view>
         <text class="blue-tooth-text">蓝牙连接</text>
     </view>
     <!--/蓝牙-->
@@ -40,26 +42,31 @@
 
     <!--计划-->
     <view class="plan">
+        <image class="plan-bg"
+               mode="aspectFit" src="../../assets/images/home-plan-bg.png"></image>
         <view class="plan-top">
             <view class="plan-button">
-                <image class="plan-button-icon"></image>
+                <image class="plan-button-icon"
+                       mode="aspectFit" src="../../assets/images/home-icon-zxwz.png"></image>
                 <text class="plan-button-text">在线问诊</text>
             </view>
             <view class="plan-button">
-                <image class="plan-button-icon"></image>
+                <image class="plan-button-icon"
+                       mode="aspectFit" src="../../assets/images/home-icon-xtbg.png"></image>
                 <text class="plan-button-text">血糖报告</text>
             </view>
         </view>
-        <view class="plan-add"><text class="plan-add-text">+</text></view>
+        <view class="plan-add"></view>
         <view class="plan-inner">
             <view class="plan-title">
-                <image class="plan-title-icon"></image>
+                <image class="plan-title-icon"
+                       mode="aspectFit" src="../../assets/images/home-icon-jhb.png"></image>
                 <text class="plan-title-text">今天的测糖计划</text>
             </view>
             <view class="plan-con">
                 <view class="plan-item">
                     <view class="plan-item-check">
-                        <image class="plan-item-check-icon"></image>
+                        <view class="plan-item-check-icon"></view>
                     </view>
                     <text class="plan-item-text">空腹</text>
                 </view>
