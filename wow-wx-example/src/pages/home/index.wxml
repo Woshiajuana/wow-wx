@@ -1,7 +1,106 @@
 <!--index.wxml-->
-<wow-view>
-    <text class="user-motto">首页</text>
-    <!--<text>{{userInfo}}</text>-->
-    <image style="width: 200px; height: 200px; background-color: #eeeeee;" mode="scaleToFill" src="../../assets/images/tab-nav-fx.png"></image>
-    <view class="bg"></view>
-</wow-view>
+<view class="wrap">
+
+    <!--用户-->
+    <view class="user">
+        <image class="user-image"></image>
+        <view class="user-info">
+            <text class="user-name user-text">张先生</text>
+            <view class="user-prompt">
+                <text class="user-text">罗氏血糖管家已守护您</text>
+                <text class="user-text user-strong-text">23</text>
+                <text class="user-text">天</text>
+            </view>
+        </view>
+    </view>
+    <!--/用户-->
+
+    <!--蓝牙-->
+    <view class="blue-tooth">
+        <image class="blue-tooth-icon"></image>
+        <text class="blue-tooth-text">蓝牙连接</text>
+    </view>
+    <!--/蓝牙-->
+
+    <!--血糖-->
+    <view class="main">
+        <view class="inner">
+            <view class="con">
+                <text class="num">5.8</text>
+                <text class="unit">mmol/L</text>
+                <text class="time">8月7日 早餐后</text>
+            </view>
+            <view class="prompt">
+                <text class="prompt-text">你的血糖指数属于</text>
+                <text class="prompt-text prompt-text-strong">健康</text>
+            </view>
+        </view>
+    </view>
+    <!--/血糖-->
+
+    <!--计划-->
+    <view class="plan">
+        <view class="plan-top">
+            <view class="plan-button">
+                <image class="plan-button-icon"></image>
+                <text class="plan-button-text">在线问诊</text>
+            </view>
+            <view class="plan-button">
+                <image class="plan-button-icon"></image>
+                <text class="plan-button-text">血糖报告</text>
+            </view>
+        </view>
+        <view class="plan-add"><text class="plan-add-text">+</text></view>
+        <view class="plan-inner">
+            <view class="plan-title">
+                <image class="plan-title-icon"></image>
+                <text class="plan-title-text">今天的测糖计划</text>
+            </view>
+            <view class="plan-con">
+                <view class="plan-item">
+                    <view class="plan-item-check">
+                        <image class="plan-item-check-icon"></image>
+                    </view>
+                    <text class="plan-item-text">空腹</text>
+                </view>
+                <view class="plan-item">
+                    <view class="plan-item-check">
+                        <image class="plan-item-check-icon"></image>
+                    </view>
+                    <text class="plan-item-text">空腹</text>
+                </view>
+                <view class="plan-item">
+                    <view class="plan-item-check">
+                        <image class="plan-item-check-icon"></image>
+                    </view>
+                    <text class="plan-item-text">空腹</text>
+                </view>
+                <view class="plan-item">
+                    <view class="plan-item-check">
+                        <image class="plan-item-check-icon"></image>
+                    </view>
+                    <text class="plan-item-text">空腹</text>
+                </view>
+                <view class="plan-item">
+                    <view class="plan-item-check">
+                        <image class="plan-item-check-icon"></image>
+                    </view>
+                    <text class="plan-item-text">空腹</text>
+                </view>
+                <view class="plan-item">
+                    <view class="plan-item-check">
+                        <image class="plan-item-check-icon"></image>
+                    </view>
+                    <text class="plan-item-text">空腹</text>
+                </view>
+                <view class="plan-item">
+                    <view class="plan-item-check">
+                        <image class="plan-item-check-icon"></image>
+                    </view>
+                    <text class="plan-item-text">空腹</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!--/计划-->
+</view>
