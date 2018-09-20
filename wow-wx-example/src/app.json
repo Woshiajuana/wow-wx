@@ -1,9 +1,7 @@
 {
     "pages": [
-        "pages/mine/index",
         "pages/home/index",
-        "pages/questionnaire/charge/index",
-        "pages/questionnaire/free/index"
+        "pages/mine/index"
     ],
     "window": {
         "backgroundTextStyle": "light",
