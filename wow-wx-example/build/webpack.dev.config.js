@@ -81,11 +81,6 @@ const config = {
                 })
             },
             {
-                test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
-                loader: './build/copy-loader.js',
-                exclude: /node_modules/,
-            },
-            {
                 test: /\.wxml/,
                 exclude: /node_modules/,
                 use: [
@@ -108,8 +103,24 @@ const config = {
             },
             {
                 test: /\.json/,
-                loader: './build/copy-loader.js',
                 exclude: /node_modules/,
+                use: [
+                    {
+                        loader: './build/copy.wow.wx.loader.js',
+                        options: {
+                            output: path.join(__dirname, '..' + webpackConfig.outputPath),
+                            entry: path.join(__dirname, '..' + '/src')
+                        }
+                    },
+                    {
+                        loader: './build/resources.wow.wx.loader.js',
+                        options: {
+                            use_source: true,
+                            use_image: false,
+                            use_filter: [],
+                        }
+                    },
+                ]
             },
         ]
     },

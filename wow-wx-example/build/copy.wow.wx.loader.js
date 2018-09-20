@@ -1,46 +1,35 @@
 let Path = require('path');
 let fs = require('fs');
 let _loaderUtils = require('loader-utils');
-let copy = {
-    readable: null,
-    writable: null,
-    mkDirsSync (dirpath, mode) {
-        try {
-            if (!fs.existsSync(dirpath)) {
-                let pathtmp;
-                dirpath.split(/[/\\]/).forEach((dirname) => {  //这里指用/ 或\ 都可以分隔目录  如  linux的/usr/local/services   和windows的 d:\temp\aaaa
-                    if (pathtmp) {
-                        pathtmp = Path.join(pathtmp, dirname);
-                    } else {
-                        pathtmp = dirname;
-                    }
-                    if (!fs.existsSync(pathtmp)) {
-                        if (!fs.mkdirSync(pathtmp, mode)) {
-                            return false;
-                        }
-                    }
-                });
-            }
-            return true;
-        } catch(e) {
-            return false;
-        }
-    },
-    copy (from, to) {
-        let from_stat = fs.statSync(from);
-        if (from_stat.isFile()) {
+
+const Copy = function (from, to) {
+    this.readable = null;
+    this.writable = null;
+    this.from = from;
+    this.to = to;
+};
+
+Copy.prototype.file = function (from, to) {
+    if (fs.existsSync(to)) return;
+    let path_tmp = '';
+    let arr_path = to.split(Path.sep);
+    arr_path.forEach((dir, index) => {
+        path_tmp = path_tmp ? Path.join(path_tmp, dir) : dir;
+        if (index === arr_path.length - 1){
             this.readable = fs.createReadStream(from);       // 创建读取流
             this.writable = fs.createWriteStream(to);      // 创建写入流
             this.readable.pipe(this.writable);
+        } else
+            if (!fs.existsSync(path_tmp)) {
+            fs.mkdirSync(path_tmp)
         }
-    },
-    close () {
-        this.readable && this.readable.close();
-        this.writable && this.writable.close();
-    },
-    start (from, to) {
-        this.copy(from, to)
-    },
+    });
+    return this;
+};
+
+Copy.prototype.close = function () {
+    this.readable && this.readable.close();
+    this.writable && this.writable.close();
 };
 
 module.exports = function (content) {
@@ -63,7 +52,7 @@ module.exports = function (content) {
     });
     arr_result.forEach((item) => {
         let { source_dir, output_dir } = item;
-        copy.start(source_dir, output_dir);
+        new Copy().file(source_dir, output_dir).close();
     });
     return ''
 };

@@ -6,6 +6,6 @@ module.exports = {
     outputPath: '/dist',
     copyArr: [
         // { from: '../src/assets', to: '../dist/assets' },
-        { from: '../src/pages', to: '../dist/pages' },
+        // { from: '../src/pages', to: '../dist/pages' },
     ]
 };
