@@ -38,7 +38,7 @@ Resources.prototype.filter = function (source, webpack) {
 
 // 本路径
 Resources.prototype.getSourceDir = function (webpack) {
-    this.source_dir = webpack.request.substring(webpack.request.indexOf('ref--3!') + 7);
+    this.source_dir = webpack.resource;
     return this;
 };
 

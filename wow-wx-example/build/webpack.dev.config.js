@@ -92,9 +92,8 @@ const config = {
                     {
                         loader: './build/copy.wow.wx.loader.js',
                         options: {
-                            use_source: true,
-                            use_image: true,
-                            use_filter: [],
+                            output: path.join(__dirname, '..' + webpackConfig.outputPath),
+                            entry: path.join(__dirname, '..' + '/src')
                         }
                     },
                     {
