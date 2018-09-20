@@ -47,7 +47,7 @@ var copy = {
     },
 };
 
-module.exports = function (source, params1, params2) {
+module.exports = function (source) {
     var options = (0, _loaderUtils.getOptions)(this) || {};
     var dir = this.request.substring(this.request.indexOf('ref--3!') + 7);
     dir = dir.substring(dir.indexOf('src') + 3);
