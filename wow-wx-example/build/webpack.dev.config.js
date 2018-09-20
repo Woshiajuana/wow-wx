@@ -87,8 +87,25 @@ const config = {
             },
             {
                 test: /\.wxml/,
-                loader: './build/copy-loader.js',
                 exclude: /node_modules/,
+                use: [
+                    {
+                        loader: './build/copy.wow.wx.loader.js',
+                        options: {
+                            use_source: true,
+                            use_image: true,
+                            use_filter: [],
+                        }
+                    },
+                    {
+                        loader: './build/resources.wow.wx.loader.js',
+                        options: {
+                            use_source: true,
+                            use_image: true,
+                            use_filter: [],
+                        }
+                    },
+                ]
             },
             {
                 test: /\.json/,
