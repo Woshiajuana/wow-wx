@@ -24,7 +24,8 @@ let walkFun = '';
             let page_name = name_arr.join('/').replace('.js', '');
             entry[page_name] = full_path;
         } else if (['js','css','img','scss', 'images',
-                'image', 'config', 'mixins', 'plugins', 'services', 'utils'].indexOf(last_dir) === -1 && stat.isDirectory()) {
+                'image', 'config', 'mixins', 'plugins',
+                'services', 'utils'].indexOf(last_dir) === -1 && stat.isDirectory()) {
             let sub_dir = path.join(dir, file);
             walkFun(sub_dir);
         }
@@ -79,14 +80,6 @@ const config = {
                     fallback: "style-loader"
                 })
             },
-            // {
-            //     test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
-            //     loader: 'url-loader',
-            //     exclude: /node_modules/,
-            //     options: {
-            //         name: 'media/[name].[ext]'
-            //     }
-            // },
             {
                 test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
                 loader: './build/copy-loader.js',

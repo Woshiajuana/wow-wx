@@ -87,14 +87,6 @@ const config = {
                     fallback: "style-loader"
                 })
             },
-            // {
-            //     test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
-            //     loader: 'url-loader',
-            //     exclude: /node_modules/,
-            //     options: {
-            //         name: 'media/[name].[ext]'
-            //     }
-            // },
             {
                 test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
                 loader: './build/copy-loader.js',
