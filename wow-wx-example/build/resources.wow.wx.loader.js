@@ -14,12 +14,13 @@ Resources.prototype.query = function (source, webpack) {
     let { use_source, use_image } = this.options;
     if (use_source) this.getSourceDir(webpack);
     if (this.source_dir) this.arr_source.push(this.source_dir);
-    if (!use_image) return;
-    let $ = Cheerio.load(source);
-    $('img').each((index, item) => {
-        let src = $(item).attr('src');
-        if (src && src.indexOf('./') > -1) this.arr_source.push(src);
-    });
+    if (use_image) {
+        let $ = Cheerio.load(source);
+        $('img').each((index, item) => {
+            let src = $(item).attr('src');
+            if (src && src.indexOf('./') > -1) this.arr_source.push(src);
+        });
+    }
     return this;
 };
 

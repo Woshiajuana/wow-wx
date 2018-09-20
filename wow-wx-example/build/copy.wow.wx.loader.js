@@ -10,20 +10,24 @@ const Copy = function (from, to) {
 };
 
 Copy.prototype.file = function (from, to) {
-    if (fs.existsSync(to)) return;
-    let path_tmp = '';
-    let arr_path = to.split(Path.sep);
-    arr_path.forEach((dir, index) => {
-        path_tmp = path_tmp ? Path.join(path_tmp, dir) : dir;
-        if (index === arr_path.length - 1){
-            this.readable = fs.createReadStream(from);       // 创建读取流
-            this.writable = fs.createWriteStream(to);      // 创建写入流
-            this.readable.pipe(this.writable);
-        } else
+    try {
+        if (fs.existsSync(to)) return;
+        let path_tmp = '';
+        let arr_path = to.split(Path.sep);
+        arr_path.forEach((dir, index) => {
+            path_tmp = path_tmp ? Path.join(path_tmp, dir) : dir;
+            if (index === arr_path.length - 1){
+                this.readable = fs.createReadStream(from);       // 创建读取流
+                this.writable = fs.createWriteStream(to);      // 创建写入流
+                this.readable.pipe(this.writable);
+            } else
             if (!fs.existsSync(path_tmp)) {
-            fs.mkdirSync(path_tmp)
-        }
-    });
+                fs.mkdirSync(path_tmp)
+            }
+        });
+    } catch (e) {
+        console.log(e);
+    }
     return this;
 };
 
@@ -52,7 +56,7 @@ module.exports = function (content) {
     });
     arr_result.forEach((item) => {
         let { source_dir, output_dir } = item;
-        new Copy().file(source_dir, output_dir).close();
+        new Copy().file(source_dir, output_dir);
     });
     return ''
 };
