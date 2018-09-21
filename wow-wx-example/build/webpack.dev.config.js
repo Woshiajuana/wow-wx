@@ -52,10 +52,10 @@ const config = {
             {
                 test: /\.js(\?[^?]+)?$/,
                 loaders: ['babel-loader'],
-                // exclude: /node_modules/
                 include: [
                     path.resolve(__dirname, '../node_modules/wow-cool'),
                     path.resolve(__dirname, '../src'),
+                    path.resolve(__dirname, '../../wow-wx-util'),
                 ],
             },
             //处理css文件
@@ -101,6 +101,11 @@ const config = {
                     },
                 ]
             },
+            // {
+            //     test: /\.json/,
+            //     loader: './build/copy-loader.js',
+            //     exclude: /node_modules/,
+            // },
             {
                 test: /\.json/,
                 exclude: /node_modules/,

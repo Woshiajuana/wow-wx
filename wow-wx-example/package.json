@@ -8,7 +8,8 @@
     "test": "node cmd -d dist&&node cmd -p&&node cmd -i -r CS&&node cmd -c&&webpack --watch --config ./build/webpack.dev.config.js",
     "build": "node cmd -d dist&&node cmd -p&&node cmd -i -r SC&&node cmd -c&&webpack --watch --config ./build/webpack.prod.config.js",
     "clear": "node cmd -d dist",
-    "router": "node cmd -p"
+    "router": "node cmd -p",
+    "serve": "serve -p 72580"
   },
   "repository": {
     "type": "git",
@@ -39,6 +40,7 @@
     "node-sass": "^4.7.2",
     "postcss-loader": "^2.1.0",
     "sass-loader": "^6.0.6",
+    "serve": "^10.0.1",
     "style-loader": "^0.20.1",
     "url-loader": "^1.1.1",
     "webpack": "^3.10.0",

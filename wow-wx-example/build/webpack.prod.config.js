@@ -32,7 +32,8 @@ let uglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({
             let page_name = name_arr.join('/').replace('.js', '');
             entry[page_name] = full_path;
         } else if (['js','css','img','scss', 'images',
-                'image', 'config', 'mixins', 'plugins', 'services', 'utils'].indexOf(last_dir) === -1 && stat.isDirectory()) {
+                'image', 'config', 'mixins', 'plugins',
+                'services', 'utils'].indexOf(last_dir) === -1 && stat.isDirectory()) {
             let sub_dir = path.join(dir, file);
             walkFun(sub_dir);
         }
@@ -59,7 +60,6 @@ const config = {
             {
                 test: /\.js(\?[^?]+)?$/,
                 loaders: ['babel-loader'],
-                // exclude: /node_modules/
                 include: [
                     path.resolve(__dirname, '../node_modules/wow-cool'),
                     path.resolve(__dirname, '../src'),
@@ -88,19 +88,46 @@ const config = {
                 })
             },
             {
-                test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
-                loader: './build/copy-loader.js',
-                exclude: /node_modules/,
-            },
-            {
                 test: /\.wxml/,
-                loader: './build/copy-loader.js',
                 exclude: /node_modules/,
+                use: [
+                    {
+                        loader: './build/copy.wow.wx.loader.js',
+                        options: {
+                            output: path.join(__dirname, '..' + webpackConfig.outputPath),
+                            entry: path.join(__dirname, '..' + '/src')
+                        }
+                    },
+                    {
+                        loader: './build/resources.wow.wx.loader.js',
+                        options: {
+                            use_source: true,
+                            use_image: true,
+                            use_filter: [],
+                        }
+                    },
+                ]
             },
             {
                 test: /\.json/,
-                loader: './build/copy-loader.js',
                 exclude: /node_modules/,
+                use: [
+                    {
+                        loader: './build/copy.wow.wx.loader.js',
+                        options: {
+                            output: path.join(__dirname, '..' + webpackConfig.outputPath),
+                            entry: path.join(__dirname, '..' + '/src')
+                        }
+                    },
+                    {
+                        loader: './build/resources.wow.wx.loader.js',
+                        options: {
+                            use_source: true,
+                            use_image: false,
+                            use_filter: [],
+                        }
+                    },
+                ]
             },
         ]
     },
