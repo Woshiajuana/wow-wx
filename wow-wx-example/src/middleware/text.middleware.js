@@ -1,17 +1,18 @@
 
-const Handle = (ctx) => new Promise((resolve, reject) => {
+const Handle = (ctx, res) => new Promise((resolve, reject) => {
     console.log('进入text中间件');
-    reject();
+    console.log('text参数', res);
+    resolve('text过来的参数是1');
 });
 
 Handle.success = (ctx, res, next) => {
     console.log('text执行成功');
-    next();
+    next(res);
 };
 
 Handle.error = (ctx, err, next) => {
     console.log('text执行失败');
-    next();
+    next(err);
 };
 
 export default () => {

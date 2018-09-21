@@ -1,6 +1,7 @@
 
-const Handle = (ctx, next) => new Promise((resolve, reject) => {
+const Handle = (ctx, res) => new Promise((resolve, reject) => {
     console.log('进入ha中间件');
+    console.log('参数', res);
     resolve();
 });
 
