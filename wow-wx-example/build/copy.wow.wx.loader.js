@@ -11,7 +11,6 @@ const Copy = function (from, to) {
 
 Copy.prototype.file = function (from, to) {
     try {
-        if (fs.existsSync(to)) return;
         let path_tmp = '';
         let arr_path = to.split(Path.sep);
         arr_path.forEach((dir, index) => {

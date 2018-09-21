@@ -1,7 +1,7 @@
 //index.js
 import './index.json'
 import './index.wxss'
-import './index.wxml'
+// import './index.wxml'
 
 import Mixin                        from '../../../../wow-wx-util/lib/mixin.util'
 import SourceMixin                  from '../../../../wow-wx-util/mixins/source.mixin'

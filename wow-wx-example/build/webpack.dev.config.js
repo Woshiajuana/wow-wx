@@ -101,11 +101,6 @@ const config = {
                     },
                 ]
             },
-            // {
-            //     test: /\.json/,
-            //     loader: './build/copy-loader.js',
-            //     exclude: /node_modules/,
-            // },
             {
                 test: /\.json/,
                 exclude: /node_modules/,
