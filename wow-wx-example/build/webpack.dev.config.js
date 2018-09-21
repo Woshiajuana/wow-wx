@@ -54,8 +54,11 @@ const config = {
                 loaders: ['babel-loader'],
                 include: [
                     path.resolve(__dirname, '../node_modules/wow-cool'),
+                    path.resolve(__dirname, '../node_modules/wow-wx-util'),
+                    path.resolve(__dirname, '../node_modules/wow-wx-plugin'),
                     path.resolve(__dirname, '../src'),
                     path.resolve(__dirname, '../../wow-wx-util'),
+                    path.resolve(__dirname, '../../wow-wx-plugin'),
                 ],
             },
             //处理css文件

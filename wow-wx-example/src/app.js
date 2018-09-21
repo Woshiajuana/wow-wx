@@ -1,4 +1,4 @@
-// import './app.json'
+import './app.json'
 import './app.wxss'
 import 'utils/es6-promise.util'
 

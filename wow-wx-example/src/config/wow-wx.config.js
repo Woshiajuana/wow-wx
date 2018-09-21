@@ -1,4 +1,4 @@
-import Config                    from './../../config/ip.config'
+import Config                    from 'config/env.config'
 let {
     SOURCE_BASE_URL
 } = Config;

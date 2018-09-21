@@ -53,7 +53,6 @@ module.exports = function (content) {
             })
         }
     });
-    console.log(arr_result);
     arr_result.forEach((item) => {
         let { source_dir, output_dir } = item;
         new Copy().file(source_dir, output_dir);
