@@ -4,22 +4,11 @@
     <!--用户-->
     <view class="user">
         <image class="user-image" src="../../assets/images/home-button-icon.png"></image>
-        <image class="user-image" src="../../assets/images/home-checked-icon.png"></image>
-        <image class="user-image" src="../../assets/images/home-icon-jhb.png"></image>
-        <image class="user-image" src="../../assets/images/mine-icon.png"></image>
         <image class="user-image" src="{{src$.mine}}"></image>
-        <view class="user-info">
-            <text class="user-name user-text">张先生1</text>
-            <view class="user-prompt">
-                <text class="user-text">罗氏血糖管家已守护1您</text>
-                <text class="user-text user-strong-text">231</text>
-                <text class="user-text">天</text>
-            </view>
-        </view>
     </view>
     <text>{{src$.mine}}</text>
     <!--/用户-->
-    <button></button>
+    <button bindtap="handleTap">点击</button>
     <!--蓝牙-->
     <view class="blue-tooth">
         <image class="blue-tooth-icon"
