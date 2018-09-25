@@ -1,5 +1,5 @@
 
-const Handle = (ctx, res) => new Promise((resolve, reject) => {
+export const Handle = (ctx, res) => new Promise((resolve, reject) => {
     console.log('进入ha中间件');
     console.log('参数', res);
     resolve();
@@ -14,6 +14,6 @@ Handle.error = (ctx, err, next) => {
 
 };
 
-export default () => {
-    return Handle;
+export default {
+
 };

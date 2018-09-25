@@ -1,5 +1,5 @@
 
-const Handle = (ctx, res) => new Promise((resolve, reject) => {
+export const Handle = (ctx, res) => new Promise((resolve, reject) => {
     console.log('进入text中间件');
     console.log('text参数', res);
     resolve('text过来的参数是1');
@@ -15,6 +15,6 @@ Handle.error = (ctx, err, next) => {
     next(err);
 };
 
-export default () => {
-    return Handle;
+export default {
+
 };
