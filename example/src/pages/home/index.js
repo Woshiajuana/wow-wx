@@ -5,16 +5,16 @@ import './index.wxml'
 
 import Mixin                        from '../../../../source/utils/mixin.util'
 import SourceMixin                  from '../../../../source/mixins/source.mixin'
-import Middleware                   from '../../../../source/utils/task.util'
-import TextMiddleware               from 'tasks/text.task'
-import HaMiddleware                 from 'tasks/ha.task'
+import TaskMixin                    from '../../../../source/utils/task.util'
+import TextTask                     from 'tasks/text.task'
+import HaTask                       from 'tasks/ha.task'
 
 const arr_src = [
     { key: 'mine', value: 'mine-icon.png' },
 ];
 
 Page(Mixin({
-    mixins: [SourceMixin, Middleware],
+    mixins: [SourceMixin, TaskMixin],
     data: {
 
     },
@@ -22,9 +22,9 @@ Page(Mixin({
         this.sourceGet(arr_src);
     },
     handleTap () {
-        return this.use(
-            TextMiddleware(),
-            HaMiddleware(),
+        return this.run(
+            TextTask(),
+            HaTask(),
         )
     }
 }));
