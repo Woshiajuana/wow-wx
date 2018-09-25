@@ -18,6 +18,9 @@ Page(Mixin({
     data: {
 
     },
+    onShow() {
+
+    },
     onLoad () {
         this.sourceGet(arr_src);
     },
