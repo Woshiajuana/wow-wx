@@ -45,7 +45,7 @@ const config = {
             'plugins': path.resolve(__dirname, '../src/plugins/'),
             'services': path.resolve(__dirname, '../src/services/'),
             'mixins': path.resolve(__dirname, '../src/mixins/'),
-            'middleware': path.resolve(__dirname, '../src/middleware/'),
+            'tasks': path.resolve(__dirname, '../src/tasks/'),
         }
     },
     module: {
