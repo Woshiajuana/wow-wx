@@ -1,26 +1,33 @@
 
+import RouterConfig from 'config/router.config'
 
-const RouterConfig = require('./../config/router.config');
+export default {
 
-module.exports = {
-
-    push: (url, type = false) => new Promise((resolve, reject) => {
+    push: (url, params = {}, type = false) => new Promise((resolve, reject) => {
         let key = type ? 'redirectTo' : 'navigateTo';
-        handle(url, key, resolve, reject)
+        handle(url, params, key, resolve, reject)
     }),
 
-    root: (url, type = false) => new Promise((resolve, reject) => {
+    root: (url, params = {}, type = false) => new Promise((resolve, reject) => {
         let key = type ? 'reLaunch' : 'switchTab';
-        handle(url, key, resolve, reject)
+        handle(url, params, key, resolve, reject)
     }),
 
     pop(delta) {
         wx.navigateBack({delta});
+    },
+
+    getParams (options) {
+        if(!options) return {};
+        let {params} = options;
+        if(!params) return {};
+        return JSON.parse(decodeURIComponent(options.params));
     }
 };
 
-function handle(url, key, resolve, reject) {
+function handle(url, params, key, resolve, reject) {
     url = RouterConfig[url] || '';
+    if(key !== 'switchTab') url = `${url}?params=${encodeURIComponent(JSON.stringify(params))}`;
     if (!url) return reject('未找到对应页面');
     wx[key]({
         url,
