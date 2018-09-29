@@ -1,4 +1,6 @@
 
-import Config                   from '../config'
+import { UtilConfig } from '../config'
 
-export default (name) => Config.SOURCE_BASE_URL + name;
+const { SOURCE_BASE_URL } = UtilConfig;
+
+export default (name) => SOURCE_BASE_URL + name;
