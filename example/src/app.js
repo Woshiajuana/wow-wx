@@ -1,12 +1,10 @@
 import './app.json'
 import './app.wxss'
-import 'utils/es6-promise.util'
 
 import MixinUtil                    from '../../source/utils/mixin.util'
 
-
 // app.js
-App({
+App(MixinUtil({
     // 生命周期函数--监听小程序初始化,
     // 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
     async onLaunch () {
@@ -32,4 +30,4 @@ App({
     onPageNotFound () {
         // 开发者可以在 onPageNotFound 回调中进行重定向处理，但必须在回调中同步处理，异步处理（例如 setTimeout 异步执行）无效。
     }
-});
+}));

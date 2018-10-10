@@ -1,5 +1,5 @@
 
-import 'utils/es6-promise.util'
+import './es6-promise.util'
 
 export default (options) => {
     let {
