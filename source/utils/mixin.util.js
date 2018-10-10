@@ -5,7 +5,8 @@ export default (options) => {
     let {
         mixins,
     } = options;
-    if (!mixins) return options;
+    if (!mixins)
+        return options;
     let result = {
         ...options
     };
