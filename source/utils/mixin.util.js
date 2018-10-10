@@ -1,6 +1,6 @@
-/**
- * Created by lenovo on 18/09/01.
- */
+
+import 'utils/es6-promise.util'
+
 export default (options) => {
     let {
         mixins,
