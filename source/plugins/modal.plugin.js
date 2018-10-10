@@ -5,23 +5,39 @@ import {
 
 const {
     modalTCallback,
-} = PluginsConfig;
+    duration,
+} = PluginsConfig.MODAL;
 
 
 export default {
+
     // 弱提示
     toast (options) {
         if (typeof options === 'undefined')
             return null;
-        let title = '';
-        let duration = 3000;
+        let message = options;
         if (typeof options === 'object') {
-            title = modalTCallback(options);
+            message = modalTCallback(options);
         }
         wx.showToast({
-            title,
-            duration,
+            title: message + '',
+            duration: options.duration || duration,
             icon: 'none',
         })
-    }
+    },
+
+    // 确认弹窗
+    confirm: (options = {}) => new Promise((resolve, reject) => {
+        wx.showModal({
+            title: '温馨提示',
+            ...options,
+            success: res=>{
+                resolve(res);
+            },
+            fail: err => {
+                reject(err);
+            },
+        });
+    })
+
 }
