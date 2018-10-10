@@ -1,11 +1,11 @@
 import ObjectUtil                       from './utils/object.util'
 import {
-    UtilConfig as UConfig,
+    UtilsConfig as UConfig,
     PluginsConfig as PConfig,
 } from 'config/wow-wx.config'
 
 // 工具配置文件
-export const UtilConfig = ObjectUtil.deepCopy({
+export const UtilsConfig = ObjectUtil.deepCopy({
 
 
 }, UConfig);
@@ -31,7 +31,7 @@ export const PluginsConfig = ObjectUtil.deepCopy({
     // 路由配置模块
     ROUTER: {
         // 路径配置
-        path: {},
+        path: '',
     }
 
 }, PConfig);

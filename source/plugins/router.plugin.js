@@ -3,7 +3,17 @@ import {
     PluginsConfig
 } from '../config'
 
-const { ROUTER_CONFIG } = PluginsConfig;
+const {
+    paths,
+} = PluginsConfig.ROUTER;
+
+console.log(path)
+let path = 'config/router.config'
+
+const ROUTER_CONFIG = require(path);
+
+console.log(ROUTER_CONFIG)
+
 
 export default {
     // 跳转页面

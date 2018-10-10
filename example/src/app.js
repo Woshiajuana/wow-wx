@@ -4,6 +4,7 @@ import './app.wxss'
 import MixinUtil                    from '../../source/utils/mixin.util'
 import ObjectUtil                   from '../../source/utils/object.util'
 import ModalPlugin                  from '../../source/plugins/modal.plugin'
+import RouterPlugin                 from '../../source/plugins/router.plugin'
 
 // app.js
 App(MixinUtil({
@@ -15,6 +16,7 @@ App(MixinUtil({
         console.log(result);
         console.log(result);
         ModalPlugin.confirm({title: 'xx', content: 'x'})
+
     },
     // 生命周期函数--监听小程序显示
     // 当小程序启动，或从后台进入前台显示，会触发 onShow
