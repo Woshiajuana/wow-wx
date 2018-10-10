@@ -5,10 +5,10 @@ import {
 } from 'config/wow-wx.config'
 
 // 工具配置文件
-export const UtilConfig = {
+export const UtilConfig = ObjectUtil.deepCopy({
 
-    ...UConfig,
-};
+
+}, UConfig);
 
 // 插件配置文件
 export const PluginsConfig = ObjectUtil.deepCopy({
@@ -28,6 +28,10 @@ export const PluginsConfig = ObjectUtil.deepCopy({
         duration: 3000,
     },
 
+    // 路由配置模块
+    ROUTER: {
+        // 路径配置
+        path: {},
+    }
 
-    ...PConfig,
-});
+}, PConfig);

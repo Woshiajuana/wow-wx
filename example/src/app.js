@@ -9,9 +9,10 @@ import ModalPlugin                  from '../../source/plugins/modal.plugin'
 App(MixinUtil({
     // 生命周期函数--监听小程序初始化,
     // 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
-    onLaunch () {
+    async onLaunch () {
         let result = ObjectUtil.deepCopy( {a:0, b:2, d: {x:1, y: 2}}, {a:1, b:3,d: {x:2, z: 2}}, {c:4, e:5});
         // let result = ObjectUtil.deepCopy( {a:0, b:2}, );
+        console.log(result);
         console.log(result);
         ModalPlugin.confirm({title: 'xx', content: 'x'})
     },

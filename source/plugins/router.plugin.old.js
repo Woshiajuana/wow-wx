@@ -1,7 +1,5 @@
 
-import {
-    PluginsConfig
-} from '../config'
+import { PluginsConfig }                  from '../config'
 
 const { ROUTER_CONFIG } = PluginsConfig;
 
