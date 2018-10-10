@@ -24,7 +24,7 @@ export const PluginsConfig = ObjectUtil.deepCopy({
             return errMsg || JSON.stringify(options);
         },
 
-        // 弱提示
+        // 弱提示持续时间
         duration: 3000,
     },
 
