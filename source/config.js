@@ -31,12 +31,6 @@ export const PluginsConfig = ObjectUtil.deepCopy({
     // 路由配置模块
     ROUTER: {
 
-        // 路径配置
-        path: './../../example/src/config/',
-
-        // 文件名配置
-        name: 'router.config.js',
-
     }
 
 }, PConfig);

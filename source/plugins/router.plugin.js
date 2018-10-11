@@ -4,47 +4,52 @@ import {
 } from '../config'
 
 const {
-    path,
-    name,
+    routerConfig,
 } = PluginsConfig.ROUTER;
 
-console.log(path)
-console.log(name)
-let cache = {};
 
-function importAll (r) {
-    r.keys().forEach(key => cache[key] = r(key));
-}
-
-importAll(require.context('./../../example/src/config/', true,  /router.config.js/));
-
-console.log(cache)
-
-let paths = '../../example/src/config/router.config.js'
-
-// let req = require.context('../../example/src/config', true, /\.router.config.js$/)
-// console.log(req)
-// const ROUTER_CONFIG = require(paths);
-//
-// console.log(ROUTER_CONFIG)
-
+const handle = (key, url, params) => new Promise((resolve, reject) => {
+    let options = {};
+    options.url = routerConfig[url] || '';
+    if (!options.url && key !== 'navigateBack')
+        return reject('no page found');
+    if (params && typeof params !== 'object')
+        return reject('params must be object');
+    if (key === 'navigateBack') {
+        options.delta = url;
+        delete options.url;
+    } else if (key !== 'switchTab' && params)
+        options.url = `${options.url}?params=${encodeURIComponent(JSON.stringify(params))}`;
+    wx[key]({
+        ...options,
+        success: (e) => {
+            resolve(e);
+        },
+        fail: (e) => {
+            reject(e);
+        },
+    });
+});
 
 export default {
-    // 跳转页面
-    push: (url, params = {}, type = false) => new Promise((resolve, reject) => {
-        let key = type ? 'redirectTo' : 'navigateTo';
-        handle(url, params, key, resolve, reject)
-    }),
 
-    // 回到首页
-    root: (url, params = {}, type = false) => new Promise((resolve, reject) => {
-        let key = type ? 'reLaunch' : 'switchTab';
-        handle(url, params, key, resolve, reject)
-    }),
+    // 跳转页面
+    push (options, params) {
+        let key = options.close ? 'redirectTo' : 'navigateTo';
+        let url = options.url || options;
+        return handle(key, url, params);
+    },
+
+    // 关闭所有页面回到某个页面
+    root (options, params) {
+        let key = options.close ? 'reLaunch' : 'switchTab';
+        let url = options.url || options;
+        return handle(key, url, params);
+    },
 
     // 返回
     pop (delta) {
-        wx.navigateBack({delta});
+        return handle('navigateBack', delta);
     },
 
     // 获取路由参数
@@ -54,19 +59,4 @@ export default {
         if (!params) return {};
         return JSON.parse(decodeURIComponent(params));
     }
-}
-
-function handle(url, params, key, resolve, reject) {
-    url = ROUTER_CONFIG[url] || '';
-    if (key !== 'switchTab') url = `${url}?params=${encodeURIComponent(JSON.stringify(params))}`;
-    if (!url) return reject('未找到对应页面');
-    wx[key]({
-        url,
-        success: (e) => {
-            resolve(e);
-        },
-        fail: (e) => {
-            reject(e);
-        },
-    });
 }

@@ -1,4 +1,5 @@
-import Config                    from 'config/env.config'
+import Config                       from 'config/env.config'
+import RouterConfig                 from 'config/router.config'
 
 let {
     SOURCE_BASE_URL
@@ -12,10 +13,6 @@ export const UtilConfig = {
 // 插件配置
 export const PluginsConfig = {
     ROUTER: {
-        // 路径配置
-        path: './../../example/src/config/',
-
-        // 文件名配置
-        name: 'router.config.js',
+        routerConfig: RouterConfig,
     },
 };
