@@ -12,6 +12,10 @@ export const UtilConfig = {
 // 插件配置
 export const PluginsConfig = {
     ROUTER: {
-        path: 'config/router.config',
+        // 路径配置
+        path: './../../example/src/config/',
+
+        // 文件名配置
+        name: 'router.config.js',
     },
 };

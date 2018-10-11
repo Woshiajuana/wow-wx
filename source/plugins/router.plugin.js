@@ -4,15 +4,29 @@ import {
 } from '../config'
 
 const {
-    paths,
+    path,
+    name,
 } = PluginsConfig.ROUTER;
 
 console.log(path)
-let path = 'config/router.config'
+console.log(name)
+let cache = {};
 
-const ROUTER_CONFIG = require(path);
+function importAll (r) {
+    r.keys().forEach(key => cache[key] = r(key));
+}
 
-console.log(ROUTER_CONFIG)
+importAll(require.context('./../../example/src/config/', true,  /router.config.js/));
+
+console.log(cache)
+
+let paths = '../../example/src/config/router.config.js'
+
+// let req = require.context('../../example/src/config', true, /\.router.config.js$/)
+// console.log(req)
+// const ROUTER_CONFIG = require(paths);
+//
+// console.log(ROUTER_CONFIG)
 
 
 export default {
