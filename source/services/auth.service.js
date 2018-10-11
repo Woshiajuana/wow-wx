@@ -1,5 +1,12 @@
 
-import StorePlugin                      from '../plugins/store.plugin'
+import AuthPlugin                   from '../plugins/auth.plugin'
+import {
+    PluginsConfig
+} from '../config'
+
+const {
+    routerConfig,
+} = PluginsConfig.ROUTER;
 
 export default {
 
@@ -7,9 +14,7 @@ export default {
         auth$: {},
     },
 
-    authGet: () => new Promise((resolve, reject) => {
-        let userToken = wx.getStorageSync($USER_TOKEN);
-        if (userToken) resolve(userToken);
-        else reject('userToken is undefined');
-    }),
+    authGet ()  {
+
+    },
 }

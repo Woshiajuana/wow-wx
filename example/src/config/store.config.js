@@ -1,4 +1,4 @@
 
 export default {
-    KEY: '',
+    $USER_TOKEN: '$USER_TOKEN',
 }

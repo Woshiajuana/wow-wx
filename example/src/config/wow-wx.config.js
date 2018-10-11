@@ -22,5 +22,11 @@ export const PluginsConfig = {
     // 存储配置模块
     STORE: {
         storeConfig: StoreConfig,
-    }
+    },
+
+    // 用户认证模块
+    AUTH: {
+        // 用户信息存储key配置
+        $USER_TOKEN: StoreConfig.$USER_TOKEN,
+    },
 };

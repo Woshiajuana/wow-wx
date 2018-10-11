@@ -35,7 +35,13 @@ export const PluginsConfig = ObjectUtil.deepCopy({
 
     // 存储配置模块
     STORE: {
+        // 非验证key
+        noUseArr: ['$USER_TOKEN'],
+    },
 
-    }
+    // 用户认证模块
+    AUTH: {
+        $USER_TOKEN: '$USER_TOKEN',
+    },
 
 }, PConfig);
