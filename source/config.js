@@ -31,6 +31,11 @@ export const PluginsConfig = ObjectUtil.deepCopy({
     // 路由配置模块
     ROUTER: {
 
+    },
+
+    // 存储配置模块
+    STORE: {
+
     }
 
 }, PConfig);

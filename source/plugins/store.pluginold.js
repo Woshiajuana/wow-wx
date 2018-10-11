@@ -1,30 +1,13 @@
-
-import {
-    PluginsConfig
-} from '../config'
-
-const {
-    storeConfig,
-} = PluginsConfig.STORE;
-
 export default {
-
-    // 获取
     get: (key) => new Promise((resolve, reject) => {
-        let reg_key = storeConfig[key];
-        if (!reg_key)
-            return reject(`${key} is no register`);
-        let value = wx.getStorageSync(reg_key) || '';
-        return resolve(value);
+        let value = wx.getStorageSync(key);
+        if (typeof value !== 'undefined' && value !== '' && value !== ' ') resolve(value);
+        else reject({errCode: -999, errMsg: `${key} is undefined`});
     }),
-
-    // 存储
     set: (key, value) => new Promise((resolve, reject) => {
         wx.setStorageSync(key, value);
         return resolve(value);
     }),
-
-    // 删除
     remove: (key) => new Promise((resolve, reject) => {
         wx.removeStorageSync(key);
         return resolve();
