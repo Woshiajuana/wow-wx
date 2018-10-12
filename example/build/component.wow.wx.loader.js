@@ -6,11 +6,15 @@ module.exports = function (content) {
     let options = (0, _loaderUtils.getOptions)(this) || {};
     let { arr_source, source } = content;
     let { output, entry } = options;
-    let use_components_obj = JSON.parse(source).usingComponents;
+    let usingComponents = JSON.parse(source).usingComponents;
+    let useComponents = JSON.parse(source).useComponents;
     let use_components = [];
-    if (use_components_obj) {
-        for (let key in use_components_obj) {
-            let value = use_components_obj[key];
+    if (useComponents) {
+
+    }
+    if (usingComponents) {
+        for (let key in usingComponents) {
+            let value = usingComponents[key];
             ['.js', '.json', '.wxml', '.wxss'].forEach((item) => {
                 let file = `${value}${item}`;
                 use_components.push({
