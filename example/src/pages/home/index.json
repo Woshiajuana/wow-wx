@@ -1,3 +1,6 @@
 {
-    "navigationBarTitleText": "罗氏血糖管家3"
+    "navigationBarTitleText": "WOW-WX",
+    "usingComponents": {
+        "wow-scroll": "../../components/wow-scroll/index"
+    }
 }

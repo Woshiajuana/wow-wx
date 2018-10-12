@@ -25,7 +25,7 @@ let walkFun = '';
             entry[page_name] = full_path;
         } else if (['js','css','img','scss', 'images',
                 'image', 'config', 'mixins', 'plugins',
-                'services', 'utils'].indexOf(last_dir) === -1 && stat.isDirectory()) {
+                'services', 'utils', 'tasks'].indexOf(last_dir) === -1 && stat.isDirectory()) {
             let sub_dir = path.join(dir, file);
             walkFun(sub_dir);
         }
