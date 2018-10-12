@@ -37,9 +37,10 @@ Copy.prototype.close = function () {
 
 module.exports = function (content) {
     let options = (0, _loaderUtils.getOptions)(this) || {};
-    let { arr_source, source } = content;
+    let { arr_source, source, use_components } = content;
     let { output, entry } = options;
-    let arr_result = [];
+    if (!use_components) use_components = [];
+    let arr_result = [...use_components];
     arr_source.forEach((item, index) => {
         if (item.indexOf('./') > -1) {
             arr_result.push({

@@ -10,9 +10,17 @@ module.exports = function (content) {
     let use_components = [];
     if (use_components_obj) {
         for (let key in use_components_obj) {
-            use_components.push(use_components_obj[key]);
+            let value = use_components_obj[key];
+            ['.js', '.json', '.wxml', '.wxss'].forEach((item) => {
+                let file = `${value}${item}`;
+                use_components.push({
+                    source_dir: Path.join(this.context, file),
+                    output_dir: Path.join(output, file.replace(/(\.\/|\.\.\/)/g, '')),
+                });
+            });
         }
     }
     console.log(use_components);
+    content.use_components = use_components;
     return content;
 };
