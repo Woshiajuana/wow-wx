@@ -4,6 +4,6 @@
         "wow-scroll": "../../components/wow-scroll/index"
     },
     "useComponents": {
-        "wow-scroll": "../../components/wow-scroll/index"
+        "wow-text": "../../../../source/components/wow-text/index"
     }
 }
