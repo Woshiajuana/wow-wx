@@ -114,6 +114,13 @@ const config = {
                         }
                     },
                     {
+                        loader: './build/component.wow.wx.loader.js',
+                        options: {
+                            output: path.join(__dirname, '..' + webpackConfig.outputPath),
+                            entry: path.join(__dirname, '..' + '/src')
+                        }
+                    },
+                    {
                         loader: './build/resources.wow.wx.loader.js',
                         options: {
                             use_source: true,
