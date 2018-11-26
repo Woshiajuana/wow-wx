@@ -2,10 +2,10 @@
 <view class="wrap">
 
     <!--&lt;!&ndash;用户&ndash;&gt;-->
-    <!--<view class="user">-->
-        <!--<image class="user-image" src="../../assets/images/home-button-icon.png"></image>-->
+    <view class="user">
+        <image class="user-image" src="../../assets/images/home-button-icon.png"></image>
         <!--<image class="user-image" src="{{src$.mine}}"></image>-->
-    <!--</view>-->
+    </view>
     <!--<text>{{src$.mine}}</text>-->
     <!--&lt;!&ndash;/用户&ndash;&gt;-->
     <!--<button bindtap="handleTap">点击</button>-->
