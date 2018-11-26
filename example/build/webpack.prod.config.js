@@ -3,7 +3,6 @@ const path = require('path');
 const fs = require('fs-extra');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
-const webpackConfig = require('../config');
 const entry = {};
 let walkFun = '';
 let uglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({
@@ -44,7 +43,7 @@ const config = {
     entry: entry,
     output: {
         filename: '[name].js',
-        path: path.join(__dirname, '..' + webpackConfig.outputPath)
+        path: path.join(__dirname, '../dist')
     },
     resolve: {
         alias: {
@@ -62,14 +61,9 @@ const config = {
                 test: /\.js(\?[^?]+)?$/,
                 loaders: ['babel-loader'],
                 include: [
-                    path.resolve(__dirname, '../node_modules/wow-cool'),
-                    path.resolve(__dirname, '../node_modules/wow-wx-util'),
-                    path.resolve(__dirname, '../node_modules/wow-wx-plugin'),
-                    path.resolve(__dirname, '../node_modules/wow-wx-middleware'),
+                    path.resolve(__dirname, '../node_modules/wow-wx'),
                     path.resolve(__dirname, '../src'),
-                    path.resolve(__dirname, '../../wow-wx-util'),
-                    path.resolve(__dirname, '../../wow-wx-plugin'),
-                    path.resolve(__dirname, '../../wow-wx-middleware'),
+                    path.resolve(__dirname, '../../source'),
                 ],
             },
             //处理css文件
@@ -101,8 +95,8 @@ const config = {
                     {
                         loader: './build/copy.wow.wx.loader.js',
                         options: {
-                            output: path.join(__dirname, '..' + webpackConfig.outputPath),
-                            entry: path.join(__dirname, '..' + '/src')
+                            output: path.join(__dirname, '../dist'),
+                            entry: path.join(__dirname, '../src')
                         }
                     },
                     {
@@ -122,8 +116,15 @@ const config = {
                     {
                         loader: './build/copy.wow.wx.loader.js',
                         options: {
-                            output: path.join(__dirname, '..' + webpackConfig.outputPath),
-                            entry: path.join(__dirname, '..' + '/src')
+                            output: path.join(__dirname, '../dist'),
+                            entry: path.join(__dirname, '../src')
+                        }
+                    },
+                    {
+                        loader: './build/component.wow.wx.loader.js',
+                        options: {
+                            output: path.join(__dirname, '../dist'),
+                            entry: path.join(__dirname, '../src')
                         }
                     },
                     {
