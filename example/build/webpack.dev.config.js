@@ -3,7 +3,6 @@ const path = require('path');
 const fs = require('fs-extra');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
-const webpackConfig = require('../config');
 const entry = {};
 let walkFun = '';
 
@@ -36,7 +35,7 @@ const config = {
     entry: entry,
     output: {
         filename: '[name].js',
-        path: path.join(__dirname, '..' + webpackConfig.outputPath)
+        path: path.join(__dirname, '../dist')
     },
     resolve: {
         alias: {
@@ -88,8 +87,8 @@ const config = {
                     {
                         loader: './build/copy.wow.wx.loader.js',
                         options: {
-                            output: path.join(__dirname, '..' + webpackConfig.outputPath),
-                            entry: path.join(__dirname, '..' + '/src')
+                            output: path.join(__dirname, '../dist'),
+                            entry: path.join(__dirname, '../src')
                         }
                     },
                     {
@@ -109,15 +108,15 @@ const config = {
                     {
                         loader: './build/copy.wow.wx.loader.js',
                         options: {
-                            output: path.join(__dirname, '..' + webpackConfig.outputPath),
-                            entry: path.join(__dirname, '..' + '/src')
+                            output: path.join(__dirname, '../dist'),
+                            entry: path.join(__dirname, '../src')
                         }
                     },
                     {
                         loader: './build/component.wow.wx.loader.js',
                         options: {
-                            output: path.join(__dirname, '..' + webpackConfig.outputPath),
-                            entry: path.join(__dirname, '..' + '/src')
+                            output: path.join(__dirname, '../dist'),
+                            entry: path.join(__dirname, '../src')
                         }
                     },
                     {

@@ -1,26 +1,42 @@
 
-import wowCool          from 'wow-cool'
-import fs               from 'fs-extra'
-import path             from 'path'
-import log              from './../tools/log.tool'
+import fs from 'fs-extra'
+import path from 'path'
+import {
+    log
+} from 'wow-cmd'
 
+const Handle = (options, data) => new Promise((resolve, reject) => {
+    let {
+        params,
+        parameters,
+    } = options;
+    params = params ? params.toLocaleLowerCase() : '';
+    if (!params)
+        return reject('清除失败：未指定清除目录');
+    let dir = path.join(__dirname, '../', params);
+    return resolve(dir);
+});
 
-/**
- * 发布环境
- * */
-export default((arr_parameter) => new Promise((resolve, reject) => {
-    let num_release_index = wowCool.findFirstIndexForArr(arr_parameter, (item) => {
-        return item === '--delete' || item === '-d';
-    });
-    let str_release = (num_release_index !== -1 && arr_parameter[num_release_index + 1]);
-    str_release = str_release ? str_release.toLocaleLowerCase() : '';
-    if (!str_release) return;
-    let dir = path.join(__dirname, '../', str_release);
-    log(`即将清除${dir}目录`);
-    emptyDir(dir);
-    log(`清除${dir}目录成功`);
+// 参数 options
+Handle.options = {
+    cmd: ['-d', '--delete'],
+};
 
-}));
+// 成功
+Handle.success = (res, next) => {
+    log(`即将清除${res}目录`);
+    emptyDir(res);
+    log(`清除${res}目录成功`);
+    next(res);
+};
+
+// 失败
+Handle.error = (err, next) => {
+    log(err, '004');
+    next();
+};
+
+export default Handle;
 
 function emptyDir(fileUrl) {
     try {
@@ -31,4 +47,3 @@ function emptyDir(fileUrl) {
         emptyDir(fileUrl);
     }
 }
-

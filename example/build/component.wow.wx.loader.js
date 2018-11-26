@@ -9,7 +9,6 @@ module.exports = function (content) {
     let obj_source = JSON.parse(source);
     let usingComponents = obj_source.usingComponents || {};
     let use_components = [];
-    console.log(obj_source);
     if (usingComponents) {
         for (let key in usingComponents) {
             let value = usingComponents[key];
@@ -22,7 +21,6 @@ module.exports = function (content) {
             });
         }
     }
-    console.log(use_components);
     content.use_components = use_components;
     return content;
 };

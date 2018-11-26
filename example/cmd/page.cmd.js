@@ -1,8 +1,10 @@
-import WowCool                          from 'wow-cool'
-import FsExtra                          from 'fs-extra'
-import Path                             from 'path'
-import log                              from './../tools/log.tool'
-import config                           from './../config/app.config'
+
+import FsExtra from 'fs-extra'
+import Path from 'path'
+import {
+    log
+} from 'wow-cmd'
+import config from './../config'
 
 const { entry } = config;
 
@@ -66,25 +68,40 @@ class Generate {
         } catch (e) {
             log(e);
         }
-        log(`生成app.json操作完成`);
         return this;
     }
 
 }
 
-export default((arr_parameter) => new Promise((resolve, reject) => {
-    let num_app_index = WowCool.findFirstIndexForArr(arr_parameter, (item) => {
-        return item === '--page' || item === '-p';
-    });
-    if (num_app_index) return resolve();
-    const generate = new Generate();
-    generate.loopDirectory().start();
-    return resolve();
-}));
+const Handle = (options, data) => new Promise((resolve, reject) => {
+    let {
+        params,
+        parameters,
+    } = options;
+    try {
+        const generate = new Generate();
+        generate.loopDirectory().start();
+    } catch (e) {
+        return reject(`生产app.json错误：${e}`)
+    }
+    return resolve(`生成app.json操作完成`);
+});
 
+// 参数 options
+Handle.options = {
+    cmd: ['-p', '--page'],
+};
 
+// 成功
+Handle.success = (res, next) => {
+    log(`${res}`);
+    next(res);
+};
 
+// 失败
+Handle.error = (err, next) => {
+    log(err, '004');
+    next();
+};
 
-
-
-
+export default Handle;

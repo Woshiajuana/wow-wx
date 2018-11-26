@@ -4,7 +4,7 @@
   "description": "webpack building multiple page projects",
   "main": "index.js",
   "scripts": {
-    "dev": "node cmd -d dist&&node cmd -p&&node cmd -i -r BD&&node cmd -c&&webpack --watch --config ./build/webpack.dev.config.js",
+    "dev": "node cmd -d dist&&node cmd -p&&node cmd -i -r BD&&webpack --watch --config ./build/webpack.dev.config.js",
     "test": "node cmd -d dist&&node cmd -p&&node cmd -i -r CS&&node cmd -c&&webpack --watch --config ./build/webpack.dev.config.js",
     "build": "node cmd -d dist&&node cmd -p&&node cmd -i -r SC&&node cmd -c&&webpack --watch --config ./build/webpack.prod.config.js",
     "clear": "node cmd -d dist",
@@ -45,6 +45,7 @@
     "style-loader": "^0.20.1",
     "url-loader": "^1.1.1",
     "webpack": "^3.10.0",
+    "wow-cmd": "0.0.7",
     "wow-cool": "0.0.3",
     "wxapp-webpack-plugin": "^0.18.0"
   },
