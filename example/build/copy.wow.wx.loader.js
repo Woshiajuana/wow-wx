@@ -14,6 +14,7 @@ Copy.prototype.file = function (from, to) {
         let path_tmp = '';
         let arr_path = to.split(Path.sep);
         arr_path.forEach((dir, index) => {
+            !dir && (dir = '.');
             path_tmp = path_tmp ? Path.join(path_tmp, dir) : dir;
             if (index === arr_path.length - 1){
                 this.readable = fs.createReadStream(from);       // 创建读取流
