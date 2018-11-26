@@ -59,15 +59,12 @@ class Generate {
         }
         AppJson.pages = this.pages;
         log(`即将生成app.json`);
-        try {
-            FsExtra.createWriteStream('./src/app.json',{defaultEncoding:'utf8'});
-            FsExtra.writeFileSync('./src/app.json', JSON.stringify(AppJson, null, 4));
-            FsExtra.ensureDirSync(`./src/config`);
-            FsExtra.createWriteStream('./src/config/router.config.js',{defaultEncoding:'utf8'});
-            FsExtra.writeFileSync(`./src/config/router.config.js`, 'module.exports = ' + JSON.stringify(this.router, null, 4));
-        } catch (e) {
-            log(e);
-        }
+        // FsExtra.createWriteStream('./src/app.js',{defaultEncoding:'utf8'});
+        // FsExtra.writeFileSync('./src/app.js', JSON.stringify(AppJson, null, 4));
+        FsExtra.writeFileSync('./src/app.json', JSON.stringify(AppJson, null, 4));
+        FsExtra.ensureDirSync(`./src/config`);
+        // FsExtra.createWriteStream('./src/config/router.config.js',{defaultEncoding:'utf8'});
+        FsExtra.writeFileSync(`./src/config/router.config.js`, 'module.exports = ' + JSON.stringify(this.router, null, 4));
         return this;
     }
 
@@ -82,7 +79,7 @@ const Handle = (options, data) => new Promise((resolve, reject) => {
         const generate = new Generate();
         generate.loopDirectory().start();
     } catch (e) {
-        return reject(`生产app.json错误：${e}`)
+        return reject(`生成app.json错误：${e}`)
     }
     return resolve(`生成app.json操作完成`);
 });
