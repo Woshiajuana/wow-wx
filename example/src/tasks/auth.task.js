@@ -1,5 +1,5 @@
 
-import AuthPlugin                   from '../../../source/plugins/auth.plugin'
+import AuthPlugin                   from 'wow-wx/plugins/auth.plugin'
 
 export const Handle = (ctx, res) => new Promise((resolve, reject) => {
     AuthPlugin.getToken().then((info) => {

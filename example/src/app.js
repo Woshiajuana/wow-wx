@@ -1,10 +1,10 @@
 import './app.json'
 import './app.wxss'
 
-import MixinUtil                    from '../../source/utils/mixin.util'
-import ObjectUtil                   from '../../source/utils/object.util'
-import ModalPlugin                  from '../../source/plugins/modal.plugin'
-import RouterPlugin                 from '../../source/plugins/router.plugin'
+import MixinUtil                    from 'wow-wx/utils/mixin.util'
+import ObjectUtil                   from 'wow-wx/utils/object.util'
+import ModalPlugin                  from 'wow-wx/plugins/modal.plugin'
+import RouterPlugin                 from 'wow-wx/plugins/router.plugin'
 
 // app.js
 App(MixinUtil({

@@ -3,9 +3,9 @@ import './index.json'
 import './index.wxss'
 import './index.wxml'
 
-import Mixin                        from '../../../../source/utils/mixin.util'
-import SourceMixin                  from '../../../../source/mixins/source.mixin'
-import TaskMixin                    from '../../../../source/utils/task.util'
+import Mixin                        from 'wow-wx/utils/mixin.util'
+import SourceMixin                  from 'wow-wx/mixins/source.mixin'
+import TaskMixin                    from 'wow-wx/utils/task.util'
 import TextTask                     from 'tasks/text.task'
 import HaTask                       from 'tasks/ha.task'
 
