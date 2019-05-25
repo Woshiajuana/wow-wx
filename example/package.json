@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/Woshiajuana/wow-wx#readme",
   "devDependencies": {
+    "@antv/f2-canvas": "^1.0.5",
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
     "babel-plugin-transform-runtime": "^6.23.0",

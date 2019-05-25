@@ -20,9 +20,18 @@ let walkFun = '';
         let stat = fs.statSync(full_path);
         let ext_name = path.extname(full_path);
         if (stat.isFile() && ext_name === '.js') {
+            // let page_name = name_arr.join('/');
             let page_name = name_arr.join('/').replace('.js', '');
-            entry[page_name] = full_path;
-        } else if (['js','css','img','scss', 'images',
+            if (page_name.indexOf('mixin') === -1)
+                entry[page_name] = full_path;
+        }
+        // else if (stat.isFile() && ext_name === '.wxs') {
+        //     let page_name = name_arr.join('/');
+        //     // let page_name = name_arr.join('/').replace('.wxs', '');
+        //     if (page_name.indexOf('mixin') === -1)
+        //         entry[page_name] = full_path;
+        // }
+        else if (['js','css','img','scss', 'images',
                 'image', 'config', 'mixins', 'plugins',
                 'services', 'utils', 'tasks'].indexOf(last_dir) === -1 && stat.isDirectory()) {
             let sub_dir = path.join(dir, file);
@@ -30,6 +39,15 @@ let walkFun = '';
         }
     })
 })();
+
+let uglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({
+    compress: {
+        unused: true,
+        dead_code: true,
+        warnings: false,
+        screw_ie8: true,
+    }
+});
 
 const config = {
     entry: entry,
@@ -58,6 +76,27 @@ const config = {
                     path.resolve(__dirname, '../../source'),
                 ],
             },
+            {
+                test: /\.wxs(\?[^?]+)?$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: './build/copy.wow.wx.loader.js',
+                        options: {
+                            output: path.join(__dirname, '../dist'),
+                            entry: path.join(__dirname, '../src')
+                        }
+                    },
+                    {
+                        loader: './build/resources.wow.wx.loader.js',
+                        options: {
+                            use_source: true,
+                            use_image: false,
+                            use_filter: [],
+                        }
+                    },
+                ]
+            },
             //处理css文件
             {
                 test: /\.wxss/,
@@ -68,11 +107,14 @@ const config = {
                 }),
             },
             {
-                test: /.scss$/,
+                test: /\.scss/,
                 exclude: /node_modules/,
                 use: ExtractTextPlugin.extract({
                     use: [{
-                        loader: "css-loader"
+                        loader: "css-loader",
+                        options:{
+                            minimize: true //css压缩
+                        },
                     }, {
                         loader: "sass-loader"
                     }],
@@ -112,13 +154,13 @@ const config = {
                             entry: path.join(__dirname, '../src')
                         }
                     },
-                    {
-                        loader: './build/component.wow.wx.loader.js',
-                        options: {
-                            output: path.join(__dirname, '../dist'),
-                            entry: path.join(__dirname, '../src')
-                        }
-                    },
+                    // {
+                    //     loader: './build/component.wow.wx.loader.js',
+                    //     options: {
+                    //         output: path.join(__dirname, '../dist'),
+                    //         entry: path.join(__dirname, '../src')
+                    //     }
+                    // },
                     {
                         loader: './build/resources.wow.wx.loader.js',
                         options: {
@@ -135,6 +177,7 @@ const config = {
         fs: 'empty'
     },
     plugins: [
+        uglifyJsPlugin,
         new ExtractTextPlugin('[name].wxss'),
     ]
 };

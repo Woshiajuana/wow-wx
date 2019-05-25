@@ -1,6 +1,0 @@
-{
-    "navigationBarTitleText": "WOW-WX",
-    "usingComponents": {
-        "wow-scroll": "../../components/wow-scroll/index"
-    }
-}
