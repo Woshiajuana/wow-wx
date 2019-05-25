@@ -1,10 +1,10 @@
 
-import App                          from './lib/app'
-import Page                         from './lib/page'
-import Component                    from './lib/component'
+import WowApp                       from './lib/app'
+import WowPage                      from './lib/page'
+import WowComponent                 from './lib/component'
 
 export {
-    App,
-    Page,
-    Component,
+    WowApp,
+    WowPage,
+    WowComponent,
 }
