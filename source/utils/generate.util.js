@@ -9,13 +9,16 @@ export const generateAppOptions = (options) => {
     delete options.mixins;
     if (!data)
         data = {};
+    let mixinData = {};
+    let mixinOption = {};
     mixins.forEach((mixin) => {
         if (mixin.data)
-            Object.assign(data, mixin.data);
+            Object.assign(mixinData, mixin.data);
         delete mixin.data;
-        Object.assign(options, mixins);
+        Object.assign(mixinOption, mixins);
     });
-    options.data = data;
+    options = Object.assign(mixinOption, options);
+    options.data = Object.assign(mixinData, data);
     return options;
 };
 
