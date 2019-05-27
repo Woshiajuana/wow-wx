@@ -1,24 +1,17 @@
 
-import {
-    PluginsConfig
-} from '../config'
+import StoreConfig from 'config/store.config'
 
-const {
-    storeConfig,
-    noUseArr,
-} = PluginsConfig.STORE;
-
-const handle = (type, key, value) => new Promise((resolve, reject) => {
-    let reg_key = '';
-    if (noUseArr.indexOf(key) > -1) reg_key = key;
-    else reg_key = storeConfig[key];
-    if (!reg_key)
+const handle = (fn, key, value) => new Promise((resolve, reject) => {
+    key = StoreConfig[key];
+    if (!key)
         return reject(`${key} is no register`);
-    let result = wx[type](reg_key, value) || '';
+    let result = wx[fn](key, value) || '';
     return resolve(result);
 });
 
 export default {
+    // 注册的key值
+    KEY: Object.assign({}, StoreConfig),
 
     // 获取
     get (key) {
