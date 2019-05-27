@@ -6,10 +6,14 @@ import './index.wxml'
 import WowPage                      from '../../../source/lib/page'
 
 WowPage({
+    mixins: [
+        WowPage.wow$.mixins.text,
+    ],
     data: {
         xx: 11
     },
     onShow () {
-        console.log(1);
+        console.log(this.wow$)
+        console.log('page => ', this.data.text)
     }
 });

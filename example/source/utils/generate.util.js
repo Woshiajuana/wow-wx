@@ -63,7 +63,7 @@ function generateExecutableFn (target, source) {
         if (fns.length) {
             target[k] = function (options) {
                 source[k].forEach((fn) => {
-                    fn(options);
+                    fn.bind(this)(options);
                 });
             }
         }

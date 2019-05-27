@@ -8,15 +8,17 @@ import WowApp                       from '../source/index'
 let files = require.context('./mixins', false, /.js$/);
 files.keys().forEach((key) => {
     let newKey = key.substring(2, key.indexOf('.mixin'));
-    WowApp.use(newKey, files(key).default);
+    WowApp.use('mixins', newKey, files(key).default);
 });
+
+console.log(WowApp.wow$)
 
 WowApp({
     mixins: [
-        this.wow$.mixins.text,
+        WowApp.wow$.mixins.text,
     ],
     onLaunch () {
-        console.log(this.wow$)
+        console.log('app => ', this.data.text)
     },
     onShow () {
 

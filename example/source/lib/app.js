@@ -10,20 +10,23 @@ let wow$ = {};
 const WowApp = (options = {}) => {
     options = generateAppOptions(options);
     Object.assign(options, { wow$ });
+    console.log(options)
     return App(options);
 };
 
-WowApp.use = (key, value) => {
-    wow$[key] = value;
+WowApp.use = (target, key, value) => {
+    if (!wow$[target])
+        wow$[target] = {};
+    wow$[target][key] = value;
     return this;
 };
-
-WowApp.wow$ = wow$;
 
 let files = require.context('../mixins', false, /.js$/);
 files.keys().forEach((key) => {
     let newKey = key.substring(2, key.indexOf('.mixin'));
-    WowApp.use(newKey, files(key).default);
+    WowApp.use('mixins', newKey, files(key).default);
 });
+
+WowApp.wow$ = wow$;
 
 export default WowApp;
