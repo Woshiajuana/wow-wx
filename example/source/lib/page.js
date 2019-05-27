@@ -10,6 +10,5 @@ const App = getApp();
 export default (options = {}) => {
     options = generateComponentOptions(options);
     Object.assign(options, { wow$: App.wow$ });
-    console.log(options)
     return Page(options);
 };

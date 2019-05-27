@@ -1,11 +1,11 @@
 
 import '../utils/es6-promise.util'
 import CheckEnv                     from '../utils/check-env.util'
-import { generateAppOptions }       from '../utils/generate.util'
+import { generateComponentOptions } from '../utils/generate.util'
 
 CheckEnv();
 
 export default (options = {}) => {
-    options = generateAppOptions(options);
-    return App(options);
+    options = generateComponentOptions(options);
+    return Component(options);
 };
