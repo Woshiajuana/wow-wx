@@ -1,5 +1,5 @@
 
-import Router                   from 'plugins/router.plugin'
+import Router                   from '../plugins/router.plugin'
 
 export default {
     data: {
