@@ -11,16 +11,19 @@ files.keys().forEach((key) => {
     WowApp.use('mixins', newKey, files(key).default);
 });
 
-console.log(WowApp.wow$)
-
 WowApp({
     mixins: [
         WowApp.wow$.mixins.text,
     ],
     onLaunch () {
-        console.log('app => ', this.data.text)
+        // console.log(this.setData({text:2}))
+        console.log('app => ', this.data.text);
+        // this.setData({text:2})
+        // console.log('app => ', this.data.text);
     },
     onShow () {
-
+        setTimeout(() => {
+            console.log('app => ', this.data.text);
+        }, 5000);
     },
 });

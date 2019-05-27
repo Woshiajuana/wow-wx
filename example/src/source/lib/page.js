@@ -1,15 +1,16 @@
 
 import '../utils/es6-promise.util'
 import CheckEnv                     from '../utils/check-env.util'
-import { generateComponentOptions } from '../utils/generate.util'
+import { generatePageOptions }      from '../utils/generate.util'
 
 CheckEnv();
 
 const App = getApp();
 
 let WowPage = (options = {}) => {
-    options = generateComponentOptions(options);
+    options = generatePageOptions(options);
     Object.assign(options, { wow$: App.wow$ });
+    console.log('page1', options)
     return Page(options);
 };
 
