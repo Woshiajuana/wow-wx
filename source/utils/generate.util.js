@@ -1,12 +1,20 @@
 
-const generateAppOptions = (options) => {
+const KEYS = {
+    app: ['onLaunch', 'onShow', 'onHide', 'onError'],
+    page: ['onLoad', 'onShow', 'onReady', 'onHide', 'onUnload',
+        'onPullDownRefresh', 'onReachBottom', 'onShareAppMessage',
+        'onPageScroll', 'onResize', 'onTabItemTap'],
+    component: [],
+};
+
+function generate (options, type) {
     let {
         data,
         mixins,
     } = options;
     if (!mixins || !mixins.length)
         return options;
-    let keys = ['onLaunch', 'onShow', 'onHide', 'onError'];
+    let keys = KEYS[type];
     let target = initTarget(keys);
     delete options.mixins;
     if (!data)
@@ -21,7 +29,12 @@ const generateAppOptions = (options) => {
         Object.assign(mixinOption, mixin);
     });
     mixinTarget(target, options, keys);
-    options = Object.assign(mixinOption, options);
+    if (type === 'component') {
+        if (!options.methods) options.methods = {};
+        options.methods = Object.assign(mixinOption, options.methods);
+    } else {
+        options = Object.assign(mixinOption, options);
+    }
     options.data = Object.assign(mixinData, data);
     generateExecutableFn(options, target);
     return options;
@@ -45,19 +58,20 @@ function mixinTarget (target, source, keys) {
 }
 
 function generateExecutableFn (target, source) {
-    for (let k in target) {
-        target[k] = function (options) {
-            source[k].forEach((fn) => {
-                fn(options);
-            });
+    for (let k in source) {
+        let fns = source[k];
+        if (fns.length) {
+            target[k] = function (options) {
+                source[k].forEach((fn) => {
+                    fn(options);
+                });
+            }
         }
     }
 }
 
-module.exports = {
-    generateAppOptions
-};
+export const generateAppOptions = (options) => generate(options, 'app');
 
-// export default {
-//     generateAppOptions,
-// };
+export const generatePageOptions = (options) => generate(options, 'page');
+
+export const generateComponentOptions = (options) => generate(options, 'component');
