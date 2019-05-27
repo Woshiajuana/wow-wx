@@ -5,12 +5,14 @@ import './wxs/filter.wxs'
 
 import WowApp                       from '../source/index'
 console.log(__dirname)
-WowApp.use('../src/mixins');
-// let content = require.context('./mixins', false, /.js$/);
-//
-// content.keys().forEach((key) => {
-//     console.log(key)
-// });
+
+let content = require.context('./mixins', false, /.js$/);
+content.keys().forEach((key) => {
+    console.log(key)
+});
+
+WowApp.use();
+
 
 WowApp({
     // 生命周期函数--监听小程序初始化,
