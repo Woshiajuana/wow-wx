@@ -23,12 +23,13 @@ const WowApp = (options = {}) => {
     return App(options);
 };
 
-
+// import x from '../../src/mixins'
 WowApp.use = (dir, useSubdirectories = false, regExp = /.js$/) => {
-    let content = require.context(dir, useSubdirectories, regExp);
+    console.log(__dirname)
+    let content = require.context('../../src/mixins', useSubdirectories, regExp);
     console.log(content)
 };
 
-WowApp.use('../mixins');
+
 
 export default WowApp;

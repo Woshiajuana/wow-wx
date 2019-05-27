@@ -1,13 +1,18 @@
 import './project.config.json'
 import './app.json'
 import './app.scss'
-
 import './wxs/filter.wxs'
 
-import MixinUtil                    from 'wow-wx/utils/mixin.util'
+import WowApp                       from '../source/index'
+console.log(__dirname)
+WowApp.use('../src/mixins');
+// let content = require.context('./mixins', false, /.js$/);
+//
+// content.keys().forEach((key) => {
+//     console.log(key)
+// });
 
-// app.js
-App(MixinUtil({
+WowApp({
     // 生命周期函数--监听小程序初始化,
     // 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
     onLaunch () {
@@ -33,4 +38,4 @@ App(MixinUtil({
     onPageNotFound () {
         // 开发者可以在 onPageNotFound 回调中进行重定向处理，但必须在回调中同步处理，异步处理（例如 setTimeout 异步执行）无效。
     }
-}));
+});

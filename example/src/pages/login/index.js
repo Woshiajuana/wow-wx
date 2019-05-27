@@ -19,7 +19,7 @@ Page(Mixin({
         InputMixin,
     ],
     onLoad () {
-        this.judgeUserGrantAuthorization();
+        // this.judgeUserGrantAuthorization();
     },
     data: {
         useAuthorize: false,

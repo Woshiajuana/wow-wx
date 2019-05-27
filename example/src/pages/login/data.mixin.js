@@ -1,7 +1,7 @@
 
 export default {
     data: {
-        isLoading: true,
+        isLoading: false,
         formData: {
             LoginName: {
                 label: '用户名',

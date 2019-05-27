@@ -6,8 +6,7 @@
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#11b9ea",
         "navigationBarTitleText": "铂金行业中心微管理",
-        "navigationBarTextStyle": "white",
-        "pageOrientation": "landscape"
+        "navigationBarTextStyle": "white"
     },
     "permission": {
         "scope.userLocation": {
