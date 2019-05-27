@@ -10,7 +10,6 @@ let wow$ = {};
 const WowApp = (options = {}) => {
     options = generateAppOptions(options);
     Object.assign(options, { wow$ });
-    console.log(options)
     return App(options);
 };
 

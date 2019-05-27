@@ -10,7 +10,6 @@ const App = getApp();
 let WowPage = (options = {}) => {
     options = generatePageOptions(options);
     Object.assign(options, { wow$: App.wow$ });
-    console.log('page1', options)
     return Page(options);
 };
 

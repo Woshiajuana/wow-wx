@@ -38,7 +38,6 @@ function generate (options, type) {
     }
     options.data = Object.assign(mixinData, data);
     generateExecutableFn(options, target);
-    console.log(type, options)
     return options;
 }
 
@@ -64,7 +63,6 @@ function generateExecutableFn (target, source) {
         let fns = source[k];
         if (fns.length) {
             target[k] = function (options) {
-                console.log(this);
                 source[k].forEach((fn) => {
                     fn.bind(this)(options);
                 });
