@@ -4,21 +4,18 @@ import './app.scss'
 import './wxs/filter.wxs'
 
 import WowApp                       from '../source/index'
-console.log(__dirname)
 
-let content = require.context('./mixins', false, /.js$/);
-content.keys().forEach((key) => {
-    console.log(key)
+let files = require.context('./mixins', false, /.js$/);
+files.keys().forEach((key) => {
+    let newKey = key.substring(2, key.indexOf('.mixin'));
+    WowApp.use(newKey, files(key).default);
 });
-
-WowApp.use();
-
 
 WowApp({
     // 生命周期函数--监听小程序初始化,
     // 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
     onLaunch () {
-
+        console.log(this.wow$)
     },
     // 生命周期函数--监听小程序显示
     // 当小程序启动，或从后台进入前台显示，会触发 onShow
