@@ -1,5 +1,5 @@
 
-export const generateAppOptions = (options) => {
+const generateAppOptions = (options) => {
     let {
         data,
         mixins,
@@ -7,7 +7,7 @@ export const generateAppOptions = (options) => {
     if (!mixins || !mixins.length)
         return options;
     let keys = ['onLaunch', 'onShow', 'onHide', 'onError'];
-    let target = initTarget();
+    let target = initTarget(keys);
     delete options.mixins;
     if (!data)
         data = {};
@@ -18,7 +18,7 @@ export const generateAppOptions = (options) => {
             Object.assign(mixinData, mixin.data);
         delete mixin.data;
         mixinTarget(target, mixin, keys);
-        Object.assign(mixinOption, mixins);
+        Object.assign(mixinOption, mixin);
     });
     mixinTarget(target, options, keys);
     options = Object.assign(mixinOption, options);
@@ -26,8 +26,6 @@ export const generateAppOptions = (options) => {
     generateExecutableFn(options, target);
     return options;
 };
-
-
 
 function initTarget (keys) {
     let target = {};
@@ -48,16 +46,18 @@ function mixinTarget (target, source, keys) {
 
 function generateExecutableFn (target, source) {
     for (let k in target) {
-        source[k] = function (options) {
-            target[k].forEach((fn) => {
+        target[k] = function (options) {
+            source[k].forEach((fn) => {
                 fn(options);
             });
         }
     }
-    return source;
 }
 
-
-export default {
-    generateAppOptions,
+module.exports = {
+    generateAppOptions
 };
+
+// export default {
+//     generateAppOptions,
+// };
