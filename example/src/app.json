@@ -1,21 +1,6 @@
 {
     "pages": [
-        "pages/login/index",
-        "pages/app/index",
-        "pages/city/home/index",
-        "pages/level/index",
-        "pages/patrol/info/index",
-        "pages/patrol/list/index",
-        "pages/region/home/index",
-        "pages/report/list/index",
-        "pages/root/chart/index",
-        "pages/root/home/index",
-        "pages/root/news/index",
-        "pages/staff/list/index",
-        "pages/store/info/index",
-        "pages/store/list/index",
-        "pages/supplement/index",
-        "pages/web/index"
+        "pages/login/index"
     ],
     "window": {
         "backgroundTextStyle": "light",

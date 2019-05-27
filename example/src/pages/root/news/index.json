@@ -1,6 +1,0 @@
-{
-    "navigationBarTitleText": "发布消息",
-    "usingComponents": {
-        "form-section": "../../../components/form-section/index"
-    }
-}
