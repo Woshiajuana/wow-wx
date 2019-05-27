@@ -5,7 +5,10 @@ import { generateComponentOptions } from '../utils/generate.util'
 
 CheckEnv();
 
+const App = getApp();
+
 export default (options = {}) => {
     options = generateComponentOptions(options);
+    Object.assign(options, { wow$: App.wow$ });
     return Component(options);
 };
