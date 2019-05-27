@@ -7,8 +7,12 @@ CheckEnv();
 
 const App = getApp();
 
-export default (options = {}) => {
+const WowPage = (options = {}) => {
     options = generateComponentOptions(options);
     Object.assign(options, { wow$: App.wow$ });
     return Page(options);
 };
+
+WowPage.wow$ = App.wow$;
+
+export default WowPage;

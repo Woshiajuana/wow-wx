@@ -7,8 +7,12 @@ CheckEnv();
 
 const App = getApp();
 
-export default (options = {}) => {
+const WowComponent = (options = {}) => {
     options = generateComponentOptions(options);
     Object.assign(options, { wow$: App.wow$ });
     return Component(options);
 };
+
+WowComponent.wow$ = App.wow$;
+
+export default WowComponent;
