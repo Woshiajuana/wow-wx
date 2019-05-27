@@ -7,7 +7,7 @@ CheckEnv();
 
 const App = getApp();
 
-const WowPage = (options = {}) => {
+let WowPage = (options = {}) => {
     options = generateComponentOptions(options);
     Object.assign(options, { wow$: App.wow$ });
     return Page(options);

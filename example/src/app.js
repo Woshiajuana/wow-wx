@@ -3,7 +3,7 @@ import './app.json'
 import './app.scss'
 import './wxs/filter.wxs'
 
-import WowApp                       from '../source/index'
+import WowApp                       from './source/index'
 
 let files = require.context('./mixins', false, /.js$/);
 files.keys().forEach((key) => {

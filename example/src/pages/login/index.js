@@ -3,11 +3,11 @@ import './index.json'
 import './index.scss'
 import './index.wxml'
 
-import WowPage                      from '../../../source/lib/page'
+import WowPage                      from '../../source/lib/page'
 
 WowPage({
     mixins: [
-        WowPage.wow$.mixins.text,
+        // WowPage.wow$.mixins.text,
     ],
     data: {
         xx: 11
@@ -17,3 +17,4 @@ WowPage({
         console.log('page => ', this.data.text)
     }
 });
+
