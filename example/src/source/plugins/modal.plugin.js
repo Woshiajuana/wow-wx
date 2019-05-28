@@ -1,4 +1,4 @@
-import Type                 from 'utils/type.util'
+import Type                 from '../utils/type.util'
 
 /**
  * @method

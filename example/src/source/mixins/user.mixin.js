@@ -1,5 +1,5 @@
 
-import Auth                         from 'plugins/auth.plugin'
+import Auth                         from '../plugins/auth.plugin'
 
 export default {
     data: {
