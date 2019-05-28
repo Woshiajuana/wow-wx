@@ -1,27 +1,37 @@
 
-import {
-    PluginsConfig
-} from '../config'
+import { RouterConfig } from 'config/wow-wx.config'
 
-const {
-    routerConfig,
-} = PluginsConfig.ROUTER;
+export default {
 
+    push: (url, params = {}, type = false) => new Promise((resolve, reject) => {
+        let key = type ? 'redirectTo' : 'navigateTo';
+        handle(url, params, key, resolve, reject)
+    }),
 
-const handle = (key, url, params) => new Promise((resolve, reject) => {
-    let options = {};
-    options.url = routerConfig[url] || '';
-    if (!options.url && key !== 'navigateBack')
-        return reject('no page found');
-    if (params && typeof params !== 'object')
-        return reject('params must be object');
-    if (key === 'navigateBack') {
-        options.delta = url;
-        delete options.url;
-    } else if (key !== 'switchTab' && params)
-        options.url = `${options.url}?params=${encodeURIComponent(JSON.stringify(params))}`;
+    root: (url, params = {}, type = false) => new Promise((resolve, reject) => {
+        let key = type ? 'reLaunch' : 'switchTab';
+        handle(url, params, key, resolve, reject)
+    }),
+
+    pop (delta) {
+        wx.navigateBack({delta});
+    },
+
+    getParams (options) {
+        if(!options) return {};
+        let {params} = options;
+        if(!params) return {};
+        return JSON.parse(decodeURIComponent(options.params));
+    }
+};
+
+function handle(url, params, key, resolve, reject) {
+    url = RouterConfig[url] || '';
+    if(key !== 'switchTab')
+        url = `${url}?params=${encodeURIComponent(JSON.stringify(params))}`;
+    if (!url) return reject('未找到对应页面');
     wx[key]({
-        ...options,
+        url,
         success: (e) => {
             resolve(e);
         },
@@ -29,34 +39,4 @@ const handle = (key, url, params) => new Promise((resolve, reject) => {
             reject(e);
         },
     });
-});
-
-export default {
-
-    // 跳转页面
-    push (options, params) {
-        let key = options.close ? 'redirectTo' : 'navigateTo';
-        let url = options.url || options;
-        return handle(key, url, params);
-    },
-
-    // 关闭所有页面回到某个页面
-    root (options, params) {
-        let key = options.close ? 'reLaunch' : 'switchTab';
-        let url = options.url || options;
-        return handle(key, url, params);
-    },
-
-    // 返回
-    pop (delta) {
-        return handle('navigateBack', delta);
-    },
-
-    // 获取路由参数
-    getParams (options) {
-        if (!options) return {};
-        let { params } = options;
-        if (!params) return {};
-        return JSON.parse(decodeURIComponent(params));
-    }
 }

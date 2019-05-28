@@ -22,6 +22,7 @@ function generate (options, type) {
     let mixinData = {};
     let mixinOption = {};
     mixins.forEach((mixin) => {
+        mixin = Object.assign({}, mixin);
         if (mixin.data)
             Object.assign(mixinData, mixin.data);
         delete mixin.data;
@@ -38,7 +39,7 @@ function generate (options, type) {
     options.data = Object.assign(mixinData, data);
     generateExecutableFn(options, target);
     return options;
-};
+}
 
 function initTarget (keys) {
     let target = {};
@@ -63,7 +64,7 @@ function generateExecutableFn (target, source) {
         if (fns.length) {
             target[k] = function (options) {
                 source[k].forEach((fn) => {
-                    fn(options);
+                    fn.bind(this)(options);
                 });
             }
         }

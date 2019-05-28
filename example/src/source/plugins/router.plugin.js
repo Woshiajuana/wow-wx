@@ -1,5 +1,5 @@
 
-import RouterConfig from 'config/router.config'
+import { RouterConfig } from 'config/wow-wx.config'
 
 export default {
 
