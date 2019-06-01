@@ -26,6 +26,19 @@ files.keys().forEach((key) => {
     WowApp.use('mixins', newKey, files(key).default);
 });
 
+files = require.context('../plugins', false, /.js$/);
+files.keys().forEach((key) => {
+    let newKey = key.substring(2, key.indexOf('.plugin'));
+    WowApp.use('plugins', newKey, files(key).default);
+});
+
+files = require.context('../utils', false, /.js$/);
+files.keys().forEach((key) => {
+    let newKey = key.substring(2, key.indexOf('.plugin'));
+    WowApp.use('plugins', newKey, files(key).default);
+});
+
+
 WowApp.wow$ = wow$;
 
 export default WowApp;
