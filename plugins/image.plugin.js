@@ -1,5 +1,4 @@
 
-
 export default {
     choose: (options = {}) => new Promise((resolve, reject) => {
         wx.chooseImage({
