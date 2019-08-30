@@ -13,4 +13,8 @@ export default {
             return Promise.reject(err);
         })
     },
+    userUpdate: Auth.updateToken,
+    userLogout: Auth.logout,
+    userLogin: Auth.login,
+    userGetInfo: Auth.getUserInfo,
 }
