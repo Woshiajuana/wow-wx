@@ -13,7 +13,7 @@ export default {
             return Promise.reject(err);
         })
     },
-    userUpdate: Auth.updateToken,
+    userUpdate: Auth.updateToken.bind(Auth),
     userLogout: Auth.logout,
     userLogin: Auth.login,
     userGetInfo: Auth.getUserInfo,
