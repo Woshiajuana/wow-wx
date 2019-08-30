@@ -10,4 +10,7 @@ export default {
         console.log(params$);
         this.setData({ params$ })
     },
+    routerPush: Router.push,
+    routerRoot: Router.root,
+    routerPop: Router.pop,
 }
