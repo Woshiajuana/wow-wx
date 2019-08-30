@@ -1,6 +1,6 @@
 {
   "name": "wow-wx",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "wow-wx",
   "main": "index.js",
   "scripts": {
