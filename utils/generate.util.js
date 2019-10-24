@@ -2,7 +2,7 @@
 const KEYS = {
     app: ['onLaunch', 'onShow', 'onHide', 'onError'],
     page: ['onLoad', 'onShow', 'onReady', 'onHide', 'onUnload',
-        'onPullDownRefresh', 'onReachBottom', 'onShareAppMessage',
+        'onPullDownRefresh', 'onReachBottom',
         'onPageScroll', 'onResize', 'onTabItemTap'],
     component: [],
 };
