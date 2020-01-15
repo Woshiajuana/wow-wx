@@ -1,0 +1,11 @@
+{
+    "pages": [
+        "pages/home/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#11b9ea",
+        "navigationBarTitleText": "测试",
+        "navigationBarTextStyle": "white"
+    }
+}
