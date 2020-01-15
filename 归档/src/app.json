@@ -1,0 +1,17 @@
+{
+    "pages": [
+        "pages/home/index",
+        "pages/brand/index",
+        "pages/details/index",
+        "pages/login/index",
+        "pages/model/index",
+        "pages/series/index",
+        "pages/suitable/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#11b9ea",
+        "navigationBarTitleText": "嘉实多选油助手",
+        "navigationBarTextStyle": "white"
+    }
+}
