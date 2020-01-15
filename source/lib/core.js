@@ -18,7 +18,9 @@ const KEYS = {
         'onResize',
         'onTabItemTap',
     ],
-    component: [],
+    component: [
+        
+    ],
 };
 
 function generate (options, type) {
