@@ -24,30 +24,17 @@
     "url": "https://github.com/Woshiajuana/wow-wx/issues"
   },
   "homepage": "https://github.com/Woshiajuana/wow-wx#readme",
-    "dependencies": {
-
-    },
+  "dependencies": {
+    "wow-cmd": "0.0.17"
+  },
   "devDependencies": {
-    "babel-core": "^6.23.1",
-    "babel-loader": "^6.3.2",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-es2015": "^6.22.0",
-    "babel-preset-stage-0": "^6.22.0",
-    "babel-register": "^6.26.0",
-    "css-loader": "^0.28.9",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "fs-extra": "^5.0.0",
-    "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^2.30.1",
-    "loader-utils": "^1.1.0",
-    "node-sass": "^4.7.2",
-    "postcss-loader": "^2.1.0",
-    "sass-loader": "^6.0.6",
-    "serve": "^10.0.1",
-    "style-loader": "^0.20.1",
-    "url-loader": "^1.1.1",
-    "webpack": "^3.10.0",
-    "wxapp-webpack-plugin": "^0.18.0"
+      "babel-core": "^6.23.1",
+      "babel-loader": "^6.3.2",
+      "babel-plugin-transform-runtime": "^6.23.0",
+      "babel-preset-es2015": "^6.22.0",
+      "babel-preset-stage-0": "^6.22.0",
+      "babel-register": "^6.26.0",
+      "serve": "^11.3.0"
   },
   "browserslist": [
     "defaults",
