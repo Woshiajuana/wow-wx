@@ -19,7 +19,7 @@ const KEYS = {
         'onTabItemTap',
     ],
     component: [
-        
+
     ],
 };
 
