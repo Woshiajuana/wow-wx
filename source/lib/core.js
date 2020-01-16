@@ -92,3 +92,9 @@ export const generateAppOptions = (options) => generate(options, 'app');
 export const generatePageOptions = (options) => generate(options, 'page');
 
 export const generateComponentOptions = (options) => generate(options, 'component');
+
+export const checkEnvFun = () => {
+    if (typeof App === 'undefined') {
+        throw new Error('请在微信小程序中打开')
+    }
+};
