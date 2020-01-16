@@ -15,6 +15,10 @@ WowApp.requireDir(require.context('./mixins', true, /\.mixin\.js$/), (key, value
     wowApp.use('configs', formatKey(key, '.config'), value.default || value);
 }).requireDir(require.context('./plugins', true, /\.plugin\.js$/), (key, value) => {
     wowApp.use('plugins', formatKey(key, '.plugin'), value.default || value);
+}).requireDir(require.context('source/mixins', true, /\.mixin\.js$/), (key, value) => {
+    wowApp.use('mixins', formatKey(key, '.mixin'), value.default || value);
+}).requireDir(require.context('source/plugins', true, /\.plugin\.js$/), (key, value) => {
+    wowApp.use('plugins', formatKey(key, '.plugin'), value.default || value);
 });
 
 wowApp.init({

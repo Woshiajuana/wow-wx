@@ -26,6 +26,9 @@ class WowPage extends Core {
         return Page(this.options);
     }
 
+    static get wow$ () {
+        return App.wow$;
+    }
 }
 
 module.exports = WowPage;
