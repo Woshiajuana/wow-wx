@@ -1,5 +1,5 @@
 
-export default {
+module.exports = {
     choose: (options = {}) => new Promise((resolve, reject) => {
         wx.chooseImage({
             count: 1,

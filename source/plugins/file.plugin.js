@@ -11,7 +11,7 @@ const handle = (options = {}, key) => new Promise((resolve, reject) => {
     })
 });
 
-export default {
+module.exports = {
     downloadFile: (options = {}) => handle(options, 'downloadFile'),
     saveFile: (options = {}) => handle(options, 'saveFile'),
     openDocument: (options = {}) => handle(options, 'openDocument'),

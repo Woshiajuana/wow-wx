@@ -1,5 +1,5 @@
 
-export default {
+module.exports = {
     show (options = { title: '加载中' }) {
         wx.showLoading(options)
     },
