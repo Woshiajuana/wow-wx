@@ -5,10 +5,10 @@ require('./es6-promise');
 class Core {
 
     // options 用户传递的参数
-    // arrFunKeys 需要重写的钩子函数
-    constructor(options = {}, arrFunKeys = []) {
+    // keys 需要重写的钩子函数
+    constructor(options = {}, keys = []) {
         this.options = options;
-        this.arrFunKeys = arrFunKeys;
+        this.keys = keys;
     }
 
     // 生成参数
@@ -27,7 +27,7 @@ class Core {
         delete this.options.mixins;
 
         // 初始化目标函数
-        let target = Core.initTarget(this.arrFunKeys);
+        let target = Core.initTarget(this.keys);
 
         // 混合数据
         let mixinData = {};
@@ -55,9 +55,9 @@ class Core {
 
     // 初始化目标函数
     // 返回目标函数的数组，用来装载混合中的目标函数
-    static initTarget (arrFunKeys) {
+    static initTarget (keys) {
          let target = {};
-        arrFunKeys.forEach((key) => target[key] = []);
+        keys.forEach((key) => target[key] = []);
          return target;
     }
 
