@@ -1,7 +1,9 @@
 
 Promise.prototype.toast = function () {
     return this.catch(err => {
-        getApp().wow$.plugins.toast(err);
+        let { Modal, modal } = getApp().wow$.plugins;
+        if (modal) Modal = modal;
+        if (Modal) Modal.toast(err);
     });
 };
 

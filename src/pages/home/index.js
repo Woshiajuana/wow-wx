@@ -17,9 +17,9 @@ new WowPage({
         let { Modal } = this.wow$.plugins;
         // this.modalToast('11111');
         // Modal.toast(1);
-        console.log(new Promise(()=> {}).toast);
+        // console.log(new Promise(()=> {}).toast);
 
-        // this.testPromise().toast();
+        this.testPromise().toast();
     },
     testPromise () {
         return Promise.reject('xxx');
