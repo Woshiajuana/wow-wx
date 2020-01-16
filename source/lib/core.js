@@ -37,10 +37,10 @@ class Core {
             if (mixin.data)
                 Object.assign(mixinData, mixin.data);
             delete mixin.data;
-            Core.mixinTarget(target, mixin, keys);
+            Core.mixinTarget(target, mixin, this.keys);
             Object.assign(mixinOption, mixin);
         });
-        Core.mixinTarget(target, options, keys);
+        Core.mixinTarget(target, this.options, this.keys);
 
         if (type === 'component') {
             if (!this.options.methods) this.options.methods = {};

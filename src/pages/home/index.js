@@ -2,6 +2,7 @@
 import './index.json'
 import './index.scss'
 import './index.wxml'
+
 import WowPage from 'source/lib/page'
 
 new WowPage({
@@ -14,7 +15,7 @@ new WowPage({
     },
     handleTap () {
         let { Modal } = this.wow$.plugins;
-        // this.Modal.toast('11111');
+        this.modalToast('11111');
         // Modal.toast(1);
     },
 });
