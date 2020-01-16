@@ -19,8 +19,7 @@ WowApp.requireDir(require.context('./mixins', true, /\.mixin\.js$/), (key, value
 
 wowApp.init({
     onLaunch(options) {
-        console.log('小程序开始加载啦1', options);
-        console.log(this);
+        console.log('小程序开始加载啦', options);
         console.log('this.wow$ => ', this.wow$);
     }
 });
