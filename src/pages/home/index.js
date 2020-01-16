@@ -8,7 +8,11 @@ import WowPage from 'source/lib/page'
 new WowPage({
     mixins: [
         WowPage.wow$.mixins.Modal,
+        WowPage.wow$.mixins.Text,
     ],
+    data: {
+        // prompt: '嘿嘿嘿',
+    },
     onLoad(options) {
         console.log('首页加载 => ', options);
         console.log('首页执行wow$ =>', this.wow$);
