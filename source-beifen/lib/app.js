@@ -20,7 +20,7 @@ WowApp.use = (target, key, value) => {
     return this;
 };
 
-let files = require.context('../mixins', false, /.js$/);
+let files = require.context('../', false, /.js$/);
 files.keys().forEach((key) => {
     let newKey = key.substring(2, key.indexOf('.mixin'));
     WowApp.use('mixins', newKey, files(key).default);
