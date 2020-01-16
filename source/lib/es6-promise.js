@@ -2,7 +2,7 @@
 
 Promise.prototype.toast = function () {
     return this.catch(err => {
-        // Modal.toast(err);
+        getApp().wow$.plugins.toast(err);
     });
 };
 

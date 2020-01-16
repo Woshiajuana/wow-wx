@@ -17,6 +17,8 @@ const formatOptions = (options) => {
 // 小程序 提示模块
 const toast = (options) => {
     let { text: title, options: opt } = formatOptions(options);
+    console.log('小程序提示 => ', options);
+    if (title === '') return null;
     wx.showToast({
         duration: 3000,
         icon: 'none',
