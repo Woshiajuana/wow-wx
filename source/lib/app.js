@@ -38,9 +38,13 @@ class WowApp extends Core {
         return this;
     }
 
-    static requireDir () {
-
-    }
+    // static requireDir (dir, bool, rex ) {
+    //     let files = require.context(dir, false, /.js$/);
+    //     files.keys().forEach((key) => {
+    //         let newKey = key.substring(2, key.indexOf('.mixin'));
+    //         WowApp.use('mixins', newKey, files(key).default);
+    //     });
+    // }
 
 }
 
