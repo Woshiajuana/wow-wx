@@ -20,6 +20,6 @@ module.exports.FUNCTION_PAGE_KEYS = [
     'onTabItemTap',
 ];
 
-module.exports.FUNCTION_COMPONENT = [
+module.exports.FUNCTION_COMPONENT_KEYS = [
 
 ];
