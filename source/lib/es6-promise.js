@@ -1,4 +1,3 @@
-// import Modal from '../plugins/modal.plugin'
 
 Promise.prototype.toast = function () {
     return this.catch(err => {

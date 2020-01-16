@@ -1,6 +1,4 @@
 
-// 扩展 promise方法
-require('./es6-promise');
 
 class Core {
 

@@ -1,4 +1,5 @@
 
+require('./es6-promise');
 
 const App = getApp();
 

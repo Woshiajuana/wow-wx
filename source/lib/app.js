@@ -1,4 +1,6 @@
 
+require('./es6-promise');
+
 const Core = require('./core');
 const {
     FUNCTION_APP_KEYS,
