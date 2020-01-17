@@ -18,7 +18,7 @@ Resources.prototype.query = function (source, webpack) {
         let $ = Cheerio.load(source);
         $('img').each((index, item) => {
             let src = $(item).attr('src');
-            if (src && src.indexOf('./') > -1 && this.arr_source.indexOf(src) === -1)
+            if (src && (src.indexOf('./') > -1 || src[0] === '/') && this.arr_source.indexOf(src) === -1)
                 this.arr_source.push(src);
         });
         $('view').each((index, item) => {

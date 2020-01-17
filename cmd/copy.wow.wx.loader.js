@@ -47,6 +47,11 @@ module.exports = function (content) {
                 source_dir: Path.join(this.context, item),
                 output_dir: Path.join(output, item.replace(/(\.\/|\.\.\/)/g, '')),
             })
+        } if(item[0] === '/') {
+            arr_result.push({
+                source_dir: Path.join(entry, item.replace(entry, '')),
+                output_dir: Path.join(output, item.replace(entry, '').replace(/(\.\/|\.\.\/)/g, '')),
+            })
         } else {
             arr_result.push({
                 source_dir: item,
