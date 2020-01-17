@@ -71,6 +71,7 @@ const Handle = (options, data, next) => {
         fs.writeFileSync(path.join(cmdPath, '/cmd/cmdParams.json'), JSON.stringify({
             app,
             env,
+            name: application.name,
         }, null, 4));
         output.success('release.cmd=>', `配置 生成 tree.json 成功`);
     } catch (e) {
