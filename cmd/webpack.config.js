@@ -40,8 +40,6 @@ const rootOutDirectoryAbsolutePath = path.join(cmdPath, rootOutputPath);
     });
 })(rootDirectoryAbsolutePath);
 
-console.log('entry => ', entry);
-
 let uglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({
     compress: {
         unused: true,
