@@ -8,10 +8,9 @@ new WowComponent({
     mixins: [
         WowComponent.wow$.mixins.System,
     ],
-    lifetimes: {
-        attached () {
-            console.log('加载测试组件 => 成功');
-            console.log(this.data.system$)
-        },
-    },
+    // 外部样式类
+    externalClasses: [
+        'class-navigation',
+        'class-navigation-status',
+    ],
 });

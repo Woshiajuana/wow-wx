@@ -5,7 +5,29 @@ page{
     background-color: $bg-color;
 }
 
-.san{
-    font-size: j(40);
-    color: red;
+.navigation-section{
+    background-color: $main-color;
+    padding-bottom: j(5);
+}
+
+.header-section{
+    @extend %df;
+    @extend %aic;
+    background-color: $main-color;
+    height: j(80);
+}
+.search{
+    @extend %df;
+    @extend %aic;
+    @extend %c9;
+    width: 65%;
+    height: j(60);
+    margin-left: j(30);
+    background-color: $bg-color;
+    border-radius: j(30);
+    font-size: j(24);
+}
+.search-icon{
+    font-size: j(32);
+    margin: 0 j(10) 0 j(15);
 }

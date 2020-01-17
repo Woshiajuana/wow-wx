@@ -1,6 +1,5 @@
 
-
-<view class="navigation">
-    <text>system$ => {{system$}}</text>
+<view class="navigation class-navigation">
+    <view class="navigation-status" style="height: {{system$.statusBarHeight}}px"></view>
     <slot></slot>
 </view>

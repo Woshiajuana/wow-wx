@@ -1,8 +1,13 @@
 <!--index.wxml-->
 <view class="wrap">
-    <navigation-custom></navigation-custom>
-    <view class="search-view">
-        <view class="iconfont icon-xinbaniconshangchuan-"></view>
-        <text>什么？找不到你想要的？试试我吧...</text>
-    </view>
+    <navigation-custom
+        class-navigation="navigation-section">
+    </navigation-custom>
+    <div class="header-section">
+        <view class="search">
+            <view class="iconfont icon-xinbaniconshangchuan- search-icon"></view>
+            <text>什么？找不到你想要的？试试我吧...</text>
+        </view>
+
+    </div>
 </view>
