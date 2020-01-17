@@ -31,7 +31,7 @@ const directoryConfig = {
     // 遍历文件的后缀名
     includeExtName: ['.js'],
     // 输出根目录
-    rootOutputPath: '/dist',
+    rootOutputPath: '/dist/',
 };
 
 // App 配置

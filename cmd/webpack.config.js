@@ -59,8 +59,8 @@ const config = {
     },
     resolve: {
         alias: {
-            '@src': path.resolve(__dirname, '../src/'),
-            '@source': path.resolve(__dirname, '../source/'),
+            'src': path.resolve(__dirname, '../src/'),
+            'source': path.resolve(__dirname, '../source/'),
         }
     },
     module: {
@@ -79,14 +79,14 @@ const config = {
                 exclude: /node_modules/,
                 use: [
                     {
-                        loader: './build/copy.wow.wx.loader.js',
+                        loader: './cmd/copy.wow.wx.loader.js',
                         options: {
                             output: rootOutDirectoryAbsolutePath,
                             entry: rootDirectoryAbsolutePath,
                         }
                     },
                     {
-                        loader: './build/resources.wow.wx.loader.js',
+                        loader: './cmd/resources.wow.wx.loader.js',
                         options: {
                             use_source: true,
                             use_image: false,
@@ -125,14 +125,14 @@ const config = {
                 exclude: /node_modules/,
                 use: [
                     {
-                        loader: './build/copy.wow.wx.loader.js',
+                        loader: './cmd/copy.wow.wx.loader.js',
                         options: {
                             output: rootOutDirectoryAbsolutePath,
                             entry: rootDirectoryAbsolutePath,
                         }
                     },
                     {
-                        loader: './build/resources.wow.wx.loader.js',
+                        loader: './cmd/resources.wow.wx.loader.js',
                         options: {
                             use_source: true,
                             use_image: true,
@@ -146,21 +146,14 @@ const config = {
                 exclude: /node_modules/,
                 use: [
                     {
-                        loader: './build/copy.wow.wx.loader.js',
+                        loader: './cmd/copy.wow.wx.loader.js',
                         options: {
                             output: rootOutDirectoryAbsolutePath,
                             entry: rootDirectoryAbsolutePath,
                         }
                     },
-                    // {
-                    //     loader: './build/component.wow.wx.loader.js',
-                    //     options: {
-                    //         output: path.join(__dirname, '../dist'),
-                    //         entry: path.join(__dirname, '../src')
-                    //     }
-                    // },
                     {
-                        loader: './build/resources.wow.wx.loader.js',
+                        loader: './cmd/resources.wow.wx.loader.js',
                         options: {
                             use_source: true,
                             use_image: false,

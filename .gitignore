@@ -1,3 +1,4 @@
 .idea/
 dist/
+cmd/cmdParams.json
 node_modules/

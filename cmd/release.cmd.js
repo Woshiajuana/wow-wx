@@ -35,9 +35,6 @@ const Handle = (options, data, next) => {
 
         const {
             applicationConfig,
-            directoryConfig,
-            ip,
-            port,
         } = require('./config');
         const application = applicationConfig[app];
         if (!application)
