@@ -16,7 +16,7 @@ const ip = (() => {
     }
 })();
 
-const port = '12580';
+const port = '32580';
 
 // directory 配置
 const directoryConfig = {

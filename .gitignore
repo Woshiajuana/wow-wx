@@ -2,3 +2,4 @@
 dist/
 cmd/cmdParams.json
 node_modules/
+src/config/env.config.js
