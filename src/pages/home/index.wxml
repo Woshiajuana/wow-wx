@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="wrap">
     <text>首页</text>
-
+    <test-section></test-section>
     <button bindtap="handleTap">测试{{prompt}}</button>
 </view>

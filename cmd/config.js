@@ -24,9 +24,11 @@ const directoryConfig = {
     rootDirectoryPath: '/src/',
     // 排除遍历的目录
     excludeDirectory: [
-        'js','css','img','scss', 'images',
-        'image', 'config', 'mixins', 'plugins',
-        'services', 'utils', 'tasks'
+        'assets',
+        'config',
+        'mixins',
+        'plugins',
+        'utils',
     ],
     // 遍历文件的后缀名
     includeExtName: ['.js'],
