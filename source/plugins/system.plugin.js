@@ -1,4 +1,6 @@
 
+
+
 module.exports = {
     getInfo: () => new Promise((resolve, reject) => {
         wx.getSystemInfo({
@@ -10,4 +12,4 @@ module.exports = {
             },
         })
     }),
-}
+};
