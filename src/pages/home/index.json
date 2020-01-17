@@ -1,7 +1,5 @@
 {
-    "navigationBarTitleText": "首页",
-    "navigationBarTextStyle": "black",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationStyle": "custom",
     "usingComponents": {
         "test-component": "/components/test-component/index"
     }

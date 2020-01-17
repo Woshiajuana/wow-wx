@@ -1,7 +1,41 @@
 {
     "pages": [
-        "pages/home/index"
+        "pages/home/index",
+        "pages/freeze/index",
+        "pages/mine/index"
     ],
+    "permission": {
+        "scope.userLocation": {
+            "desc": "你的位置信息将用于小程序位置接口的效果展示"
+        }
+    },
+    "tabBar": {
+        "color": "#999",
+        "selectedColor": "#ec642f",
+        "backgroundColor": "#fff",
+        "borderStyle": "black",
+        "position": "bottom",
+        "list": [
+            {
+                "pagePath": "pages/home/index",
+                "text": "世界",
+                "iconPath": "assets/images/icon-1.png",
+                "selectedIconPath": "assets/images/icon-1.png"
+            },
+            {
+                "pagePath": "pages/freeze/index",
+                "text": "定格",
+                "iconPath": "assets/images/icon-1.png",
+                "selectedIconPath": "assets/images/icon-1.png"
+            },
+            {
+                "pagePath": "pages/mine/index",
+                "text": "我的",
+                "iconPath": "assets/images/icon-1.png",
+                "selectedIconPath": "assets/images/icon-1.png"
+            }
+        ]
+    },
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#11b9ea",
