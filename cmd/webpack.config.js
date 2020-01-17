@@ -3,42 +3,44 @@ const path = require('path');
 const fs = require('fs-extra');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
-const entry = {};
-let walkFun = '';
+const output = require('wow-cmd').output;
+const cmdPath = process.cwd();
+const { directoryConfig } = require('./config');
+const { name, env, app, version, err } = require('./cmdParams.json');
 
-/**
- * 遍历获取目录结构
- * */
-(walkFun = (dir) => {
-    dir = dir || '.';
-    let directory = path.join(__dirname, '../src', dir);
+if (err) {
+    throw '无法打包，环境配置发布有误，请检查无误之后再打包';
+}
+
+output.info('webpack.config.js=>', `即将开始【app: ${name} 】【环境: ${env}】打包`);
+
+let entry = {};
+const {
+    rootDirectoryPath,
+    excludeDirectory,
+    includeExtName,
+    rootOutputPath,
+} = directoryConfig;
+const rootDirectoryAbsolutePath = path.join(cmdPath, rootDirectoryPath);
+const rootOutDirectoryAbsolutePath = path.join(cmdPath, rootOutputPath);
+;(function walkFun (directory) {
     fs.readdirSync(directory).forEach((file) => {
-        let full_path = path.join(directory, file);
-        let dir_arr = full_path.replace(/\\/g, '/').split('\/');
-        let name_arr = full_path.substring(full_path.indexOf('src') + 4).replace(/\\/g, '/').split('\/');
-        let last_dir = dir_arr[dir_arr.length - 1];
-        let stat = fs.statSync(full_path);
-        let ext_name = path.extname(full_path);
-        if (stat.isFile() && ext_name === '.js') {
-            // let page_name = name_arr.join('/');
-            let page_name = name_arr.join('/').replace('.js', '');
-            if (page_name.indexOf('mixin') === -1)
-                entry[page_name] = full_path;
+        const fullPath = path.join(directory, file);
+        const fileStat = fs.statSync(fullPath);
+        const fileExtName = path.extname(fullPath);
+        const fileDirArr = (path.join(directory, path.basename(fullPath, fileExtName))).replace(rootDirectoryAbsolutePath, '').replace(/\\/g, '/').split('\/');
+        const fileLastDir = fileDirArr[fileDirArr.length - 1];
+        if (fileStat.isFile() && includeExtName.indexOf(fileExtName) > -1) {
+            let name = fileDirArr.join('/').replace('.js', '');
+            if (name.indexOf('mixin') === -1)
+                entry[name] = fullPath;
+        } else if (fileStat.isDirectory() && excludeDirectory.indexOf(fileLastDir) === -1) {
+            walkFun(fullPath);
         }
-        // else if (stat.isFile() && ext_name === '.wxs') {
-        //     let page_name = name_arr.join('/');
-        //     // let page_name = name_arr.join('/').replace('.wxs', '');
-        //     if (page_name.indexOf('mixin') === -1)
-        //         entry[page_name] = full_path;
-        // }
-        else if (['js','css','img','scss', 'images',
-                'image', 'config', 'mixins', 'plugins',
-                'services', 'utils', 'tasks'].indexOf(last_dir) === -1 && stat.isDirectory()) {
-            let sub_dir = path.join(dir, file);
-            walkFun(sub_dir);
-        }
-    })
-})();
+    });
+})(rootDirectoryAbsolutePath);
+
+console.log('entry => ', entry);
 
 let uglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({
     compress: {
@@ -53,18 +55,12 @@ const config = {
     entry: entry,
     output: {
         filename: '[name].js',
-        path: path.join(__dirname, '../dist')
+        path: rootOutDirectoryAbsolutePath,
     },
     resolve: {
         alias: {
-            'utils': path.resolve(__dirname, '../src/utils/'),
-            'config': path.resolve(__dirname, '../src/config/'),
-            'plugins': path.resolve(__dirname, '../src/plugins/'),
-            'services': path.resolve(__dirname, '../src/services/'),
-            'mixins': path.resolve(__dirname, '../src/mixins/'),
-            'tasks': path.resolve(__dirname, '../src/tasks/'),
-            'source': path.resolve(__dirname, '../source/'),
-            'cmdConfig': path.resolve(__dirname, '../cmd/config'),
+            '@src': path.resolve(__dirname, '../src/'),
+            '@source': path.resolve(__dirname, '../source/'),
         }
     },
     module: {
@@ -85,8 +81,8 @@ const config = {
                     {
                         loader: './build/copy.wow.wx.loader.js',
                         options: {
-                            output: path.join(__dirname, '../dist'),
-                            entry: path.join(__dirname, '../src')
+                            output: rootOutDirectoryAbsolutePath,
+                            entry: rootDirectoryAbsolutePath,
                         }
                     },
                     {
@@ -131,8 +127,8 @@ const config = {
                     {
                         loader: './build/copy.wow.wx.loader.js',
                         options: {
-                            output: path.join(__dirname, '../dist'),
-                            entry: path.join(__dirname, '../src')
+                            output: rootOutDirectoryAbsolutePath,
+                            entry: rootDirectoryAbsolutePath,
                         }
                     },
                     {
@@ -152,8 +148,8 @@ const config = {
                     {
                         loader: './build/copy.wow.wx.loader.js',
                         options: {
-                            output: path.join(__dirname, '../dist'),
-                            entry: path.join(__dirname, '../src')
+                            output: rootOutDirectoryAbsolutePath,
+                            entry: rootDirectoryAbsolutePath,
                         }
                     },
                     // {

@@ -21,11 +21,15 @@ const port = '12580';
 // directory 配置
 const directoryConfig = {
     // 根目录遍历
-    rootDirectoryPath: '/src/views',
+    rootDirectoryPath: '/src/',
     // 排除遍历的目录
-    excludeDirectory: ['components'],
+    excludeDirectory: [
+        'js','css','img','scss', 'images',
+        'image', 'config', 'mixins', 'plugins',
+        'services', 'utils', 'tasks'
+    ],
     // 遍历文件的后缀名
-    includeExtName: ['.vue'],
+    includeExtName: ['.js'],
     // 输出根目录
     rootOutputPath: '/dist',
 };
@@ -34,19 +38,15 @@ const directoryConfig = {
 const applicationConfig = {
     // APPID
     mk: {
-        app: 'mk',
+        app: 'wow-wx',
         // app名称
-        name: '码可',
+        name: 'wow-wx',
         // 版本
         version: '0.0.1',
-        // 入口文件
-        entry: 'mk_app',
         // 发布
         release: {
             // 本地
             dev: {
-                // 基础 如果不配置将会默认启用自身本地服务
-                base: '',
                 // 环境
                 env: {
                     path: path.join(cmdPath, '/src/config'),
@@ -60,8 +60,6 @@ const applicationConfig = {
             },
             // 测试
             test: {
-                // 基础 如果不配置将会默认启用自身本地服务
-                base: 'http://www.baidu.com/[version]',
                 // 环境
                 env: {
                     path: path.join(cmdPath, '/src/config'),
@@ -75,8 +73,6 @@ const applicationConfig = {
             },
             // 生产
             build: {
-                // 基础 如果不配置将会默认启用自身本地服务
-                base: 'http://www.baidu.com/[version]',
                 // 环境
                 env: {
                     path: path.join(cmdPath, '/src/config'),
@@ -89,29 +85,6 @@ const applicationConfig = {
                 },
             },
         },
-        // 生成 tree.json 配置
-        tree: [
-            {
-                path: path.join(cmdPath, directoryConfig.rootOutputPath, '[app]/[env]/entry'),
-                filename: 'old_tree.json',
-                mode: 'old',
-            },
-            {
-                path: path.join(cmdPath, directoryConfig.rootOutputPath, '[app]/[env]/entry'),
-                filename: 'tree.json',
-                mode: 'new',
-            },
-            {
-                path: path.join(cmdPath, '.'),
-                filename: 'old_tree.json',
-                mode: 'old',
-            },
-            {
-                path: path.join(cmdPath, '.'),
-                filename: 'tree.json',
-                mode: 'new',
-            },
-        ],
     },
 };
 

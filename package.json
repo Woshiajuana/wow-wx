@@ -4,9 +4,9 @@
   "description": "webpack building multiple page projects",
   "main": "index.js",
   "scripts": {
-    "dev": "node cmd -d dist -i :cmd/config -r BD -p home_index&&webpack --watch --config ./build/webpack.config.js",
-    "test": "node cmd -d dist -i :cmd/config -r CS -p home_index&&webpack --watch --config ./build/webpack.config.js",
-    "build": "node cmd -d dist -i :cmd/config -r SC -p home_index&&webpack --watch --config ./build/webpack.config.js",
+    "dev": "node cmd -d dist -i :cmd/config -r BD -p home_index&&webpack --watch --config ./cmd/webpack.config.js",
+    "test": "node cmd -d dist -i :cmd/config -r CS -p home_index&&webpack --config ./cmd/webpack.config.js",
+    "build": "node cmd -d dist -i :cmd/config -r SC -p home_index&&webpack --config ./cmd/webpack.config.js",
     "clear": "node cmd -d dist",
     "router": "node cmd -p home_index",
     "serve": "serve -p 10011"
