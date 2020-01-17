@@ -20,7 +20,7 @@ const port = '32580';
 
 // directory 配置
 const directoryConfig = {
-    // 根目录遍历
+    // 根目录遍历(开发目录最好不要改不然很多配置都得改)
     rootDirectoryPath: '/src/',
     // 排除遍历的目录
     excludeDirectory: [
@@ -30,7 +30,7 @@ const directoryConfig = {
     ],
     // 遍历文件的后缀名
     includeExtName: ['.js'],
-    // 输出根目录
+    // 输出根目录(完全可以改)
     rootOutputPath: '/dist/',
 };
 
