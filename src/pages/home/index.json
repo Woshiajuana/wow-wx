@@ -4,6 +4,6 @@
     "backgroundTextStyle": "dark",
     "backgroundColor": "#ec642f",
     "usingComponents": {
-        "test-component": "/components/test-component/index"
+        "navigation-custom": "/components/navigation-custom/index"
     }
 }

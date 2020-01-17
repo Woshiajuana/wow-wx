@@ -1,6 +1,7 @@
 <!--index.wxml-->
 <view class="wrap">
-
-    <view class="search-view"></view>
-    <view class="icon-saoyisao iconfont san"></view>
+    <view class="search-view">
+        <view class="iconfont icon-xinbaniconshangchuan-"></view>
+        <text>什么？找不到你想要的？试试我吧...</text>
+    </view>
 </view>
