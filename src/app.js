@@ -1,5 +1,6 @@
 
 import './app.json'
+import './app.scss'
 import WowApp from 'source/lib/app'
 
 const wowApp = new WowApp();

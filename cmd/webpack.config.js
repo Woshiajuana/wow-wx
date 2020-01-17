@@ -160,6 +160,26 @@ const config = {
                     },
                 ]
             },
+            {
+                test: /\.(eot|woff2?|ttf|svg)$/,
+                use: [
+                    {
+                        loader: './cmd/copy.wow.wx.loader.js',
+                        options: {
+                            output: rootOutDirectoryAbsolutePath,
+                            entry: rootDirectoryAbsolutePath,
+                        }
+                    },
+                    {
+                        loader: './cmd/resources.wow.wx.loader.js',
+                        options: {
+                            use_source: true,
+                            use_image: false,
+                            use_filter: [],
+                        }
+                    },
+                ]
+            }
         ]
     },
     node: {
