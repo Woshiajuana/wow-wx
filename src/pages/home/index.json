@@ -1,5 +1,8 @@
 {
     "navigationStyle": "custom",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#ec642f",
     "usingComponents": {
         "test-component": "/components/test-component/index"
     }
