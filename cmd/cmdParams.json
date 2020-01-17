@@ -1,3 +1,4 @@
 {
-    "err": true
+    "app": "wow",
+    "env": "dev"
 }

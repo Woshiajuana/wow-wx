@@ -6,7 +6,7 @@ const webpack = require('webpack');
 const output = require('wow-cmd').output;
 const cmdPath = process.cwd();
 const { directoryConfig } = require('./config');
-const { name, env, app, version, err } = require('./cmdParams.json');
+const { name, env, err } = require('./cmdParams.json');
 
 if (err) {
     throw '无法打包，环境配置发布有误，请检查无误之后再打包';

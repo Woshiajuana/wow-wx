@@ -37,7 +37,7 @@ const directoryConfig = {
 // App 配置
 const applicationConfig = {
     // APPID
-    mk: {
+    wow: {
         app: 'wow-wx',
         // app名称
         name: 'wow-wx',
