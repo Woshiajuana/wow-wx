@@ -8,16 +8,10 @@
     bindscrolltoupper="handleScrollToUpper"
     class="scroll-wrap">
     <view class="scroll-inner {{ isAnimate && 'animate' }}"
-          style="margin-top: {{ numY + 'px' }}">
+          style="transform: translate3d(0,{{numY+'px'}},0)">
         <view class="scroll-header">
             <text>{{ isRefresh ? strRefreshPrompt || '正在刷新...' : numY > numMin ? '↑ 释放刷新' : '↓ 下拉刷新'}}</text>
         </view>
-        <view><text>numY: {{numY}}</text></view>
-        <view><text>strRefreshPrompt: {{strRefreshPrompt}}</text></view>
-        <view><text>isDisabled: {{isDisabled}}</text></view>
-        <view><text>scrollTop: {{scrollTop}}</text></view>
-<!--        <view class="scroll-content">-->
-            <slot></slot>
-<!--        </view>-->
+        <slot></slot>
     </view>
 </scroll-view>

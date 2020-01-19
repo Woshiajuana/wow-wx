@@ -34,15 +34,15 @@ new WowComponent({
     },
     methods: {
         handleScroll (event) {
-            console.log('event.detail.scrollTop', event.detail.scrollTop)
             this.scrollTop = event.detail.scrollTop;
         },
         handleScrollToUpper () {
-            console.log('到顶部了==========')
             this.scrollTop = 0;
+            setTimeout(() => {
+                this.scrollTop = 0;
+            },100);
         },
         handleTouchStart (event) {
-            console.log('触发handleTouchStart');
             let [ objStart ] = event.touches;
             if (objStart) this.startClientY = objStart.clientY;
             this.setData({ isAnimate: false, strRefreshPrompt: '', isRefresh: false });
@@ -53,11 +53,13 @@ new WowComponent({
             console.log('触发handleTouchMove after', this.scrollTop);
             let [ objEnd ] = event.touches;
             let numY = objEnd.clientY - this.startClientY;
+            console.log('objEnd.clientY =>', objEnd.clientY);
+            console.log('startClientY =>', this.startClientY);
+            console.log('numY =>', numY);
             if (numY > this.data.numMax) return null;
             this.setData({ numY, isDisabled: true });
         },
         handleTouchEnd () {
-            console.log('触发handleTouchEnd');
             let { numY, numMin, isRefresh } = this.data;
             if (numY < numMin) {
                 numY = 0;
@@ -66,7 +68,6 @@ new WowComponent({
                 isRefresh = true;
             }
             this.setData({ numY, isAnimate: true, isRefresh  });
-
             if (isRefresh) {
                 // 触发接口
                 setTimeout(() => {
