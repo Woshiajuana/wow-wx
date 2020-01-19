@@ -3,7 +3,8 @@
 .photo-wrap{
     @extend %pr;
     width: j(370);
-    height: j(600);
+    height: j(500);
+    margin-top: j(10);
 }
 .image{
     @extend %w100;
@@ -20,13 +21,13 @@
     @extend %fdc;
     padding: j(20);
     background-color: rgba(0,0,0,.3);
-    justify-content: end;
+    justify-content: flex-end;
 }
 .title{
     @extend %cfff;
     font-size: j(28);
-    height: j(88);
-    line-height: j(44);
+    height: j(60);
+    line-height: j(30);
 }
 .prompt{
     @extend %df;
