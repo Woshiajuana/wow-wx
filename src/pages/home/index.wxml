@@ -18,7 +18,10 @@
         </view>
     </view>
     <view class="main-section">
-        <wow-scroll class="main-inner">
+        <wow-scroll
+            bindonrefresh="handleRefresh"
+            bindonload="handleLoad"
+            class="main-inner">
             <view class="main-content">
                 <photo-cell></photo-cell>
                 <photo-cell></photo-cell>

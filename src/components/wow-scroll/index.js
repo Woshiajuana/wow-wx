@@ -43,24 +43,24 @@ new WowComponent({
             },100);
         },
         handleTouchStart (event) {
+            let { isRefresh, numY } = this.data;
+            if (isRefresh && numY > 0) return null;
             let [ objStart ] = event.touches;
             if (objStart) this.startClientY = objStart.clientY;
             this.setData({ isAnimate: false, strRefreshPrompt: '', isRefresh: false });
         },
         handleTouchMove (event) {
-            console.log('触发handleTouchMove  before', this.scrollTop);
-            if (this.scrollTop > 0) return null;
-            console.log('触发handleTouchMove after', this.scrollTop);
+            let { isRefresh, numY } = this.data;
+            if (isRefresh && numY > 0) return null;
+            if (this.scrollTop > 0) return console.log(this.scrollTop);
             let [ objEnd ] = event.touches;
-            let numY = objEnd.clientY - this.startClientY;
-            console.log('objEnd.clientY =>', objEnd.clientY);
-            console.log('startClientY =>', this.startClientY);
-            console.log('numY =>', numY);
+            numY = objEnd.clientY - this.startClientY;
             if (numY > this.data.numMax) return null;
             this.setData({ numY, isDisabled: true });
         },
         handleTouchEnd () {
             let { numY, numMin, isRefresh } = this.data;
+            if (isRefresh && numY > 0) return null;
             if (numY < numMin) {
                 numY = 0;
             } else {
@@ -68,19 +68,24 @@ new WowComponent({
                 isRefresh = true;
             }
             this.setData({ numY, isAnimate: true, isRefresh  });
-            if (isRefresh) {
-                // 触发接口
-                setTimeout(() => {
+            if (!isRefresh) {
+               return this.setData({ isDisabled: false, numY: 0 });
+            }
+            this.triggerEvent('onrefresh', {
+                callback: () => {
                     this.setData({ strRefreshPrompt: '刷新成功' });
                     setTimeout(() => {
                         this.setData({ isDisabled: false, numY: 0,  });
                     }, 300);
-                }, 2000);
+                },
+            });
+        },
+        handleScrollToLower () {
+            this.triggerEvent('onload', {
+                callback: () => {
 
-            } else {
-                this.setData({ isDisabled: false, numY: 0 });
-            }
-            // console.log('滚动结束 =>', event);
+                },
+            });
         },
     },
 });

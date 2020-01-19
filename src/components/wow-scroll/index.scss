@@ -25,6 +25,10 @@
     height: j(160);
     font-size: j(28);
 }
-.scroll-content{
-    @extend %pr;
+.scroll-footer{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    height: j(100);
+    font-size: j(28);
 }
