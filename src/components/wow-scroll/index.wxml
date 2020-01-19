@@ -1,11 +1,13 @@
 <!--index.wxml-->
 <scroll-view
-    scroll-y
+    scroll-y="{{!isDisabled}}"
     bindscroll="handleScroll"
     bindtouchstart="handleTouchStart"
     bindtouchend="handleTouchEnd"
+    bindtouchmove="handleTouchMove"
     class="scroll-wrap">
-    <view class="scroll-inner">
+    <view class="scroll-inner"
+          style="transform: translate3D(0,{{numY+'px'}},0)">
         <view class="scroll-header">
             <text>上拉刷新</text>
         </view>

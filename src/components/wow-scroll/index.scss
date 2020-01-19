@@ -6,6 +6,7 @@
 }
 .scroll-inner{
     @extend %pr;
+    @include tst(transform, .3s);
 }
 
 .scroll-header{
