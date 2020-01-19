@@ -18,11 +18,11 @@ new WowComponent({
     properties: {
         numMax: { // 最大距离
             type: Number,
-            value: 100
+            value: 120
         },
         numMin: { // 最小距离
             type: Number,
-            value: 50
+            value: 80
         },
     },
     scrollTop: 0,
@@ -34,15 +34,23 @@ new WowComponent({
     },
     methods: {
         handleScroll (event) {
+            console.log('event.detail.scrollTop', event.detail.scrollTop)
             this.scrollTop = event.detail.scrollTop;
         },
+        handleScrollToUpper () {
+            console.log('到顶部了==========')
+            this.scrollTop = 0;
+        },
         handleTouchStart (event) {
+            console.log('触发handleTouchStart');
             let [ objStart ] = event.touches;
             if (objStart) this.startClientY = objStart.clientY;
             this.setData({ isAnimate: false, strRefreshPrompt: '', isRefresh: false });
         },
         handleTouchMove (event) {
-            if (this.scrollTop > 0) return;
+            console.log('触发handleTouchMove  before', this.scrollTop);
+            if (this.scrollTop > 0) return null;
+            console.log('触发handleTouchMove after', this.scrollTop);
             let [ objEnd ] = event.touches;
             let numY = objEnd.clientY - this.startClientY;
             if (numY > this.data.numMax) return null;
@@ -65,7 +73,7 @@ new WowComponent({
                     this.setData({ strRefreshPrompt: '刷新成功' });
                     setTimeout(() => {
                         this.setData({ isDisabled: false, numY: 0,  });
-                    }, 1000);
+                    }, 300);
                 }, 2000);
 
             } else {

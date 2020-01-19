@@ -22,8 +22,8 @@
     @extend %aic;
     @extend %jcc;
     @include tft(translate3d(0, -100%, 0));
-    height: j(100);
-    //background-color: red;
+    height: j(160);
+    font-size: j(28);
 }
 .scroll-content{
     @extend %pr;
