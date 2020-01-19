@@ -19,7 +19,14 @@
     </view>
     <view class="main-section">
         <view class="main-section">
-
+            <photo-cell></photo-cell>
+            <photo-cell></photo-cell>
+            <photo-cell></photo-cell>
+            <photo-cell></photo-cell>
+            <photo-cell></photo-cell>
+            <photo-cell></photo-cell>
+            <photo-cell></photo-cell>
+            <photo-cell></photo-cell>
         </view>
     </view>
 </view>

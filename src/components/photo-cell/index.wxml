@@ -1,4 +1,15 @@
 <!--index.wxml-->
-<view>
-    <text>测试组件{{text}}</text>
+
+<view class="photo-wrap">
+    <image class="image" mode="aspectFill" src="https://img3.mukewang.com/szimg/5e1d990f0885d97306000338-360-202.jpg"></image>
+    <view class="photo-inner">
+        <view class="title">
+            <text>哈哈哈啊哈哈哈哈哈哈哈哈啊啊哈啊哈哈哈</text>
+        </view>
+        <view class="prompt">
+            <text class="first-child">我是阿倦啊</text>
+            <view class="iconfont icon-xinbaniconshangchuan- eye-icon"></view>
+            <text>0</text>
+        </view>
+    </view>
 </view>

@@ -1,1 +1,39 @@
 @import '~src/assets/scss/define';
+
+.photo-wrap{
+    @extend %pr;
+    width: j(370);
+    height: j(600);
+}
+.image{
+    @extend %w100;
+    @extend %pa;
+    @extend %t0;
+    @extend %l0;
+    @extend %h100;
+}
+.photo-inner{
+    @extend %pr;
+    @extend %h100;
+    @extend %df;
+    @extend %bsb;
+    @extend %fdc;
+    padding: j(20);
+    background-color: rgba(0,0,0,.3);
+    justify-content: end;
+}
+.title{
+    @extend %cfff;
+    font-size: j(28);
+    height: j(88);
+    line-height: j(44);
+}
+.prompt{
+    @extend %df;
+    @extend %aic;
+    color: #ccc;
+    font-size: j(24);
+    .first-child{
+        @extend %df1;
+    }
+}
