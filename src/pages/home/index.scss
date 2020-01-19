@@ -2,7 +2,15 @@
 @import "~src/assets/scss/common";
 
 page{
+    @extend %w100;
+    @extend %h100;
     background-color: $bg-color;
+}
+.wrap{
+    @extend %w100;
+    @extend %h100;
+    @extend %df;
+    @extend %fdc;
 }
 
 .navigation-section{
@@ -52,6 +60,13 @@ page{
 }
 
 .main-section{
+    @extend %df;
+    @extend %df1;
+}
+.main-inner{
+    @extend %w100;
+}
+.main-content{
     @extend %df;
     @extend %fww;
     @extend %jcs;

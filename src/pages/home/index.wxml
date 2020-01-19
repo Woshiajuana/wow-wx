@@ -18,15 +18,17 @@
         </view>
     </view>
     <view class="main-section">
-        <wow-scroll>
-            <photo-cell></photo-cell>
-            <photo-cell></photo-cell>
-            <photo-cell></photo-cell>
-            <photo-cell></photo-cell>
-            <photo-cell></photo-cell>
-            <photo-cell></photo-cell>
-            <photo-cell></photo-cell>
-            <photo-cell></photo-cell>
+        <wow-scroll class="main-inner">
+            <view class="main-content">
+                <photo-cell></photo-cell>
+                <photo-cell></photo-cell>
+                <photo-cell></photo-cell>
+                <photo-cell></photo-cell>
+                <photo-cell></photo-cell>
+                <photo-cell></photo-cell>
+                <photo-cell></photo-cell>
+                <photo-cell></photo-cell>
+            </view>
         </wow-scroll>
     </view>
 </view>

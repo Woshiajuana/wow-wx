@@ -5,9 +5,12 @@
     bindtouchstart="handleTouchStart"
     bindtouchend="handleTouchEnd"
     class="scroll-wrap">
-
     <view class="scroll-inner">
-
+        <view class="scroll-header">
+            <text>上拉刷新</text>
+        </view>
+        <view class="scroll-content">
+            <slot></slot>
+        </view>
     </view>
-
 </scroll-view>

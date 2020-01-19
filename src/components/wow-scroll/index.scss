@@ -1,1 +1,26 @@
 @import '~src/assets/scss/define';
+
+.scroll-wrap{
+    @extend %w100;
+    @extend %h100;
+}
+.scroll-inner{
+    @extend %pr;
+}
+
+.scroll-header{
+    @extend %pa;
+    @extend %df;
+    @extend %t0;
+    @extend %l0;
+    @extend %w100;
+    @extend %cfff;
+    @extend %aic;
+    @extend %jcc;
+    @include tft(translate3d(0, -100%, 0));
+    height: j(100);
+    background-color: red;
+}
+.scroll-content{
+    @extend %pr;
+}
