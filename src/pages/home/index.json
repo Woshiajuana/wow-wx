@@ -5,6 +5,7 @@
     "backgroundColor": "#ec642f",
     "usingComponents": {
         "navigation-custom": "/components/navigation-custom/index",
+        "wow-scroll": "/components/wow-scroll/index",
         "photo-cell": "/components/photo-cell/index"
     }
 }

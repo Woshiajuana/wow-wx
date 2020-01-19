@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<scroll-view
+    scroll-y
+    bindscroll="handleScroll"
+    bindtouchstart="handleTouchStart"
+    bindtouchend="handleTouchEnd"
+    class="scroll-wrap">
+
+    <view class="scroll-inner">
+
+    </view>
+
+</scroll-view>

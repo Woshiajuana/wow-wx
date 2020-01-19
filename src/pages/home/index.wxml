@@ -18,7 +18,7 @@
         </view>
     </view>
     <view class="main-section">
-        <view class="main-section">
+        <wow-scroll>
             <photo-cell></photo-cell>
             <photo-cell></photo-cell>
             <photo-cell></photo-cell>
@@ -27,6 +27,6 @@
             <photo-cell></photo-cell>
             <photo-cell></photo-cell>
             <photo-cell></photo-cell>
-        </view>
+        </wow-scroll>
     </view>
 </view>
