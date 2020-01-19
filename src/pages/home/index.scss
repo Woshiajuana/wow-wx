@@ -31,3 +31,22 @@ page{
     font-size: j(32);
     margin: 0 j(10) 0 j(15);
 }
+
+.tab-section{
+    @extend %df;
+    background-color: $main-color;
+}
+.tab-item{
+    @extend %df;
+    @extend %df1;
+    @extend %jcc;
+    @extend %aic;
+    @extend %cp;
+    height: j(80);
+    color: #ddd;
+    font-size: j(30);
+    &.active{
+        @extend %cfff;
+        font-size: j(36);
+    }
+}

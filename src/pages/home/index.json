@@ -4,6 +4,7 @@
     "backgroundTextStyle": "dark",
     "backgroundColor": "#ec642f",
     "usingComponents": {
-        "navigation-custom": "/components/navigation-custom/index"
+        "navigation-custom": "/components/navigation-custom/index",
+        "photo-cell": "/components/photo-cell/index"
     }
 }

@@ -3,11 +3,23 @@
     <navigation-custom
         class-navigation="navigation-section">
     </navigation-custom>
-    <div class="header-section">
+    <view class="header-section">
         <view class="search">
             <view class="iconfont icon-xinbaniconshangchuan- search-icon"></view>
             <text>什么？找不到你想要的？试试我吧...</text>
         </view>
-    </div>
+    </view>
+    <view class="tab-section">
+        <view class="tab-item active">
+            <text>推荐</text>
+        </view>
+        <view class="tab-item">
+            <text>关注</text>
+        </view>
+    </view>
+    <view class="main-section">
+        <view class="main-section">
 
+        </view>
+    </view>
 </view>
