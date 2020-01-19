@@ -11,20 +11,22 @@ new WowComponent({
     data: {
         numY: 0,
         isDisabled: false,
-        objStart: {
-            clientY: 0,
-            scrollTop: 0,
-        },
-        objEnd: {
-            clientY: 0,
-            scrollTop: 0,
-        },
-        scrollTop: 0,
-
-        numMax: 200, // 最大距离
-        numMin: 100, // 最小距离
-
+        isAnimate: false,
+        isRefresh: false,
+        strRefreshPrompt: '',
     },
+    properties: {
+        numMax: { // 最大距离
+            type: Number,
+            value: 100
+        },
+        numMin: { // 最小距离
+            type: Number,
+            value: 50
+        },
+    },
+    scrollTop: 0,
+    startClientY: 0,
     lifetimes: {
         attached () {
             console.log('加载测试组件 => 成功');
@@ -32,29 +34,44 @@ new WowComponent({
     },
     methods: {
         handleScroll (event) {
-            this.setData({ scrollTop: event.detail.scrollTop });
-            // console.log('滚动距离 =>', event);
+            this.scrollTop = event.detail.scrollTop;
         },
         handleTouchStart (event) {
-            // console.log('滚动开始 =>', event);
             let [ objStart ] = event.touches;
-            if (objStart) this.setData({ objStart });
+            if (objStart) this.startClientY = objStart.clientY;
+            this.setData({ isAnimate: false, strRefreshPrompt: '', isRefresh: false });
         },
         handleTouchMove (event) {
-            let { scrollTop, objStart } = this.data;
-            if (scrollTop > 0) return;
+            if (this.scrollTop > 0) return;
             let [ objEnd ] = event.touches;
-            let numY = objEnd.clientY - objStart.clientY;
-            this.setData({ numY, objEnd });
-            console.log('滚动中 numY=>', numY);
+            let numY = objEnd.clientY - this.startClientY;
+            if (numY > this.data.numMax) return null;
+            this.setData({ numY, isDisabled: true });
         },
-        handleTouchEnd (event) {
-            let { numY, numMin, numMax } = this.data;
-            if (numY < numMin) numY = 0;
-            else numY = numMax;
-            this.setData({ numY });
-            // console.log('滚动结束 =>', event);
+        handleTouchEnd () {
+            console.log('触发handleTouchEnd');
+            let { numY, numMin, isRefresh } = this.data;
+            if (numY < numMin) {
+                numY = 0;
+            } else {
+                numY = numMin;
+                isRefresh = true;
+            }
+            this.setData({ numY, isAnimate: true, isRefresh  });
 
+            if (isRefresh) {
+                // 触发接口
+                setTimeout(() => {
+                    this.setData({ strRefreshPrompt: '刷新成功' });
+                    setTimeout(() => {
+                        this.setData({ isDisabled: false, numY: 0,  });
+                    }, 1000);
+                }, 2000);
+
+            } else {
+                this.setData({ isDisabled: false, numY: 0 });
+            }
+            // console.log('滚动结束 =>', event);
         },
     },
 });

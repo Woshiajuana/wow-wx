@@ -6,7 +6,10 @@
 }
 .scroll-inner{
     @extend %pr;
-    @include tst(transform, .3s);
+    @include tst(all, .01s);
+    &.animate{
+        @include tst(all, .3s);
+    }
 }
 
 .scroll-header{
@@ -15,12 +18,12 @@
     @extend %t0;
     @extend %l0;
     @extend %w100;
-    @extend %cfff;
+    @extend %c9;
     @extend %aic;
     @extend %jcc;
     @include tft(translate3d(0, -100%, 0));
     height: j(100);
-    background-color: red;
+    //background-color: red;
 }
 .scroll-content{
     @extend %pr;

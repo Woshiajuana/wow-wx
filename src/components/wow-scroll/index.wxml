@@ -6,13 +6,15 @@
     bindtouchend="handleTouchEnd"
     bindtouchmove="handleTouchMove"
     class="scroll-wrap">
-    <view class="scroll-inner"
-          style="transform: translate3D(0,{{numY+'px'}},0)">
+    <view class="scroll-inner {{ isAnimate && 'animate' }}"
+          style="margin-top: {{ numY + 'px' }}">
         <view class="scroll-header">
-            <text>上拉刷新</text>
+            <text>{{ isRefresh ? strRefreshPrompt || '正在刷新...' : numY > numMin ? '↑ 释放刷新' : '↓ 下拉刷新'}}</text>
         </view>
-        <view class="scroll-content">
+        <text>{{numY}}</text>
+        <text>{{strRefreshPrompt}}</text>
+<!--        <view class="scroll-content">-->
             <slot></slot>
-        </view>
+<!--        </view>-->
     </view>
 </scroll-view>
