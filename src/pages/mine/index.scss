@@ -1,1 +1,115 @@
 
+@import "~src/assets/scss/common";
+
+page{
+    @extend %w100;
+    @extend %h100;
+    background-color: $bg-color;
+}
+.navigation-section{
+    @extend %pa;
+    @extend %l0;
+    @extend %t0;
+    @extend %r0;
+    z-index: 9;
+    //background-color: $main-color;
+}
+.header-section{
+    @extend %df;
+    @extend %aic;
+    height: j(90);
+    padding: 0 j(20);
+}
+.notice{
+    @extend %pr;
+}
+.notice-icon{
+    @extend %cfff;
+    font-size: j(46);
+}
+.notice-dot{
+    @extend %pa;
+    @extend %t0;
+    @extend %r0;
+    width: j(10);
+    height: j(10);
+    border-radius: 50%;
+    background-color: red;
+    border-bottom: 1px transparent solid;
+}
+.user-section{
+    @extend %pr;
+    height: j(520);
+    background-color: #ddd;
+}
+.user-bg{
+    @extend %pa;
+    @extend %t0;
+    @extend %l0;
+    @extend %r0;
+    @extend %b0;
+    @extend %h100;
+    @extend %w100;
+    filter: blur(j(3));
+}
+.user-content{
+    @extend %pr;
+    @extend %df;
+    @extend %aic;
+    @extend %fdc;
+    @extend %h100;
+    justify-content: flex-end;
+    background-color: rgba(0,0,0,.5);
+}
+.user-avatar{
+    @extend %df;
+    @extend %pr;
+    @extend %aic;
+    @extend %jcc;
+    @extend %c6;
+    width: j(120);
+    height: j(120);
+    font-size: j(24);
+    border-radius: 50%;
+    border: j(1) #ddd solid;
+}
+.avatar{
+    @extend %pa;
+    @extend %t0;
+    @extend %l0;
+    @extend %w100;
+    @extend %h100;
+    border-radius: 50%;
+}
+.user-name{
+    @extend %cfff;
+    margin-top: j(20);
+    font-size: j(28);
+}
+.user-signature{
+    @extend %cc;
+    font-size: j(24);
+}
+.user-base{
+    @extend %df;
+    @extend %w100;
+    @extend %aic;
+    padding: j(20) 0;
+}
+.base-info{
+    @extend %df;
+    @extend %df1;
+    @extend %cp;
+    @extend %aic;
+    @extend %jcc;
+    @extend %fdc;
+    height: j(80);
+}
+.base-info-value{
+    @extend %cfff;
+    font-size: j(28);
+}
+.base-info-label{
+    @extend %cc;
+    font-size: j(20);
+}
