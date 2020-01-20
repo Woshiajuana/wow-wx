@@ -18,20 +18,6 @@
         </view>
     </view>
     <view class="main-section">
-        <wow-scroll
-            bindonrefresh="handleRefresh"
-            bindonload="handleLoad"
-            class="main-inner">
-            <view class="main-content">
-                <photo-cell></photo-cell>
-                <photo-cell></photo-cell>
-                <photo-cell></photo-cell>
-                <photo-cell></photo-cell>
-                <photo-cell></photo-cell>
-                <photo-cell></photo-cell>
-                <photo-cell></photo-cell>
-                <photo-cell></photo-cell>
-            </view>
-        </wow-scroll>
+        <tab-page class="main-inner"></tab-page>
     </view>
 </view>

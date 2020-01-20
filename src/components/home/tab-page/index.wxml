@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<wow-scroll
+    bindonrefresh="handleRefresh"
+    bindonload="handleLoad">
+    <view class="content">
+        <photo-cell></photo-cell>
+        <photo-cell></photo-cell>
+        <photo-cell></photo-cell>
+        <photo-cell></photo-cell>
+        <photo-cell></photo-cell>
+        <photo-cell></photo-cell>
+        <photo-cell></photo-cell>
+        <photo-cell></photo-cell>
+    </view>
+</wow-scroll>
