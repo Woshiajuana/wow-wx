@@ -20,13 +20,13 @@ new WowPage({
     },
     handleRefresh (event) {
         console.log('handleRefresh', event);
-        let { callback } = event;
+        let { callback } = event.detail;
         callback();
     },
     handleLoad (event) {
-        let { callback } = event;
-        callback();
         console.log('handleLoad', event);
+        let { callback } = event.detail;
+        callback();
     },
     handleTap () {
         let { Modal } = this.wow$.plugins;

@@ -24,6 +24,10 @@ new WowComponent({
             type: Number,
             value: 80
         },
+        isNoMore: {
+            type: Boolean,
+            value: false
+        },
     },
     scrollTop: 0,
     startClientY: 0,
@@ -52,7 +56,7 @@ new WowComponent({
         handleTouchMove (event) {
             let { isRefresh, numY } = this.data;
             if (isRefresh && numY > 0) return null;
-            if (this.scrollTop > 0) return console.log(this.scrollTop);
+            if (this.scrollTop > 0) return null;
             let [ objEnd ] = event.touches;
             numY = objEnd.clientY - this.startClientY;
             if (numY > this.data.numMax) return null;
@@ -72,8 +76,12 @@ new WowComponent({
                return this.setData({ isDisabled: false, numY: 0 });
             }
             this.triggerEvent('onrefresh', {
-                callback: () => {
-                    this.setData({ strRefreshPrompt: '刷新成功' });
+                callback: (res) => {
+                    let { strPrompt = '刷新成功', isNoMore } = res || {};
+                    this.setData({ strRefreshPrompt: strPrompt });
+                    if (isNoMore) {
+                        this.setData({ isNoMore });
+                    }
                     setTimeout(() => {
                         this.setData({ isDisabled: false, numY: 0,  });
                     }, 300);
@@ -82,8 +90,11 @@ new WowComponent({
         },
         handleScrollToLower () {
             this.triggerEvent('onload', {
-                callback: () => {
-
+                callback: (res) => {
+                    let { isNoMore } = res || {};
+                    if (isNoMore !== undefined) {
+                        this.setData({ isNoMore });
+                    }
                 },
             });
         },

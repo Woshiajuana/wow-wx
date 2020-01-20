@@ -15,7 +15,7 @@
         </view>
         <slot></slot>
         <view class="scroll-footer">
-            <text>正在加载...</text>
+            <text>{{isNoMore ? '没有更多了' : '正在加载...' }}</text>
         </view>
     </view>
 </scroll-view>
