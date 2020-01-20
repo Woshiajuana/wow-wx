@@ -10,14 +10,20 @@
         </view>
     </view>
     <view class="tab-section">
-        <view class="tab-item active">
-            <text>推荐</text>
-        </view>
-        <view class="tab-item">
-            <text>关注</text>
+        <view class="tab-item {{item.active && 'active'}}"
+              bindtap="handleTabSwitch"
+              data-index="{{index}}"
+              wx:for="{{arrTab}}"
+              wx:key="index">
+            <text>{{ item.label }}</text>
         </view>
     </view>
     <view class="main-section">
-        <tab-page class="main-inner"></tab-page>
+        <tab-page
+            class="main-inner {{item.active && 'active'}}"
+            wx:for="{{arrTab}}"
+            wx:key="index"
+            prompt="{{item.label}}"
+        ></tab-page>
     </view>
 </view>

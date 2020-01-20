@@ -28,6 +28,7 @@ new WowComponent({
     },
     scrollTop: 0,
     startClientY: 0,
+    isLoading: false,
     lifetimes: {
         attached () {
             console.log('加载测试组件 => 成功');
@@ -86,12 +87,16 @@ new WowComponent({
             });
         },
         handleScrollToLower () {
+            let { isNoMore } = this.data;
+            if (isNoMore || this.isLoading) return null;
+            this.isLoading = true;
             this.triggerEvent('onload', {
                 callback: (res) => {
                     let { isNoMore } = res || {};
                     if (isNoMore !== undefined) {
                         this.setData({ isNoMore });
                     }
+                    this.isLoading = false;
                 },
             });
         },

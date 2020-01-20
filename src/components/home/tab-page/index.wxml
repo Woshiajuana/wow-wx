@@ -3,6 +3,7 @@
     bindonrefresh="handleRefresh"
     bindonload="handleLoad">
     <view class="content">
+        <text>{{prompt}}</text>
         <photo-cell></photo-cell>
         <photo-cell></photo-cell>
         <photo-cell></photo-cell>
