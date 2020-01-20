@@ -25,12 +25,12 @@ page{
 }
 .notice-icon{
     @extend %cfff;
-    font-size: j(46);
+    font-size: j(52);
 }
 .notice-dot{
     @extend %pa;
-    @extend %t0;
     @extend %r0;
+    top: j(5);
     width: j(10);
     height: j(10);
     border-radius: 50%;

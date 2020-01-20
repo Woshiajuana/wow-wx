@@ -4,7 +4,7 @@
         class-navigation="navigation-section">
         <view class="header-section">
             <view class="notice">
-                <view class="iconfont icon-xinbaniconshangchuan- notice-icon"></view>
+                <view class="iconfont icon-htmal5icon05 notice-icon"></view>
                 <view class="notice-dot"></view>
             </view>
         </view>
@@ -33,7 +33,7 @@
                 </view>
                 <view class="base-info">
                     <text class="base-info-value">999</text>
-                    <text class="base-info-label">视频</text>
+                    <text class="base-info-label">照片</text>
                 </view>
             </view>
         </view>
