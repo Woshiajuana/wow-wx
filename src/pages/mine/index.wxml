@@ -39,21 +39,12 @@
         </view>
     </view>
     <view class="entry-section">
-        <view class="entry-cell">
-            <view class="iconfont icon-saoyisao entry-icon"></view>
-            <text>照片</text>
-        </view>
-        <view class="entry-cell">
-            <view class="iconfont icon-saoyisao entry-icon"></view>
-            <text>照片</text>
-        </view>
-        <view class="entry-cell">
-            <view class="iconfont icon-saoyisao entry-icon"></view>
-            <text>照片</text>
-        </view>
-        <view class="entry-cell">
-            <view class="iconfont icon-saoyisao entry-icon"></view>
-            <text>照片</text>
+        <view class="entry-cell"
+              data-url="{{item.url}}"
+              wx:for="{{arrEntry}}"
+              wx:key="index">
+            <view class="iconfont entry-icon {{item.class}}"></view>
+            <text>{{item.label}}</text>
         </view>
     </view>
 </view>
