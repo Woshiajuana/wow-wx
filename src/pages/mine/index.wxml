@@ -38,4 +38,22 @@
             </view>
         </view>
     </view>
+    <view class="entry-section">
+        <view class="entry-cell">
+            <view class="iconfont icon-saoyisao entry-icon"></view>
+            <text>照片</text>
+        </view>
+        <view class="entry-cell">
+            <view class="iconfont icon-saoyisao entry-icon"></view>
+            <text>照片</text>
+        </view>
+        <view class="entry-cell">
+            <view class="iconfont icon-saoyisao entry-icon"></view>
+            <text>照片</text>
+        </view>
+        <view class="entry-cell">
+            <view class="iconfont icon-saoyisao entry-icon"></view>
+            <text>照片</text>
+        </view>
+    </view>
 </view>

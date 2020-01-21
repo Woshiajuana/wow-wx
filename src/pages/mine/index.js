@@ -11,7 +11,12 @@ new WowPage({
         WowPage.wow$.mixins.Refresh,
     ],
     data: {
-        // prompt: '嘿嘿嘿',
+        arrEntry: [
+            { label: '照片', class: '', useMargin: false },
+            { label: '收藏', class: '', useMargin: false },
+            { label: '历史', class: '', useMargin: false },
+            { label: '设置', class: 'icon-shezhi', useMargin: false },
+        ]
     },
     onLoad(options) {
         console.log('首页加载 => ', options);

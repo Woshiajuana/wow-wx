@@ -113,3 +113,39 @@ page{
     @extend %cc;
     font-size: j(20);
 }
+
+.entry-section{
+    margin-top: j(20);
+}
+.entry-cell{
+    @extend %df;
+    @extend %pr;
+    @extend %aic;
+    @extend %c6;
+    @extend %cp;
+    font-size: j(28);
+    padding: 0 j(32);
+    height: j(100);
+    background-color: #fff;
+    border-bottom: j(1) #ddd solid;
+    &:first-child{
+        border-top: j(1) #ddd solid;
+    }
+    &:after{
+        @extend %pa;
+        @extend %t50;
+        @include tfr(45deg);
+        right: j(32);
+        margin-top: j(-10);
+        border-top: j(2) #ddd solid;
+        border-right: j(2) #ddd solid;
+        width: j(20);
+        height: j(20);
+        content: '';
+    }
+}
+.entry-icon{
+    @extend %c6;
+    font-size: j(52);
+    margin-right: j(20);
+}
