@@ -44,7 +44,8 @@
               wx:for="{{arrEntry}}"
               wx:key="index">
             <view class="iconfont entry-icon {{item.class}}"></view>
-            <text>{{item.label}}</text>
+            <text class="label">{{item.label}}</text>
+            <view class="arrow"></view>
         </view>
     </view>
 </view>
