@@ -39,7 +39,7 @@
         </view>
     </view>
     <view class="entry-section">
-        <view class="entry-cell"
+        <view class="entry-cell {{item.useMargin && 'margin-border'}}"
               data-url="{{item.url}}"
               wx:for="{{arrEntry}}"
               wx:key="index">

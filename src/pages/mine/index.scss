@@ -115,7 +115,7 @@ page{
 }
 
 .entry-section{
-    margin-top: j(20);
+
 }
 .entry-cell{
     @extend %df;
@@ -128,9 +128,6 @@ page{
     height: j(100);
     background-color: #fff;
     border-bottom: j(1) #ddd solid;
-    &:first-child{
-        border-top: j(1) #ddd solid;
-    }
     &:after{
         @extend %pa;
         @extend %t50;
@@ -143,7 +140,7 @@ page{
         height: j(20);
         content: '';
     }
-    &.cell-te{
+    &.margin-border{
         margin-top: j(20);
         border-top: j(1) #ddd solid;
     }
