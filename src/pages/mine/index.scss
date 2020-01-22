@@ -122,14 +122,23 @@ page{
     @extend %pr;
     @extend %aic;
     @extend %c6;
+    @extend %pr;
     @extend %cp;
     font-size: j(28);
     padding: 0 j(32);
     height: j(100);
     background-color: #fff;
-    border-bottom: j(1) #ddd solid;
     &:before{
-
+        @extend %pa;
+        @extend %t0;
+        @extend %l0;
+        @extend %bsb;
+        @include tft(scale(0.5, 0.5));
+        @include tfo(0, 0);
+        content: '';
+        width: 200%;
+        height: 200%;
+        border-bottom: 1px solid #ddd;
     }
     &:after{
         @extend %pa;
@@ -145,7 +154,9 @@ page{
     }
     &.margin-border{
         margin-top: j(20);
-        border-top: j(1) #ddd solid;
+        &:before{
+            border-top: 1px #ddd solid;
+        }
     }
     .label{
         @extend %df1;

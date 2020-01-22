@@ -320,6 +320,14 @@
     transform: $translate3d;
 }
 
+@mixin tfo($x, $y) {
+    -webkit-transform-origin: $x $y;
+    -moz-transform-origin: $x $y;
+    -ms-transform-origin: $x $y;
+    -o-transform-origin: $x $y;
+    transform-origin: $x $y;
+}
+
 @mixin tst($sty,$time){
     -webkit-transition: $sty $time;
     -moz-transition: $sty $time;
