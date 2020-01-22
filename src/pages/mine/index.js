@@ -12,10 +12,10 @@ new WowPage({
     ],
     data: {
         arrEntry: [
-            { label: '照片', class: 'icon-zhaopian_huabanfuben', useMargin: false, url: '' },
-            { label: '收藏', class: 'icon-shoucang-tianchong', useMargin: false, url: '' },
-            { label: '历史', class: 'icon-3lishi', useMargin: false, url: '' },
-            { label: '设置', class: 'icon-shezhi', useMargin: false, url: '' },
+            { label: '照片', class: 'icon-zhaopian_huabanfuben', url: '' },
+            { label: '收藏', class: 'icon-shoucang-tianchong', url: '' },
+            { label: '历史', class: 'icon-3lishi', url: '' },
+            { label: '设置', class: 'icon-shezhi', url: '' },
         ]
     },
     onLoad(options) {

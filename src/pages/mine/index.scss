@@ -143,9 +143,13 @@ page{
         height: j(20);
         content: '';
     }
+    &.cell-te{
+        margin-top: j(20);
+        border-top: j(1) #ddd solid;
+    }
 }
 .entry-icon{
     @extend %c6;
-    font-size: j(52);
+    font-size: j(42);
     margin-right: j(20);
 }
