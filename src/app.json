@@ -1,8 +1,9 @@
 {
     "pages": [
-        "pages/mine/index",
         "pages/home/index",
-        "pages/freeze/index"
+        "pages/freeze/index",
+        "pages/mine/index",
+        "pages/setting/index"
     ],
     "permission": {
         "scope.userLocation": {
