@@ -1,4 +1,6 @@
 <!--index.wxml-->
-<view>
-    <text>测试组件{{text}}</text>
+<view class="cell">
+    <view class="icon"></view>
+    <text class="label"></text>
+    <text class="value"></text>
 </view>
