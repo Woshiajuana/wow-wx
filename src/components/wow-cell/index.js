@@ -5,13 +5,9 @@ import './index.scss'
 import WowComponent from 'source/lib/component'
 
 new WowComponent({
-
-    mixins: [
-        WowComponent.wow$.mixins.Text,
+    // 外部样式类
+    externalClasses: [
+        'class-navigation',
+        'class-navigation-status',
     ],
-    lifetimes: {
-        attached () {
-            console.log('加载测试组件 => 成功');
-        },
-    },
 });

@@ -48,4 +48,5 @@
             <view class="arrow"></view>
         </view>
     </view>
+    <wow-cell></wow-cell>
 </view>

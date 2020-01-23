@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="cell">
     <view class="icon"></view>
-    <text class="label"></text>
+    <text class="label">左边</text>
     <text class="value"></text>
 </view>
