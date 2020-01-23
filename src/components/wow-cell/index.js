@@ -5,10 +5,6 @@ import './index.scss'
 import WowComponent from 'source/lib/component'
 
 new WowComponent({
-    // 外部样式类
-    externalClasses: [
-        'class-navigation',
-    ],
     properties: {
         cellLabel: { // 最大距离
             type: String,
@@ -21,6 +17,10 @@ new WowComponent({
         iconClass: {
             type: String,
             value: ''
+        },
+        useMargin: {
+            type: Boolean,
+            value: false,
         },
     },
 });

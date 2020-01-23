@@ -55,5 +55,6 @@
         cellLabel="{{item.label}}"
         cellValue="{{item.value}}"
         iconClass="{{item.icon}}"
+        useMargin="{{item.useMargin}}"
     ></wow-cell>
 </view>

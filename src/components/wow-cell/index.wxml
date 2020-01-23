@@ -1,6 +1,6 @@
 <!--index.wxml-->
-<view class="cell">
-    <view wx:if="{{iconClass}}" class="icon {{iconClass}}"></view>
+<view class="cell {{useMargin && 'margin-border'}}">
+    <view wx:if="{{iconClass}}" class="icon iconfont {{iconClass}}"></view>
     <text class="label">{{cellLabel}}</text>
-    <text class="value">{{cellValue}}</text>
+    <text class="value">{{cellValue}}{{iconClass}}</text>
 </view>
