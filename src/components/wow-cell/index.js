@@ -8,6 +8,5 @@ new WowComponent({
     // 外部样式类
     externalClasses: [
         'class-navigation',
-        'class-navigation-status',
     ],
 });
