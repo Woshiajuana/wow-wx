@@ -38,16 +38,6 @@
             </view>
         </view>
     </view>
-    <view class="entry-section">
-        <view class="entry-cell {{item.useMargin && 'margin-border'}}"
-              data-url="{{item.url}}"
-              wx:for="{{arrEntry}}"
-              wx:key="index">
-            <view class="iconfont entry-icon {{item.icon}}"></view>
-            <text class="label">{{item.label}}</text>
-            <view class="arrow"></view>
-        </view>
-    </view>
     <wow-cell
         data-url="{{item.url}}"
         wx:for="{{arrEntry}}"
@@ -56,5 +46,7 @@
         cellValue="{{item.value}}"
         iconClass="{{item.icon}}"
         useMargin="{{item.useMargin}}"
+        bindtap="handleSelect"
+        data-item="{{item}}"
     ></wow-cell>
 </view>

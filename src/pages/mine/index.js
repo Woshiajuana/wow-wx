@@ -9,6 +9,7 @@ new WowPage({
     mixins: [
         WowPage.wow$.mixins.Modal,
         WowPage.wow$.mixins.Refresh,
+        WowPage.wow$.mixins.Input,
     ],
     data: {
         arrEntry: [
@@ -17,10 +18,6 @@ new WowPage({
             { label: '历史', icon: 'icon-3lishi', useMargin: false, url: '' },
             { label: '设置', icon: 'icon-shezhi', useMargin: true, url: '' },
         ]
-    },
-    onLoad(options) {
-        console.log('首页加载 => ', options);
-        console.log('首页执行wow$ =>', this.wow$);
     },
     handleTap () {
         let { Modal } = this.wow$.plugins;
@@ -32,5 +29,8 @@ new WowPage({
     },
     testPromise () {
         return Promise.reject('xxx');
-    }
+    },
+    handleSelect (event) {
+        console.log('点了外面', event);
+    },
 });

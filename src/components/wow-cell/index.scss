@@ -45,6 +45,9 @@
     .label{
         @extend %df1;
     }
+    .value{
+        margin-right: j(32);
+    }
 }
 .icon{
     @extend %c6;
