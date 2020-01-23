@@ -9,4 +9,18 @@ new WowComponent({
     externalClasses: [
         'class-navigation',
     ],
+    properties: {
+        cellLabel: { // 最大距离
+            type: String,
+            value: ''
+        },
+        cellValue: { // 最小距离
+            type: String,
+            value: ''
+        },
+        iconClass: {
+            type: String,
+            value: ''
+        },
+    },
 });

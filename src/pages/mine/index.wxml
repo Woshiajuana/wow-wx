@@ -43,10 +43,17 @@
               data-url="{{item.url}}"
               wx:for="{{arrEntry}}"
               wx:key="index">
-            <view class="iconfont entry-icon {{item.class}}"></view>
+            <view class="iconfont entry-icon {{item.icon}}"></view>
             <text class="label">{{item.label}}</text>
             <view class="arrow"></view>
         </view>
     </view>
-    <wow-cell></wow-cell>
+    <wow-cell
+        data-url="{{item.url}}"
+        wx:for="{{arrEntry}}"
+        wx:key="index"
+        cellLabel="{{item.label}}"
+        cellValue="{{item.value}}"
+        iconClass="{{item.icon}}"
+    ></wow-cell>
 </view>
