@@ -1,0 +1,8 @@
+
+@import "~src/assets/scss/common";
+
+page{
+    @extend %w100;
+    @extend %h100;
+    background-color: $bg-color;
+}
