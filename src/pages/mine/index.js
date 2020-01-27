@@ -14,9 +14,9 @@ new WowPage({
     ],
     data: {
         arrEntry: [
-            { label: '照片', icon: 'icon-zhaopian_huabanfuben', useMargin: true, url: '' },
-            { label: '收藏', icon: 'icon-shoucang-tianchong', useMargin: true, url: '' },
-            { label: '历史', icon: 'icon-3lishi', useMargin: false, url: '' },
+            { label: '照片', icon: 'icon-zhaopian_huabanfuben', useMargin: true, url: 'photo_index' },
+            { label: '收藏', icon: 'icon-shoucang-tianchong', useMargin: true, url: 'collect_index' },
+            { label: '历史', icon: 'icon-3lishi', useMargin: false, url: 'history_index' },
             { label: '设置', icon: 'icon-shezhi', useMargin: true, url: 'setting_index' },
         ]
     },

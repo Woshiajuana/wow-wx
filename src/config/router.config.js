@@ -1,11 +1,11 @@
 export default {
     "collect_index": "/pages/collect/index",
     "freeze_index": "/pages/freeze/index",
+    "history_index": "/pages/history/index",
     "home_index": "/pages/home/index",
     "mine_about_index": "/pages/mine/about/index",
     "mine_center_index": "/pages/mine/center/index",
     "mine_friend_index": "/pages/mine/friend/index",
-    "mine_history_index": "/pages/mine/history/index",
     "mine_index": "/pages/mine/index",
     "mine_nickname_index": "/pages/mine/nickname/index",
     "mine_qrcode_index": "/pages/mine/qrcode/index",
