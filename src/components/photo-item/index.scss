@@ -19,8 +19,8 @@
 .photo{
     @extend %oh;
     border-radius: j(10);
-    width: j(120);
-    height: j(100);
+    width: j(200);
+    height: j(140);
     margin-right: j(20);
 }
 .image{
@@ -31,12 +31,16 @@
     @extend %df1;
     @extend %df;
     @extend %fdc;
+    @extend %jcs;
+    height: j(140);
 }
 .title{
     @extend %df;
     @extend %c3;
-    @extend %aic;
     font-size: j(28);
+}
+.title-text{
+    @extend %df1;
 }
 .status{
     @extend %df;

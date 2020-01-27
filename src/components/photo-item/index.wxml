@@ -7,7 +7,7 @@
     <view class="inner">
         <view class="title">
             <view class="status"><text>公开</text></view>
-            <text>你的啊啊啊</text>
+            <text class="title-text">你的啊啊啊你的啊啊啊你的啊啊啊你的啊啊啊你的啊啊啊你的啊啊啊你的啊啊啊</text>
         </view>
         <view class="operate">
             <view class="attr">
