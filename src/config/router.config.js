@@ -1,6 +1,20 @@
 export default {
+    "collect_index": "/pages/collect/index",
     "freeze_index": "/pages/freeze/index",
     "home_index": "/pages/home/index",
+    "mine_about_index": "/pages/mine/about/index",
+    "mine_center_index": "/pages/mine/center/index",
+    "mine_friend_index": "/pages/mine/friend/index",
+    "mine_history_index": "/pages/mine/history/index",
     "mine_index": "/pages/mine/index",
+    "mine_nickname_index": "/pages/mine/nickname/index",
+    "mine_qrcode_index": "/pages/mine/qrcode/index",
+    "mine_signature_index": "/pages/mine/signature/index",
+    "mine_webview_index": "/pages/mine/webview/index",
+    "notice_details_index": "/pages/notice/details/index",
+    "notice_index": "/pages/notice/index",
+    "photo_details_index": "/pages/photo/details/index",
+    "photo_index": "/pages/photo/index",
+    "search_index": "/pages/search/index",
     "setting_index": "/pages/setting/index"
 }

@@ -1,8 +1,22 @@
 {
     "pages": [
-        "pages/mine/index",
         "pages/home/index",
+        "pages/collect/index",
         "pages/freeze/index",
+        "pages/mine/about/index",
+        "pages/mine/center/index",
+        "pages/mine/friend/index",
+        "pages/mine/history/index",
+        "pages/mine/index",
+        "pages/mine/nickname/index",
+        "pages/mine/qrcode/index",
+        "pages/mine/signature/index",
+        "pages/mine/webview/index",
+        "pages/notice/details/index",
+        "pages/notice/index",
+        "pages/photo/details/index",
+        "pages/photo/index",
+        "pages/search/index",
         "pages/setting/index"
     ],
     "permission": {
