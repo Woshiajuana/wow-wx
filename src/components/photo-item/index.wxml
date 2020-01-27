@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="head"><text>2020-01-10 22:21:55</text></view>
+<view class="time"><text>2020-01-10 22:21:55</text></view>
 <view class="main">
     <view class="photo">
         <image class="image" mode="aspectFill" src="https://img3.mukewang.com/szimg/5e1d990f0885d97306000338-360-202.jpg"></image>
@@ -7,7 +7,7 @@
     <view class="inner">
         <view class="title">
             <view class="status"><text>公开</text></view>
-            <text class="title-text">你的啊啊啊你的啊啊啊你的啊啊啊你的啊啊啊你的啊啊啊你的啊啊啊你的啊啊啊</text>
+            <text>你的啊啊啊你的啊啊啊你的啊啊啊你的啊啊啊你的啊啊啊你的啊啊啊你的啊啊啊</text>
         </view>
         <view class="operate">
             <view class="attr">

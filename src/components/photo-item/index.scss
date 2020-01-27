@@ -2,7 +2,7 @@
 @import '~src/assets/scss/skin';
 @import '~src/assets/scss/iconfont';
 
-.head{
+.time{
     @extend %df;
     @extend %aic;
     @extend %c6;
@@ -35,18 +35,18 @@
     height: j(140);
 }
 .title{
-    @extend %df;
     @extend %c3;
+    @extend %oh;
+    vert-align: middle;
+    height: j(80);
+    line-height: j(40);
     font-size: j(28);
 }
-.title-text{
-    @extend %df1;
-}
 .status{
-    @extend %df;
-    @extend %aic;
-    @extend %jcc;
+    @extend %dib;
+    //@extend %bsb;
     height: j(28);
+    line-height: j(28);
     margin-right: j(16);
     border-radius: j(10);
     padding: 0 j(6);
@@ -63,4 +63,7 @@
     @extend %df;
     @extend %aic;
     @extend %jcc;
+    .iconfont{
+        margin-right: j(8);
+    }
 }
