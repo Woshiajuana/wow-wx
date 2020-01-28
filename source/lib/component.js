@@ -11,7 +11,7 @@ const {
     FUNCTION_COMPONENT_KEYS,
 } = configs;
 
-class WowPage extends Core {
+class WowComponent extends Core {
 
     constructor (options, filterFun) {
         super(options);
@@ -22,7 +22,7 @@ class WowPage extends Core {
             get wow$ () { return App.wow$; },
             get App () { return App },
         });
-        this.generate();
+        this.generate('component');
         return Component(this.options);
     }
 
@@ -32,5 +32,5 @@ class WowPage extends Core {
 
 }
 
-module.exports = WowPage;
+module.exports = WowComponent;
 

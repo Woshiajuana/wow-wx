@@ -42,7 +42,7 @@ class Core {
 
         if (type === 'component') {
             if (!this.options.methods) this.options.methods = {};
-            this.options.methods = Object.assign({}, mixinOption, options.methods);
+            this.options.methods = Object.assign({}, mixinOption, this.options.methods);
         } else {
             this.options = Object.assign({}, mixinOption, this.options);
         }

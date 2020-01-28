@@ -30,6 +30,9 @@ new WowPage({
 
         this.testPromise().toast();
     },
+    handleMore (event) {
+        console.log('更多', event);
+    },
     testPromise () {
         return Promise.reject('xxx');
     }
