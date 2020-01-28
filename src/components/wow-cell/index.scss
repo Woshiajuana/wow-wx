@@ -22,7 +22,7 @@
         content: '';
         width: 200%;
         height: 200%;
-        border-bottom: 1px solid #ddd;
+        border-bottom: j(1) solid #ddd;
     }
     &:after{
         @extend %pa;
@@ -39,7 +39,7 @@
     &.margin-border{
         margin-top: j(20);
         &:before{
-            border-top: 1px #ddd solid;
+            border-top: j(1) #ddd solid;
         }
     }
     .label{

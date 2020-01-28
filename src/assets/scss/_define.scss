@@ -348,3 +348,43 @@
     -o-box-shadow: $x $y $m $n $rgba;
     box-shadow: $x $y $m $n $rgba;
 }
+
+%bw05{
+    @extend %pr;
+    &:before{
+        @extend %pa;
+        @extend %t0;
+        @extend %l0;
+        @extend %bsb;
+        @include tft(scale(0.5, 0.5));
+        @include tfo(0, 0);
+        content: '';
+        width: 200%;
+        height: 200%;
+    }
+}
+
+%bwt{
+    &:before{
+        border-top: j(1) solid #ddd;
+    }
+}
+
+%bwr{
+    &:before{
+        border-right: j(1) solid #ddd;
+    }
+}
+
+%bwb{
+    &:before{
+        border-bottom: j(1) solid #ddd;
+    }
+}
+
+%bwl{
+    &:before{
+        border-left: j(1) solid #ddd;
+    }
+}
+
