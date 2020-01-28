@@ -1,10 +1,10 @@
 <!--index.wxml-->
 <view class="wrap">
-    <photo-item></photo-item>
-    <photo-item></photo-item>
-    <photo-item></photo-item>
-    <photo-item></photo-item>
-    <photo-item></photo-item>
-    <photo-item></photo-item>
-    <photo-item></photo-item>
+    <photo-list-item></photo-list-item>
+    <photo-list-item></photo-list-item>
+    <photo-list-item></photo-list-item>
+    <photo-list-item></photo-list-item>
+    <photo-list-item></photo-list-item>
+    <photo-list-item></photo-list-item>
+    <photo-list-item></photo-list-item>
 </view>

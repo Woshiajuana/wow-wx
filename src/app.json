@@ -1,6 +1,5 @@
 {
     "pages": [
-        "pages/photo/index",
         "pages/home/index",
         "pages/collect/index",
         "pages/freeze/index",
@@ -16,6 +15,7 @@
         "pages/notice/details/index",
         "pages/notice/index",
         "pages/photo/details/index",
+        "pages/photo/index",
         "pages/search/index",
         "pages/setting/index"
     ],

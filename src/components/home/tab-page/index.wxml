@@ -4,13 +4,13 @@
     bindonload="handleLoad">
     <view class="content">
         <text>{{prompt}}</text>
-        <photo-cell></photo-cell>
-        <photo-cell></photo-cell>
-        <photo-cell></photo-cell>
-        <photo-cell></photo-cell>
-        <photo-cell></photo-cell>
-        <photo-cell></photo-cell>
-        <photo-cell></photo-cell>
-        <photo-cell></photo-cell>
+        <photo-grid-item></photo-grid-item>
+        <photo-grid-item></photo-grid-item>
+        <photo-grid-item></photo-grid-item>
+        <photo-grid-item></photo-grid-item>
+        <photo-grid-item></photo-grid-item>
+        <photo-grid-item></photo-grid-item>
+        <photo-grid-item></photo-grid-item>
+        <photo-grid-item></photo-grid-item>
     </view>
 </wow-scroll>

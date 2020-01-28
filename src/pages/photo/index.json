@@ -3,6 +3,6 @@
     "backgroundColor": "#ec642f",
     "navigationBarTitleText": "我的照片",
     "usingComponents": {
-        "photo-item": "/components/photo-item/index"
+        "photo-list-item": "/components/photo-list-item/index"
     }
 }
