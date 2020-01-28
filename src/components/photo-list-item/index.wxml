@@ -14,7 +14,7 @@
                 <view class="iconfont icon-yanjing"></view>
                 <text>6</text>
             </view>
-            <view class="iconfont icon-saoyisao"></view>
+            <view bindtap="handleMore" class="iconfont icon-saoyisao"></view>
         </view>
     </view>
 </view>

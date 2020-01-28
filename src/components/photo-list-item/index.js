@@ -5,5 +5,9 @@ import './index.scss'
 import WowComponent from 'source/lib/component'
 
 new WowComponent({
+    methods: {
+        handleMore () {
 
+        },
+    },
 });

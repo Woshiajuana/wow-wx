@@ -10,4 +10,9 @@ module.exports = {
         let dataset = currentTarget.dataset || {};
         return Object.assign({}, dataset, detail);
     },
+    inputEvent (e) {
+        let { params, event } = this.inputParams(e);
+        
+
+    },
 };
