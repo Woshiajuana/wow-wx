@@ -12,7 +12,6 @@ module.exports = {
     },
     inputEvent (e) {
         let { params, event } = this.inputParams(e);
-        
-
+        if (event) this.triggerEvent(event, params);
     },
 };

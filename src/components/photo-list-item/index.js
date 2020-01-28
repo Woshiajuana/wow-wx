@@ -5,9 +5,7 @@ import './index.scss'
 import WowComponent from 'source/lib/component'
 
 new WowComponent({
-    methods: {
-        handleMore () {
-
-        },
-    },
+    mixins: [
+        WowComponent.wow$.mixins.Input,
+    ],
 });
