@@ -1,5 +1,6 @@
 {
     "pages": [
+        "pages/notice/index",
         "pages/home/index",
         "pages/collect/index",
         "pages/freeze/index",
@@ -13,7 +14,6 @@
         "pages/mine/signature/index",
         "pages/mine/webview/index",
         "pages/notice/details/index",
-        "pages/notice/index",
         "pages/photo/details/index",
         "pages/photo/index",
         "pages/search/index",

@@ -1,1 +1,20 @@
 @import '~src/assets/scss/define';
+@import '~src/assets/scss/iconfont';
+
+.wrap{
+    @extend %pa;
+    @extend %t0;
+    @extend %l0;
+    @extend %b0;
+    @extend %df;
+    @extend %fdc;
+    @extend %aic;
+    @extend %w100;
+    @extend %h100;
+    @extend %c9;
+    font-size: j(24);
+}
+.icon-wushuju{
+    margin: j(300) 0 j(20);
+    font-size: j(100);
+}

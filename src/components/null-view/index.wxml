@@ -1,4 +1,6 @@
 <!--index.wxml-->
-<view>
-    <text>测试组件{{text}}</text>
+
+<view class="wrap">
+    <view class="iconfont icon-wushuju"></view>
+    <text>暂无数据</text>
 </view>

@@ -4,6 +4,7 @@
     "enablePullDownRefresh": true,
     "navigationBarTitleText": "我的消息",
     "usingComponents": {
-        "notice-item": "/components/notice-item/index"
+        "notice-item": "/components/notice-item/index",
+        "null-view": "/components/null-view/index"
     }
 }
