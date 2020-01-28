@@ -1,6 +1,7 @@
 {
     "backgroundTextStyle": "dark",
     "backgroundColor": "#ec642f",
+    "enablePullDownRefresh": true,
     "navigationBarTitleText": "我的照片",
     "usingComponents": {
         "photo-list-item": "/components/photo-list-item/index"

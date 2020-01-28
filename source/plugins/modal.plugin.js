@@ -46,6 +46,9 @@ const confirm = (options) => new Promise((resolve, reject) => {
 
 // 显示操作菜单
 const actionSheet = (options) => new Promise((resolve, reject) => {
+    if (Object.prototype.toString.call(options) === '[object Array]') {
+        options = { itemList: options };
+    }
     wx.showActionSheet({
         ...options,
         success: res => {
