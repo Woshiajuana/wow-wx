@@ -3,7 +3,7 @@
     <navigation-custom
         class-navigation="navigation-section">
         <view class="header-section">
-            <view class="notice">
+            <view class="notice" bindtap="handleSelect" data-item="{{objNotice}}">
                 <view class="iconfont icon-htmal5icon05 notice-icon"></view>
                 <view class="notice-dot"></view>
             </view>
