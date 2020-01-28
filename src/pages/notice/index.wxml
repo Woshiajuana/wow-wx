@@ -1,5 +1,15 @@
 <!--index.wxml-->
 
+<null-view></null-view>
+
+<view class="cell" bindtap="jumpPageByUrl" data-url="notice_details_index">
+    <view class="title">
+        <text>你好呀普吉岛怕送打破斯柯达打牌撒快点跑打卡上</text>
+    </view>
+    <view class="time">
+        <text>2019-12-12 12:22:22</text>
+    </view>
+</view>
 <view class="cell">
     <view class="title">
         <text>你好呀普吉岛怕送打破斯柯达打牌撒快点跑打卡上</text>
@@ -8,5 +18,19 @@
         <text>2019-12-12 12:22:22</text>
     </view>
 </view>
-
-<null-view></null-view>
+<view class="cell">
+    <view class="title">
+        <text>你好呀普吉岛怕送打破斯柯达打牌撒快点跑打卡上</text>
+    </view>
+    <view class="time">
+        <text>2019-12-12 12:22:22</text>
+    </view>
+</view>
+<view class="cell">
+    <view class="title">
+        <text>你好呀普吉岛怕送打破斯柯达打牌撒快点跑打卡上</text>
+    </view>
+    <view class="time">
+        <text>2019-12-12 12:22:22</text>
+    </view>
+</view>

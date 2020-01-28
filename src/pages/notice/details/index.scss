@@ -6,3 +6,25 @@ page{
     @extend %h100;
     background-color: $bg-color;
 }
+.wrap{
+    padding: 0 j(32);
+}
+.title{
+    @extend %c3;
+    padding-top: j(32);
+    font-size: j(28);
+}
+.time{
+    @extend %c9;
+    @extend %bw05;
+    @extend %bwb;
+    padding-top: j(8);
+    padding-bottom: j(32);
+    font-size: j(20);
+}
+.content{
+    @extend %c6;
+    line-height: 2;
+    font-size: j(24);
+    padding: j(50) 0;
+}
