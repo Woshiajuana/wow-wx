@@ -1,2 +1,39 @@
 @import '~src/assets/scss/define';
 @import '~src/assets/scss/iconfont';
+
+.wrap{
+    padding: j(20) j(32);
+}
+.input-section{
+    @extend %df;
+    @extend %aic;
+    @extend %bw05;
+    @extend %bwb;
+    height: j(100);
+    input{
+        @extend %df1;
+        @extend %c3;
+        @extend %h100;
+    }
+    .iconfont{
+        @extend %c9;
+        margin-left: j(32);
+    }
+}
+.number-section{
+    @extend %df;
+    @extend %aic;
+    @extend %c9;
+    height: j(60);
+    justify-content: flex-end;
+    font-size: j(20);
+}
+.prompt-section{
+    @extend %df;
+    @extend %aic;
+    @extend %c9;
+    font-size: j(20);
+    .iconfont{
+        margin-right: j(8);
+    }
+}

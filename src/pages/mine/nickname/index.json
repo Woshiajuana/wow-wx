@@ -3,6 +3,7 @@
     "backgroundColor": "#ec642f",
     "navigationBarTitleText": "修改昵称",
     "usingComponents": {
+        "wow-button": "/components/wow-button/index",
         "mine-input-cell": "/components/mine-input-cell/index"
     }
 }

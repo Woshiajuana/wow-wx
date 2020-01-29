@@ -1,4 +1,14 @@
 <!--index.wxml-->
-<view>
-    <text>测试组件{{text}}</text>
+<view class="wrap">
+    <view class="input-section">
+        <input type="text" placeholder="请输入"/>
+        <view class="iconfont icon-saoyisao"></view>
+    </view>
+    <view class="number-section">
+        <text>5/10</text>
+    </view>
+    <view class="prompt-section">
+        <view class="iconfont icon-saoyisao"></view>
+        <text>好昵称还不赶紧下手等着过年么？</text>
+    </view>
 </view>

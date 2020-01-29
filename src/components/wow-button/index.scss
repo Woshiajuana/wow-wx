@@ -1,0 +1,16 @@
+@import '~src/assets/scss/define';
+@import '~src/assets/scss/iconfont';
+
+.wrap{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    @extend %cfff;
+    @extend %ma;
+    @extend %cp;
+    font-size: j(28);
+    margin: j(100) j(32);
+    height: j(84);
+    background-color: #ec642f;
+    border-radius: j(6);
+}
