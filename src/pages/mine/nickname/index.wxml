@@ -2,8 +2,9 @@
 
 <mine-input-cell
     value="{{nickname}}"
-    bindinput="handleInput"
+    data-item="nickname"
+    bindinput="inputHandle"
 ></mine-input-cell>
-
+<text>nickname: {{nickname}}</text>
 <wow-button
 ></wow-button>
