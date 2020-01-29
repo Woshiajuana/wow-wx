@@ -1,6 +1,9 @@
 <!--index.wxml-->
 
 <wow-cell
-    wx:for="{{arrEntry}}"
+    wx:for="{{objEntry}}"
     wx:key="index"
+    cellLabel="{{item.label}}"
+    cellValue="{{item.value}}"
+    useMargin="{{item.useMargin}}"
 ></wow-cell>
