@@ -6,3 +6,14 @@ page{
     @extend %h100;
     background-color: $bg-color;
 }
+
+.avatar{
+    border-radius: 50%;
+    width: j(90);
+    height: j(90);
+    background-color: #f2f2f2;
+    image{
+        @extend %w100;
+        @extend %h100;
+    }
+}

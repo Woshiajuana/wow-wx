@@ -1,9 +1,12 @@
 <!--index.wxml-->
-
 <wow-cell
     wx:for="{{objEntry}}"
-    wx:key="index"
+    wx:for-index="key"
+    wx:key="key"
     cellLabel="{{item.label}}"
     cellValue="{{item.value}}"
-    useMargin="{{item.useMargin}}"
-></wow-cell>
+    useMargin="{{item.useMargin}}">
+    <view wx:if="{{key === 'avatar'}}" class="avatar" slot="after">
+        <image></image>
+    </view>
+</wow-cell>

@@ -1,8 +1,9 @@
 <!--index.wxml-->
-<view class="cell {{useMargin && 'margin-border'}} {{useArrow && 'arrow'}}">
+<view class="cell {{useMargin && 'margin-border'}} class-cell">
     <slot name="before"></slot>
     <view wx:if="{{iconClass}}" class="icon iconfont {{iconClass}}"></view>
     <text class="label">{{cellLabel}}</text>
     <text class="value">{{cellValue}}</text>
     <slot name="after"></slot>
+    <view wx:if="{{useArrow}}" class="arrow"></view>
 </view>

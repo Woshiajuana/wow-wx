@@ -8,10 +8,11 @@ new WowComponent({
     options: {
         multipleSlots: true // 在组件定义时的选项中启用多slot支持
     },
+    externalClasses: ['class-cell'],
     properties: {
         cellLabel: {
             type: String,
-            value: ''
+            value: '',
         },
         cellValue: {
             type: String,
