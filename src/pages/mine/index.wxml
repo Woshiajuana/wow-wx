@@ -3,7 +3,7 @@
     <navigation-custom
         class-navigation="navigation-section">
         <view class="header-section">
-            <view class="notice" bindtap="jumpPageByItem" data-item="{{objNotice}}">
+            <view class="notice" bindtap="jumpPageOrFireFn" data-item="{{objNotice}}">
                 <view class="iconfont icon-htmal5icon05 notice-icon"></view>
                 <view class="notice-dot"></view>
             </view>
@@ -12,7 +12,9 @@
     <view class="user-section">
         <image class="user-bg" mode="aspectFill" src="https://img3.mukewang.com/szimg/5e1d990f0885d97306000338-360-202.jpg"></image>
         <view class="user-content">
-            <view class="user-avatar" bindtap="jumpPageByItem">
+            <view class="user-avatar"
+                  bindtap="jumpPageOrFireFn"
+                  data-url="mine_center_index">
                 <image class="avatar" mode="aspectFill" src="https://img3.mukewang.com/szimg/5e1d990f0885d97306000338-360-202.jpg"></image>
                 <text>点击登录</text>
             </view>
@@ -46,7 +48,7 @@
         cellValue="{{item.value}}"
         iconClass="{{item.icon}}"
         useMargin="{{item.useMargin}}"
-        bindtap="handleSelect"
+        bindtap="jumpPageOrFireFn"
         data-item="{{item}}"
     ></wow-cell>
 </view>

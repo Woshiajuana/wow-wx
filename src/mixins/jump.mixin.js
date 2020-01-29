@@ -4,7 +4,7 @@ export default {
         let { url, params, item, auth } = this.inputParams(event);
         let { url: itemUrl, fn } = item || {};
         if (typeof auth !== 'undefined' && !auth) {
-            return this.routerPush();
+            return this.routerPush('login_index');
         }
         if (url || itemUrl) {
             return this.routerPush(url || itemUrl, params || item || {});

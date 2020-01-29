@@ -11,6 +11,7 @@ new WowPage({
         WowPage.wow$.mixins.Refresh,
         WowPage.wow$.mixins.Input,
         WowPage.wow$.mixins.Router,
+        WowPage.wow$.mixins.Jump,
     ],
     data: {
         arrEntry: [
