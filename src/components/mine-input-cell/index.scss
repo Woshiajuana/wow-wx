@@ -1,5 +1,6 @@
 @import '~src/assets/scss/define';
 @import '~src/assets/scss/iconfont';
+@import '~src/assets/scss/skin';
 
 .wrap{
     padding: j(20) j(32);
@@ -34,6 +35,7 @@
     @extend %c9;
     font-size: j(20);
     .iconfont{
+        color: $main-color;
         margin-right: j(8);
     }
 }

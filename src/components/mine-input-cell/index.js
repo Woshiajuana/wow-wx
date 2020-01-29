@@ -5,7 +5,6 @@ import './index.scss'
 import WowComponent from 'source/lib/component'
 
 new WowComponent({
-
     mixins: [
         WowComponent.wow$.mixins.Text,
     ],

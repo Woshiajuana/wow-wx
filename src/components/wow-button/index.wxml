@@ -1,4 +1,4 @@
 <!--index.wxml-->
-<view class="wrap">
-    <text>按钮</text>
+<view class="wrap class-button">
+    <text>{{buttonText}}</text>
 </view>

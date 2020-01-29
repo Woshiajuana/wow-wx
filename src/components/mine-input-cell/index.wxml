@@ -2,13 +2,13 @@
 <view class="wrap">
     <view class="input-section">
         <input type="text" placeholder="请输入"/>
-        <view class="iconfont icon-saoyisao"></view>
+        <view class="iconfont icon-close"></view>
     </view>
     <view class="number-section">
         <text>5/10</text>
     </view>
     <view class="prompt-section">
-        <view class="iconfont icon-saoyisao"></view>
+        <view class="iconfont icon-gantanhao1"></view>
         <text>好昵称还不赶紧下手等着过年么？</text>
     </view>
 </view>

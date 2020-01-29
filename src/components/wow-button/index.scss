@@ -1,5 +1,6 @@
 @import '~src/assets/scss/define';
 @import '~src/assets/scss/iconfont';
+@import '~src/assets/scss/skin';
 
 .wrap{
     @extend %df;
@@ -11,6 +12,6 @@
     font-size: j(28);
     margin: j(100) j(32);
     height: j(84);
-    background-color: #ec642f;
+    background-color: $main-color;
     border-radius: j(6);
 }

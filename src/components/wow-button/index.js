@@ -5,13 +5,14 @@ import './index.scss'
 import WowComponent from 'source/lib/component'
 
 new WowComponent({
-
-    mixins: [
-        WowComponent.wow$.mixins.Text,
-    ],
-    lifetimes: {
-        attached () {
-            console.log('加载测试组件 => 成功');
-        },
+    options: {
+        multipleSlots: true // 在组件定义时的选项中启用多slot支持
     },
+    externalClasses: ['class-button'],
+    properties: {
+        buttonText: {
+            type: String,
+            value: '确认',
+        },
+    }
 });
