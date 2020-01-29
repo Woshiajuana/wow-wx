@@ -1,6 +1,8 @@
 <!--index.wxml-->
 
 <mine-input-cell
+    value="{{nickname}}"
+    bindinput="handleInput"
 ></mine-input-cell>
 
 <wow-button

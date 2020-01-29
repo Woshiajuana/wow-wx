@@ -1,14 +1,14 @@
 <!--index.wxml-->
 <view class="wrap">
     <view class="input-section">
-        <input type="text" placeholder="请输入"/>
-        <view class="iconfont icon-close"></view>
+        <input type="text" value="{{value}}" placeholder="{{placeholder}}" bindinput="handleInput"/>
+        <view class="iconfont icon-close" bindtap="handleClose"></view>
     </view>
     <view class="number-section">
-        <text>5/10</text>
+        <text>{{numLen}}/{{maxLength}}</text>
     </view>
     <view class="prompt-section">
         <view class="iconfont icon-gantanhao1"></view>
-        <text>好昵称还不赶紧下手等着过年么？</text>
+        <text>{{prompt}}？</text>
     </view>
 </view>
