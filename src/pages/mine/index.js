@@ -21,10 +21,4 @@ new WowPage({
         ],
         objNotice: { label: '消息', url: 'notice_index' },
     },
-    handleSelect (event) {
-        let { item } = this.inputParams(event);
-        let { url } = item;
-        console.log('点了外面', url);
-        this.routerPush(url);
-    },
 });

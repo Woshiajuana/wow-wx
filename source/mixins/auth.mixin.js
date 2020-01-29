@@ -3,7 +3,7 @@ const Auth = require('../plugins/auth.plugin');
 
 export default {
     data: {
-        user$: {},
+        user$: '',
     },
     userGet () {
         return Auth.getToken().then((user$) => {
