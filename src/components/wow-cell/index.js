@@ -5,12 +5,15 @@ import './index.scss'
 import WowComponent from 'source/lib/component'
 
 new WowComponent({
+    options: {
+        multipleSlots: true // 在组件定义时的选项中启用多slot支持
+    },
     properties: {
-        cellLabel: { // 最大距离
+        cellLabel: {
             type: String,
             value: ''
         },
-        cellValue: { // 最小距离
+        cellValue: {
             type: String,
             value: ''
         },
@@ -21,6 +24,14 @@ new WowComponent({
         useMargin: {
             type: Boolean,
             value: false,
+        },
+        cellHeight: {
+            type: Number,
+            value: 100,
+        },
+        useArrow: {
+            type: Boolean,
+            value: true,
         },
     },
 });

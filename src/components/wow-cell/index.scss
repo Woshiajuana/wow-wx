@@ -9,8 +9,8 @@
     @extend %pr;
     @extend %cp;
     font-size: j(28);
-    padding: 0 j(32);
-    height: j(100);
+    padding: j(26) j(32);
+    //height: j(100);
     background-color: #fff;
     &:before{
         @extend %pa;
@@ -24,18 +24,6 @@
         height: 200%;
         border-bottom: j(1) solid #ddd;
     }
-    &:after{
-        @extend %pa;
-        @extend %t50;
-        @include tfr(45deg);
-        right: j(32);
-        margin-top: j(-10);
-        border-top: j(2) #999 solid;
-        border-right: j(2) #999 solid;
-        width: j(20);
-        height: j(20);
-        content: '';
-    }
     &.margin-border{
         margin-top: j(20);
         &:before{
@@ -47,6 +35,20 @@
     }
     .value{
         margin-right: j(32);
+    }
+    &.arrow{
+        &:after{
+            @extend %pa;
+            @extend %t50;
+            @include tfr(45deg);
+            right: j(32);
+            margin-top: j(-10);
+            border-top: j(2) #999 solid;
+            border-right: j(2) #999 solid;
+            width: j(20);
+            height: j(20);
+            content: '';
+        }
     }
 }
 .icon{
