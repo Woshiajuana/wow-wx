@@ -15,11 +15,11 @@ new WowPage({
     data: {
         objEntry: {
             avatar: { label: '头像', value: '', useMargin: true, fn: 'handleAvatar' },
-            nickname: { label: '昵称', value: '我是阿倦啊', useMargin: true, url: '' },
-            email: { label: '邮箱', value: '979703986@qq.com', useMargin: false, url: '' },
-            sex: { label: '性别', value: '男', useMargin: true, url: '' },
-            signature: { label: '签名', value: '好好学习，天天向上！', useMargin: false, url: '' },
-            qr: { label: '名片', value: '', useMargin: false, url: '' },
+            nickname: { label: '昵称', value: '我是阿倦啊', useMargin: true, url: 'mine_nickname_index' },
+            email: { label: '邮箱', value: '979703986@qq.com', useMargin: false, url: 'mine_email_index' },
+            sex: { label: '性别', value: '男', useMargin: true, url: 'mine_sex_index' },
+            signature: { label: '签名', value: '好好学习，天天向上！', useMargin: false, url: 'mine_signature_index' },
+            qr: { label: '名片', value: '', useMargin: false, url: 'mine_qrcode_index' },
         },
     },
     handleAvatar () {

@@ -1,4 +1,4 @@
 <!--index.wxml-->
-<view class="wrap">
 
-</view>
+<mine-input-cell
+></mine-input-cell>
