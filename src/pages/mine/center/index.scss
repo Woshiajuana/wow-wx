@@ -8,6 +8,12 @@ page{
 }
 
 .avatar{
+    @extend %bw05;
+    @extend %bwt;
+    @extend %bwl;
+    @extend %bwr;
+    @extend %bwb;
+    @extend %bw05r;
     border-radius: 50%;
     width: j(90);
     height: j(90);

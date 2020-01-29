@@ -3,6 +3,8 @@
     wx:for="{{objEntry}}"
     wx:for-index="key"
     wx:key="key"
+    bindtap="jumpPageOrFireFn"
+    data-item="{{item}}"
     cellLabel="{{item.label}}"
     cellValue="{{item.value}}"
     useMargin="{{item.useMargin}}">
