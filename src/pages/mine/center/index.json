@@ -1,8 +1,8 @@
 {
     "backgroundTextStyle": "dark",
     "backgroundColor": "#ec642f",
+    "navigationBarTitleText": "个人中心",
     "usingComponents": {
-        "navigation-custom": "/components/navigation-custom/index",
-        "test-component": "/components/test-component/index"
+        "wow-cell": "/components/wow-cell/index"
     }
 }

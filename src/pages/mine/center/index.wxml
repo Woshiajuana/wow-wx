@@ -1,4 +1,6 @@
 <!--index.wxml-->
-<view class="wrap">
 
-</view>
+<wow-cell
+    wx:for="{{arrEntry}}"
+    wx:key="index"
+></wow-cell>
