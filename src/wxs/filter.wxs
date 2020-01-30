@@ -1,6 +1,6 @@
 
 module.exports = {
-    filterLength: function () {
-        return value ? 0 : value.length;
+    filterLength: function (value) {
+        return value ? value.length : 0;
     },
 };

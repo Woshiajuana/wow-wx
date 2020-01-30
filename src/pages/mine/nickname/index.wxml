@@ -4,7 +4,8 @@
     value="{{nickname}}"
     data-item="nickname"
     bindinput="inputHandle"
+    prompt=""
+    placeholder=""
 ></mine-input-cell>
-<text>nickname: {{nickname}}</text>
 <wow-button
 ></wow-button>

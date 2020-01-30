@@ -11,11 +11,6 @@ new WowPage({
         WowPage.wow$.mixins.Input,
     ],
     data: {
-        nickname: '12',
-    },
-    handleInput (event) {
-        let data = this.inputParams(event);
-        console.log('触发了 =>', data);
-        console.log('触发了 =>', event);
+        nickname: '',
     },
 });
