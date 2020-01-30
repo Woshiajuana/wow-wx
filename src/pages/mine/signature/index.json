@@ -1,8 +1,9 @@
 {
     "backgroundTextStyle": "dark",
     "backgroundColor": "#ec642f",
+    "navigationBarTitleText": "修改签名",
     "usingComponents": {
-        "navigation-custom": "/components/navigation-custom/index",
-        "test-component": "/components/test-component/index"
+        "wow-button": "/components/wow-button/index",
+        "mine-input-cell": "/components/mine-input-cell/index"
     }
 }

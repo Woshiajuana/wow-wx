@@ -28,7 +28,7 @@ new WowComponent({
             type: String,
             value: '',
         },
-        maxLength: {
+        maxlength: {
             type: Number,
             value: 20,
         }

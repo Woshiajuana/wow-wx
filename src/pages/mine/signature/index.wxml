@@ -1,4 +1,11 @@
 <!--index.wxml-->
-<view class="wrap">
 
-</view>
+<mine-input-cell
+    value="{{nickname}}"
+    data-item="nickname"
+    bindinput="inputHandle"
+    prompt=""
+    placeholder=""
+></mine-input-cell>
+<wow-button
+></wow-button>
