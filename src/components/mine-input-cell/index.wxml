@@ -6,7 +6,7 @@
         <view class="iconfont icon-close" bindtap="handleClose"></view>
     </view>
     <view class="number-section">
-        <text>{{numLen}}/{{maxLength}}</text>
+        <text>{{filter.filterLength(value)}}/{{maxLength}}</text>
     </view>
     <view class="prompt-section">
         <view class="iconfont icon-gantanhao1"></view>
