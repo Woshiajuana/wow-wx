@@ -3,14 +3,12 @@
     <view class="input-section">
         <input type="text" value="{{value}}" placeholder="{{placeholder}}" bindinput="handleInput"/>
         <view class="iconfont icon-close" bindtap="handleClose"></view>
-        <view><text>111121313</text></view>
     </view>
     <view class="number-section">
         <text>{{numLen}}/{{maxLength}}</text>
     </view>
-    <view class="iconfont icon-close" bindtap="handleClose"></view>
     <view class="prompt-section">
         <view class="iconfont icon-gantanhao1"></view>
-        <text>{{prompt}}？</text>
+        <text>{{prompt}}</text>
     </view>
 </view>

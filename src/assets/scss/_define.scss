@@ -358,6 +358,7 @@
         @extend %bsb;
         @include tft(scale(0.5, 0.5));
         @include tfo(0, 0);
+        z-index: -1;
         content: '';
         width: 200%;
         height: 200%;

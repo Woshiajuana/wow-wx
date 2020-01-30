@@ -39,8 +39,7 @@ new WowComponent({
             this.triggerEvent('input', { value });
         },
         handleClose () {
-            console.log('11')
-            this.triggerEvent('input', { value: 0 });
+            this.triggerEvent('input', { value: '' });
         },
     },
 });
