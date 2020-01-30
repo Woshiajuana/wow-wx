@@ -1,3 +1,4 @@
+<wxs src="../../wxs/filter.wxs" module="filter" />
 <!--index.wxml-->
 <view class="wrap">
     <view class="input-section">

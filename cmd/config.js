@@ -31,7 +31,7 @@ const directoryConfig = {
         'utils',
     ],
     // 遍历文件的后缀名
-    includeExtName: ['.js'],
+    includeExtName: [ '.js', '.wxs'],
     // 输出根目录(完全可以改)
     rootOutputPath: '/dist/',
 };
