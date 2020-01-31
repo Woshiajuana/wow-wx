@@ -17,7 +17,8 @@
     <picker
         wx:if="{{key === 'sex'}}"
         range="{{item.options}}"
-        range-key="label"
+        data-item="{{item}}"
+        range-key="{{item.labelKey}}"
         bindchange="handleChange">
         <wow-cell
             bindtap="jumpPageOrFireFn"
