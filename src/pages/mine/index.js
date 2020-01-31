@@ -22,9 +22,9 @@ new WowPage({
         ],
         objNotice: { label: '消息', url: 'notice_index' },
         objInfo: {
-            following: { value: 999, label: '关注', url: '' },
-            followers: { value: 999, label: '粉丝' },
-            photo: { value: 999, label: '照片' },
+            following: { value: 999, label: '关注', url: 'friend_index' },
+            followers: { value: 999, label: '粉丝', url: 'friend_index' },
+            photo: { value: 999, label: '照片', url: 'photo_index' },
         },
     },
 });

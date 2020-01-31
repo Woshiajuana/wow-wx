@@ -28,6 +28,7 @@
                 <view class="base-info"
                       wx:for="{{objInfo}}"
                       wx:key="index"
+                      data-item="{{item}}"
                       bindtap="jumpPageOrFireFn">
                     <text class="base-info-value">{{item.value}}</text>
                     <text class="base-info-label">{{item.label}}</text>

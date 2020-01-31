@@ -1,13 +1,13 @@
 {
     "pages": [
+        "pages/mine/center/index",
+        "pages/mine/index",
         "pages/home/index",
         "pages/collect/index",
         "pages/freeze/index",
         "pages/friend/index",
         "pages/history/index",
         "pages/mine/about/index",
-        "pages/mine/center/index",
-        "pages/mine/index",
         "pages/mine/nickname/index",
         "pages/mine/qrcode/index",
         "pages/mine/signature/index",
