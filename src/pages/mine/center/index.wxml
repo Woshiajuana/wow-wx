@@ -13,6 +13,7 @@
         <view wx:if="{{key === 'avatar'}}" class="avatar" slot="after">
             <image></image>
         </view>
+        <view wx:if="{{key === 'qr'}}" class="iconfont icon-erweima" slot="after"></view>
     </wow-cell>
     <picker
         wx:if="{{key === 'sex'}}"

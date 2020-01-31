@@ -1,7 +1,7 @@
 {
     "pages": [
-        "pages/mine/nickname/index",
         "pages/mine/center/index",
+        "pages/mine/nickname/index",
         "pages/mine/index",
         "pages/home/index",
         "pages/collect/index",
