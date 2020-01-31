@@ -1,14 +1,30 @@
 <!--index.wxml-->
-<wow-cell
+<block
     wx:for="{{objEntry}}"
     wx:for-index="key"
-    wx:key="key"
-    bindtap="jumpPageOrFireFn"
-    data-item="{{item}}"
-    cellLabel="{{item.label}}"
-    cellValue="{{item.value}}"
-    useMargin="{{item.useMargin}}">
-    <view wx:if="{{key === 'avatar'}}" class="avatar" slot="after">
-        <image></image>
-    </view>
-</wow-cell>
+    wx:key="key">
+    <wow-cell
+        wx:if="{{key !== 'sex'}}"
+        bindtap="jumpPageOrFireFn"
+        data-item="{{item}}"
+        cellLabel="{{item.label}}"
+        cellValue="{{item.value}}"
+        useMargin="{{item.useMargin}}">
+        <view wx:if="{{key === 'avatar'}}" class="avatar" slot="after">
+            <image></image>
+        </view>
+    </wow-cell>
+    <picker
+        wx:if="{{key === 'sex'}}"
+        range="{{item.options}}"
+        range-key="label"
+        bindchange="handleChange">
+        <wow-cell
+            bindtap="jumpPageOrFireFn"
+            data-item="{{item}}"
+            cellLabel="{{item.label}}"
+            cellValue="{{item.value}}"
+            useMargin="{{item.useMargin}}">
+        </wow-cell>
+    </picker>
+</block>

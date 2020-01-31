@@ -23,3 +23,17 @@ page{
         @extend %h100;
     }
 }
+
+.select-box{
+    @extend %pa;
+    @extend %t0;
+    @extend %l0;
+    @extend %r0;
+    @extend %b0;
+}
+
+.select-box1{
+    @extend %w100;
+    height: j(100);
+    background-color: red;
+}
