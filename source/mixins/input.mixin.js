@@ -3,7 +3,6 @@ module.exports = {
     inputHandle (event) {
         let { item, value, options } = this.inputParams(event);
         if (options && options.length) {
-            let label = item.label || 'label';
             let value = item.value || 'value';
             value = options[value][value];
         }

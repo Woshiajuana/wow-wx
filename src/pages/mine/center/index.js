@@ -34,13 +34,14 @@ new WowPage({
             },
             sex: {
                 label: '性别',
-                value: '男',
+                value: '0',
                 key: 'objEntry.sex',
                 useMargin: true,
                 url: 'mine_sex_index',
                 valueKey: 'value',
                 labelKey: 'label',
                 options: [
+                    { label: '保密', value: 0 },
                     { label: '男', value: 1 },
                     { label: '女', value: 2 },
                 ],
@@ -66,8 +67,5 @@ new WowPage({
         ]).then((res) => {
             console.log(res);
         }).null();
-    },
-    handleChange (event) {
-        console.log(event);
     },
 });

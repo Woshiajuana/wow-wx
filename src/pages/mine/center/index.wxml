@@ -19,12 +19,12 @@
         range="{{item.options}}"
         data-item="{{item}}"
         range-key="{{item.labelKey}}"
-        bindchange="handleChange">
+        bindchange="inputHandle">
         <wow-cell
             bindtap="jumpPageOrFireFn"
             data-item="{{item}}"
             cellLabel="{{item.label}}"
-            cellValue="{{item.value}}"
+            cellValue="{{item.options[item.value][item.labelKey]}}"
             useMargin="{{item.useMargin}}">
         </wow-cell>
     </picker>
