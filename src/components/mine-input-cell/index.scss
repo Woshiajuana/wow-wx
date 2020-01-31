@@ -17,6 +17,7 @@
         @extend %h100;
     }
     .iconfont{
+        @extend %pr;
         @extend %c9;
         @extend %cp;
         margin-left: j(32);
