@@ -25,17 +25,12 @@
                 <text>这个家伙什么都没留下...</text>
             </view>
             <view class="user-base">
-                <view class="base-info">
-                    <text class="base-info-value">999</text>
-                    <text class="base-info-label">关注</text>
-                </view>
-                <view class="base-info">
-                    <text class="base-info-value">999</text>
-                    <text class="base-info-label">粉丝</text>
-                </view>
-                <view class="base-info">
-                    <text class="base-info-value">999</text>
-                    <text class="base-info-label">照片</text>
+                <view class="base-info"
+                      wx:for="{{objInfo}}"
+                      wx:key="index"
+                      bindtap="jumpPageOrFireFn">
+                    <text class="base-info-value">{{item.value}}</text>
+                    <text class="base-info-label">{{item.label}}</text>
                 </view>
             </view>
         </view>

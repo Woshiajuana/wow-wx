@@ -21,5 +21,10 @@ new WowPage({
             { label: '设置', icon: 'icon-shezhi', useMargin: true, url: 'setting_index' },
         ],
         objNotice: { label: '消息', url: 'notice_index' },
+        objInfo: {
+            following: { value: 999, label: '关注' },
+            followers: { value: 999, label: '粉丝' },
+            photo: { value: 999, label: '照片' },
+        },
     },
 });
