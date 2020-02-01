@@ -1,23 +1,23 @@
 {
     "pages": [
-        "pages/setting/index",
         "pages/home/index",
+        "pages/about/index",
         "pages/collect/index",
         "pages/freeze/index",
         "pages/friend/index",
         "pages/history/index",
-        "pages/mine/about/index",
         "pages/mine/center/index",
         "pages/mine/index",
         "pages/mine/nickname/index",
         "pages/mine/qrcode/index",
         "pages/mine/signature/index",
-        "pages/mine/webview/index",
         "pages/notice/details/index",
         "pages/notice/index",
         "pages/photo/details/index",
         "pages/photo/index",
-        "pages/search/index"
+        "pages/search/index",
+        "pages/setting/index",
+        "pages/webview/index"
     ],
     "permission": {
         "scope.userLocation": {
