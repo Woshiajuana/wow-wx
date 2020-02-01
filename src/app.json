@@ -1,9 +1,10 @@
 {
     "pages": [
+        "pages/setting/index",
+        "pages/mine/index",
         "pages/mine/qrcode/index",
         "pages/mine/center/index",
         "pages/mine/nickname/index",
-        "pages/mine/index",
         "pages/home/index",
         "pages/collect/index",
         "pages/freeze/index",
@@ -16,8 +17,7 @@
         "pages/notice/index",
         "pages/photo/details/index",
         "pages/photo/index",
-        "pages/search/index",
-        "pages/setting/index"
+        "pages/search/index"
     ],
     "permission": {
         "scope.userLocation": {

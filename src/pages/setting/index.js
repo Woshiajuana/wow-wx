@@ -12,11 +12,27 @@ new WowPage({
     ],
     data: {
         arrEntry: [
-            { label: '照片', class: 'icon-zhaopian_huabanfuben', useMargin: true, url: '' },
-            { label: '收藏', class: 'icon-shoucang-tianchong', useMargin: true, url: '' },
-            { label: '历史', class: 'icon-3lishi', useMargin: false, url: '' },
-            { label: '设置', class: 'icon-shezhi', useMargin: true, url: '' },
-        ]
+            {
+                label: '修改密码',
+                useMargin: true,
+                url: ''
+            },
+            {
+                label: '关于我们',
+                useMargin: true,
+                url: ''
+            },
+            {
+                label: '帮助',
+                useMargin: false,
+                url: ''
+            },
+            {
+                label: '反馈',
+                useMargin: false,
+                url: ''
+            },
+        ],
     },
     onLoad(options) {
         console.log('首页加载 => ', options);
