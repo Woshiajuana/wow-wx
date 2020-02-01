@@ -19,12 +19,12 @@ new WowPage({
             },
             {
                 label: '关于我们',
-                useMargin: true,
+                useMargin: false,
                 url: ''
             },
             {
                 label: '帮助',
-                useMargin: false,
+                useMargin: true,
                 url: ''
             },
             {
@@ -34,19 +34,4 @@ new WowPage({
             },
         ],
     },
-    onLoad(options) {
-        console.log('首页加载 => ', options);
-        console.log('首页执行wow$ =>', this.wow$);
-    },
-    handleTap () {
-        let { Modal } = this.wow$.plugins;
-        // this.modalToast('11111');
-        // Modal.toast(1);
-        // console.log(new Promise(()=> {}).toast);
-
-        this.testPromise().toast();
-    },
-    testPromise () {
-        return Promise.reject('xxx');
-    }
 });
