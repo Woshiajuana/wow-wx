@@ -13,13 +13,8 @@ new WowPage({
     data: {
         arrEntry: [
             {
-                label: '修改密码',
-                useMargin: true,
-                url: ''
-            },
-            {
                 label: '关于我们',
-                useMargin: false,
+                useMargin: true,
                 url: ''
             },
             {
