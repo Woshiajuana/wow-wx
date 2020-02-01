@@ -1,4 +1,16 @@
 <!--index.wxml-->
-<view class="wrap">
 
+<view class="wrap">
+    <view class="user">
+        <view class="avatar">
+            <image></image>
+        </view>
+        <view class="info">
+            <text class="name">我是阿倦啊</text>
+            <text class="signature">好好学习，天天向上！！！</text>
+        </view>
+    </view>
+    <view class="inner">
+        <image></image>
+    </view>
 </view>

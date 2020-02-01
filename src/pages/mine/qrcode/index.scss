@@ -6,3 +6,45 @@ page{
     @extend %h100;
     background-color: $bg-color;
 }
+.wrap{
+    @extend %df;
+    @extend %fdc;
+    @extend %aic;
+    width: j(600);
+    margin: j(120) auto;
+    background-color: #fff;
+}
+.user{
+    @extend %df;
+    @extend %aic;
+}
+.avatar{
+    @extend %bw05;
+    width: j(100);
+    height: j(100);
+    background-color: red;
+    image{
+        @extend %w100;
+        @extend %h100;
+    }
+}
+.info{
+    @extend %df1;
+}
+.name{
+    @extend %c3;
+    font-size: j(28);
+}
+.signature{
+    @extend %c9;
+    font-size: j(24);
+}
+.inner{
+    width: j(200);
+    height: j(200);
+    background-color: #ec642f;
+    image{
+        @extend %w100;
+        @extend %h100;
+    }
+}
