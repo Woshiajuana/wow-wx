@@ -9,7 +9,8 @@ new WowPage({
     mixins: [
         WowPage.wow$.mixins.Modal,
         WowPage.wow$.mixins.Input,
-        // WowPage.wow$.mixins.Refresh,
+        WowPage.wow$.mixins.Router,
+        WowPage.wow$.mixins.Jump,
     ],
     data: {
         arrTab: [

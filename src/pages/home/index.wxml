@@ -4,7 +4,7 @@
         class-navigation="navigation-section">
     </navigation-custom>
     <view class="header-section">
-        <view class="search">
+        <view class="search" bindtap="jumpPageOrFireFn" data-url="search_index">
             <view class="iconfont icon-xinbaniconshangchuan- search-icon"></view>
             <text>什么？找不到你想要的？试试我吧...</text>
         </view>
