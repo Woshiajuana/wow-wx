@@ -6,6 +6,11 @@ import './index.wxml'
 import WowPage from 'source/lib/page'
 
 new WowPage({
+    mixins: [
+        WowPage.wow$.mixins.Router,
+        WowPage.wow$.mixins.Input,
+        WowPage.wow$.mixins.Jump,
+    ],
     data: {
         arrEntry: [
             {
