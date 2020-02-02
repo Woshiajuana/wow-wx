@@ -6,26 +6,22 @@ import './index.wxml'
 import WowPage from 'source/lib/page'
 
 new WowPage({
-    mixins: [
-        WowPage.wow$.mixins.Modal,
-        WowPage.wow$.mixins.Refresh,
-    ],
     data: {
         arrEntry: [
             {
                 label: '关于我们',
                 useMargin: true,
-                url: ''
+                url: 'about_index'
             },
             {
                 label: '帮助',
                 useMargin: true,
-                url: ''
+                url: 'webview_index'
             },
             {
                 label: '反馈',
                 useMargin: false,
-                url: ''
+                url: 'webview_index'
             },
         ],
     },
