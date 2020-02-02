@@ -6,3 +6,10 @@ page{
     @extend %h100;
     background-color: $bg-color;
 }
+
+.wrap{
+    @extend %c6;
+    line-height: 1.5;
+    padding: j(32);
+    font-size: j(24);
+}
