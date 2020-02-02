@@ -3,6 +3,13 @@ import './app.json'
 import './app.scss'
 import WowApp from 'source/lib/app'
 
+import 'src/assets/images/film-active-icon.png'
+import 'src/assets/images/film-icon.png'
+import 'src/assets/images/mine-active-icon.png'
+import 'src/assets/images/mine-icon.png'
+import 'src/assets/images/word-active-icon.png'
+import 'src/assets/images/word-icon.png'
+
 const wowApp = new WowApp();
 
 const formatKey = (key, cut) => {
