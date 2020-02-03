@@ -1,8 +1,10 @@
 {
     "backgroundTextStyle": "dark",
     "backgroundColor": "#ec642f",
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "我的收藏",
     "usingComponents": {
-        "navigation-custom": "/components/navigation-custom/index",
-        "test-component": "/components/test-component/index"
+        "photo-list-item": "/components/photo-list-item/index",
+        "null-view": "/components/null-view/index"
     }
 }

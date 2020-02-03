@@ -1,4 +1,9 @@
 <!--index.wxml-->
 <view class="wrap">
-
+    <null-view></null-view>
+    <photo-list-item
+        data-xx="xx"
+        bindmore="handleMore"
+    ></photo-list-item>
+    <photo-list-item></photo-list-item>
 </view>
