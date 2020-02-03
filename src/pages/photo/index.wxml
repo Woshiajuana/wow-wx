@@ -3,6 +3,8 @@
     <photo-list-item
         data-xx="xx"
         bindmore="handleMore"
+        bindclick="jumpPageOrFireFn"
+        data-url="photo_details_index"
     ></photo-list-item>
     <photo-list-item></photo-list-item>
     <photo-list-item></photo-list-item>

@@ -8,7 +8,9 @@ import WowPage from 'source/lib/page'
 new WowPage({
     mixins: [
         WowPage.wow$.mixins.Modal,
-        WowPage.wow$.mixins.Refresh,
+        WowPage.wow$.mixins.Router,
+        WowPage.wow$.mixins.Input,
+        WowPage.wow$.mixins.Jump,
     ],
     handleMore (event) {
         this.modalActionSheet([
