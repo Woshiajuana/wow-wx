@@ -4,6 +4,7 @@
     "enablePullDownRefresh": true,
     "navigationBarTitleText": "我的照片",
     "usingComponents": {
-        "photo-list-item": "/components/photo-list-item/index"
+        "photo-list-item": "/components/photo-list-item/index",
+        "null-view": "/components/null-view/index"
     }
 }
