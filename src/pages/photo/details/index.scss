@@ -51,6 +51,21 @@ page{
     @extend %c9;
     font-size: j(24);
 }
+.user-button{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    @extend %cp;
+    @extend %cfff;
+    font-size: j(24);
+    width: j(140);
+    height: j(50);
+    border-radius: j(8);
+    background-color: $main-color;
+    .iconfont{
+        margin-right: j(8);
+    }
+}
 .info-section{
     padding: j(20) j(32);
     background-color: #fff;
@@ -93,11 +108,14 @@ page{
     @extend %c6;
     @extend %cp;
     width: j(100);
-    //height: j(100);
     font-size: j(20);
-    margin-right: j(20);
-    background-color: red;
+    margin-right: j(12);
+    padding: j(12) 0;
     .iconfont{
-        font-size: j(64);
+        font-size: j(36);
+        margin-bottom: j(12);
     }
+}
+.recommend-section{
+    margin-top: j(20);
 }
