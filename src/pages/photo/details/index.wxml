@@ -1,11 +1,11 @@
 <!--index.wxml-->
 
 <view class="banner-section">
-    <image class="image" mode="aspectFill" src="https://img3.mukewang.com/szimg/5e1d990f0885d97306000338-360-202.jpg"></image>
+    <image class="banner-image" mode="aspectFill" src="https://img3.mukewang.com/szimg/5e1d990f0885d97306000338-360-202.jpg"></image>
 </view>
 
 <view class="user-section">
-    <view class="avatar">
+    <view class="user-avatar">
         <image mode="aspectFill" src="https://img3.mukewang.com/szimg/5e1d990f0885d97306000338-360-202.jpg"></image>
     </view>
     <view class="user-info">
@@ -16,14 +16,17 @@
 
 <view class="info-section">
     <view class="info-title">
-        <text>马拍马屁到拉萨到了啊塑料袋是；阿拉丁阿斯兰对啊是</text>
+        <text>马拍马屁到拉萨到了啊塑料袋是；阿拉丁阿阿拉丁阿斯兰对啊是阿拉丁阿斯兰对啊是斯兰对啊是</text>
+    </view>
+    <view class="info-prompt">
+        <text>阿拉丁阿阿拉丁阿斯兰对啊是阿拉丁阿斯兰对啊是斯兰对啊是阿拉丁阿阿拉丁阿斯兰对啊是阿拉丁阿斯兰对啊是斯兰对啊是阿拉丁阿阿拉丁阿斯兰对啊是阿拉丁阿斯兰对啊是斯兰对啊是阿拉丁阿阿拉丁阿斯兰对啊是阿拉丁阿斯兰对啊是斯兰对啊是阿拉丁阿阿拉丁阿斯兰对啊是阿拉丁阿斯兰对啊是斯兰对啊是阿拉丁阿阿拉丁阿斯兰对啊是阿拉丁阿斯兰对啊是斯兰对啊是</text>
     </view>
     <view class="info-base">
-        <view class="base">
+        <view class="info-base-item">
             <view class="iconfont icon-xinbaniconshangchuan-"></view>
             <text>99</text>
         </view>
-        <view class="base">
+        <view class="info-base-item">
             <view class="iconfont icon-xinbaniconshangchuan-"></view>
             <text>2019-12-12 12:12:12</text>
         </view>

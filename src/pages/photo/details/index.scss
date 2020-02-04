@@ -6,3 +6,76 @@ page{
     @extend %h100;
     background-color: $bg-color;
 }
+.banner-section{
+    @extend %w100;
+    height: j(600);
+}
+.banner-image{
+    @extend %w100;
+    @extend %h100;
+}
+.user-section{
+    @extend %df;
+    @extend %aic;
+    background-color: #fff;
+    padding: j(20) j(32);
+}
+.user-avatar{
+    @extend %bw05;
+    @extend %bwt;
+    @extend %bwl;
+    @extend %bwr;
+    @extend %bwb;
+    @extend %bw05r;
+    @extend %oh;
+    width: j(80);
+    height: j(80);
+    background-color: #f2f2f2;
+    border-radius: 50%;
+    margin-right: j(16);
+    image{
+        @extend %w100;
+        @extend %h100;
+    }
+}
+.user-info{
+    @extend %df;
+    @extend %df1;
+    @extend %fdc;
+}
+.user-name{
+    @extend %c3;
+    font-size: j(28);
+}
+.user-prompt{
+    @extend %c9;
+    font-size: j(24);
+}
+.info-section{
+    padding: j(20) j(32);
+    background-color: #fff;
+}
+.info-title{
+    @extend %c3;
+    font-size: j(28);
+}
+.info-prompt{
+    @extend %c9;
+    margin-top: j(20);
+    font-size: j(20);
+}
+.info-base{
+    @extend %df;
+    @extend %aic;
+    @extend %jcs;
+    margin-top: j(20);
+}
+.info-base-item{
+    @extend %df;
+    @extend %aic;
+    @extend %c9;
+    font-size: j(24);
+    .iconfont{
+        margin-right: j(8);
+    }
+}
