@@ -79,3 +79,25 @@ page{
         margin-right: j(8);
     }
 }
+.operate-section{
+    @extend %df;
+    @extend %aic;
+    background-color: #fff;
+    padding: j(20) j(32);
+}
+.operate-item{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    @extend %fdc;
+    @extend %c6;
+    @extend %cp;
+    width: j(100);
+    //height: j(100);
+    font-size: j(20);
+    margin-right: j(20);
+    background-color: red;
+    .iconfont{
+        font-size: j(64);
+    }
+}
