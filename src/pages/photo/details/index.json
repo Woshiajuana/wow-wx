@@ -1,8 +1,4 @@
 {
     "backgroundTextStyle": "dark",
-    "backgroundColor": "#ec642f",
-    "usingComponents": {
-        "navigation-custom": "/components/navigation-custom/index",
-        "test-component": "/components/test-component/index"
-    }
+    "backgroundColor": "#ec642f"
 }
