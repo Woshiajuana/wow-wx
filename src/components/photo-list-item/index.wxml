@@ -14,7 +14,7 @@
                 <view class="iconfont icon-yanjing"></view>
                 <text>6</text>
             </view>
-            <view bindtap="inputEvent" data-event="more" class="iconfont icon-more"></view>
+            <view catchtap="inputEvent" data-event="more" class="iconfont icon-more"></view>
         </view>
     </view>
 </view>
