@@ -3,6 +3,6 @@
     "backgroundColor": "#ec642f",
     "navigationBarTitleText": "添加照片",
     "usingComponents": {
-        "photo-list-item": "/components/photo-list-item/index"
+        "wow-button": "/components/wow-button/index"
     }
 }
