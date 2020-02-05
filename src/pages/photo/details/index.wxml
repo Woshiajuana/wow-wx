@@ -31,7 +31,7 @@
             <text>99</text>
         </view>
         <view class="info-base-item">
-            <view class="iconfont icon-xinbaniconshangchuan-"></view>
+            <view class="iconfont icon-shijian"></view>
             <text>2019-12-12 12:12:12</text>
         </view>
     </view>
