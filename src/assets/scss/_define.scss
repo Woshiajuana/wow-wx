@@ -389,6 +389,12 @@
     }
 }
 
+@mixin bw05r($px){
+    &:before{
+        border-radius: $px;
+    }
+}
+
 %bw05r{
     &:before{
         border-radius: 50%;

@@ -15,6 +15,6 @@
     </view>
     <view class="input-cell">
         <text class="input-label">添加到世界</text>
-        <switch></switch>
+        <switch class="switch"></switch>
     </view>
 </view>
