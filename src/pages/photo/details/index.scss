@@ -117,8 +117,18 @@ page{
     margin-right: j(12);
     padding: j(12) 0;
     .iconfont{
-        font-size: j(36);
+        @extend %df;
+        @extend %aic;
+        @extend %jcc;
+        height: j(50);
+        font-size: j(42);
         margin-bottom: j(12);
+    }
+    .icon-dislike-b{
+        font-size: j(36);
+    }
+    .icon-shoucang-tianchong{
+        font-size: j(36);
     }
 }
 .recommend-section{
