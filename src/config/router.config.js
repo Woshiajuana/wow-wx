@@ -14,6 +14,7 @@ export default {
     "notice_index": "/pages/notice/index",
     "photo_details_index": "/pages/photo/details/index",
     "photo_index": "/pages/photo/index",
+    "photo_info_index": "/pages/photo/info/index",
     "search_index": "/pages/search/index",
     "setting_index": "/pages/setting/index",
     "webview_index": "/pages/webview/index"

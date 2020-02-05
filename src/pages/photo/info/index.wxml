@@ -1,0 +1,67 @@
+<!--index.wxml-->
+
+<view class="banner-section">
+    <image class="banner-image" mode="aspectFill" src="https://img3.mukewang.com/szimg/5e1d990f0885d97306000338-360-202.jpg"></image>
+</view>
+
+<view class="user-section">
+    <view class="user-avatar">
+        <image mode="aspectFill" src="https://img3.mukewang.com/szimg/5e1d990f0885d97306000338-360-202.jpg"></image>
+    </view>
+    <view class="user-info">
+        <text class="user-name">我是阿倦啊</text>
+        <text class="user-prompt">粉丝：99</text>
+    </view>
+    <view class="user-button disabled">
+        <view class="iconfont icon-tianjia"></view>
+        <text>关注</text>
+    </view>
+</view>
+
+<view class="info-section">
+    <view class="info-title">
+        <text>马拍马屁到拉萨到了啊塑料袋是；阿拉丁阿阿拉丁阿斯兰对啊是阿拉丁阿斯兰对啊是斯兰对啊是</text>
+    </view>
+    <view class="info-prompt">
+        <text>阿拉丁阿阿拉丁阿斯兰对啊是阿拉丁阿斯兰对啊是斯兰对啊是阿拉丁阿阿拉丁阿斯兰对啊是阿拉丁阿斯兰对啊是斯兰对啊是阿拉丁阿阿拉丁阿斯兰对啊是阿拉丁阿斯兰对啊是斯兰对啊是阿拉丁阿阿拉丁阿斯兰对啊是阿拉丁阿斯兰对啊是斯兰对啊是阿拉丁阿阿拉丁阿斯兰对啊是阿拉丁阿斯兰对啊是斯兰对啊是阿拉丁阿阿拉丁阿斯兰对啊是阿拉丁阿斯兰对啊是斯兰对啊是</text>
+    </view>
+    <view class="info-base">
+        <view class="info-base-item">
+            <view class="iconfont icon-yanjing"></view>
+            <text>99</text>
+        </view>
+        <view class="info-base-item">
+            <view class="iconfont icon-shijian"></view>
+            <text>2019-12-12 12:12:12</text>
+        </view>
+    </view>
+</view>
+
+<view class="operate-section">
+    <view class="operate-item">
+        <view class="iconfont icon-dianzan"></view>
+        <text>99</text>
+    </view>
+    <view class="operate-item">
+        <view class="iconfont icon-dislike-b"></view>
+        <text>99</text>
+    </view>
+    <view class="operate-item">
+        <view class="iconfont icon-shoucang-tianchong"></view>
+        <text>99</text>
+    </view>
+</view>
+
+<view class="recommend-section">
+    <photo-list-item></photo-list-item>
+    <photo-list-item></photo-list-item>
+    <photo-list-item></photo-list-item>
+    <photo-list-item></photo-list-item>
+    <photo-list-item></photo-list-item>
+    <photo-list-item></photo-list-item>
+    <photo-list-item></photo-list-item>
+    <photo-list-item></photo-list-item>
+    <photo-list-item></photo-list-item>
+    <photo-list-item></photo-list-item>
+</view>
+
