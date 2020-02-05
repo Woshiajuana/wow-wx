@@ -12,8 +12,8 @@
         <text class="user-name">我是阿倦啊</text>
         <text class="user-prompt">粉丝：99</text>
     </view>
-    <view class="user-button">
-        <view class="iconfont icon-xinbaniconshangchuan-"></view>
+    <view class="user-button disabled">
+        <view class="iconfont icon-tianjia"></view>
         <text>关注</text>
     </view>
 </view>
@@ -27,7 +27,7 @@
     </view>
     <view class="info-base">
         <view class="info-base-item">
-            <view class="iconfont icon-xinbaniconshangchuan-"></view>
+            <view class="iconfont icon-yanjing"></view>
             <text>99</text>
         </view>
         <view class="info-base-item">

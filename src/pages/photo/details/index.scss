@@ -63,7 +63,12 @@ page{
     border-radius: j(8);
     background-color: $main-color;
     .iconfont{
+        font-size: j(24);
         margin-right: j(8);
+    }
+    &.disabled{
+        cursor: default;
+        background-color: #ddd;
     }
 }
 .info-section{
