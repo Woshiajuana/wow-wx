@@ -20,6 +20,7 @@ page{
 }
 .tab-item{
     @extend %df1;
+    @extend %pr;
     @extend %df;
     @extend %aic;
     @extend %jcc;
@@ -44,8 +45,10 @@ page{
     @extend %l0;
     @extend %w100;
     @extend %h100;
+
 }
 .cell{
+    @extend %cp;
     @extend %df;
     @extend %aic;
     @extend %bw05;
