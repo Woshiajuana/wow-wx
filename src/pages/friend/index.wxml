@@ -1,11 +1,18 @@
 <!--index.wxml-->
 <view class="tab-section">
-    <view class="tab-item active"><text>我的关注</text></view>
-    <view class="tab-item"><text>我的粉丝</text></view>
+    <view class="tab-item {{item.active && 'active'}}"
+          bindtap="handleTabSwitch"
+          data-index="{{index}}"
+          wx:for="{{arrData}}"
+          wx:key="index">
+        <text>{{ item.label }}</text>
+    </view>
 </view>
 
 <view class="main-section">
-    <wow-scroll class="main-content">
+    <wow-scroll
+        class="main-content"
+        wx:for="{{arrData}}">
         <view class="cell">
             <view class="user-avatar">
                 <image class="avatar"></image>
