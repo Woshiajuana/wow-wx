@@ -45,7 +45,10 @@ page{
     @extend %l0;
     @extend %w100;
     @extend %h100;
-
+    @extend %dn;
+    &.active{
+        @extend %db;
+    }
 }
 .cell{
     @extend %cp;
