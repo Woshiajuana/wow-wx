@@ -3,6 +3,84 @@
 
 page{
     @extend %w100;
+    @extend %df;
+    @extend %fdc;
     @extend %h100;
     background-color: $bg-color;
+}
+
+.tab-section{
+    @extend %df;
+    @extend %aic;
+    @extend %bw05;
+    @extend %bwb;
+    @extend %bwt;
+    margin: j(20) 0;
+    background-color: #fff;
+}
+.tab-item{
+    @extend %df1;
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    @extend %cp;
+    @extend %bsb;
+    color: #ddd;
+    font-size: j(28);
+    height: j(80);
+    border-bottom: j(2) transparent solid;
+    &.active{
+        color: $main-color;
+        border-bottom: j(2) $main-color solid;
+    }
+}
+.main-section{
+    @extend %pr;
+    @extend %df1;
+}
+.main-content{
+    @extend %pa;
+    @extend %t0;
+    @extend %l0;
+    @extend %w100;
+    @extend %h100;
+}
+.cell{
+    @extend %df;
+    @extend %aic;
+    @extend %bw05;
+    @extend %bwb;
+    padding: j(20) j(32);
+    background-color: #fff;
+}
+.user-avatar{
+    @extend %bw05;
+    @extend %bwt;
+    @extend %bwl;
+    @extend %bwr;
+    @extend %bwb;
+    @extend %bw05r;
+    @extend %oh;
+    margin-right: j(16);
+    height: j(80);
+    width: j(80);
+    border-radius: 50%;
+    background-color: #f2f2f2;
+    image{
+        @extend %w100;
+        @extend %h100;
+    }
+}
+.user-info{
+    @extend %df1;
+    @extend %df;
+    @extend %fdc;
+}
+.user-name{
+    @extend %c3;
+    font-size: j(28);
+}
+.user-signature{
+    @extend %c9;
+    font-size: j(24);
 }

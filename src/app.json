@@ -1,10 +1,10 @@
 {
     "pages": [
+        "pages/friend/index",
         "pages/freeze/index",
         "pages/home/index",
         "pages/about/index",
         "pages/collect/index",
-        "pages/friend/index",
         "pages/history/index",
         "pages/mine/center/index",
         "pages/mine/index",
