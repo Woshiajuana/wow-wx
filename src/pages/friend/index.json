@@ -1,5 +1,8 @@
 {
     "navigationBarTitleText": "我的朋友",
     "backgroundTextStyle": "dark",
-    "backgroundColor": "#ec642f"
+    "backgroundColor": "#ec642f",
+    "usingComponents": {
+        "wow-scroll": "/components/wow-scroll/index"
+    }
 }

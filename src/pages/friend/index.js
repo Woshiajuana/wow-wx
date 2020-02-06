@@ -8,7 +8,6 @@ import WowPage from 'source/lib/page'
 new WowPage({
     mixins: [
         WowPage.wow$.mixins.Modal,
-        WowPage.wow$.mixins.Refresh,
     ],
     data: {
         arrEntry: [

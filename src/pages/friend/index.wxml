@@ -5,7 +5,7 @@
 </view>
 
 <view class="main-section">
-    <view class="main-content">
+    <wow-scroll class="main-content">
         <view class="cell">
             <view class="user-avatar">
                 <image class="avatar"></image>
@@ -87,5 +87,5 @@
                 <text class="user-signature">好好学习，天天向上</text>
             </view>
         </view>
-    </view>
+    </wow-scroll>
 </view>
