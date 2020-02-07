@@ -1,7 +1,2 @@
 <!--index.wxml-->
-<view class="wrap">
-    <text>首页</text>
-    <text-section></text-section>
-    <image src="/assets/images/icon-1.png"></image>
-    <button bindtap="handleTap">测试{{prompt}}</button>
-</view>
+<wow-calendar></wow-calendar>
