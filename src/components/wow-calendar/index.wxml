@@ -1,4 +1,14 @@
 <!--index.wxml-->
-<view>
 
+<view class="head">
+    <view class="head-title"></view>
+</view>
+<view class="tr">
+    <view class="td"><text>日</text></view>
+    <view class="td"><text>一</text></view>
+    <view class="td"><text>二</text></view>
+    <view class="td"><text>三</text></view>
+    <view class="td"><text>四</text></view>
+    <view class="td"><text>五</text></view>
+    <view class="td"><text>六</text></view>
 </view>
