@@ -1,7 +1,9 @@
 <!--index.wxml-->
 
 <view class="head">
+    <view class="iconfont icon-shoucang-tianchong"></view>
     <view class="head-title"></view>
+    <view class="iconfont icon-shoucang-tianchong"></view>
 </view>
 <view class="tr">
     <view class="td"><text>日</text></view>
