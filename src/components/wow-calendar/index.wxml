@@ -12,3 +12,12 @@
     <view class="td"><text>五</text></view>
     <view class="td"><text>六</text></view>
 </view>
+<view class="tr">
+    <view class="td">1</view>
+    <view class="td">2</view>
+    <view class="td">3</view>
+    <view class="td">4</view>
+    <view class="td">5</view>
+    <view class="td">6</view>
+    <view class="td">7</view>
+</view>
