@@ -1,2 +1,7 @@
 <!--index.wxml-->
+
 <wow-calendar></wow-calendar>
+
+<view class="photo">
+    <image mode="aspectFill" src="https://img3.mukewang.com/szimg/5e1d990f0885d97306000338-360-202.jpg"></image>
+</view>

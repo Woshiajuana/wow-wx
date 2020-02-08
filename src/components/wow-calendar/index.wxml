@@ -1,4 +1,4 @@
 <!--index.wxml-->
 <view>
-    <text>测试组件{{text}}</text>
+
 </view>
