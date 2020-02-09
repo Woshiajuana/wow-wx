@@ -5,10 +5,18 @@
     @extend %df;
     @extend %aic;
     @extend %jcc;
+    @extend %c3;
+    height: j(80);
+    font-size: j(28);
+    .iconfont{
+        padding: 0 j(20);
+    }
 }
 .tr{
     @extend %df;
     @extend %aic;
+    @extend %bw05;
+    @extend %bwb;
 }
 .td{
     @extend %df;
