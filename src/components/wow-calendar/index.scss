@@ -6,5 +6,16 @@
     @extend %aic;
     @extend %jcc;
 }
-
-
+.tr{
+    @extend %df;
+    @extend %aic;
+}
+.td{
+    @extend %df;
+    @extend %df1;
+    @extend %aic;
+    @extend %jcc;
+    @extend %c6;
+    font-size: j(24);
+    height: j(60);
+}
