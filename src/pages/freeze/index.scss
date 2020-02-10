@@ -2,14 +2,32 @@
 @import '~src/assets/scss/define';
 
 .photo{
+    @extend %oh;
     @extend %pr;
     margin: j(20) j(32);
     background-color: #f2f2f2;
     height: j(360);
+    border-radius: j(12);
     image{
         @extend %pa;
         @extend %w100;
         @extend %h100;
+    }
+}
+.photo-content{
+    @extend %w100;
+    @extend %h100;
+    @extend %df;
+    @extend %aic;
+    @extend %pr;
+    @extend %jcc;
+    background-color: rgba(0,0,0,.3);
+    .iconfont{
+        @extend %cfff;
+        padding: j(20);
+        border-radius: 50%;
+        background-color: rgba(0,0,0,.8);
+        font-size: j(48);
     }
 }
 .tip{
