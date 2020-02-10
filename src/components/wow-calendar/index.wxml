@@ -1,9 +1,9 @@
 <!--index.wxml-->
 
 <view class="head">
-    <view class="iconfont icon-shoucang-tianchong"></view>
-    <text>2020-12-12</text>
-    <view class="iconfont icon-shoucang-tianchong"></view>
+    <view class="arrow left"></view>
+    <text class="title">2020-12-12</text>
+    <view class="arrow right"></view>
 </view>
 <view class="tr">
     <view class="td"><text>日</text></view>
