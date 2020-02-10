@@ -15,8 +15,9 @@
 .tr{
     @extend %df;
     @extend %aic;
-    @extend %bw05;
-    @extend %bwb;
+    padding: 0 j(32);
+    //@extend %bw05;
+    //@extend %bwb;
 }
 .td{
     @extend %df;
@@ -24,6 +25,7 @@
     @extend %aic;
     @extend %jcc;
     @extend %c6;
+    @extend %cp;
     font-size: j(24);
-    height: j(70);
+    height: j(80);
 }
