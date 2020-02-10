@@ -2,7 +2,10 @@
 
 <wow-calendar></wow-calendar>
 
-<view class="prompt"><text></text></view>
+<view class="prompt">
+    <view class="iconfont icon-shijian"></view>
+    <text>2019/02/10</text>
+</view>
 
 <view class="photo">
     <image mode="aspectFill" src="https://img3.mukewang.com/szimg/5e1d990f0885d97306000338-360-202.jpg"></image>

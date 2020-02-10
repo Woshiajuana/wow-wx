@@ -1,6 +1,17 @@
 
 @import '~src/assets/scss/define';
 
+.prompt{
+    @extend %df;
+    @extend %aic;
+    @extend %c3;
+    margin-top: j(50);
+    font-size: j(24);
+    padding-left: j(32);
+    .iconfont{
+        margin-right: j(10);
+    }
+}
 .photo{
     @extend %oh;
     @extend %pr;
