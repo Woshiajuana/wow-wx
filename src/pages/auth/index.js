@@ -29,15 +29,13 @@ new WowPage({
                 iv,
                 code,
                 encryptedData,
-                user: {
-                    AvatarUrl: avatarUrl,
-                    City: city,
-                    Country: country,
-                    Gender: gender,
-                    Language: language,
-                    NickName: nickName,
-                    Province: province,
-                },
+                avatarUrl,
+                city,
+                country,
+                gender,
+                language,
+                nickName,
+                province,
             }, {
                 useAuth: false,
             });

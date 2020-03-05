@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="wrap">
 
-    <image class="logo" mode="widthFix" src="/assets/images/logo-icon.png"></image>
+    <image class="logo" mode="widthFix" src="/assets/images/ic_launcher.png"></image>
 
     <view class="title">
         <text>XXXXXXXX</text>

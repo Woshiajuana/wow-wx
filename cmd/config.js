@@ -56,7 +56,7 @@ const applicationConfig = {
                     prompt: '本地环境、资源配置',
                     config: {
                         STATIC_URL: `http://${ip}:${port}/static/`,
-                        API_URL: 'http://www.baidu.com',
+                        API_URL: `http://${ip}:9004/api/`,
                     },
                 },
             },
