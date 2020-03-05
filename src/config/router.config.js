@@ -1,5 +1,6 @@
 export default {
     "about_index": "/pages/about/index",
+    "auth_index": "/pages/auth/index",
     "collect_index": "/pages/collect/index",
     "freeze_index": "/pages/freeze/index",
     "friend_index": "/pages/friend/index",
