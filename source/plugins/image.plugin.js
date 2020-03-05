@@ -14,4 +14,21 @@ module.exports = {
             },
         })
     }),
-}
+    save: (options) => new Promise((resolve, reject) => {
+        let filePath = '';
+        if (typeof options === 'string') {
+            filePath = options;
+            options = {};
+        }
+        wx.saveImageToPhotosAlbum({
+            filePath,
+            ...options,
+            success: res => {
+                resolve(res);
+            },
+            fail: err => {
+                reject('');
+            },
+        })
+    }),
+};

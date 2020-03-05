@@ -3,18 +3,16 @@ const Auth = require('../plugins/auth.plugin');
 
 export default {
     data: {
-        user$: '',
+        auth$: {
+            userInfo: 'scope.userInfo',
+            userLocation: 'scope.userLocation',
+            address: 'scope.address',
+            invoiceTitle: 'scope.invoiceTitle',
+            werun: 'scope.werun',
+            record: 'scope.record',
+            writePhotosAlbum: 'scope.writePhotosAlbum',
+            camera: 'scope.camera',
+        },
     },
-    userGet () {
-        return Auth.getToken().then((user$) => {
-            this.setData({ user$ });
-            return Promise.resolve(user$);
-        }).catch((err) => {
-            return Promise.reject(err);
-        })
-    },
-    userUpdate: Auth.updateToken.bind(Auth),
-    userLogout: Auth.logout,
-    userLogin: Auth.login,
-    userGetInfo: Auth.getUserInfo,
+    authScope: Auth.authorizeScope,
 }

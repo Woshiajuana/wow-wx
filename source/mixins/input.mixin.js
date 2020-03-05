@@ -1,13 +1,25 @@
 
 module.exports = {
     inputHandle (event) {
-        let { item, value, options } = this.inputParams(event);
-        if (options && options.length) {
-            let value = item.value || 'value';
-            value = options[value][value];
+        let { item = '', value } = this.inputParams(event);
+        let callValue = value;
+        if (typeof item !== 'object')  {
+            this.setData({ [item]: value })
+        } else {
+            let { options, rangeKey, key, contactKey, contactRangeKey } = item;
+            if (options && options.length) {
+                value = typeof value !== 'object' ? options[value] : value;
+                callValue = value;
+                if (typeof value === 'object' && contactKey && contactRangeKey) {
+                    this.setData({ [`${contactKey}.value`]: value[contactRangeKey]})
+                }
+                if (typeof value === 'object' && rangeKey) {
+                    value = value[rangeKey];
+                }
+            }
+            this.setData({ [`${key}.value`]: value});
         }
-        typeof item === 'object' ? this.setData({ [`${item.key}.value`]: value}) : this.setData({ [item]: value });
-        this.inputCallback && this.inputCallback(item, value);
+        this.inputCallback && this.inputCallback(item, callValue);
     },
     inputParams (event) {
         let { detail, currentTarget } = event;

@@ -6,4 +6,9 @@ module.exports = {
         system$: wx.getSystemInfoSync(),
     },
     systemGetInfo: System.getInfo,
+    systemGetRpx (w = 750) {
+        let { system$ } = this.data;
+        system$.rpx = system$.windowWidth / w;
+        this.setData({ system$ });
+    }
 };

@@ -50,7 +50,7 @@ module.exports = {
                     children2,
                 } = item;
                 let sV = sourceData[key];
-                if (typeof value !== 'undefined' && (sV || sV !== null)) {
+                if (typeof value !== 'undefined' && (sV || (sV !== null && typeof sV !== 'undefined'))) {
                     item.value = sV;
                 }
                 if (typeof value !== 'undefined' && checkbox) {
