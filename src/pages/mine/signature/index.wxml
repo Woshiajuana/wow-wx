@@ -1,11 +1,13 @@
 <!--index.wxml-->
 
 <mine-input-cell
-    value="{{nickname}}"
-    data-item="nickname"
+    value="{{signature}}"
+    data-item="signature"
     bindinput="inputHandle"
     prompt="什么？20个字不够形容自己个的帅气？就不能精简下？"
     placeholder="一句话介绍自己个，符号表情党泥奏凯..."
 ></mine-input-cell>
+
 <wow-button
+    bindtap="handleSubmit"
 ></wow-button>

@@ -7,5 +7,5 @@ export default {
     REQ_USER_INFO: 'v1/wx/user/info',
 
     // 修改信息
-    DO_USER_UPDATE: '',
+    DO_USER_UPDATE: 'v1/wx/user/update',
 }

@@ -19,6 +19,7 @@ page{
     image{
         @extend %w100;
         @extend %h100;
+        border-radius: 50%;
     }
 }
 .select-box{

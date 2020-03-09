@@ -7,5 +7,7 @@
     prompt="好昵称不赶紧下手，等着别人抢吗？"
     placeholder="汉字/数字/字母，符号表情泥奏凯"
 ></mine-input-cell>
+
 <wow-button
+    bindtap="handleSubmit"
 ></wow-button>

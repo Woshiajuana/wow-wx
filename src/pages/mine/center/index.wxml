@@ -8,10 +8,10 @@
         bindtap="jumpPageOrFireFn"
         data-item="{{item}}"
         cellLabel="{{item.label}}"
-        cellValue="{{item.value}}"
+        cellValue="{{key === 'avatar' ? '' : item.value}}"
         useMargin="{{item.useMargin}}">
         <view wx:if="{{key === 'avatar'}}" class="avatar" slot="after">
-            <image></image>
+            <image mode="aspectFill" src="{{item.value}}"></image>
         </view>
         <view wx:if="{{key === 'qr'}}" class="iconfont icon-erweima" slot="after"></view>
     </wow-cell>
