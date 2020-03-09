@@ -5,7 +5,7 @@
         <view class="header-section">
             <view class="notice" bindtap="jumpPageOrFireFn" data-item="{{objNotice}}">
                 <view class="iconfont icon-htmal5icon05 notice-icon"></view>
-                <view class="notice-dot"></view>
+                <view wx:if="{{user$.numPrivateNotice}}" class="notice-dot"></view>
             </view>
         </view>
     </navigation-custom>
@@ -57,6 +57,7 @@
         iconClass="{{item.icon}}"
         useMargin="{{item.useMargin}}"
         bindtap="jumpPageOrFireFn"
+        data-auth="{{user$}}"
         data-item="{{item}}"
     ></wow-cell>
 </view>

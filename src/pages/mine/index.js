@@ -12,6 +12,7 @@ new WowPage({
         WowPage.wow$.mixins.Input,
         WowPage.wow$.mixins.Router,
         WowPage.wow$.mixins.Jump,
+        WowPage.wow$.mixins.Validate,
         WowPage.wow$.mixins.User,
     ],
     data: {
@@ -23,20 +24,27 @@ new WowPage({
         ],
         objNotice: { label: '消息', url: 'notice_index' },
         objInfo: {
-            following: { value: 0, label: '关注', url: 'friend_index' },
-            followers: { value: 999, label: '粉丝', url: 'friend_index' },
-            photo: { value: 999, label: '照片', url: 'photo_index' },
+            numFollowing: { value: 0, label: '关注', url: 'friend_index', key: 'objInfo.numFollowing' },
+            numFollower: { value: 0, label: '粉丝', url: 'friend_index', key: 'objInfo.numFollowing' },
+            numPhoto: { value: 0, label: '照片', url: 'photo_index', key: 'objInfo.numFollowing' },
         },
     },
     onShow () {
-        this.userGet().null();
-        this.reqUserInfo();
+        this.userGet().then(() => {
+            this.reqUserInfo();
+        }).null();
     },
     reqUserInfo () {
         let { Http } = this.wow$.plugins;
         Http(Http.API.REQ_USER_INFO, {}, {
             loading: false,
+        }).then((res) => {
+            return this.userUpdate(res);
         }).then(() => {
+            return this.userGet();
+        }).then(() => {
+            let { objInfo, user$ } = this.data;
+            this.validateAssignment(this, user$, objInfo, 'objInfo');
         }).toast();
     }
 });
