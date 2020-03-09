@@ -53,6 +53,8 @@ class Http {
                 }
                 wx[key]({
                     ...data,
+                    dataType: 'json',
+                    // responseType: 'json',
                     url: this.url,
                     success: (response) => {
                         let {

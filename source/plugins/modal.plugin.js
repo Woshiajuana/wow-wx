@@ -3,7 +3,7 @@
 const formatOptions = (options) => {
     let text;
     if (typeof options === 'object') {
-        text = options.title || options.errMsg || options.Message || options.message || JSON.stringify(options);
+        text = options.msg || options.title || options.errMsg || options.Message || options.message || JSON.stringify(options);
     } else {
         text = options + '';
         options = {};
