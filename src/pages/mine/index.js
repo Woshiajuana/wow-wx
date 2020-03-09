@@ -12,6 +12,7 @@ new WowPage({
         WowPage.wow$.mixins.Input,
         WowPage.wow$.mixins.Router,
         WowPage.wow$.mixins.Jump,
+        WowPage.wow$.mixins.User,
     ],
     data: {
         arrEntry: [
@@ -22,9 +23,20 @@ new WowPage({
         ],
         objNotice: { label: '消息', url: 'notice_index' },
         objInfo: {
-            following: { value: 999, label: '关注', url: 'friend_index' },
+            following: { value: 0, label: '关注', url: 'friend_index' },
             followers: { value: 999, label: '粉丝', url: 'friend_index' },
             photo: { value: 999, label: '照片', url: 'photo_index' },
         },
     },
+    onShow () {
+        this.userGet().null();
+        this.reqUserInfo();
+    },
+    reqUserInfo () {
+        let { Http } = this.wow$.plugins;
+        Http(Http.API.REQ_USER_INFO, {}, {
+            loading: false,
+        }).then(() => {
+        }).toast();
+    }
 });

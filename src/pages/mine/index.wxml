@@ -10,24 +10,36 @@
         </view>
     </navigation-custom>
     <view class="user-section">
-        <image class="user-bg" mode="aspectFill" src="https://img3.mukewang.com/szimg/5e1d990f0885d97306000338-360-202.jpg"></image>
+        <image class="user-bg" mode="aspectFill" src="{{user$.avatarUrl}}"></image>
         <view class="user-content">
             <view class="user-avatar"
                   bindtap="jumpPageOrFireFn"
-                  data-url="mine_center_index">
-                <image class="avatar" mode="aspectFill" src="https://img3.mukewang.com/szimg/5e1d990f0885d97306000338-360-202.jpg"></image>
-                <text>点击登录</text>
+                  data-url="mine_center_index"
+                  data-auth="{{user$}}">
+                <image wx:if="{{user$}}" class="avatar" mode="aspectFill" src="{{user$.avatarUrl}}"></image>
+                <text wx:else>点击登录</text>
             </view>
-            <view class="user-name">
-                <text>我是阿倦啊</text>
-            </view>
-            <view class="user-signature">
-                <text>这个家伙什么都没留下...</text>
-            </view>
+            <block wx:if="{{user$}}">
+                <view class="user-name">
+                    <text>{{user$.nickname || user$.nickName}}</text>
+                </view>
+                <view class="user-signature">
+                    <text>{{user$.xx || '这个家伙什么都没留下..'}}</text>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="user-name">
+                    <text>您好，请先登录</text>
+                </view>
+                <view class="user-signature">
+                    <text>登录之后有新天地哦...</text>
+                </view>
+            </block>
             <view class="user-base">
                 <view class="base-info"
                       wx:for="{{objInfo}}"
                       wx:key="index"
+                      data-auth="{{user$}}"
                       data-item="{{item}}"
                       bindtap="jumpPageOrFireFn">
                     <text class="base-info-value">{{item.value}}</text>

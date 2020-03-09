@@ -4,7 +4,7 @@ export default {
     DO_USER_AUTH: 'v1/wx/user/login',
 
     // 查询用户信息
-    REQ_USER_INFO: '',
+    REQ_USER_INFO: 'v1/wx/user/info',
 
     // 修改信息
     DO_USER_UPDATE: '',
