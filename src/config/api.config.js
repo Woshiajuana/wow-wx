@@ -8,4 +8,7 @@ export default {
 
     // 修改信息
     DO_USER_UPDATE: 'v1/wx/user/update',
+
+    // 上传图片
+    DO_IMAGE_UPLOAD: 'v1/wx/file/upload'
 }

@@ -46,7 +46,8 @@ class Http {
                             UserId: this.data.UserId,
                         },
                         header: {
-                            "Content-Type": "multipart/form-data"
+                            "Content-Type": "multipart/form-data",
+                            'access-token': objUser.accessToken || '',
                         },
                     };
                 }
@@ -68,8 +69,8 @@ class Http {
                             msg,
                             data,
                         } = respData;
-                        if (['F00001', '', '', ''].indexOf(code) > -1) {
-                            return Router.root('home_index');
+                        if (['F40000', 'F40001', 'F40002', 'F40003'].indexOf(code) > -1) {
+                            return Auth.logout().finally(() => Router.root('home_index'));
                         }
                         if (code !== 'S00000') {
                             return reject(msg);

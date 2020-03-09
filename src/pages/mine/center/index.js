@@ -13,6 +13,7 @@ new WowPage({
         WowPage.wow$.mixins.Jump,
         WowPage.wow$.mixins.User,
         WowPage.wow$.mixins.Validate,
+        WowPage.wow$.mixins.Image,
     ],
     data: {
         objEntry: {
@@ -75,8 +76,19 @@ new WowPage({
             '相册',
             '拍照',
         ]).then((res) => {
-            console.log(res);
-        }).null();
+            let sourceType = [['album'], ['camera']];
+            return this.imageChoose({ sourceType: sourceType[res.tapIndex] });
+        }).then((res) => {
+            if (!res) return null;
+            let { Http } = this.wow$.plugins;
+            return Http(Http.API.DO_IMAGE_UPLOAD, {
+                filePath: res.tempFilePaths[0],
+                name: 'fileToUpload',
+                type: 'AVATAR',
+            }, { useUpLoad: true });
+        }).then((res) => {
+
+        }).toast();
     },
     inputCallback (item, value) {
         if (item.key === 'objEntry.sex') {
