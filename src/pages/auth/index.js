@@ -24,7 +24,6 @@ new WowPage({
         }).then((res) => {
             let { avatarUrl, city, country, gender, language, nickName, province } = userInfo;
             let { encryptedData, iv } = res;
-            // return console.log('code', code);
             return Http(Http.API.DO_USER_AUTH, {
                 iv,
                 code,
@@ -40,9 +39,9 @@ new WowPage({
                 useAuth: false,
             });
         }).then((res) => {
-            // return this.userUpdate({ ...userInfo, ...res });
+            return this.userUpdate({ ...userInfo, ...res });
         }).then(() => {
-            // this.routerRoot('home_index');
+            this.routerRoot('home_index');
         }).catch((err) => {
             if (typeof err === 'object' && err.status === 302) {
                 return this.handleGetUser(event);

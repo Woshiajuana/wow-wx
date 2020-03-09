@@ -4,11 +4,11 @@
     <image class="logo" mode="widthFix" src="/assets/images/ic_launcher.png"></image>
 
     <view class="title">
-        <text>XXXXXXXX</text>
+        <text>七秒</text>
     </view>
 
     <view class="sub-title">
-        <text>XXXX 有限公司</text>
+        <text>定格生活每一刻</text>
     </view>
 
     <view class="bar"></view>
@@ -22,16 +22,9 @@
         <text>将获取您的公开信息（昵称、头像等）</text>
     </view>
 
-    <view class="operate">
-        <button
-            class="operate-button cancel"
-            bindtap="handleRefuse"
-        >拒绝</button>
-        <button
-            class="operate-button sure"
-            open-type="getUserInfo"
-            bindgetuserinfo="handleGetUser"
-        >登录</button>
+    <view class="button-group">
+        <button class="button" open-type="getUserInfo" bindgetuserinfo="handleGetUser">登录</button>
+        <button class="button" bindtap="handleRefuse">拒绝</button>
     </view>
 
 </view>

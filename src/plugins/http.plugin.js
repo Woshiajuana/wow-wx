@@ -25,26 +25,18 @@ class Http {
 
     _fetch () {
         return new Promise((resolve, reject) => {
+            let objUser = '';
             Auth.getToken().then((res) => {
-                let {
-                    AccessToken,
-                    UserId,
-                } = res;
-                if (UserId && !this.data.UserId) {
-                    if (this.data instanceof Array) {
-                        this.data.forEach((item) => item.UserId = UserId);
-                    } else {
-                        this.data.UserId = UserId;
-                    }
-                }
-                // if (AccessToken) this.data = Object.assign({ accessToken: AccessToken }, this.data);
-                this.useAuth && AccessToken && (this.url = `${this.url}?access_token=${AccessToken}`);
+                objUser = res;
             }).catch(() => {}).finally(() => {
                 this._log('请求参数', this.data);
                 let key = 'request';
                 let data = {
                     data: this.data,
                     method: this.method,
+                    header: {
+                        'access-token': objUser.accessToken || ''
+                    },
                 };
                 if (this.useUpLoad) {
                     key = 'uploadFile';

@@ -1,4 +1,4 @@
-@import '~src/assets/scss/define';
+@import '~src/assets/scss/common';
 
 page{
     @extend %h100;
@@ -13,22 +13,22 @@ page{
     @extend %h100;
 }
 .logo{
-    margin-top: j(180);
+    margin-top: j(60);
     width: j(280);
     height: auto;
 }
 .title{
     @extend %c3;
     font-size: j(42);
-    margin: j(60) auto j(30);
+    margin: j(50) auto j(20);
 }
 .sub-title{
     @extend %c9;
     font-size: j(28);
 }
 .bar{
-    margin: j(80);
-    width: j(700);
+    margin: j(60) 0;
+    width: j(680);
     height: j(2);
     background-color: #ddd;
 }
@@ -37,7 +37,7 @@ page{
     @extend %aic;
     @extend %df;
     margin-top: j(30);
-    width: j(700);
+    width: j(680);
     font-size: j(28);
 }
 .dot{
@@ -47,27 +47,30 @@ page{
     background-color: #ddd;
     border-radius: 50%;
 }
-.operate{
+.button-group{
     @extend %df;
-    @extend %aic;
     @extend %jcc;
+    @extend %fdc;
     margin-top: j(80);
 }
-.operate-button{
+.button{
     @extend %df;
     @extend %aic;
     @extend %cp;
     @extend %jcc;
     @extend %cp;
-    @extend %cfff;
+    @extend %c9;
     font-size: j(36);
-    border: none;
     border-radius: j(50);
-    width: j(300);
-    height: j(100);
-    margin: 0 j(50);
-    background-color: #999;
-    &.sure{
-        background-color: #459350;
+    height: j(90);
+    width: j(600);
+    margin: 0 j(50) j(20);
+    background-color: transparent;
+    &:first-child{
+        @extend %cfff;
+        background-color: $main-color;
+    }
+    &:after{
+        border: none;
     }
 }
