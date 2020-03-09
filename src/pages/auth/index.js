@@ -40,9 +40,9 @@ new WowPage({
                 useAuth: false,
             });
         }).then((res) => {
-            return this.userUpdate({ ...userInfo, ...res });
+            // return this.userUpdate({ ...userInfo, ...res });
         }).then(() => {
-            this.routerRoot('home_index');
+            // this.routerRoot('home_index');
         }).catch((err) => {
             if (typeof err === 'object' && err.status === 302) {
                 return this.handleGetUser(event);

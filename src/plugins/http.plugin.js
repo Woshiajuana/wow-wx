@@ -63,40 +63,26 @@ class Http {
                     url: this.url,
                     success: (response) => {
                         let {
-                            data,
                             errMsg,
-                            statusCode
+                            statusCode,
+                            data: respData,
                         } = response;
-                        if (statusCode !== 200 || !data) {
+                        if (statusCode !== 200 || !respData) {
                             return reject(`网络繁忙，请稍候再试(${statusCode})`);
                         }
-                        if (this.useUpLoad && typeof data === 'string') {
-                            data = JSON.parse(data);
-                        }
-                        this._log('请求返回', data);
+                        this._log('请求返回', respData);
                         let {
-                            Status,
-                            Message,
-                            Data,
-                            Id,
-                            Extend,
-                        } = data;
-                        if (Status === 201) {
-                            Auth.logout().finally(() => {
-                                let pages = getCurrentPages();    //获取加载的页面
-                                let first_url = pages[0].route;    //当前页面url
-                                let cur_url = pages[pages.length-1].route;    //当前页面url
-                                cur_url === 'home_index' ? reject(Message) : Router.root('home_index', { useRoot: true }, true);
-                            });
-                            return;
+                            code,
+                            msg,
+                            data,
+                        } = respData;
+                        if (['F00001', '', '', ''].indexOf(code) > -1) {
+                            return Router.root('home_index');
                         }
-                        if ([301, 302].indexOf(Status) > -1) {
-                            return reject(data);
+                        if (code !== 'S00000') {
+                            return reject(msg);
                         }
-                        if (Status !== 0) {
-                            return reject(Message);
-                        }
-                        resolve(Data);
+                        resolve(data);
                     },
                     fail: (error) => {
                         this._log('请求失败', error);
