@@ -9,23 +9,12 @@ new WowPage({
     mixins: [
         WowPage.wow$.mixins.Modal,
         WowPage.wow$.mixins.Text,
+        WowPage.wow$.mixins.Calendar,
     ],
     data: {
         // prompt: '嘿嘿嘿',
     },
     onLoad(options) {
-        console.log('首页加载 => ', options);
-        console.log('首页执行wow$ =>', this.wow$);
+        this.calendarRender();
     },
-    handleTap () {
-        let { Modal } = this.wow$.plugins;
-        // this.modalToast('11111');
-        // Modal.toast(1);
-        // console.log(new Promise(()=> {}).toast);
-
-        this.testPromise().toast();
-    },
-    testPromise () {
-        return Promise.reject('xxx');
-    }
 });

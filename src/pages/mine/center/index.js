@@ -87,7 +87,9 @@ new WowPage({
                 type: 'AVATAR',
             }, { useUpLoad: true });
         }).then((res) => {
-
+            return this.doUserUpdate({ avatar: res.url });
+        }).then((res) => {
+            this.setData({ 'objEntry.avatar.value': res.avatar });
         }).toast();
     },
     inputCallback (item, value) {
@@ -99,6 +101,7 @@ new WowPage({
         let { Http } = this.wow$.plugins;
         return Http(Http.API.DO_USER_UPDATE, data).then(() => {
             this.modalToast('修改成功');
+            return Promise.resolve(data)
         }).toast();
     },
 });

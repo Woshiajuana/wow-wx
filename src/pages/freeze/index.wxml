@@ -1,6 +1,29 @@
-<!--index.wxml-->
 
-<wow-calendar></wow-calendar>
+<view class="head">
+    <view class="arrow left"></view>
+    <text class="title">2020-12-12</text>
+    <view class="arrow right"></view>
+</view>
+
+<view class="tr">
+    <view class="td"
+          wx:for="{{calendar$.week}}"
+          wx:key="index">
+        <text>{{item}}</text>
+    </view>
+</view>
+
+<view class="tr"
+      wx:for="{{calendar$.arrArrData}}"
+      wx:for-item="arrData"
+      wx:for-index="{{arrIndex}}"
+      wx:key="arrIndex">
+    <view class="td"
+          wx:for="{{arrData}}"
+          wx:key="index">
+        <text>{{item}}</text>
+    </view>
+</view>
 
 <view class="prompt">
     <view class="iconfont icon-shijian"></view>

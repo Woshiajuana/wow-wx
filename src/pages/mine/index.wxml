@@ -10,13 +10,13 @@
         </view>
     </navigation-custom>
     <view class="user-section">
-        <image class="user-bg" mode="aspectFill" src="{{user$.avatarUrl}}"></image>
+        <image class="user-bg" mode="aspectFill" src="{{user$.avatar || user$.avatarUrl}}"></image>
         <view class="user-content">
             <view class="user-avatar"
                   bindtap="jumpPageOrFireFn"
                   data-url="mine_center_index"
                   data-auth="{{user$}}">
-                <image wx:if="{{user$}}" class="avatar" mode="aspectFill" src="{{user$.avatarUrl}}"></image>
+                <image wx:if="{{user$ && (user$.avatar || user$.avatarUrl)}}" class="avatar" mode="aspectFill" src="{{user$.avatar || user$.avatarUrl}}"></image>
                 <text wx:else>点击登录</text>
             </view>
             <block wx:if="{{user$}}">
@@ -24,7 +24,7 @@
                     <text>{{user$.nickname || user$.nickName}}</text>
                 </view>
                 <view class="user-signature">
-                    <text>{{user$.xx || '这个家伙什么都没留下..'}}</text>
+                    <text>{{user$.signature || '这个家伙什么都没留下..'}}</text>
                 </view>
             </block>
             <block wx:else>

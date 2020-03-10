@@ -43,7 +43,7 @@ class Http {
                     data = {
                         ...this.data,
                         formData: {
-                            UserId: this.data.UserId,
+                            ...this.data,
                         },
                         header: {
                             "Content-Type": "multipart/form-data",
@@ -64,6 +64,9 @@ class Http {
                         } = response;
                         if (statusCode !== 200 || !respData) {
                             return reject(`网络繁忙，请稍候再试(${statusCode})`);
+                        }
+                        if (this.useUpLoad && typeof respData === 'string') {
+                            respData = JSON.parse(respData);
                         }
                         this._log('请求返回', respData);
                         let {
