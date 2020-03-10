@@ -10,6 +10,9 @@ new WowPage({
         WowPage.wow$.mixins.Modal,
         WowPage.wow$.mixins.Text,
         WowPage.wow$.mixins.Calendar,
+        WowPage.wow$.mixins.Router,
+        WowPage.wow$.mixins.Input,
+        WowPage.wow$.mixins.Jump,
     ],
     data: {
         // prompt: '嘿嘿嘿',
