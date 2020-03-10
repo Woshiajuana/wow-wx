@@ -1,8 +1,8 @@
 
 <view class="head">
-    <view class="arrow left"></view>
-    <text class="title">2020-12-12</text>
-    <view class="arrow right"></view>
+    <view class="arrow left" bindtap="calendarPreMonth"></view>
+    <text class="title">{{calendar$.curMonth}}</text>
+    <view class="arrow right" bindtap="calendarNextMonth"></view>
 </view>
 
 <view class="tr">
@@ -13,21 +13,22 @@
     </view>
 </view>
 
-<view class="tr"
-      wx:for="{{calendar$.arrArrData}}"
-      wx:for-item="arrData"
-      wx:for-index="{{arrIndex}}"
-      wx:key="arrIndex">
-    <view class="td"
-          wx:for="{{arrData}}"
+<view class="content">
+    <view class="cell {{item.status !== 0 && 'disabled'}} {{item.isSelect && 'active'}}"
+          wx:for="{{calendar$.arrDate}}"
           wx:key="index">
-        <text>{{item}}</text>
+        <view class="cell-content">
+            <image class="bg" mode="aspectFill" src="https://img3.mukewang.com/szimg/5e1d990f0885d97306000338-360-202.jpg"></image>
+        </view>
+        <view class="cell-content">
+            <text>{{item.day}}</text>
+        </view>
     </view>
 </view>
 
 <view class="prompt">
     <view class="iconfont icon-shijian"></view>
-    <text>2019/02/10</text>
+    <text>{{calendar$.curDate}}</text>
 </view>
 
 <view class="photo">

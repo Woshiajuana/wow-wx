@@ -1,5 +1,5 @@
 
-@import '~src/assets/scss/define';
+@import '~src/assets/scss/common';
 
 .head{
     @extend %df;
@@ -33,9 +33,9 @@
 .tr{
     @extend %df;
     @extend %aic;
-    padding: 0 j(32);
     //@extend %bw05;
     //@extend %bwb;
+    margin: 0 j(24);
 }
 .td{
     @extend %df;
@@ -47,7 +47,60 @@
     font-size: j(24);
     height: j(80);
 }
-
+.content{
+    @extend %df;
+    @extend %fww;
+    @extend %jcs;
+    margin: 0 j(24);
+}
+.cell{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    @extend %cfff;
+    @extend %cp;
+    @extend %pr;
+    font-size: j(24);
+    height: j(100);
+    width: 14.2%;
+    &.disabled{
+        @extend %c9;
+        .cell-content{
+            background-color: transparent;
+        }
+        .bg{
+            @extend %dn;
+        }
+    }
+    &.active{
+        .cell-content{
+            @extend %cfff;
+            background-color: $main-color;
+        }
+        .bg{
+            @extend %dn;
+        }
+    }
+}
+.cell-content{
+    @extend %pa;
+    @extend %t50;
+    @extend %l50;
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    width: j(70);
+    height: j(70);
+    margin-top: j(-35);
+    margin-left: j(-35);
+    border-radius: 50%;
+    background-color: rgba(0,0,0,.3);
+    .bg{
+        @extend %w100;
+        @extend %h100;
+        border-radius: 50%;
+    }
+}
 .prompt{
     @extend %df;
     @extend %aic;
