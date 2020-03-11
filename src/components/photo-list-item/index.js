@@ -8,4 +8,10 @@ new WowComponent({
     mixins: [
         WowComponent.wow$.mixins.Input,
     ],
+    properties: {
+        data: { // 推荐
+            type: Object,
+            value: '',
+        },
+    },
 });

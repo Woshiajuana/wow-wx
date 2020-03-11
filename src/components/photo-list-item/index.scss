@@ -40,7 +40,7 @@
     vert-align: middle;
     height: j(80);
     line-height: j(40);
-    font-size: j(28);
+    font-size: j(32);
 }
 .status{
     @extend %dib;
@@ -64,6 +64,7 @@
     @extend %aic;
     @extend %jcc;
     @extend %c9;
+    font-size: j(28);
     .iconfont{
         margin-right: j(8);
     }

@@ -2,7 +2,7 @@
 <photo-list-item
     wx:for="{{arrData}}"
     wx:key="index"
-    data-xx="xx"
+    data="{{item}}"
     bindmore="handleMore"
     bindclick="jumpPageOrFireFn"
     data-url="photo_details_index"
