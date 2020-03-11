@@ -13,5 +13,8 @@ export default {
     DO_IMAGE_UPLOAD: 'v1/wx/file/upload',
 
     // 新增照片
-    DO_PHOTO_ADD: 'v1/wx/photo/add',
+    DO_PHOTO_ADD: 'v1/wx/photo/create',
+
+    // 查询照片
+    REQ_PHOTO_LIST: 'v1/wx/photo/list',
 }

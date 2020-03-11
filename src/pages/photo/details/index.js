@@ -56,14 +56,14 @@ new WowPage({
         if (this.validateCheck(objInput)) return null;
         let { photo, title, desc, nature } = this.validateInput(objInput);
         let { Http } = this.wow$.plugins;
-        Http(Http.API.DO_PHOTO_ADD, {
+        Http(Http.API.DO_IMAGE_UPLOAD, {
             filePath: photo,
             name: 'fileToUpload',
             type: 'PHOTO',
         }, {
             useUpLoad: true,
         }).then((res) => {
-            photo = res.url;
+            photo = res.file;
             return Http(Http.API.DO_PHOTO_ADD, {
                 photo,
                 title,

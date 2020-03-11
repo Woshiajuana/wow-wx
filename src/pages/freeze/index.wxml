@@ -15,10 +15,12 @@
 
 <view class="content">
     <view class="cell {{item.status !== 0 && 'disabled'}} {{item.isSelect && 'active'}}"
+          bindtap="handleSelect"
+          data-item="{{item}}"
           wx:for="{{calendar$.arrDate}}"
           wx:key="index">
         <view class="cell-content">
-            <image class="bg" mode="aspectFill" src="https://img3.mukewang.com/szimg/5e1d990f0885d97306000338-360-202.jpg"></image>
+            <image wx:if="{{objData[item.date]}}" class="bg" mode="aspectFill" src="{{objData[item.date].imgUrl}}"></image>
         </view>
         <view class="cell-content">
             <text>{{item.day}}</text>
@@ -32,9 +34,10 @@
 </view>
 
 <view class="photo">
-    <image mode="aspectFill" src="https://img3.mukewang.com/szimg/5e1d990f0885d97306000338-360-202.jpg"></image>
+    <image wx:if="{{objData[calendar$.curDate]}}" mode="aspectFill" src="{{objData[calendar$.curDate].imgUrl}}"></image>
     <view class="photo-content"
           bindtap="jumpPageOrFireFn"
+          data-params="{{objData[calendar$.curDate] || {date: calendar$.curDate} }}"
           data-url="photo_details_index">
         <view class="iconfont icon-tianjia"></view>
     </view>
