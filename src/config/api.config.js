@@ -10,5 +10,8 @@ export default {
     DO_USER_UPDATE: 'v1/wx/user/update',
 
     // 上传图片
-    DO_IMAGE_UPLOAD: 'v1/wx/file/upload'
+    DO_IMAGE_UPLOAD: 'v1/wx/file/upload',
+
+    // 新增照片
+    DO_PHOTO_ADD: 'v1/wx/photo/add',
 }

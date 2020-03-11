@@ -1,22 +1,41 @@
 <!--index.wxml-->
 <view class="image-section">
-    <view class="image-upload">
+    <view class="image-upload" bindtap="handleUpload">
         <view class="iconfont icon-tianjia"></view>
-        <image class="image"></image>
+        <image class="image" src="{{objInput.photo.value}}"></image>
     </view>
 </view>
 
 <view class="input-section">
     <view class="input-cell">
-        <input type="text" class="input" placeholder="标题"/>
+        <input
+            value="{{objInput.title.value}}"
+            data-item="{{objInput.title}}"
+            bindinput="inputHandle"
+            type="text"
+            class="input"
+            placeholder="请填写标题"
+        />
     </view>
     <view class="input-cell">
-        <textarea class="textarea" placeholder="请输入简介"></textarea>
+        <textarea
+            value="{{objInput.desc.value}}"
+            data-item="{{objInput.desc}}"
+            bindinput="inputHandle"
+            class="textarea"
+            placeholder="请填写描述"
+        ></textarea>
     </view>
     <view class="input-cell">
         <text class="input-label">添加到世界</text>
-        <switch color="#ec642f" class="switch"></switch>
+        <switch
+            checked="{{objInput.nature.value}}"
+            data-item="{{objInput.nature}}"
+            bindchange="inputHandle"
+            color="#ec642f"
+            class="switch"
+        ></switch>
     </view>
 </view>
 
-<wow-button></wow-button>
+<wow-button bindtap="handleSubmit"></wow-button>
