@@ -5,6 +5,10 @@ export default {
             week: [ '日', '一', '二', '三', '四', '五', '六' ],
             arrDate: [],
             curDate: '',
+            curYearMonth: '',
+            curYear: '',
+            curMonth: '',
+            curDay: '',
         },
     },
     // 返回月天数
@@ -23,17 +27,23 @@ export default {
     calendarIsToday (str) {
         return new Date().getTime() - new Date(str).getTime() < 86400000;
     },
+    // 判断日期是不是未来时间
+    calendarIsAfter (str) {
+        return new Date(str).getTime() > new Date().getTime();
+    },
     // 上一个月
     calendarPreMonth () {
         let { curDate } = this.data.calendar$;
         let [ year, month, day ] = curDate.split('-');
-        this.calendarRender(new Date(+year, month - 2, +day));
+        console.log(new Date(+year, +month - 2).toLocaleDateString());
+        this.calendarRender(new Date(+year, month - 1, 0));
     },
     // 下一个月
     calendarNextMonth () {
         let { curDate } = this.data.calendar$;
         let [ year, month, day ] = curDate.split('-');
-        this.calendarRender(new Date(+year, +month, +day));
+        console.log(new Date(+year, +month + 1, 0).toLocaleDateString());
+        this.calendarRender(new Date(+year, +month + 1, 0));
     },
     // 渲染
     calendarRender (date = new Date()) {
@@ -42,10 +52,13 @@ export default {
         let days = this.calendarGetMonthDays(year, month);
         let preDays = this.calendarGetMonthDays(year, month - 1);
         let firstDayInWeek = this.calendarGetWeekday(year, month, 1);
+        if (calendar$.curDay) {
+            day = +calendar$.curDay > days ? days : +calendar$.curDay;
+        }
         let arrDays = [];
         if (firstDayInWeek) {
             let { year: curYear, months: curMonth } = this.calendarGetYearMonthDay(new Date(year, months - 1, 0));
-            curYear = year.toString();
+            curYear = curYear.toString();
             curMonth = curMonth < 10 ? `0${curMonth}` : curMonth.toString();
             for (let i = 1; i <= firstDayInWeek; i++) {
                 let day = (preDays - firstDayInWeek + i).toString();
@@ -58,14 +71,17 @@ export default {
                     status: -1,
                     isSelect: false,
                     isToday: this.calendarIsToday(`${curYear}/${curMonth}/${day}`),
+                    isAfter: this.calendarIsAfter(`${curYear}/${curMonth}/${day}`),
                 });
             }
         }
         let curYear = year.toString();
         let curMonth = months < 10 ? `0${months}` : months.toString();
-        let curDate = `${curYear}-${curMonth}-${day < 10 ? `0${day}` : day.toString()}`;
+        let curDay = day < 10 ? `0${day}` : day.toString();
+        let curDate = `${curYear}-${curMonth}-${curDay}`;
         for (let i = 1; i <= days; i++) {
             let curDay = i < 10 ? `0${i}` : i.toString();
+            let isAfter = this.calendarIsAfter(`${curYear}/${curMonth}/${curDay}`);
             arrDays.push({
                 index: firstDayInWeek + i,
                 year: curYear,
@@ -73,8 +89,9 @@ export default {
                 day: curDay,
                 date: `${curYear}-${curMonth}-${curDay}`,
                 status: 0,
-                isSelect: day === i,
+                isSelect: !isAfter && day === i,
                 isToday: this.calendarIsToday(`${curYear}/${curMonth}/${curDay}`),
+                isAfter,
             });
         }
         let len = arrDays.length;
@@ -94,12 +111,16 @@ export default {
                     status: 1,
                     isSelect: false,
                     isToday: this.calendarIsToday(`${curYear}/${curMonth}/${day}`),
+                    isAfter: this.calendarIsAfter(`${curYear}/${curMonth}/${day}`),
                 });
             }
         }
         calendar$.arrDate = arrDays;
         calendar$.curDate = curDate;
-        calendar$.curMonth = `${curYear}-${curMonth}`;
+        calendar$.curYearMonth = `${curYear}-${curMonth}`;
+        calendar$.curYear = `${curYear}`;
+        calendar$.curMonth = `${curMonth}`;
+        calendar$.curDay = `${curDay}`;
         this.setData({ calendar$ });
         console.log(this.data.calendar$)
     },

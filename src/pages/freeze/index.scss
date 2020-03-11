@@ -6,15 +6,23 @@
     @extend %aic;
     @extend %jcc;
     @extend %c3;
-    padding: 0 j(120);
+    //padding: 0 j(120);
     height: j(80);
     font-size: j(28);
     .iconfont{
         padding: 0 j(20);
     }
 }
-.arrow{
+.arrow-button{
     @extend %cp;
+    @extend %h100;
+    @extend %df;
+    @extend %df1;
+    @extend %aic;
+    @extend %jcc;
+    padding: 0 j(30);
+}
+.arrow{
     width: j(24);
     height: j(24);
     border-top: j(2) #999 solid;
@@ -72,6 +80,11 @@
             @extend %dn;
         }
     }
+    &.have{
+        .cell-content{
+            background-color: rgba(0,0,0,.3);
+        }
+    }
     &.active{
         .cell-content{
             @extend %cfff;
@@ -94,7 +107,7 @@
     margin-top: j(-35);
     margin-left: j(-35);
     border-radius: 50%;
-    background-color: rgba(0,0,0,.3);
+    background-color: rgba(0,0,0,.1);
     .bg{
         @extend %w100;
         @extend %h100;

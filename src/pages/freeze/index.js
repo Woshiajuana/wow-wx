@@ -24,7 +24,8 @@ new WowPage({
     },
     handleSelect (event) {
         let { item } = this.inputParams(event);
-        let { date } = item;
+        let { date, isAfter } = item;
+        if (isAfter) return null;
         this.calendarRender(new Date(date.replace(/-/g, '/')));
         this.reqPhotoList();
     },

@@ -1,8 +1,12 @@
 
 <view class="head">
-    <view class="arrow left" bindtap="calendarPreMonth"></view>
-    <text class="title">{{calendar$.curMonth}}</text>
-    <view class="arrow right" bindtap="calendarNextMonth"></view>
+    <view class="arrow-button" bindtap="calendarPreMonth">
+        <view class="arrow left"></view>
+    </view>
+    <text class="title">{{calendar$.curYearMonth}}</text>
+    <view class="arrow-button" bindtap="calendarNextMonth">
+        <view class="arrow right"></view>
+    </view>
 </view>
 
 <view class="tr">
@@ -14,7 +18,7 @@
 </view>
 
 <view class="content">
-    <view class="cell {{item.status !== 0 && 'disabled'}} {{item.isSelect && 'active'}}"
+    <view class="cell {{item.isAfter && 'disabled'}} {{ objData[item.date] && 'have'}} {{item.isSelect && 'active'}}"
           bindtap="handleSelect"
           data-item="{{item}}"
           wx:for="{{calendar$.arrDate}}"
