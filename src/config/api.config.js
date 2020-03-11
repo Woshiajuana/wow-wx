@@ -15,6 +15,9 @@ export default {
     // 新增照片
     DO_PHOTO_ADD: 'v1/wx/photo/create',
 
-    // 查询照片
+    // 查询照片列表
     REQ_PHOTO_LIST: 'v1/wx/photo/list',
+
+    // 修改照片
+    DO_PHOTO_UPDATE: 'v1/wx/photo/update',
 }

@@ -19,6 +19,7 @@ new WowPage({
             photo: {
                 value: '',
                 key: 'objInput.photo',
+                url: '',
                 use: [ { nonempty: true, prompt: '请选择上传的照片' } ],
             },
             title: {
@@ -39,7 +40,21 @@ new WowPage({
     },
     onLoad (options) {
         this.routerGetParams(options);
+        this.assignmentData();
     },
+    assignmentData () {
+        let { params$, objInput } = this.data;
+        let { imgUrl, _id, nature, photo } = params$;
+        wx.setNavigationBarTitle({ title: _id ? '修改照片' : '定格照片' });
+        if (!_id) return null;
+        this.validateAssignment(this, {
+            ...params$,
+            photo: photo._id,
+            nature: nature === 'PUBLIC',
+        }, objInput, 'objInput');
+        this.setData({ 'objInput.photo.url': imgUrl });
+    },
+    // 上传图片
     handleUpload () {
         this.modalActionSheet([
             '从手机相册选择',
@@ -48,28 +63,39 @@ new WowPage({
             let sourceType = [['album'], ['camera']];
             return this.imageChoose({ sourceType: sourceType[res.tapIndex] });
         }).then((res) => {
-            this.setData({ 'objInput.photo.value': res.tempFilePaths[0] });
+            let { Http } = this.wow$.plugins;
+            return Http(Http.API.DO_IMAGE_UPLOAD, {
+                filePath: res.tempFilePaths[0],
+                name: 'fileToUpload',
+                type: 'PHOTO',
+            }, {
+                useUpLoad: true,
+            });
+        }).then((res) => {
+            let { file, url } = res;
+            this.setData({
+                'objInput.photo.value': file,
+                'objInput.photo.url': url,
+            });
         }).toast();
     },
+    // 提交
     handleSubmit () {
-        let { objInput } = this.data;
+        let { objInput, params$ } = this.data;
         if (this.validateCheck(objInput)) return null;
-        let { photo, title, desc, nature } = this.validateInput(objInput);
+        let options = this.validateInput(objInput);
         let { Http } = this.wow$.plugins;
-        Http(Http.API.DO_IMAGE_UPLOAD, {
-            filePath: photo,
-            name: 'fileToUpload',
-            type: 'PHOTO',
-        }, {
-            useUpLoad: true,
-        }).then((res) => {
-            photo = res.file;
-            return Http(Http.API.DO_PHOTO_ADD, {
-                photo,
-                title,
-                desc,
-                nature: nature ? 'PUBLIC' : 'PRIVACY',
-            });
+        let { _id, date } = params$;
+        let url = Http.API.DO_PHOTO_ADD;
+        if (_id) {
+            options.id = params$._id;
+            url = Http.API.DO_PHOTO_UPDATE;
+        } else {
+            options.created_at = date;
+        }
+        Http(url, {
+            ...options,
+            nature: options.nature ? 'PUBLIC' : 'PRIVACY',
         }).then(() => {
             this.modalToast('提交成功');
         }).toast();

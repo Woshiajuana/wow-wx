@@ -1,11 +1,11 @@
 {
     "pages": [
-        "pages/freeze/index",
-        "pages/photo/details/index",
+        "pages/photo/index",
         "pages/home/index",
         "pages/about/index",
         "pages/auth/index",
         "pages/collect/index",
+        "pages/freeze/index",
         "pages/friend/index",
         "pages/history/index",
         "pages/mine/center/index",
@@ -15,7 +15,7 @@
         "pages/mine/signature/index",
         "pages/notice/details/index",
         "pages/notice/index",
-        "pages/photo/index",
+        "pages/photo/details/index",
         "pages/photo/info/index",
         "pages/search/index",
         "pages/setting/index",

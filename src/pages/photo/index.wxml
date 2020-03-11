@@ -1,15 +1,13 @@
 <!--index.wxml-->
-<view class="wrap">
-    <photo-list-item
-        data-xx="xx"
-        bindmore="handleMore"
-        bindclick="jumpPageOrFireFn"
-        data-url="photo_details_index"
-    ></photo-list-item>
-    <photo-list-item></photo-list-item>
-    <photo-list-item></photo-list-item>
-    <photo-list-item></photo-list-item>
-    <photo-list-item></photo-list-item>
-    <photo-list-item></photo-list-item>
-    <photo-list-item></photo-list-item>
-</view>
+<photo-list-item
+    wx:for="{{arrData}}"
+    wx:key="index"
+    data-xx="xx"
+    bindmore="handleMore"
+    bindclick="jumpPageOrFireFn"
+    data-url="photo_details_index"
+></photo-list-item>
+
+<no-more data="{{arrData}}" total="{{numTotal}}"></no-more>
+
+<null-view wx:if="{{arrData && !arrData.length}}"></null-view>
