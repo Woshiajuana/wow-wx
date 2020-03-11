@@ -33,6 +33,14 @@ new WowPage({
         this.calendarRender();
         this.reqPhotoList();
     },
+    handlePreMonth () {
+        this.calendarPreMonth();
+        this.reqPhotoList();
+    },
+    handleNextMonth () {
+        this.calendarNextMonth();
+        this.reqPhotoList();
+    },
     reqPhotoList () {
         let { calendar$, strStartTime } = this.data;
         let { arrDate } = calendar$;

@@ -36,23 +36,23 @@ export default {
         let { curDate } = this.data.calendar$;
         let [ year, month, day ] = curDate.split('-');
         console.log(new Date(+year, +month - 2).toLocaleDateString());
-        this.calendarRender(new Date(+year, month - 1, 0));
+        this.calendarRender(new Date(+year, month - 1, 0), true);
     },
     // 下一个月
     calendarNextMonth () {
         let { curDate } = this.data.calendar$;
         let [ year, month, day ] = curDate.split('-');
         console.log(new Date(+year, +month + 1, 0).toLocaleDateString());
-        this.calendarRender(new Date(+year, +month + 1, 0));
+        this.calendarRender(new Date(+year, +month + 1, 0), true);
     },
     // 渲染
-    calendarRender (date = new Date()) {
+    calendarRender (date = new Date(), type = false) {
         let { calendar$ } = this.data;
         let { year, month, months, day } = this.calendarGetYearMonthDay(date);
         let days = this.calendarGetMonthDays(year, month);
         let preDays = this.calendarGetMonthDays(year, month - 1);
         let firstDayInWeek = this.calendarGetWeekday(year, month, 1);
-        if (calendar$.curDay) {
+        if (type && calendar$.curDay) {
             day = +calendar$.curDay > days ? days : +calendar$.curDay;
         }
         let arrDays = [];

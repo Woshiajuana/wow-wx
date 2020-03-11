@@ -1,10 +1,10 @@
 
 <view class="head">
-    <view class="arrow-button" bindtap="calendarPreMonth">
+    <view class="arrow-button" bindtap="handlePreMonth">
         <view class="arrow left"></view>
     </view>
     <text class="title">{{calendar$.curYearMonth}}</text>
-    <view class="arrow-button" bindtap="calendarNextMonth">
+    <view class="arrow-button" bindtap="handleNextMonth">
         <view class="arrow right"></view>
     </view>
 </view>
