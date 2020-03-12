@@ -77,12 +77,12 @@ page{
 }
 .info-title{
     @extend %c3;
-    font-size: j(28);
+    font-size: j(32);
 }
 .info-prompt{
     @extend %c9;
     margin-top: j(20);
-    font-size: j(20);
+    font-size: j(28);
 }
 .info-base{
     @extend %df;

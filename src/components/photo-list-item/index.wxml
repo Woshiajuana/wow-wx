@@ -4,7 +4,7 @@
 <view class="time"><text>{{filter.filterCut(data.created_at, 10)}}</text></view>
 <view class="main" bindtap="inputEvent" data-event="click">
     <view class="photo">
-        <image class="image" mode="aspectFill" src="https://img3.mukewang.com/szimg/5e1d990f0885d97306000338-360-202.jpg"></image>
+        <image class="image" mode="aspectFill" src="{{data.photo.base + data.photo.path + data.photo.filename}}"></image>
     </view>
     <view class="inner">
         <view class="title">

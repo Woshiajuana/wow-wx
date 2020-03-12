@@ -1,0 +1,13 @@
+@import '~src/assets/scss/common';
+
+.loading{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    @extend %fdc;
+    padding: j(100);
+}
+.loading-icon{
+    width: j(100);
+    height: j(100);
+}

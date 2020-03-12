@@ -44,7 +44,7 @@ new WowPage({
     },
     assignmentData () {
         let { params$, objInput } = this.data;
-        let { imgUrl, _id, nature, photo } = params$;
+        let { _id, nature, photo } = params$;
         wx.setNavigationBarTitle({ title: _id ? '修改照片' : '定格照片' });
         if (!_id) return null;
         this.validateAssignment(this, {
@@ -52,7 +52,7 @@ new WowPage({
             photo: photo._id,
             nature: nature === 'PUBLIC',
         }, objInput, 'objInput');
-        this.setData({ 'objInput.photo.url': imgUrl });
+        this.setData({ 'objInput.photo.url': photo.base + photo.path + photo.filename });
     },
     // 上传图片
     handleUpload () {
@@ -98,6 +98,7 @@ new WowPage({
             nature: options.nature ? 'PUBLIC' : 'PRIVACY',
         }).then(() => {
             this.modalToast('提交成功');
+            setTimeout(this.routerPop.bind(this), 1000);
         }).toast();
     },
 });

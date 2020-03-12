@@ -20,4 +20,13 @@ export default {
 
     // 修改照片
     DO_PHOTO_UPDATE: 'v1/wx/photo/update',
+
+    // 删除照片
+    DO_PHOTO_DELETE: 'v1/wx/photo/del',
+
+    // 照片详情
+    REQ_PHOTO_INFO: 'v1/wx/photo/info',
+
+    // 照片推荐
+    REQ_PHOTO_RECOMMEND: 'v1/wx/photo/recommend',
 }

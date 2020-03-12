@@ -1,0 +1,4 @@
+
+<view class="loading">
+    <image class="loading-icon" src="/assets/images/loading.gif" mode="aspectFill"></image>
+</view>

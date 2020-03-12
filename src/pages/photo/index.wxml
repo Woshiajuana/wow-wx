@@ -3,9 +3,11 @@
     wx:for="{{arrData}}"
     wx:key="index"
     data="{{item}}"
+    data-index="{{index}}"
+    data-item="{{item}}"
     bindmore="handleMore"
     bindclick="jumpPageOrFireFn"
-    data-url="photo_details_index"
+    data-url="photo_info_index"
 ></photo-list-item>
 
 <no-more data="{{arrData}}" total="{{numTotal}}"></no-more>
