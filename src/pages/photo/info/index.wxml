@@ -40,15 +40,18 @@
     </view>
 
     <view class="operate-section">
-        <view class="operate-item">
+        <view class="operate-item {{objData.thumbId && 'active'}}"
+              bindtap="handleThumbOperation">
             <view class="iconfont icon-dianzan"></view>
             <text>{{objData.numThumb}}</text>
         </view>
-        <view class="operate-item">
+        <view class="operate-item {{objData.dislikeId && 'active'}}"
+              bindtap="handleDislikeOperation">
             <view class="iconfont icon-dislike-b"></view>
             <text>不喜欢</text>
         </view>
-        <view class="operate-item">
+        <view class="operate-item {{objData.collectId && 'active'}}"
+              bindtap="handleCollectOperation">
             <view class="iconfont icon-shoucang-tianchong"></view>
             <text>{{objData.numCollect}}</text>
         </view>

@@ -52,4 +52,40 @@ new WowPage({
             this.setData({ isLoading: false });
         });
     },
+    // 不喜欢
+    handleDislikeOperation () {
+        let { objData } = this.data;
+        let { Http } = this.wow$.plugins;
+        Http(Http.API.DO_DISLIKE_OPERATION, {
+            photo: objData._id,
+        }).then((res) => {
+            objData.dislikeId = res;
+            this.setData({ objData });
+            this.modalToast(res ? '哦豁...作者会努力的' : '取消成功');
+        }).toast();
+    },
+    // 点赞
+    handleThumbOperation () {
+        let { objData } = this.data;
+        let { Http } = this.wow$.plugins;
+        Http(Http.API.DO_THUMB_OPERATION, {
+            photo: objData._id,
+        }).then((res) => {
+            objData.thumbId = res;
+            this.setData({ objData });
+            this.modalToast(res ? '点赞成功' : '取消成功');
+        }).toast();
+    },
+    // 收藏
+    handleCollectOperation () {
+        let { objData } = this.data;
+        let { Http } = this.wow$.plugins;
+        Http(Http.API.DO_COLLECT_OPERATION, {
+            photo: objData._id,
+        }).then((res) => {
+            objData.collectId = res;
+            this.setData({ objData });
+            this.modalToast(res ? '收藏成功' : '取消成功');
+        }).toast();
+    },
 });

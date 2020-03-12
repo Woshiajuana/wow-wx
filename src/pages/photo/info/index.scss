@@ -121,7 +121,7 @@ page{
         @extend %aic;
         @extend %jcc;
         height: j(50);
-        font-size: j(42);
+        font-size: j(46);
         margin-bottom: j(12);
     }
     .icon-dislike-b{
@@ -129,6 +129,9 @@ page{
     }
     .icon-shoucang-tianchong{
         font-size: j(36);
+    }
+    &.active{
+        color: $main-color;
     }
 }
 .recommend-section{

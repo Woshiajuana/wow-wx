@@ -29,4 +29,15 @@ export default {
 
     // 照片推荐
     REQ_PHOTO_RECOMMEND: 'v1/wx/photo/recommend',
+
+    // 不喜欢创建 or 关闭
+    DO_DISLIKE_OPERATION: 'v1/app/dislike/do',
+
+    // 点赞创建 or 关闭
+    DO_THUMB_OPERATION: 'v1/app/thumb/do',
+
+    // 收藏创建 or 关闭
+    DO_COLLECT_OPERATION: 'v1/app/collect/do',
+
+
 }
