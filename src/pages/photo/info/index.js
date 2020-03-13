@@ -10,6 +10,7 @@ new WowPage({
         WowPage.wow$.mixins.Modal,
         WowPage.wow$.mixins.Router,
         WowPage.wow$.mixins.User,
+        WowPage.wow$.mixins.Input,
     ],
     data: {
         isLoading: true,
@@ -19,20 +20,18 @@ new WowPage({
     onLoad (options) {
         this.userGet();
         this.routerGetParams(options);
-        this.assignmentData();
         this.reqPhotoInfo();
-    },
-    assignmentData () {
-
     },
     reqPhotoInfo () {
         let { Http } = this.wow$.plugins;
         let { _id: id } = this.data.params$;
         Http(Http.API.REQ_PHOTO_INFO, {
-            id: "5e68626109f975847a991ea7",
+            id: id || "5e68626109f975847a991ea7",
         }, {
-            loading: false,
+            loading: !this.data.isLoading,
         }).then((res) => {
+            // 滚动到顶部
+            wx.pageScrollTo({ scrollTop: 0 });
             this.setData({ objData: res });
         }).toast().finally(() => {
             this.reqPhotoRecommend();
@@ -42,10 +41,10 @@ new WowPage({
         let { Http } = this.wow$.plugins;
         let { _id: id } = this.data.params$;
         Http(Http.API.REQ_PHOTO_RECOMMEND, {
-            exclude: ['5e68626109f975847a991ea7'],
+            exclude: [id] || ['5e68626109f975847a991ea7'],
             limit: 10,
         },{
-            loading: false,
+            loading: !this.data.isLoading,
         }).then((res) => {
             this.setData({ arrData: res });
         }).toast().finally(() => {
@@ -89,6 +88,8 @@ new WowPage({
         }).toast();
     },
     handleSelect (event) {
-        let {} = this.inputParams(event);
+        let { item } = this.inputParams(event);
+        this.setData({ 'params$._id': item._id });
+        this.reqPhotoInfo();
     },
 });

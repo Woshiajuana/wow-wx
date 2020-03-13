@@ -43,7 +43,7 @@
         <view class="operate-item {{objData.thumbId && 'active'}}"
               bindtap="handleThumbOperation">
             <view class="iconfont icon-dianzan"></view>
-            <text>{{objData.numThumb}}</text>
+            <text>{{objData.numThumb || 0}}</text>
         </view>
         <view class="operate-item {{objData.dislikeId && 'active'}}"
               bindtap="handleDislikeOperation">
@@ -53,7 +53,12 @@
         <view class="operate-item {{objData.collectId && 'active'}}"
               bindtap="handleCollectOperation">
             <view class="iconfont icon-shoucang-tianchong"></view>
-            <text>{{objData.numCollect}}</text>
+            <text>{{objData.numCollect || 0}}</text>
+        </view>
+        <view class="operate-item active"
+              bindtap="handleCollectOperation">
+            <view class="iconfont icon-fenxiang"></view>
+            <text>分享</text>
         </view>
     </view>
 

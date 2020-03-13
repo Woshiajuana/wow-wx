@@ -102,8 +102,9 @@ page{
 .operate-section{
     @extend %df;
     @extend %aic;
+    @extend %jcs;
     background-color: #fff;
-    padding: j(20) j(32);
+    padding: j(20) j(64);
 }
 .operate-item{
     @extend %df;
@@ -114,7 +115,6 @@ page{
     @extend %cp;
     width: j(100);
     font-size: j(20);
-    margin-right: j(12);
     padding: j(12) 0;
     .iconfont{
         @extend %df;
@@ -124,16 +124,12 @@ page{
         font-size: j(46);
         margin-bottom: j(12);
     }
-    .icon-dislike-b{
-        font-size: j(36);
-    }
     .icon-shoucang-tianchong{
-        font-size: j(36);
+        //font-size: j(36);
     }
     &.active{
         color: $main-color;
     }
 }
 .recommend-section{
-    margin-top: j(20);
 }
