@@ -6,7 +6,7 @@
     data-index="{{index}}"
     data-item="{{item}}"
     bindmore="handleMore"
-    mode="manage"
+    mode="photo"
 ></photo-list-item>
 
 <no-more data="{{arrData}}" total="{{numTotal}}"></no-more>

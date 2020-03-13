@@ -73,7 +73,7 @@
         data="{{item}}"
         data-item="{{item}}"
         bindclick="handleSelect"
-        mode="open"
+        mode="info"
     ></photo-list-item>
 </view>
 
