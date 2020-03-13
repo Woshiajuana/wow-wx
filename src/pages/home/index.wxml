@@ -1,14 +1,13 @@
 <!--index.wxml-->
 <navigation-custom
     class-navigation="navigation-section">
+<!--    <view class="header-section">-->
+<!--        <view class="search" bindtap="jumpPageOrFireFn" data-url="search_index">-->
+<!--            <view class="iconfont icon-xinbaniconshangchuan- search-icon"></view>-->
+<!--            <text>什么？找不到你想要的？试试我吧...</text>-->
+<!--        </view>-->
+<!--    </view>-->
 </navigation-custom>
-
-<view class="header-section">
-    <view class="search" bindtap="jumpPageOrFireFn" data-url="search_index">
-        <view class="iconfont icon-xinbaniconshangchuan- search-icon"></view>
-        <text>什么？找不到你想要的？试试我吧...</text>
-    </view>
-</view>
 
 <view class="content">
     <photo-grid-item

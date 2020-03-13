@@ -7,6 +7,9 @@ page{
 }
 
 .navigation-section{
+    @extend %pf;
+    @extend %w100;
+    z-index: 9;
     background-color: $main-color;
     padding-bottom: j(5);
 }
@@ -33,7 +36,9 @@ page{
     margin: 0 j(10) 0 j(15);
 }
 .content{
+    @extend %pr;
     @extend %df;
     @extend %fww;
     @extend %jcs;
+    padding-top: j(90);
 }

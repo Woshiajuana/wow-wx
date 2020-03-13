@@ -1,5 +1,5 @@
-
+<view class="navigation-status" style="height: {{system$.statusBarHeight}}px"></view>
 <view class="navigation class-navigation">
-    <view class="navigation-status" style="height: {{system$.statusBarHeight}}px"></view>
+<!--    <view class="navigation-status" style="height: {{system$.statusBarHeight}}px"></view>-->
     <slot></slot>
 </view>
