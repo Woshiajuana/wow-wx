@@ -13,8 +13,7 @@
 .main{
     @extend %df;
     @extend %aic;
-    //@extend %bw05;
-    //@extend %bwb;
+    @extend %oh;
     padding: j(20) j(32);
     background-color: #fff;
     &.open{
@@ -38,6 +37,7 @@
     @extend %df;
     @extend %fdc;
     @extend %jcs;
+    @extend %oh;
     height: j(140);
 }
 .title{
@@ -45,10 +45,15 @@
     @extend %aic;
     @extend %c3;
     @extend %oh;
+    @extend %twno;
     font-size: j(32);
+}
+.title-text{
+    @extend %twno;
 }
 .author{
     @extend %c9;
+    @extend %twno;
     font-size: j(24);
 }
 .status{

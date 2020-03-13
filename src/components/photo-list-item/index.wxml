@@ -9,11 +9,9 @@
     <view class="inner">
         <view class="title">
             <view wx:if="{{mode === 'manage' && data.nature === 'PUBLIC'}}" class="status"><text>公开</text></view>
-            <text>{{data.title}}</text>
+            <text class="title-text">{{data.title}}</text>
         </view>
-        <view class="author">
-            <text>UP主:{{data.user.nickname || data.user.nickName}}</text>
-        </view>
+        <text class="author" wx:if="{{mode === 'open'}}">UP主:{{data.user.nickname || data.user.nickName}}</text>
         <view class="operate">
             <view class="attr">
                 <view class="iconfont icon-yanjing"></view>
