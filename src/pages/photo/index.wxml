@@ -6,8 +6,7 @@
     data-index="{{index}}"
     data-item="{{item}}"
     bindmore="handleMore"
-    bindclick="jumpPageOrFireFn"
-    data-url="photo_info_index"
+    mode="manage"
 ></photo-list-item>
 
 <no-more data="{{arrData}}" total="{{numTotal}}"></no-more>

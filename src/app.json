@@ -1,5 +1,6 @@
 {
     "pages": [
+        "pages/mine/index",
         "pages/photo/info/index",
         "pages/home/index",
         "pages/about/index",
@@ -9,7 +10,6 @@
         "pages/friend/index",
         "pages/history/index",
         "pages/mine/center/index",
-        "pages/mine/index",
         "pages/mine/nickname/index",
         "pages/mine/qrcode/index",
         "pages/mine/signature/index",

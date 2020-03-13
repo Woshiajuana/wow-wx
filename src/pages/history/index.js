@@ -10,6 +10,13 @@ new WowPage({
         WowPage.wow$.mixins.Modal,
         WowPage.wow$.mixins.Refresh,
     ],
+    onLoad () {
+        this.handleRefresh();
+    },
+    getReqUrlOrOption () {
+        let { Http } = this.wow$.plugins;
+        return { url: Http.API.REQ_HISTORY_LIST };
+    },
     handleMore (event) {
         this.modalActionSheet([
             '编辑',

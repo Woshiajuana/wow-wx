@@ -1,7 +1,9 @@
 <wxs src="../../wxs/filter.wxs" module="filter" />
 
 <!--index.wxml-->
-<view class="time" wx:if="{{mode === 'manage'}}"><text>{{filter.filterCut(data.created_at, 10)}}</text></view>
+<view class="time" wx:if="{{mode === 'manage'}}">
+    <text>{{filter.filterCut(data.created_at, 10)}}</text>
+</view>
 <view class="main {{mode}}" bindtap="inputEvent" data-event="click">
     <view class="photo">
         <image class="image" mode="aspectFill" src="{{data.photo.base + data.photo.path + data.photo.filename}}"></image>
