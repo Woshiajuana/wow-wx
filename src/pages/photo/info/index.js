@@ -88,4 +88,7 @@ new WowPage({
             this.modalToast(res ? '收藏成功' : '取消成功');
         }).toast();
     },
+    handleSelect (event) {
+        let {} = this.inputParams(event);
+    },
 });

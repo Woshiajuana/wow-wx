@@ -64,6 +64,8 @@
         wx:for="{{arrData}}"
         wx:key="index"
         data="{{item}}"
+        data-item="{{item}}"
+        bindclick="handleSelect"
     ></photo-list-item>
 </view>
 
