@@ -25,8 +25,8 @@ page{
     @extend %cp;
     @extend %bsb;
     color: #ddd;
-    font-size: j(28);
-    height: j(80);
+    font-size: j(32);
+    height: j(100);
     border-bottom: j(2) transparent solid;
     &.active{
         color: $main-color;
@@ -54,7 +54,7 @@ page{
     @extend %aic;
     @extend %bw05;
     @extend %bwb;
-    padding: j(20) j(32);
+    padding: j(28) j(32);
     background-color: #fff;
 }
 .user-avatar{
@@ -65,9 +65,9 @@ page{
     @extend %bwb;
     @extend %bw05r;
     @extend %oh;
-    margin-right: j(16);
-    height: j(80);
-    width: j(80);
+    margin-right: j(32);
+    height: j(100);
+    width: j(100);
     border-radius: 50%;
     background-color: #f2f2f2;
     image{
@@ -82,9 +82,9 @@ page{
 }
 .user-name{
     @extend %c3;
-    font-size: j(28);
+    font-size: j(32);
 }
 .user-signature{
     @extend %c9;
-    font-size: j(24);
+    font-size: j(28);
 }

@@ -10,8 +10,10 @@
 </view>
 
 <view class="main-section">
-    <wow-scroll
-        class="main-content {{numCurIndex === key && 'active'}}"
+    <scroll-view
+        scroll-y
+        bindscrolltolower="handleLoad"
+        class="main-content {{numCurIndex === tabIndex && 'active'}}"
         wx:for="{{arrTab}}"
         wx:for-item="tabItem"
         wx:for-index="tabIndex"
@@ -20,12 +22,14 @@
               wx:for="{{tabItem.arrData}}"
               wx:key="index">
             <view class="user-avatar">
-                <image class="avatar"></image>
+                <image class="avatar" src="{{user$ && (user$.avatar || user$.avatarUrl)}}"></image>
             </view>
             <view class="user-info">
-                <text class="user-name">我是阿倦啊</text>
-                <text class="user-signature">好好学习，天天向上</text>
+                <text class="user-name">{{item.nickname || item.nickName}}</text>
+                <text class="user-signature">{{item.signature || '这个家伙什么都没留下..'}}</text>
             </view>
         </view>
-    </wow-scroll>
+        <no-more data="{{tabItem.arrData}}" total="{{tabItem.numTotal}}"></no-more>
+        <null-view wx:if="{{tabItem.arrData && !tabItem.arrData.length}}"></null-view>
+    </scroll-view>
 </view>

@@ -11,6 +11,7 @@ new WowPage({
         WowPage.wow$.mixins.Modal,
         WowPage.wow$.mixins.Router,
         WowPage.wow$.mixins.Jump,
+        WowPage.wow$.mixins.Refresh,
     ],
     data: {
         numCurIndex: 0,
@@ -36,25 +37,29 @@ new WowPage({
     onLoad () {
         this.reqDataList();
     },
-    reqDataList () {
+    reqDataList (callback) {
         let { arrTab, numCurIndex } = this.data;
         let { url, numIndex, numSize, arrData } = arrTab[numCurIndex];
         let { Http } = this.wow$.plugins;
         Http(Http.API[url], {
             numIndex,
             numSize,
+        }, {
+            loading: typeof callback !== 'function',
         }).then((res) => {
             let { list = [], total } = res || {};
             arrTab[numCurIndex].arrData = numIndex === 1 ? list : [ ...arrData, ...list ];
             arrTab[numCurIndex].numTotal = total;
             this.setData({ arrTab });
-        }).toast();
+        }).toast().finally(() => {
+            typeof callback === 'function' && callback();
+        });
     },
-    handleRefresh () {
+    handleRefresh (callback) {
         let { arrTab, numCurIndex } = this.data;
         arrTab[numCurIndex].numIndex = 1;
         this.setData({ arrTab });
-        this.reqDataList();
+        this.reqDataList(callback);
     },
     handleTabSwitch (event) {
         let { index } = this.inputParams(event);
@@ -65,38 +70,11 @@ new WowPage({
     },
     handleLoad (event) {
         let { arrTab, numCurIndex } = this.data;
-        let { numIndex, numTotal, arrData } = arrTab[numIndex];
+        let { numTotal, arrData } = arrTab[numCurIndex];
         if (arrData.length >= numTotal)
             return console.log('数据加载已完毕');
         arrTab[numCurIndex].numIndex++;
         this.setData({ arrTab });
         this.reqDataList();
     },
-    // 取消供应收藏
-    handleSupplyCancelCollect (event) {
-        let { item } = this.inputParams(event);
-        this.modalConfirm(`确认取消该供应收藏么?`).then(() => {
-            let { Http } = this.wow$.plugins;
-            Http(Http.API.DO_SUPPLY_COLLECT_DEL, {
-                Id: item.Id,
-            });
-        }).then(() => {
-            this.modalToast('取消成功');
-            this.handleRefresh();
-        }).toast();
-    },
-    // 取消店铺收藏
-    handleStoreCancelCollect (event) {
-        let { item } = this.inputParams(event);
-        this.modalConfirm(`确认取消该店铺收藏么?`).then(() => {
-            let { Http } = this.wow$.plugins;
-            return Http(Http.API.DO_STORE_COLLECT_DEL, {
-                Id: item.ShopId,
-                Operation: '2',
-            });
-        }).then(() => {
-            this.modalToast('取消成功');
-            this.handleRefresh();
-        }).toast();
-    }
 });
