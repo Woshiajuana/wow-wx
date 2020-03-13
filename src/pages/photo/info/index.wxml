@@ -14,7 +14,8 @@
             <text class="user-name">{{objData.user.nickname || objData.user.nickName}}</text>
             <text class="user-prompt">粉丝：{{objData.user.numFollower}}</text>
         </view>
-        <view class="user-button disabled" wx:if="{{user$._id !== objData.user._id}}">
+        <view class="user-button {{objData.follower && 'disabled'}}"
+              wx:if="{{user$._id !== objData.user._id}}">
             <view class="iconfont icon-tianjia"></view>
             <text>关注</text>
         </view>
@@ -71,6 +72,7 @@
         data="{{item}}"
         data-item="{{item}}"
         bindclick="handleSelect"
+        mode="open"
     ></photo-list-item>
 </view>
 

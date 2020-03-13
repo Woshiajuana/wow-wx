@@ -1,22 +1,25 @@
 <wxs src="../../wxs/filter.wxs" module="filter" />
 
 <!--index.wxml-->
-<view class="time"><text>{{filter.filterCut(data.created_at, 10)}}</text></view>
-<view class="main" bindtap="inputEvent" data-event="click">
+<view class="time" wx:if="{{mode === 'manage'}}"><text>{{filter.filterCut(data.created_at, 10)}}</text></view>
+<view class="main {{mode}}" bindtap="inputEvent" data-event="click">
     <view class="photo">
         <image class="image" mode="aspectFill" src="{{data.photo.base + data.photo.path + data.photo.filename}}"></image>
     </view>
     <view class="inner">
         <view class="title">
-            <view class="status" wx:if="{{data.nature === 'PUBLIC'}}"><text>公开</text></view>
+            <view wx:if="{{mode === 'manage' && data.nature === 'PUBLIC'}}" class="status"><text>公开</text></view>
             <text>{{data.title}}</text>
+        </view>
+        <view class="author">
+            <text>UP主:{{data.user.nickname || data.user.nickName}}</text>
         </view>
         <view class="operate">
             <view class="attr">
                 <view class="iconfont icon-yanjing"></view>
                 <text>{{data.volume}}</text>
             </view>
-            <view catchtap="inputEvent" data-event="more" class="iconfont icon-more"></view>
+            <view wx:if="{{mode === 'manage'}}" catchtap="inputEvent" data-event="more" class="iconfont icon-more"></view>
         </view>
     </view>
 </view>

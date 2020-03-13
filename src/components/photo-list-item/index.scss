@@ -13,8 +13,14 @@
 .main{
     @extend %df;
     @extend %aic;
+    //@extend %bw05;
+    //@extend %bwb;
     padding: j(20) j(32);
     background-color: #fff;
+    &.open{
+        @extend %bw05;
+        @extend %bwt;
+    }
 }
 .photo{
     @extend %oh;
@@ -35,12 +41,15 @@
     height: j(140);
 }
 .title{
+    @extend %df;
+    @extend %aic;
     @extend %c3;
     @extend %oh;
-    vert-align: middle;
-    height: j(80);
-    line-height: j(40);
     font-size: j(32);
+}
+.author{
+    @extend %c9;
+    font-size: j(24);
 }
 .status{
     @extend %dib;

@@ -13,5 +13,9 @@ new WowComponent({
             type: Object,
             value: '',
         },
+        mode: {
+            type: String,
+            value: 'manage',
+        },
     },
 });
