@@ -14,68 +14,36 @@ new WowPage({
         WowPage.wow$.mixins.Refresh,
     ],
     data: {
-        numCurIndex: 0,
-        arrTab: [
-            {
-                label: '推荐',
-                limit: 20,
-                arrData: '',
-                url: 'REQ_PHOTO_RECOMMEND',
-                isLoading: false,
-            },
-            {
-                label: '关注',
-                limit: 20,
-                arrData: '',
-                url: 'REQ_PHOTO_RECOMMEND',
-                isLoading: false,
-            },
-        ],
+        arrData: '',
+        isLoading: false,
     },
     onLoad (options) {
-        this.routerGetParams(options);
-        this.assignmentData();
-        this.reqDataList();
-    },
-    assignmentData () {
-        let { key } = this.data.params$;
-        this.setData({ numCurIndex: key === 'objInfo.numFollowing' ? 1 : 0 });
-    },
-    reqDataList (callback) {
-        let { arrTab, numCurIndex } = this.data;
-        let { url, limit, arrData } = arrTab[numCurIndex];
-        let { Http } = this.wow$.plugins;
-        arrTab[numCurIndex].isLoading = true;
-        this.setData({ arrTab });
-        Http(Http.API[url], {
-            limit,
-        }, {
-            loading: typeof callback !== 'function',
-        }).then((res) => {
-            if (!arrData) arrData = [];
-            arrTab[numCurIndex].arrData = typeof callback === 'function' ? [ ...res, ...arrData ] : [ ...arrData, ...res ];
-        }).toast().finally(() => {
-            arrTab[numCurIndex].isLoading = false;
-            this.setData({ arrTab });
-            console.log(arrTab)
-            typeof callback === 'function' && callback();
-        });
+        this.handleRefresh();
     },
     handleRefresh (callback) {
         this.reqDataList(callback);
     },
-    handleTabSwitch (event) {
-        let { index } = this.inputParams(event);
-        this.setData({ numCurIndex: index });
-        if (this.data.arrTab[index].arrData.length === 0) {
-            this.reqDataList();
-        }
+    reqDataList (callback) {
+        let { arrData, isLoading } = this.data;
+        let { Http } = this.wow$.plugins;
+        if (isLoading) return console.log('正在加载数据');
+        this.setData({ isLoading: true });
+        Http(Http.API.REQ_PHOTO_RECOMMEND, {
+            limit: 20,
+        }, {
+            loading: typeof callback !== 'function',
+        }).then((res) => {
+            if (!arrData) arrData = [];
+            arrData = typeof callback === 'function' ? [ ...res, ...arrData ] : [ ...arrData, ...res ];
+        }).toast().finally(() => {
+            this.setData({
+                arrData,
+                isLoading: false,
+            });
+            typeof callback === 'function' && callback();
+        });
     },
-    handleLoad (event) {
-        let { arrTab, numCurIndex } = this.data;
-        let { isLoading } = arrTab[numCurIndex];
-        if (isLoading)
-            return console.log('数据正在加载中');
+    onReachBottom (event) {
         this.reqDataList();
     },
 });

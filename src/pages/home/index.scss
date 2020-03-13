@@ -3,14 +3,7 @@
 
 page{
     @extend %w100;
-    @extend %h100;
     background-color: $bg-color;
-}
-.wrap{
-    @extend %w100;
-    @extend %h100;
-    @extend %df;
-    @extend %fdc;
 }
 
 .navigation-section{
@@ -38,37 +31,6 @@ page{
 .search-icon{
     font-size: j(32);
     margin: 0 j(10) 0 j(15);
-}
-
-.tab-section{
-    @extend %df;
-    background-color: $main-color;
-}
-.tab-item{
-    @extend %df;
-    @extend %df1;
-    @extend %jcc;
-    @extend %aic;
-    @extend %cp;
-    height: j(80);
-    color: #ddd;
-    font-size: j(30);
-    &.active{
-        @extend %cfff;
-        font-size: j(36);
-    }
-}
-
-.main-section{
-    @extend %df;
-    @extend %df1;
-}
-.main-inner{
-    @extend %w100;
-    @extend %dn;
-    &.active{
-        @extend %db;
-    }
 }
 .content{
     @extend %df;

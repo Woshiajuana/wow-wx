@@ -1,6 +1,9 @@
 <!--index.wxml-->
 
-<view class="photo-wrap">
+<view class="photo-wrap"
+      bindtap="jumpPageOrFireFn"
+      data-params="{{data}}"
+      data-url="photo_info_index">
     <image class="image" mode="aspectFill" src="{{data.photo.base + data.photo.path + data.photo.filename}}"></image>
     <view class="photo-inner">
         <view class="title">
@@ -8,7 +11,7 @@
         </view>
         <view class="prompt">
             <text class="first-child">{{data.user.nickname || data.user.nickName}}</text>
-            <view class="iconfont icon-xinbaniconshangchuan- eye-icon"></view>
+            <view class="iconfont icon-yanjing"></view>
             <text>{{data.volume || 0}}</text>
         </view>
     </view>

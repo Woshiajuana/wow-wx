@@ -51,5 +51,10 @@
     font-size: j(24);
     .first-child{
         @extend %df1;
+        @extend %twno;
     }
+}
+.icon-yanjing{
+    margin-top: j(2);
+    margin-right: j(8);
 }

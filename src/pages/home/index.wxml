@@ -1,45 +1,24 @@
 <!--index.wxml-->
-<view class="wrap">
-    <navigation-custom
-        class-navigation="navigation-section">
-    </navigation-custom>
+<navigation-custom
+    class-navigation="navigation-section">
+</navigation-custom>
 
-    <view class="header-section">
-        <view class="search" bindtap="jumpPageOrFireFn" data-url="search_index">
-            <view class="iconfont icon-xinbaniconshangchuan- search-icon"></view>
-            <text>什么？找不到你想要的？试试我吧...</text>
-        </view>
+<view class="header-section">
+    <view class="search" bindtap="jumpPageOrFireFn" data-url="search_index">
+        <view class="iconfont icon-xinbaniconshangchuan- search-icon"></view>
+        <text>什么？找不到你想要的？试试我吧...</text>
     </view>
-
-    <view class="tab-section">
-        <view class="tab-item {{numCurIndex === index && 'active'}}"
-              bindtap="handleTabSwitch"
-              data-index="{{index}}"
-              wx:for="{{arrTab}}"
-              wx:key="index">
-            <text>{{ item.label }}</text>
-        </view>
-    </view>
-
-    <view class="main-section">
-        <scroll-view
-            scroll-y
-            bindscrolltolower="handleLoad"
-            class="main-inner {{numCurIndex === tabIndex && 'active'}}"
-            wx:for="{{arrTab}}"
-            wx:for-item="tabItem"
-            wx:for-index="tabIndex"
-            wx:key="tabIndex">
-            <view class="content">
-                <photo-grid-item
-                    wx:for="{{tabItem.arrData}}"
-                    wx:key="index"
-                    data="{{item}}"
-                ></photo-grid-item>
-            </view>
-<!--            <no-more data="{{tabItem.arrData}}" total="{{tabItem.numTotal}}"></no-more>-->
-            <null-view wx:if="{{tabItem.arrData && !tabItem.arrData.length}}"></null-view>
-        </scroll-view>
-    </view>
-
 </view>
+
+<view class="content">
+    <photo-grid-item
+        wx:for="{{arrData}}"
+        wx:key="index"
+        data="{{item}}"
+    ></photo-grid-item>
+</view>
+
+<loading-view mode="list">正在加载中...</loading-view>
+
+<null-view wx:if="{{tabItem.arrData && !tabItem.arrData.length}}"></null-view>
+

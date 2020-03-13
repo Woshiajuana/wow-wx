@@ -4,8 +4,16 @@
     @extend %df;
     @extend %aic;
     @extend %jcc;
-    @extend %fdc;
     padding: j(100);
+    &.list{
+        @extend %c9;
+        padding: j(20);
+        .loading-icon{
+            width: j(80);
+            height: j(80);
+        }
+        font-size: j(28);
+    }
 }
 .loading-icon{
     width: j(100);

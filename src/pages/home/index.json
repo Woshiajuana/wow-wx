@@ -6,6 +6,7 @@
     "usingComponents": {
         "navigation-custom": "/components/navigation-custom/index",
         "photo-grid-item": "/components/photo-grid-item/index",
+        "loading-view": "/components/loading-view/index",
         "no-more": "/components/no-more/index",
         "null-view": "/components/null-view/index"
     }
