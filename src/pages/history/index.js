@@ -9,6 +9,7 @@ new WowPage({
     mixins: [
         WowPage.wow$.mixins.Modal,
         WowPage.wow$.mixins.Refresh,
+        WowPage.wow$.mixins.Input,
     ],
     onLoad () {
         this.handleRefresh();
@@ -18,11 +19,23 @@ new WowPage({
         return { url: Http.API.REQ_HISTORY_LIST };
     },
     handleMore (event) {
+        let { item, index } = this.inputParams(event);
         this.modalActionSheet([
-            '编辑',
-            '删除',
+            '查询详情',
+            '清除历史',
         ]).then(({ tapIndex }) => {
-            console.log(tapIndex);
+            tapIndex
+                ? this.doHistoryClear()
+                : this.routerPush('photo_info_index', item)
         }).null();
+    },
+    doHistoryClear () {
+        this.modalConfirm(`确认清除浏览历史记录么？`).then(() => {
+            let { Http } = this.wow$.plugins;
+            return Http(Http.API.DO_HISTORY_CLEAR);
+        }).then(() => {
+            this.modalToast('清除成功');
+            this.handleRefresh();
+        }).toast();
     },
 });

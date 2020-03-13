@@ -54,4 +54,7 @@ export default {
     // 关注列表
     REQ_FOLLOWING_LIST: 'v1/wx/following/list',
 
+    // 清除历史记录
+    DO_HISTORY_CLEAR: 'v1/wx/history/clear',
+
 }

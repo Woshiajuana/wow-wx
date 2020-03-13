@@ -37,6 +37,7 @@
     }
 }
 .photo-image{
+    @extend %pr;
     @extend %oh;
     border-radius: j(10);
     width: j(200);
@@ -49,6 +50,7 @@
 }
 .inner{
     @extend %df1;
+    @extend %pr;
     @extend %df;
     @extend %fdc;
     @extend %jcs;

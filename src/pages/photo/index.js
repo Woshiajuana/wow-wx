@@ -39,9 +39,7 @@ new WowPage({
             });
         }).then(() => {
             this.modalToast('删除成功');
-            let { arrData } = this.data;
-            arrData.splice(index, 1);
-            this.setData({ arrData });
+            this.handleRefresh();
         }).toast();
     },
 });
