@@ -1,9 +1,9 @@
 <!--index.wxml-->
 <view class="tab-section">
-    <view class="tab-item {{item.active && 'active'}}"
+    <view class="tab-item {{numCurIndex === index && 'active'}}"
           bindtap="handleTabSwitch"
           data-index="{{index}}"
-          wx:for="{{arrData}}"
+          wx:for="{{arrTab}}"
           wx:key="index">
         <text>{{ item.label }}</text>
     </view>
@@ -11,13 +11,13 @@
 
 <view class="main-section">
     <wow-scroll
-        class="main-content {{tabItem.active && 'active'}}"
-        wx:for="{{arrData}}"
+        class="main-content {{numCurIndex === key && 'active'}}"
+        wx:for="{{arrTab}}"
         wx:for-item="tabItem"
         wx:for-index="tabIndex"
         wx:key="tabIndex">
         <view class="cell"
-              wx:for="{{tabItem.data}}"
+              wx:for="{{tabItem.arrData}}"
               wx:key="index">
             <view class="user-avatar">
                 <image class="avatar"></image>

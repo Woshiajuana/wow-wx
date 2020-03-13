@@ -10,7 +10,6 @@
     @extend %cp;
     font-size: j(32);
     padding: j(30) j(32);
-    //height: j(100);
     background-color: #fff;
     &:before{
         @extend %pa;
