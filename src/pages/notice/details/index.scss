@@ -12,7 +12,7 @@ page{
 .title{
     @extend %c3;
     padding-top: j(32);
-    font-size: j(28);
+    font-size: j(36);
 }
 .time{
     @extend %c9;
@@ -20,11 +20,11 @@ page{
     @extend %bwb;
     padding-top: j(8);
     padding-bottom: j(32);
-    font-size: j(20);
+    font-size: j(24);
 }
 .content{
     @extend %c6;
     line-height: 2;
-    font-size: j(24);
+    font-size: j(28);
     padding: j(50) 0;
 }

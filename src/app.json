@@ -1,7 +1,7 @@
 {
     "pages": [
-        "pages/notice/index",
         "pages/home/index",
+        "pages/notice/index",
         "pages/friend/index",
         "pages/mine/index",
         "pages/photo/info/index",

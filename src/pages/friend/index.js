@@ -34,8 +34,14 @@ new WowPage({
             },
         ],
     },
-    onLoad () {
+    onLoad (options) {
+        this.routerGetParams(options);
+        this.assignmentData();
         this.reqDataList();
+    },
+    assignmentData () {
+        let { key } = this.data.params$;
+        this.setData({ numCurIndex: key === 'objInfo.numFollowing' ? 1 : 0 });
     },
     reqDataList (callback) {
         let { arrTab, numCurIndex } = this.data;

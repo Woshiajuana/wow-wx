@@ -24,9 +24,9 @@ new WowPage({
         ],
         objNotice: { label: '消息', url: 'notice_index' },
         objInfo: {
+            numFollower: { value: 0, label: '粉丝', url: 'friend_index', key: 'objInfo.numFollower' },
             numFollowing: { value: 0, label: '关注', url: 'friend_index', key: 'objInfo.numFollowing' },
-            numFollower: { value: 0, label: '粉丝', url: 'friend_index', key: 'objInfo.numFollowing' },
-            numPhoto: { value: 0, label: '照片', url: 'photo_index', key: 'objInfo.numFollowing' },
+            numPhoto: { value: 0, label: '照片', url: 'photo_index', key: 'objInfo.numPhoto' },
         },
     },
     onShow () {
