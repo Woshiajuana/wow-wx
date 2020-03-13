@@ -1,9 +1,12 @@
 {
     "navigationStyle": "custom",
     "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true,
     "backgroundColor": "#ec642f",
     "usingComponents": {
         "navigation-custom": "/components/navigation-custom/index",
-        "tab-page": "/components/home/tab-page/index"
+        "photo-grid-item": "/components/photo-grid-item/index",
+        "no-more": "/components/no-more/index",
+        "null-view": "/components/null-view/index"
     }
 }

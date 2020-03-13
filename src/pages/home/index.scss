@@ -66,6 +66,8 @@ page{
 .main-inner{
     @extend %w100;
     @extend %dn;
+    @extend %df;
+    @extend %jcs;
     &.active{
         @extend %db;
     }

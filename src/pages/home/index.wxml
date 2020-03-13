@@ -3,14 +3,16 @@
     <navigation-custom
         class-navigation="navigation-section">
     </navigation-custom>
+
     <view class="header-section">
         <view class="search" bindtap="jumpPageOrFireFn" data-url="search_index">
             <view class="iconfont icon-xinbaniconshangchuan- search-icon"></view>
             <text>什么？找不到你想要的？试试我吧...</text>
         </view>
     </view>
+
     <view class="tab-section">
-        <view class="tab-item {{item.active && 'active'}}"
+        <view class="tab-item {{numCurIndex === index && 'active'}}"
               bindtap="handleTabSwitch"
               data-index="{{index}}"
               wx:for="{{arrTab}}"
@@ -18,12 +20,23 @@
             <text>{{ item.label }}</text>
         </view>
     </view>
+
     <view class="main-section">
-        <tab-page
-            class="main-inner {{item.active && 'active'}}"
+        <scroll-view
+            scroll-y
+            bindscrolltolower="handleLoad"
+            class="main-inner {{numCurIndex === tabIndex && 'active'}}"
             wx:for="{{arrTab}}"
-            wx:key="index"
-            prompt="{{item.label}}"
-        ></tab-page>
+            wx:for-item="tabItem"
+            wx:for-index="tabIndex"
+            wx:key="tabIndex">
+            <photo-grid-item
+                wx:for="{{tabItem.arrData}}"
+                wx:key="index"
+            ></photo-grid-item>
+            <no-more data="{{tabItem.arrData}}" total="{{tabItem.numTotal}}"></no-more>
+            <null-view wx:if="{{tabItem.arrData && !tabItem.arrData.length}}"></null-view>
+        </scroll-view>
     </view>
+
 </view>
