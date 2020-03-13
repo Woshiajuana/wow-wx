@@ -30,11 +30,12 @@ new WowPage({
         },
     },
     onShow () {
-        this.userGet().then(() => {
-            this.reqUserInfo();
-        }).null();
+        this.userGet().then(this.reqUserInfo.bind(this)).null();
     },
-    reqUserInfo () {
+    handleRefresh (callback) {
+        this.reqUserInfo(callback);
+    },
+    reqUserInfo (callback) {
         let { Http } = this.wow$.plugins;
         Http(Http.API.REQ_USER_INFO, {}, {
             loading: false,
@@ -45,6 +46,8 @@ new WowPage({
         }).then(() => {
             let { objInfo, user$ } = this.data;
             this.validateAssignment(this, user$, objInfo, 'objInfo');
-        }).toast();
+        }).toast().finally(() => {
+            typeof callback === 'function' && callback();
+        });
     }
 });

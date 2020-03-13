@@ -15,6 +15,7 @@
             <text class="user-prompt">粉丝：{{objData.user.numFollower}}</text>
         </view>
         <view class="user-button {{objData.follower && 'disabled'}}"
+              bindtap="handleFollowOperation"
               wx:if="{{user$._id !== objData.user._id}}">
             <view class="iconfont icon-tianjia"></view>
             <text>关注</text>

@@ -58,7 +58,7 @@ new WowPage({
         Http(Http.API.DO_DISLIKE_OPERATION, {
             photo: objData._id,
         }).then((res) => {
-            objData.dislikeId = res;
+            objData.dislikeId = res || '';
             this.setData({ objData });
             this.modalToast(res ? '哦豁...作者会努力的' : '取消成功');
         }).toast();
@@ -70,7 +70,8 @@ new WowPage({
         Http(Http.API.DO_THUMB_OPERATION, {
             photo: objData._id,
         }).then((res) => {
-            objData.thumbId = res;
+            objData.thumbId = res || '';
+            objData.numThumb += res ? 1 : -1;
             this.setData({ objData });
             this.modalToast(res ? '点赞成功' : '取消成功');
         }).toast();
@@ -82,14 +83,28 @@ new WowPage({
         Http(Http.API.DO_COLLECT_OPERATION, {
             photo: objData._id,
         }).then((res) => {
-            objData.collectId = res;
+            objData.collectId = res || '';
+            objData.numCollect += res ? 1 : -1;
             this.setData({ objData });
             this.modalToast(res ? '收藏成功' : '取消成功');
         }).toast();
     },
+    // 选择
     handleSelect (event) {
         let { item } = this.inputParams(event);
         this.setData({ 'params$._id': item._id });
         this.reqPhotoInfo();
     },
+    // 关注 or 取消关注
+    handleFollowOperation () {
+        let { objData } = this.data;
+        let { Http } = this.wow$.plugins;
+        Http(Http.API.DO_FOLLOW_OPERATION, {
+            id: objData.user._id,
+        }).then((res) => {
+            objData.follower = res || '';
+            this.setData({ objData });
+            this.modalToast(res ? '关注成功' : '取消成功');
+        }).toast();
+    }
 });

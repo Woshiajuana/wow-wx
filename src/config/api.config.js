@@ -39,5 +39,8 @@ export default {
     // 收藏创建 or 关闭
     DO_COLLECT_OPERATION: 'v1/app/collect/do',
 
+    // 关注 or 取消
+    DO_FOLLOW_OPERATION: 'v1/app/follow/update',
+
 
 }
