@@ -1,4 +1,5 @@
-@import '~src/assets/scss/define';
+@import '~src/assets/scss/common';
+@import '~src/assets/scss/iconfont';
 
 .photo-wrap{
     @extend %pr;
@@ -20,19 +21,33 @@
     @extend %bsb;
     @extend %fdc;
     padding: j(20);
-    background-color: rgba(0,0,0,.3);
+    //background-color: rgba(0,0,0,.3);
     justify-content: flex-end;
+    &:after{
+        @extend %pa;
+        @extend %w100;
+        @extend %l0;
+        @extend %t0;
+        @extend %b0;
+        content: '';
+        background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.6));
+    }
 }
 .title{
+    @extend %pr;
     @extend %cfff;
+    z-index: 1;
     font-size: j(28);
-    height: j(60);
-    line-height: j(30);
+}
+.title-text{
+    @include twno(2);
 }
 .prompt{
+    @extend %pr;
     @extend %df;
     @extend %aic;
     color: #ccc;
+    z-index: 1;
     font-size: j(24);
     .first-child{
         @extend %df1;

@@ -1,15 +1,15 @@
 <!--index.wxml-->
 
 <view class="photo-wrap">
-    <image class="image" mode="aspectFill" src="https://img3.mukewang.com/szimg/5e1d990f0885d97306000338-360-202.jpg"></image>
+    <image class="image" mode="aspectFill" src="{{data.photo.base + data.photo.path + data.photo.filename}}"></image>
     <view class="photo-inner">
         <view class="title">
-            <text>哈哈哈啊哈哈哈哈哈哈哈哈啊啊哈啊哈哈哈</text>
+            <text class="title-text">{{data.title}}</text>
         </view>
         <view class="prompt">
-            <text class="first-child">我是阿倦啊</text>
+            <text class="first-child">{{data.user.nickname || data.user.nickName}}</text>
             <view class="iconfont icon-xinbaniconshangchuan- eye-icon"></view>
-            <text>0</text>
+            <text>{{data.volume || 0}}</text>
         </view>
     </view>
 </view>

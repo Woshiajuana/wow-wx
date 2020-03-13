@@ -30,11 +30,14 @@
             wx:for-item="tabItem"
             wx:for-index="tabIndex"
             wx:key="tabIndex">
-            <photo-grid-item
-                wx:for="{{tabItem.arrData}}"
-                wx:key="index"
-            ></photo-grid-item>
-            <no-more data="{{tabItem.arrData}}" total="{{tabItem.numTotal}}"></no-more>
+            <view class="content">
+                <photo-grid-item
+                    wx:for="{{tabItem.arrData}}"
+                    wx:key="index"
+                    data="{{item}}"
+                ></photo-grid-item>
+            </view>
+<!--            <no-more data="{{tabItem.arrData}}" total="{{tabItem.numTotal}}"></no-more>-->
             <null-view wx:if="{{tabItem.arrData && !tabItem.arrData.length}}"></null-view>
         </scroll-view>
     </view>

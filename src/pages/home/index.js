@@ -18,14 +18,14 @@ new WowPage({
         arrTab: [
             {
                 label: '推荐',
-                limit: 10,
+                limit: 20,
                 arrData: '',
                 url: 'REQ_PHOTO_RECOMMEND',
                 isLoading: false,
             },
             {
                 label: '关注',
-                limit: 10,
+                limit: 20,
                 arrData: '',
                 url: 'REQ_PHOTO_RECOMMEND',
                 isLoading: false,
