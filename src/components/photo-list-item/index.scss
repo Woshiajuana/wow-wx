@@ -16,18 +16,27 @@
     @extend %oh;
     padding: j(20) j(32);
     background-color: #fff;
-    &.open{
+    &.photo{
+        .author{
+            @extend %dn;
+        }
+    }
+    &.info,
+    &.collect,
+    &.history{
         @extend %bw05;
         @extend %bwt;
+        .status{
+            @extend %dn;
+        }
     }
-    &.manage{
-
-    }
-    &.operate{
-
+    &.info{
+        .icon-more{
+            @extend %dn;
+        }
     }
 }
-.photo{
+.photo-image{
     @extend %oh;
     border-radius: j(10);
     width: j(200);
