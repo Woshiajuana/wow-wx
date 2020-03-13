@@ -1,36 +1,20 @@
 <!--index.wxml-->
+<wxs src="../../wxs/filter.wxs" module="filter" />
 
-<null-view></null-view>
+<view class="cell {{item.unread && 'unread'}}"
+      wx:for="{{arrData}}"
+      wx:key="index"
+      data-params="{{item}}"
+      bindtap="jumpPageOrFireFn"
+      data-url="notice_details_index">
+    <view class="title">
+        <text>{{item.title}}</text>
+    </view>
+    <view class="time">
+        <text>{{filter.filterCut(item.created_at, 10)}}</text>
+    </view>
+</view>
 
-<view class="cell" bindtap="jumpPageOrFireFn" data-url="notice_details_index">
-    <view class="title">
-        <text>你好呀普吉岛怕送打破斯柯达打牌撒快点跑打卡上</text>
-    </view>
-    <view class="time">
-        <text>2019-12-12 12:22:22</text>
-    </view>
-</view>
-<view class="cell">
-    <view class="title">
-        <text>你好呀普吉岛怕送打破斯柯达打牌撒快点跑打卡上</text>
-    </view>
-    <view class="time">
-        <text>2019-12-12 12:22:22</text>
-    </view>
-</view>
-<view class="cell">
-    <view class="title">
-        <text>你好呀普吉岛怕送打破斯柯达打牌撒快点跑打卡上</text>
-    </view>
-    <view class="time">
-        <text>2019-12-12 12:22:22</text>
-    </view>
-</view>
-<view class="cell">
-    <view class="title">
-        <text>你好呀普吉岛怕送打破斯柯达打牌撒快点跑打卡上</text>
-    </view>
-    <view class="time">
-        <text>2019-12-12 12:22:22</text>
-    </view>
-</view>
+<no-more data="{{arrData}}" total="{{numTotal}}"></no-more>
+
+<null-view wx:if="{{arrData && !arrData.length}}"></null-view>

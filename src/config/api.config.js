@@ -57,4 +57,10 @@ export default {
     // 清除历史记录
     DO_HISTORY_CLEAR: 'v1/wx/history/clear',
 
+    // 通知列表
+    REQ_NOTICE_LIST: 'v1/wx/notice/list',
+
+    // 通知详情
+    REQ_NOTICE_INFO: 'v1/wx/notice/info',
+
 }

@@ -11,8 +11,14 @@ page{
     @extend %bwb;
     @extend %cp;
     background-color: #fff;
-    padding: j(20) j(64) j(20) j(32);
+    padding: j(28) j(64) j(28) j(32);
+    &.unread{
+        &:after{
+            @extend %db;
+        }
+    }
     &:after{
+        @extend %dn;
         @extend %pa;
         @extend %t50;
         right: j(32);
@@ -26,10 +32,10 @@ page{
 }
 .title{
     @extend %c3;
-    font-size: j(28);
+    font-size: j(32);
 }
 .time{
     @extend %c9;
     margin-top: j(8);
-    font-size: j(20);
+    font-size: j(28);
 }

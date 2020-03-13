@@ -13,4 +13,11 @@ new WowPage({
         WowPage.wow$.mixins.Router,
         WowPage.wow$.mixins.Jump,
     ],
+    onLoad () {
+        this.handleRefresh();
+    },
+    getReqUrlOrOption () {
+        let { Http } = this.wow$.plugins;
+        return { url: Http.API.REQ_NOTICE_LIST, options: { nature: 'PRIVATE'} };
+    },
 });

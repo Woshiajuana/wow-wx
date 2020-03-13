@@ -1,10 +1,10 @@
 {
     "backgroundTextStyle": "dark",
-    "backgroundColor": "#ec642f",
+    "backgroundColor": "#f2f2f2",
     "enablePullDownRefresh": true,
     "navigationBarTitleText": "我的消息",
     "usingComponents": {
-        "notice-item": "/components/notice-item/index",
+        "no-more": "/components/no-more/index",
         "null-view": "/components/null-view/index"
     }
 }
