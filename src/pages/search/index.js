@@ -5,32 +5,90 @@ import './index.wxml'
 
 import WowPage from 'source/lib/page'
 
+const HISTORY_KEYWORD = 'HISTORY_KEYWORD';
+
 new WowPage({
     mixins: [
         WowPage.wow$.mixins.Modal,
-        WowPage.wow$.mixins.Refresh,
+        WowPage.wow$.mixins.Input,
+        WowPage.wow$.mixins.Store,
+        WowPage.wow$.mixins.Router,
     ],
     data: {
-        arrEntry: [
-            { label: '照片', class: 'icon-zhaopian_huabanfuben', useMargin: true, url: '' },
-            { label: '收藏', class: 'icon-shoucang-tianchong', useMargin: true, url: '' },
-            { label: '历史', class: 'icon-3lishi', useMargin: false, url: '' },
-            { label: '设置', class: 'icon-shezhi', useMargin: true, url: '' },
-        ]
+        strKeyword: '',
+        arrHistory: [],
+        numIndex: 1,
+        numSize: 10,
+        arrData: '',
+        numTotal: 0,
     },
-    onLoad(options) {
-        console.log('首页加载 => ', options);
-        console.log('首页执行wow$ =>', this.wow$);
+    onLoad (options) {
+        this.getHistoryKeywords();
+        this.routerGetParams(options);
     },
-    handleTap () {
-        let { Modal } = this.wow$.plugins;
-        // this.modalToast('11111');
-        // Modal.toast(1);
-        // console.log(new Promise(()=> {}).toast);
-
-        this.testPromise().toast();
+    inputCallback (item, value) {
+        if (value === '') {
+            this.setData({ arrData: '' });
+        }
     },
-    testPromise () {
-        return Promise.reject('xxx');
-    }
+    getHistoryKeywords () {
+        this.storeGet(HISTORY_KEYWORD).then((res) => {
+            this.setData({ arrHistory: res || [] });
+        }).null();
+    },
+    saveHistoryKeywords () {
+        let { arrHistory, strKeyword } = this.data;
+        strKeyword = strKeyword.trim();
+        if (!strKeyword) return null;
+        let index = arrHistory.indexOf(strKeyword);
+        if (index > -1) {
+            arrHistory.splice(index, 1);
+        }
+        arrHistory.unshift(strKeyword);
+        this.setData({ arrHistory });
+        this.storeSet(HISTORY_KEYWORD, arrHistory);
+    },
+    handleClear () {
+        this.modalConfirm(`确认清除历史搜索？`).then(() => {
+            this.storeDel(HISTORY_KEYWORD);
+            this.setData({ arrHistory: [] });
+        }).null();
+    },
+    handleSearch () {
+        let { strKeyword } = this.data;
+        if (!strKeyword)
+            return this.modalToast('请输入关键字');
+        this.setData({ numIndex: 1 });
+        this.reqPhotoSearch();
+    },
+    handleSelect (event) {
+        let { item } = this.inputParams(event);
+        this.setData({ strKeyword: item });
+        this.handleSearch();
+    },
+    reqPhotoSearch () {
+        let { Http } = this.wow$.plugins;
+        let { numIndex, numSize, arrData, strKeyword } = this.data;
+        Http(Http.API.REQ_PHOTO_SEARCH, {
+            numIndex,
+            numSize,
+            keyword: strKeyword,
+        }).then((res) => {
+            let { list = [], total } = res || {};
+            this.setData({
+                arrData: numIndex === 1 ? list : [ ...arrData, ...list ],
+                numTotal: total,
+            });
+            this.saveHistoryKeywords();
+        }).toast();
+    },
+    // 上拉加载更多
+    onReachBottom () {
+        let { numIndex, numTotal, arrData } = this.data;
+        if (arrData.length >= numTotal)
+            return console.log('数据加载已完毕');
+        numIndex++;
+        this.setData({ numIndex });
+        this.reqPhotoSearch();
+    },
 });

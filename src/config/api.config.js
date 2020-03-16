@@ -63,4 +63,7 @@ export default {
     // 通知详情
     REQ_NOTICE_INFO: 'v1/wx/notice/info',
 
+    // 搜索
+    REQ_PHOTO_SEARCH: 'v1/wx/search/preview',
+
 }

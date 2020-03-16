@@ -1,4 +1,41 @@
-<!--index.wxml-->
-<view class="wrap">
 
+<view class="search">
+    <view class="search-input">
+        <input type="text" value="{{strKeyword}}" bindinput="inputHandle" data-item="strKeyword" placeholder="请输入搜索"/>
+        <view class="search-clear {{strKeyword && 'active'}}" bindtap="inputHandle" data-item="strKeyword" data-value="">
+            <view class="iconfont icon-close"></view>
+        </view>
+    </view>
+    <view class="search-btn" bindtap="handleSearch"><text>搜索</text></view>
 </view>
+
+<view class="history" wx:if="{{(!strKeyword || !arrData) && arrHistory.length}}">
+    <view class="history-title">
+        <text>历史搜索</text>
+        <view class="iconfont icon-shanchu-m"></view>
+    </view>
+    <view class="history-content">
+        <view class="history-cell"
+              bindtap="handleSelect"
+              data-item="{{item}}"
+              wx:for="{{arrHistory}}"
+              wx:key="index">
+            <text>{{item}}</text>
+        </view>
+    </view>
+</view>
+
+<view class="content" wx:if="{{strKeyword && arrData}}">
+    <photo-grid-item
+        wx:for="{{arrData}}"
+        wx:key="index"
+        data="{{item}}"
+    ></photo-grid-item>
+</view>
+
+<no-more data="{{arrData}}" total="{{numTotal}}"></no-more>
+
+<null-view
+    wx:if="{{strKeyword && arrData && arrData.length === 0}}"
+    prompt="没有数据哦..."
+></null-view>

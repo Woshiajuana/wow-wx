@@ -1,6 +1,7 @@
 {
     "pages": [
         "pages/home/index",
+        "pages/search/index",
         "pages/about/index",
         "pages/auth/index",
         "pages/collect/index",
@@ -17,7 +18,6 @@
         "pages/photo/details/index",
         "pages/photo/index",
         "pages/photo/info/index",
-        "pages/search/index",
         "pages/setting/index",
         "pages/webview/index"
     ],

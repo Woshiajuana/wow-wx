@@ -7,13 +7,7 @@ page{
 }
 
 .navigation-section{
-    //@extend %pf;
-    //@extend %w100;
-    //@extend %t0;
-    //@extend %l0;
-    //z-index: 9;
     background-color: $main-color;
-    //padding-bottom: j(5);
 }
 
 .header-section{
@@ -42,5 +36,5 @@ page{
     @extend %df;
     @extend %fww;
     @extend %jcs;
-    padding-top: j(90);
+    padding-top: j(95);
 }

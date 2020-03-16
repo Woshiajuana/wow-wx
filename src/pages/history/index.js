@@ -10,6 +10,7 @@ new WowPage({
         WowPage.wow$.mixins.Modal,
         WowPage.wow$.mixins.Refresh,
         WowPage.wow$.mixins.Input,
+        WowPage.wow$.mixins.Router,
     ],
     onLoad () {
         this.handleRefresh();
