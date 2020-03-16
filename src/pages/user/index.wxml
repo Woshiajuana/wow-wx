@@ -1,0 +1,64 @@
+<!--index.wxml-->
+<view class="wrap">
+    <navigation-custom
+        useBar=""
+        class-navigation="navigation-section">
+        <view class="header-section">
+            <view class="notice" bindtap="jumpPageOrFireFn" data-item="{{objNotice}}">
+                <view class="iconfont icon-htmal5icon05 notice-icon"></view>
+                <view wx:if="{{user$.numPrivateNotice}}" class="notice-dot"></view>
+            </view>
+        </view>
+    </navigation-custom>
+    <view class="user-section">
+        <image class="user-bg" mode="aspectFill" src="{{user$.avatar || user$.avatarUrl}}"></image>
+        <view class="user-content">
+            <view class="user-avatar"
+                  bindtap="jumpPageOrFireFn"
+                  data-url="mine_center_index"
+                  data-auth="{{user$}}">
+                <image wx:if="{{user$ && (user$.avatar || user$.avatarUrl)}}" class="avatar" mode="aspectFill" src="{{user$.avatar || user$.avatarUrl}}"></image>
+                <text wx:else>点击登录</text>
+            </view>
+            <block wx:if="{{user$}}">
+                <view class="user-name">
+                    <text>{{user$.nickname || user$.nickName}}</text>
+                </view>
+                <view class="user-signature">
+                    <text>{{user$.signature || '这个家伙什么都没留下..'}}</text>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="user-name">
+                    <text>您好，请先登录</text>
+                </view>
+                <view class="user-signature">
+                    <text>登录之后有新天地哦...</text>
+                </view>
+            </block>
+            <view class="user-base">
+                <view class="base-info"
+                      wx:for="{{objInfo}}"
+                      wx:key="index"
+                      data-auth="{{user$}}"
+                      data-item="{{item}}"
+                      bindtap="jumpPageOrFireFn">
+                    <text class="base-info-value">{{item.value}}</text>
+                    <text class="base-info-label">{{item.label}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <wow-cell
+        data-url="{{item.url}}"
+        wx:for="{{arrEntry}}"
+        wx:key="index"
+        cellLabel="{{item.label}}"
+        cellValue="{{item.value}}"
+        iconClass="{{item.icon}}"
+        useMargin="{{item.useMargin}}"
+        bindtap="jumpPageOrFireFn"
+        data-auth="{{user$}}"
+        data-item="{{item}}"
+    ></wow-cell>
+</view>

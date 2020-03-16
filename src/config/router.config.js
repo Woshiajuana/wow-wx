@@ -18,5 +18,6 @@ export default {
     "photo_info_index": "/pages/photo/info/index",
     "search_index": "/pages/search/index",
     "setting_index": "/pages/setting/index",
+    "user_index": "/pages/user/index",
     "webview_index": "/pages/webview/index"
 }
