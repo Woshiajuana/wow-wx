@@ -1,8 +1,12 @@
-@import '~src/assets/scss/define';
+@import '~src/assets/scss/common';
 
 .navigation{
-
+    @extend %pf;
+    @extend %w100;
+    @extend %t0;
+    @extend %l0;
+    z-index: 9;
+    padding-bottom: j(5);
 }
 .navigation-status{
-
 }

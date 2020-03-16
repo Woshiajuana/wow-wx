@@ -8,6 +8,12 @@ new WowComponent({
     mixins: [
         WowComponent.wow$.mixins.System,
     ],
+    properties: {
+        useBar: {
+            type: Boolean,
+            value: true,
+        },
+    },
     // 外部样式类
     externalClasses: [
         'class-navigation',

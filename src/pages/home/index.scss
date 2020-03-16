@@ -7,11 +7,13 @@ page{
 }
 
 .navigation-section{
-    @extend %pf;
-    @extend %w100;
-    z-index: 9;
+    //@extend %pf;
+    //@extend %w100;
+    //@extend %t0;
+    //@extend %l0;
+    //z-index: 9;
     background-color: $main-color;
-    padding-bottom: j(5);
+    //padding-bottom: j(5);
 }
 
 .header-section{
