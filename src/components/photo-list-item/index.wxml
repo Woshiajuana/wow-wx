@@ -1,7 +1,7 @@
 <wxs src="../../wxs/filter.wxs" module="filter" />
 
 <!--index.wxml-->
-<view class="time" wx:if="{{mode === 'photo'}}">
+<view class="time" wx:if="{{mode === 'photo' || mode === 'user'}}">
     <text>{{filter.filterCut(data.created_at, 10)}}</text>
 </view>
 <view class="main {{mode}}"

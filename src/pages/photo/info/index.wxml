@@ -6,7 +6,10 @@
         <image class="banner-image" mode="aspectFill" src="{{objData.photo.base + objData.photo.path + objData.photo.filename}}"></image>
     </view>
 
-    <view class="user-section">
+    <view class="user-section"
+          bindtap="jumpPageOrFireFn"
+          data-item="{{item}}"
+          data-url="user_index">
         <view class="user-avatar">
             <image mode="aspectFill" src="{{objData.user.avatar || objData.user.avatarUrl}}"></image>
         </view>
@@ -15,7 +18,7 @@
             <text class="user-prompt">粉丝：{{objData.user.numFollower}}</text>
         </view>
         <view class="user-button {{objData.user.follower && 'disabled'}}"
-              bindtap="handleFollowOperation"
+              catchtap="handleFollowOperation"
               wx:if="{{user$._id !== objData.user._id}}">
             <view class="iconfont icon-tianjia"></view>
             <text>关注</text>

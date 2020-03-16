@@ -16,6 +16,7 @@
     @extend %oh;
     padding: j(20) j(32);
     background-color: #fff;
+    &.user,
     &.photo{
         .author{
             @extend %dn;
@@ -30,6 +31,7 @@
             @extend %dn;
         }
     }
+    &.user,
     &.info{
         .icon-more{
             @extend %dn;

@@ -19,6 +19,9 @@
         wx:for-index="tabIndex"
         wx:key="tabIndex">
         <view class="cell"
+              bindtap="jumpPageOrFireFn"
+              data-item="{{item}}"
+              data-url="user_index"
               wx:for="{{tabItem.arrData}}"
               wx:key="index">
             <view class="user-avatar">

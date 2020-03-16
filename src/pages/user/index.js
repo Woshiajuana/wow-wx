@@ -15,12 +15,21 @@ new WowPage({
         WowPage.wow$.mixins.Validate,
         WowPage.wow$.mixins.User,
     ],
+    data: {
+        objUser: '',
+    },
     onLoad (options) {
         this.routerGetParams(options);
         this.reqUserInfo();
     },
+    getReqUrlOrOption () {
+        let { Http } = this.wow$.plugins;
+        let { _id: user } = this.data.params$;
+        return { url: Http.API.REQ_PHOTO_LIST, options: { user } };
+    },
     handleRefresh (callback) {
         this.reqUserInfo(callback);
+        this.reqDataList();
     },
     reqUserInfo (callback) {
         let { _id: id } = this.data.params$;
@@ -30,9 +39,10 @@ new WowPage({
         }, {
             loading: false,
         }).then((res) => {
-
+            this.setData({ objUser: res });
         }).toast().finally(() => {
+            this.reqDataList();
             typeof callback === 'function' && callback();
         });
-    }
+    },
 });
