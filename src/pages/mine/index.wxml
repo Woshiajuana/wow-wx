@@ -4,7 +4,10 @@
         useBar=""
         class-navigation="navigation-section">
         <view class="header-section">
-            <view class="notice" bindtap="jumpPageOrFireFn" data-item="{{objNotice}}">
+            <view class="notice"
+                  data-auth="{{user$}}"
+                  bindtap="jumpPageOrFireFn"
+                  data-item="{{objNotice}}">
                 <view class="iconfont icon-htmal5icon05 notice-icon"></view>
                 <view wx:if="{{user$.numPrivateNotice}}" class="notice-dot"></view>
             </view>

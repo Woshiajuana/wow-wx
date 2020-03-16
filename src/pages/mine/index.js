@@ -30,10 +30,14 @@ new WowPage({
         },
     },
     onShow () {
-        this.userGet().then(this.reqUserInfo.bind(this)).null();
+        this.handleRefresh();
     },
     handleRefresh (callback) {
-        this.reqUserInfo(callback);
+        this.userGet().then(() => {
+            this.reqUserInfo(callback);
+        }).catch(() => {
+            callback && callback();
+        });
     },
     reqUserInfo (callback) {
         let { Http } = this.wow$.plugins;
