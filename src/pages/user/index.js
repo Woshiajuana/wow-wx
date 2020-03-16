@@ -21,6 +21,7 @@ new WowPage({
     onLoad (options) {
         this.routerGetParams(options);
         this.reqUserInfo();
+        this.userGet().null();
     },
     getReqUrlOrOption () {
         let { Http } = this.wow$.plugins;
@@ -40,6 +41,7 @@ new WowPage({
             loading: false,
         }).then((res) => {
             this.setData({ objUser: res });
+            wx.setNavigationBarTitle({ title: res.nickname || res.nickName });
         }).toast().finally(() => {
             this.reqDataList();
             typeof callback === 'function' && callback();

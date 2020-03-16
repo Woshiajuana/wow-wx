@@ -23,9 +23,10 @@
                         <text class="base-info-label">照片</text>
                     </view>
                 </view>
-                <view class="user-button">
+                <view class="user-button {{objUser.follower && 'disabled'}}"
+                      wx:if="{{user$._id !== objUser._id}}">
                     <view class="iconfont icon-tianjia"></view>
-                    <text>关注</text>
+                    <text>{{objUser.follower ? '已关注' : '未关注'}}</text>
                 </view>
             </view>
         </view>

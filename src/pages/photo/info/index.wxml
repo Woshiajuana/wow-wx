@@ -8,7 +8,7 @@
 
     <view class="user-section"
           bindtap="jumpPageOrFireFn"
-          data-item="{{item}}"
+          data-item="{{objData.user}}"
           data-url="user_index">
         <view class="user-avatar">
             <image mode="aspectFill" src="{{objData.user.avatar || objData.user.avatarUrl}}"></image>

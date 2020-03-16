@@ -11,6 +11,7 @@ new WowPage({
         WowPage.wow$.mixins.Router,
         WowPage.wow$.mixins.User,
         WowPage.wow$.mixins.Input,
+        WowPage.wow$.mixins.Jump,
     ],
     data: {
         isLoading: true,
@@ -97,13 +98,13 @@ new WowPage({
     },
     // 关注 or 取消关注
     handleFollowOperation () {
-        let { objData } = this.data;
+        let { objUser } = this.data;
         let { Http } = this.wow$.plugins;
         Http(Http.API.DO_FOLLOW_OPERATION, {
-            id: objData.user._id,
+            id: objUser._id,
         }).then((res) => {
-            objData.user.follower = res || '';
-            this.setData({ objData });
+            objUser.follower = res || '';
+            this.setData({ objUser });
             this.modalToast(res ? '关注成功' : '取消成功');
         }).toast();
     }

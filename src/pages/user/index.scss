@@ -72,6 +72,9 @@ page{
         margin-right: j(10);
         font-size: j(28);
     }
+    &.disabled{
+        background-color: #bbb;
+    }
 }
 .user-name{
     @extend %cfff;

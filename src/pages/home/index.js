@@ -31,7 +31,7 @@ new WowPage({
         Http(Http.API.REQ_PHOTO_RECOMMEND, {
             limit: 20,
         }, {
-            loading: typeof callback !== 'function',
+            loading: false,
         }).then((res) => {
             if (!arrData) arrData = [];
             arrData = typeof callback === 'function' ? [ ...res, ...arrData ] : [ ...arrData, ...res ];
