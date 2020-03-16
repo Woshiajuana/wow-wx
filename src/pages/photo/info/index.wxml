@@ -18,7 +18,9 @@
             <text class="user-prompt">粉丝：{{objData.user.numFollower}}</text>
         </view>
         <view class="user-button {{objData.user.follower && 'disabled'}}"
-              catchtap="handleFollowOperation"
+              data-auth="{{user$}}"
+              data-fn="handleFollowOperation"
+              catchtap="jumpPageOrFireFn"
               wx:if="{{user$._id !== objData.user._id}}">
             <view class="iconfont icon-tianjia"></view>
             <text>关注</text>
@@ -46,25 +48,30 @@
 
     <view class="operate-section">
         <view class="operate-item {{objData.thumbId && 'active'}}"
-              bindtap="handleThumbOperation">
+              data-auth="{{user$}}"
+              data-fn="handleThumbOperation"
+              bindtap="jumpPageOrFireFn">
             <view class="iconfont icon-dianzan"></view>
             <text>{{objData.numThumb || 0}}</text>
         </view>
         <view class="operate-item {{objData.dislikeId && 'active'}}"
-              bindtap="handleDislikeOperation">
+              data-auth="{{user$}}"
+              data-fn="handleDislikeOperation"
+              bindtap="jumpPageOrFireFn">
             <view class="iconfont icon-dislike-b"></view>
             <text>不喜欢</text>
         </view>
         <view class="operate-item {{objData.collectId && 'active'}}"
-              bindtap="handleCollectOperation">
+              data-auth="{{user$}}"
+              data-fn="handleCollectOperation"
+              bindtap="jumpPageOrFireFn">
             <view class="iconfont icon-shoucang-tianchong"></view>
             <text>{{objData.numCollect || 0}}</text>
         </view>
-        <view class="operate-item active"
-              bindtap="handleCollectOperation">
+        <button open-type="share" class="operate-item">
             <view class="iconfont icon-fenxiang"></view>
             <text>分享</text>
-        </view>
+        </button>
     </view>
 
 </block>

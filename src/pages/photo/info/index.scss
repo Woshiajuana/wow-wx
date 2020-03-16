@@ -113,9 +113,13 @@ page{
     @extend %fdc;
     @extend %c6;
     @extend %cp;
+    margin: 0;
+    background-color: transparent;
     width: j(100);
     font-size: j(20);
+    border-radius: 0;
     padding: j(12) 0;
+    line-height: 1.5;
     .iconfont{
         @extend %df;
         @extend %aic;
@@ -129,6 +133,9 @@ page{
     }
     &.active{
         color: $main-color;
+    }
+    &:after{
+        border: none;
     }
 }
 .recommend-section{

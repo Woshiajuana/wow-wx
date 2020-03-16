@@ -21,7 +21,9 @@
                     </view>
                 </view>
                 <view class="user-button {{objUser.follower && 'disabled'}}"
-                      bindtap="handleFollowOperation"
+                      data-fn="handleFollowOperation"
+                      data-auth="{{user$}}"
+                      bindtap="jumpPageOrFireFn"
                       wx:if="{{user$._id !== objUser._id}}">
                     <view class="iconfont icon-tianjia"></view>
                     <text>{{objUser.follower ? '已关注' : '关注'}}</text>

@@ -19,7 +19,7 @@ new WowPage({
         arrData: '',
     },
     onLoad (options) {
-        this.userGet();
+        this.userGet().null();
         this.routerGetParams(options);
         this.reqPhotoInfo();
     },
@@ -27,7 +27,7 @@ new WowPage({
         let { Http } = this.wow$.plugins;
         let { _id: id } = this.data.params$;
         Http(Http.API.REQ_PHOTO_INFO, {
-            id: id || "5e68626109f975847a991ea7",
+            id,
         }, {
             loading: !this.data.isLoading,
         }).then((res) => {
@@ -42,7 +42,7 @@ new WowPage({
         let { Http } = this.wow$.plugins;
         let { _id: id } = this.data.params$;
         Http(Http.API.REQ_PHOTO_RECOMMEND, {
-            exclude: [id] || ['5e68626109f975847a991ea7'],
+            exclude: [id],
             limit: 10,
         },{
             loading: !this.data.isLoading,
