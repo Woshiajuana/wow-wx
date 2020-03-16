@@ -1,6 +1,7 @@
 <!--index.wxml-->
 <view class="wrap">
     <navigation-custom
+        useBar=""
         class-navigation="navigation-section">
         <view class="header-section">
             <view class="notice" bindtap="jumpPageOrFireFn" data-item="{{objNotice}}">
