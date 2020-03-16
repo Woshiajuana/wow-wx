@@ -55,7 +55,7 @@ const applicationConfig = {
                     filename: 'env.config.js',
                     prompt: '本地环境、资源配置',
                     config: {
-                        STATIC_URL: `http://${ip}:${port}/static/`,
+                        // STATIC_URL: `http://${ip}:${port}/static/`,
                         API_URL: `http://${ip}:9004/api/`,
                     },
                 },
@@ -68,8 +68,8 @@ const applicationConfig = {
                     filename: 'env.config.js',
                     prompt: '本地环境、资源配置',
                     config: {
-                        STATIC_URL: `http://${ip}:${port}/static/`,
-                        API_URL: 'http://www.baidu.com',
+                        // STATIC_URL: `http://${ip}:${port}/static/`,
+                        API_URL: 'http://154.8.209.13:9004/api/',
                     },
                 },
             },
@@ -81,8 +81,8 @@ const applicationConfig = {
                     filename: 'env.config.js',
                     prompt: '本地环境、资源配置',
                     config: {
-                        STATIC_URL: `http://${ip}:${port}/static/`,
-                        API_URL: 'http://www.baidu.com',
+                        // STATIC_URL: `http://${ip}:${port}/static/`,
+                        API_URL: 'http://49.233.210.236:9004/api/',
                     },
                 },
             },

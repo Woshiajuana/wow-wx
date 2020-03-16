@@ -1,7 +1,6 @@
 {
     "pages": [
         "pages/home/index",
-        "pages/user/index",
         "pages/about/index",
         "pages/auth/index",
         "pages/collect/index",
@@ -20,6 +19,7 @@
         "pages/photo/info/index",
         "pages/search/index",
         "pages/setting/index",
+        "pages/user/index",
         "pages/webview/index"
     ],
     "permission": {
