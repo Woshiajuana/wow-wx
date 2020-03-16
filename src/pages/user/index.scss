@@ -3,43 +3,10 @@
 
 page{
     @extend %w100;
-    @extend %h100;
     background-color: $bg-color;
-}
-.navigation-section{
-    @extend %pa;
-    @extend %l0;
-    @extend %t0;
-    @extend %r0;
-    z-index: 9;
-    //background-color: $main-color;
-}
-.header-section{
-    @extend %df;
-    @extend %aic;
-    height: j(90);
-    padding: 0 j(20);
-}
-.notice{
-    @extend %pr;
-}
-.notice-icon{
-    @extend %cfff;
-    font-size: j(52);
-}
-.notice-dot{
-    @extend %pa;
-    @extend %r0;
-    top: j(5);
-    width: j(10);
-    height: j(10);
-    border-radius: 50%;
-    background-color: red;
-    border-bottom: 1px transparent solid;
 }
 .user-section{
     @extend %pr;
-    height: j(520);
     background-color: #ddd;
 }
 .user-bg{
@@ -54,12 +21,18 @@ page{
 }
 .user-content{
     @extend %pr;
+    @extend %h100;
+    @extend %df;
+    @extend %bsb;
+    @extend %fdc;
+    padding: j(100) j(32) j(32);
+    background-color: rgba(0,0,0,.5);
+    justify-content: flex-end;
+}
+.user-info{
     @extend %df;
     @extend %aic;
-    @extend %fdc;
-    @extend %h100;
-    justify-content: flex-end;
-    background-color: rgba(0,0,0,.5);
+    @extend %pr;
 }
 .user-avatar{
     @extend %df;
@@ -67,8 +40,9 @@ page{
     @extend %aic;
     @extend %jcc;
     @extend %cc;
-    width: j(120);
-    height: j(120);
+    margin-right: j(100);
+    width: j(160);
+    height: j(160);
     font-size: j(24);
     border-radius: 50%;
     border: j(1) #ddd solid;
@@ -81,29 +55,66 @@ page{
     @extend %h100;
     border-radius: 50%;
 }
+.user-info-content{
+    @extend %df1;
+}
+.user-button{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    @extend %cfff;
+    @extend %cp;
+    font-size: j(28);
+    height: j(65);
+    border-radius: j(6);
+    background-color: $main-color;
+    .iconfont{
+        margin-right: j(10);
+        font-size: j(28);
+    }
+}
 .user-name{
     @extend %cfff;
-    margin-top: j(20);
-    font-size: j(28);
+    @extend %fwb;
+    margin-top: j(28);
+    font-size: j(36);
 }
 .user-signature{
     @extend %cc;
-    font-size: j(24);
+    font-size: j(28);
 }
 .user-base{
     @extend %df;
-    @extend %w100;
     @extend %aic;
     padding: j(20) 0;
 }
 .base-info{
     @extend %df;
     @extend %df1;
-    @extend %cp;
     @extend %aic;
     @extend %jcc;
     @extend %fdc;
+    @extend %pr;
     height: j(80);
+    &:after{
+        @extend %pa;
+        @extend %r0;
+        @extend %t0;
+        @extend %b0;
+        @include tft(scale(0.5, 0.5));
+        content: '';
+        width: 1px;
+        background-color: #ddd;
+    }
+    &:first-child{
+        //align-items: flex-start;
+    }
+    &:last-child{
+        //align-items: flex-end;
+        &:after{
+            @extend %dn;
+        }
+    }
 }
 .base-info-value{
     @extend %cfff;
