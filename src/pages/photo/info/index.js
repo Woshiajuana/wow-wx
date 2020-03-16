@@ -102,7 +102,7 @@ new WowPage({
         Http(Http.API.DO_FOLLOW_OPERATION, {
             id: objData.user._id,
         }).then((res) => {
-            objData.follower = res || '';
+            objData.user.follower = res || '';
             this.setData({ objData });
             this.modalToast(res ? '关注成功' : '取消成功');
         }).toast();
