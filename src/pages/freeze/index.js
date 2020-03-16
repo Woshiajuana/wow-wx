@@ -13,14 +13,17 @@ new WowPage({
         WowPage.wow$.mixins.Router,
         WowPage.wow$.mixins.Input,
         WowPage.wow$.mixins.Jump,
+        WowPage.wow$.mixins.User,
     ],
     data: {
         strStartTime: '',
         objData: '',
     },
-    onLoad(options) {
-        this.calendarRender();
-        this.reqPhotoList();
+    onShow () {
+        this.userGet().then(() => {
+            this.calendarRender();
+            this.reqPhotoList();
+        }).null();
     },
     handleSelect (event) {
         let { item } = this.inputParams(event);
