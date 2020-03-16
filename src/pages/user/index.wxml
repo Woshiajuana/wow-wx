@@ -2,10 +2,7 @@
     <image class="user-bg" mode="aspectFill" src="{{objUser.avatar || objUser.avatarUrl}}"></image>
     <view class="user-content">
         <view class="user-info">
-            <view class="user-avatar"
-                  bindtap="jumpPageOrFireFn"
-                  data-url="mine_center_index"
-                  data-auth="{{user$}}">
+            <view class="user-avatar">
                 <image class="avatar" mode="aspectFill" src="{{objUser.avatar || objUser.avatarUrl}}"></image>
             </view>
             <view class="user-info-content">
@@ -24,9 +21,10 @@
                     </view>
                 </view>
                 <view class="user-button {{objUser.follower && 'disabled'}}"
+                      bindtap="handleFollowOperation"
                       wx:if="{{user$._id !== objUser._id}}">
                     <view class="iconfont icon-tianjia"></view>
-                    <text>{{objUser.follower ? '已关注' : '未关注'}}</text>
+                    <text>{{objUser.follower ? '已关注' : '关注'}}</text>
                 </view>
             </view>
         </view>

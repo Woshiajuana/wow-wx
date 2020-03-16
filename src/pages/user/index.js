@@ -47,4 +47,16 @@ new WowPage({
             typeof callback === 'function' && callback();
         });
     },
+    // 关注 or 取消关注
+    handleFollowOperation () {
+        let { objUser } = this.data;
+        let { Http } = this.wow$.plugins;
+        Http(Http.API.DO_FOLLOW_OPERATION, {
+            id: objUser._id,
+        }).then((res) => {
+            objUser.follower = res || '';
+            this.setData({ objUser });
+            this.modalToast(res ? '关注成功' : '取消成功');
+        }).toast();
+    }
 });

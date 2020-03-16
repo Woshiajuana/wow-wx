@@ -98,13 +98,13 @@ new WowPage({
     },
     // 关注 or 取消关注
     handleFollowOperation () {
-        let { objUser } = this.data;
+        let { objData } = this.data;
         let { Http } = this.wow$.plugins;
         Http(Http.API.DO_FOLLOW_OPERATION, {
-            id: objUser._id,
+            id: objData.user._id,
         }).then((res) => {
-            objUser.follower = res || '';
-            this.setData({ objUser });
+            objData.user.follower = res || '';
+            this.setData({ objData });
             this.modalToast(res ? '关注成功' : '取消成功');
         }).toast();
     }
