@@ -1,7 +1,0 @@
-{
-    "component": true,
-    "usingComponents": {
-        "wow-scroll": "/components/wow-scroll/index",
-        "photo-grid-item": "/components/photo-grid-item/index"
-    }
-}

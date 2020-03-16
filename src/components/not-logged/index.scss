@@ -1,0 +1,29 @@
+@import '~src/assets/scss/common';
+
+.wrap{
+    @extend %df;
+    @extend %aic;
+    @extend %fdc;
+    @extend %c9;
+    @extend %pf;
+    @extend %w100;
+    @extend %t0;
+    @extend %l0;
+    padding: j(300) 0;
+    font-size: j(32);
+}
+.button{
+    @extend %cp;
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    @extend %cfff;
+    font-size: j(32);
+    width: j(300);
+    height: j(80);
+    margin-top: j(50);
+    border-radius: j(10);
+    background-color: $main-color;
+    box-shadow: 0 j(10) 0 0 #f57241;
+}
+

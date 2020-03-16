@@ -1,8 +1,5 @@
 {
     "navigationBarTitleText": "定格",
     "navigationBarTextStyle": "black",
-    "navigationBarBackgroundColor": "#fff",
-    "usingComponents": {
-        "wow-calendar": "/components/wow-calendar/index"
-    }
+    "navigationBarBackgroundColor": "#fff"
 }
