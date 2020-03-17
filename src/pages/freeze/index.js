@@ -33,19 +33,15 @@ new WowPage({
         this.calendarRender(new Date(date.replace(/-/g, '/')));
         this.reqPhotoList();
     },
-    handleRefresh () {
-        this.calendarRender();
-        this.reqPhotoList();
-    },
     handlePreMonth () {
         this.calendarPreMonth();
-        this.reqPhotoList();
+        this.reqPhotoList(true);
     },
     handleNextMonth () {
         this.calendarNextMonth();
-        this.reqPhotoList();
+        this.reqPhotoList(true);
     },
-    reqPhotoList () {
+    reqPhotoList (loading) {
         let { calendar$, strStartTime } = this.data;
         let { arrDate } = calendar$;
         let { date: startTime } = arrDate[0];
@@ -56,6 +52,8 @@ new WowPage({
         Http(Http.API.REQ_PHOTO_LIST, {
             startTime,
             endTime,
+        }, {
+            loading: !!loading,
         }).then((res) => {
             let objData = {};
             res.forEach((item) => {

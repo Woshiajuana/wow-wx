@@ -1,5 +1,5 @@
 {
     "app": "wow",
-    "env": "dev",
+    "env": "build",
     "name": "wow-wx"
 }
