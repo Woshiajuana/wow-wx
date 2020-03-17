@@ -1,6 +1,5 @@
 {
     "backgroundTextStyle": "dark",
-    "backgroundColor": "#ec642f",
     "navigationBarTitleText": "照片详情",
     "usingComponents": {
         "photo-list-item": "/components/photo-list-item/index",

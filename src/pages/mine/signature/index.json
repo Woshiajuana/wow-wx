@@ -1,6 +1,5 @@
 {
     "backgroundTextStyle": "dark",
-    "backgroundColor": "#ec642f",
     "navigationBarTitleText": "个性签名",
     "usingComponents": {
         "wow-button": "/components/wow-button/index",
