@@ -2,7 +2,7 @@
 <view class="image-section">
     <view class="image-upload" bindtap="handleUpload">
         <view class="iconfont icon-tianjia"></view>
-        <image class="image" src="{{objInput.photo.url}}"></image>
+        <image class="image" src="{{objInput.photo.url}}" mode="aspectFill"></image>
     </view>
 </view>
 

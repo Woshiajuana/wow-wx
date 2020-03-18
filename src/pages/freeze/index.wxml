@@ -40,11 +40,25 @@
 
     <view class="photo">
         <image wx:if="{{objData[calendar$.curDate]}}" mode="aspectFill" src="{{objData[calendar$.curDate].imgUrl}}"></image>
-        <view class="photo-content"
-              bindtap="jumpPageOrFireFn"
-              data-params="{{objData[calendar$.curDate] || {date: calendar$.curDate} }}"
-              data-url="photo_details_index">
-            <view class="iconfont icon-tianjia"></view>
+        <view class="photo-content">
+            <block wx:if="{{objData[calendar$.curDate]}}">
+                <view class="iconfont icon-tubiao09"
+                      bindtap="jumpPageOrFireFn"
+                      data-params="{{objData[calendar$.curDate]}}"
+                      data-url="photo_details_index"
+                ></view>
+                <view class="iconfont icon-yanjing"
+                      bindtap="jumpPageOrFireFn"
+                      data-params="{{objData[calendar$.curDate]}}"
+                      data-url="photo_info_index"
+                ></view>
+            </block>
+            <view wx:else
+                  class="iconfont icon-tianjia"
+                  bindtap="jumpPageOrFireFn"
+                  data-params="{{ {date: calendar$.curDate} }}"
+                  data-url="photo_details_index"
+            ></view>
         </view>
     </view>
 
