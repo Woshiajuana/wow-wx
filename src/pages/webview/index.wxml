@@ -1,4 +1,3 @@
-<!--index.wxml-->
-<view class="wrap">
 
-</view>
+<loading wx:if="{{!src}}">加载中</loading>
+<web-view wx:else class="wrap" src="{{src}}"></web-view>

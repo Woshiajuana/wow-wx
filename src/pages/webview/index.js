@@ -7,30 +7,23 @@ import WowPage from 'source/lib/page'
 
 new WowPage({
     mixins: [
-        WowPage.wow$.mixins.Modal,
-        WowPage.wow$.mixins.Refresh,
+        WowPage.wow$.mixins.Router,
+        WowPage.wow$.mixins.User,
     ],
     data: {
-        arrEntry: [
-            { label: '照片', class: 'icon-zhaopian_huabanfuben', useMargin: true, url: '' },
-            { label: '收藏', class: 'icon-shoucang-tianchong', useMargin: true, url: '' },
-            { label: '历史', class: 'icon-3lishi', useMargin: false, url: '' },
-            { label: '设置', class: 'icon-shezhi', useMargin: true, url: '' },
-        ]
+        src: '',
     },
-    onLoad(options) {
-        console.log('首页加载 => ', options);
-        console.log('首页执行wow$ =>', this.wow$);
+    onLoad (options) {
+        this.routerGetParams(options);
+        this.userGet().then(this.assignmentData.bind(this)).null();
     },
-    handleTap () {
-        let { Modal } = this.wow$.plugins;
-        // this.modalToast('11111');
-        // Modal.toast(1);
-        // console.log(new Promise(()=> {}).toast);
-
-        this.testPromise().toast();
+    assignmentData () {
+        let { params$, user$ } = this.data;
+        let { AccessToken } = user$;
+        let link = params$.link || params$.Link;
+        let title = params$.title || params$.label || params$.Name || '内容详情';
+        wx.setNavigationBarTitle({ title });
+        this.setData({ src: link.replace('ACCESSTOKEN', AccessToken) });
     },
-    testPromise () {
-        return Promise.reject('xxx');
-    }
 });
+

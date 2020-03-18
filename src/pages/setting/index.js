@@ -18,16 +18,18 @@ new WowPage({
                 useMargin: true,
                 url: 'about_index'
             },
-            {
-                label: '帮助',
-                useMargin: true,
-                url: 'webview_index'
-            },
-            {
-                label: '反馈',
-                useMargin: false,
-                url: 'webview_index'
-            },
+            // {
+            //     label: '帮助',
+            //     useMargin: true,
+            //     url: 'webview_index',
+            //     link: 'https://www.owulia.com/mini/help/fqa.html?application=5e71d19361825b52a86a7729',
+            // },
+            // {
+            //     label: '反馈',
+            //     useMargin: false,
+            //     url: 'webview_index',
+            //     link: 'https://www.owulia.com/mini/help/fqa.html?application=5e71d19361825b52a86a7729',
+            // },
         ],
     },
 });

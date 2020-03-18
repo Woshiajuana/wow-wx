@@ -1,7 +1,5 @@
 {
-    "backgroundTextStyle": "dark",
-    "usingComponents": {
-        "navigation-custom": "/components/navigation-custom/index",
-        "test-component": "/components/test-component/index"
-    }
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#fff"
 }
