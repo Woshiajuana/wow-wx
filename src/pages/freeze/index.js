@@ -21,7 +21,7 @@ new WowPage({
     },
     onShow () {
         this.userGet().then(() => {
-            this.calendarRender();
+            this.data.calendar$.arrDate.length === 0 && this.calendarRender();
             this.setData({ strStartTime: '' });
             this.reqPhotoList();
         }).null();

@@ -1,7 +1,5 @@
 {
     "navigationBarTitleText": "定格",
-    "navigationBarTextStyle": "black",
-    "navigationBarBackgroundColor": "#fff",
     "usingComponents": {
         "not-logged": "/components/not-logged/index"
     }

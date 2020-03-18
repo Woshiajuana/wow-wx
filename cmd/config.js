@@ -82,7 +82,8 @@ const applicationConfig = {
                     prompt: '本地环境、资源配置',
                     config: {
                         // STATIC_URL: `http://${ip}:${port}/static/`,
-                        API_URL: 'http://49.233.210.236:9004/api/',
+                        // API_URL: 'http://49.233.210.236:9004/api/',
+                        API_URL: 'https://api.owulia.com/mini/',
                     },
                 },
             },

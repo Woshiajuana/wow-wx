@@ -74,7 +74,8 @@ class Http {
                             msg,
                             data,
                         } = respData;
-                        if (['F40000', 'F40001', 'F40002', 'F40003'].indexOf(code) > -1) {
+                        if (['F40000', 'F40001', 'F40002', 'F40003', 'F40004'].indexOf(code) > -1) {
+                            reject(msg);
                             return Auth.logout().finally(() => Router.root('home_index'));
                         }
                         if (code !== 'S00000') {
@@ -116,10 +117,12 @@ const fn = (api, data = {}, options = {}) => {
     if (useLoadingNav)
         Loading.showNav();
     return new Http(api, data, options).finally(() => {
-        if (useLoading)
-            Loading.hide();
-        if (useLoadingNav)
-            Loading.hideNav();
+        setTimeout(() => {
+            if (useLoading)
+                Loading.hide();
+            if (useLoadingNav)
+                Loading.hideNav();
+        }, 500)
     });
 };
 

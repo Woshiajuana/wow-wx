@@ -28,8 +28,6 @@ new WowPage({
         let { _id: id } = this.data.params$;
         Http(Http.API.REQ_PHOTO_INFO, {
             id,
-        }, {
-            loading: !this.data.isLoading,
         }).then((res) => {
             // 滚动到顶部
             wx.pageScrollTo({ scrollTop: 0 });

@@ -1,6 +1,5 @@
 <!--index.wxml-->
 <wxs src="../../../wxs/filter.wxs" module="filter" />
-
 <block wx:if="{{objData}}">
     <view class="banner-section">
         <image class="banner-image" mode="aspectFill" src="{{objData.photo.base + objData.photo.path + objData.photo.filename}}"></image>
