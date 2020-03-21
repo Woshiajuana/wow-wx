@@ -41,7 +41,6 @@
 
 <view class="content">
 
-    <!--index.wxml-->
     <photo-list-item
         wx:for="{{arrData}}"
         wx:key="index"
