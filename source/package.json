@@ -1,6 +1,6 @@
 {
     "name": "wow-wx",
-    "version": "0.0.2",
+    "version": "0.1.0",
     "description": "wow-wx",
     "main": "index.js",
     "scripts": {
@@ -12,27 +12,26 @@
     },
     "keywords": [
         "wow",
-        "mini-progress",
         "wow-wx",
-        "ui"
+        "mini-program"
     ],
     "author": {
         "name": "Ajuan",
         "email": "zhigang.chen@owulia.com",
-        "url": "http://www.owulia.com/"
+        "url": "https://ajuan.owulia.com/"
     },
     "contributors": [
         {
             "name": "Ajuan",
             "email": "zhigang.chen@owulia.com",
-            "url": "http://www.owulia.com/"
+            "url": "https://ajuan.owulia.com/"
         }
     ],
     "maintainer": [
         {
             "name": "Ajuan",
             "email": "zhigang.chen@owulia.com",
-            "url": "http://www.owulia.com/"
+            "url": "https://ajuan.owulia.com/"
         }
     ],
     "license": "ISC",
