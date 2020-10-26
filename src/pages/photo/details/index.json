@@ -1,7 +1,0 @@
-{
-    "backgroundTextStyle": "dark",
-    "navigationBarTitleText": "",
-    "usingComponents": {
-        "wow-button": "/components/wow-button/index"
-    }
-}

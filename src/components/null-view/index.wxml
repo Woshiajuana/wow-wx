@@ -1,6 +1,0 @@
-<!--index.wxml-->
-
-<view class="wrap">
-    <view class="iconfont icon-wushuju"></view>
-    <text>暂无数据</text>
-</view>

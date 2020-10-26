@@ -1,8 +1,0 @@
-{
-    "backgroundTextStyle": "dark",
-    "navigationBarTitleText": "照片详情",
-    "usingComponents": {
-        "photo-list-item": "/components/photo-list-item/index",
-        "loading-view": "/components/loading-view/index"
-    }
-}

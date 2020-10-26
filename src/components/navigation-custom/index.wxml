@@ -1,6 +1,0 @@
-<view class="navigation-status" wx:if="{{useBar}}" style="height: {{system$.statusBarHeight}}px"></view>
-<view class="navigation class-navigation"
-      style="padding-top:{{system$.statusBarHeight}}px">
-<!--    <view class="navigation-status" style="height: {{system$.statusBarHeight}}px"></view>-->
-    <slot></slot>
-</view>

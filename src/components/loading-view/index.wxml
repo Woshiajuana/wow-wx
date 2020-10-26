@@ -1,5 +1,0 @@
-
-<view class="loading {{ mode }}">
-    <image class="loading-icon" src="/assets/images/loading.gif" mode="aspectFill"></image>
-    <slot></slot>
-</view>

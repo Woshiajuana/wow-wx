@@ -1,7 +1,0 @@
-{
-    "backgroundTextStyle": "dark",
-    "navigationBarTitleText": "个人中心",
-    "usingComponents": {
-        "wow-cell": "/components/wow-cell/index"
-    }
-}

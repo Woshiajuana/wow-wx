@@ -1,8 +1,0 @@
-{
-    "navigationBarTitleText": "搜索",
-    "usingComponents": {
-        "photo-grid-item": "/components/photo-grid-item/index",
-        "null-view": "/components/null-view/index",
-        "no-more": "/components/no-more/index"
-    }
-}

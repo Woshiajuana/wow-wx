@@ -1,7 +1,0 @@
-
-<view class="wrap">
-    <text>登录之后会有新天地哦...</text>
-    <view class="button" bindtap="jumpPageOrFireFn" data-url="auth_index">
-        <text>立即登录</text>
-    </view>
-</view>

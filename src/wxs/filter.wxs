@@ -1,9 +1,0 @@
-
-module.exports = {
-    filterLength: function (value) {
-        return value ? value.length : 0;
-    },
-    filterCut: function (value, length) {
-        return value ? value.substring(0, length) : '';
-    }
-};

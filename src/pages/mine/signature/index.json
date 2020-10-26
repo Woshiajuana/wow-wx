@@ -1,8 +1,0 @@
-{
-    "backgroundTextStyle": "dark",
-    "navigationBarTitleText": "个性签名",
-    "usingComponents": {
-        "wow-button": "/components/wow-button/index",
-        "mine-input-cell": "/components/mine-input-cell/index"
-    }
-}
