@@ -51,11 +51,11 @@ Curl.prototype.request = function (config = {}) {
     let chain = [ dispatchRequest ];
     let promise = Promise.resolve(config);
     // 将两个拦截器中的回调加入到chain数组中
-    this.interceptors.request.handler.forEach((interceptor) => {
+    this.interceptors.request.handlers.forEach((interceptor) => {
         // chain.unshift(interceptor.fulfilled, interceptor.rejected);
         chain.unshift(interceptor);
     });
-    this.interceptors.response.handler.forEach((interceptor) => {
+    this.interceptors.response.handlers.forEach((interceptor) => {
         // chain.push(interceptor.fulfilled, interceptor.rejected);
         chain.push(interceptor);
     });

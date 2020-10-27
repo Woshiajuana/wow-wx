@@ -5,22 +5,22 @@ import EnvConfig from 'src/config/env.config'
 import ApiConfig from 'src/config/api.config'
 
 const curl = new Curl({
-    baseUrl: EnvConfig.baseUrl,
+    baseUrl: EnvConfig.API_URL,
 });
-
-curl.interceptors.request.use((config) => new Promise((resolve, reject) => {
-    console.log('请求参数1', config);
-    config.xx = '请求参数1';
-    resolve(config);
-}));
 
 curl.interceptors.request.use((config) => new Promise((resolve, reject) => {
     console.log('请求参数2', config);
     resolve(config);
 }));
 
+curl.interceptors.request.use((config) => new Promise((resolve, reject) => {
+    console.log('请求参数1', config);
+    resolve({...config, xx: 'xxxx'});
+}));
+
 curl.interceptors.response.use((response) => new Promise((resolve, reject) => {
     console.log('请求报文', response);
+    resolve(response);
 }));
 
 export default {
