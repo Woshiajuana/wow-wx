@@ -1,119 +1,77 @@
-//
-// function curl (config = {}) {
-//     config = Object.assign({ }, curl.DEFAULT_CONFIG, config);
-//     return new Promise((resolve, reject) => {
-//         let reqInterceptors = curl.interceptors.request.interceptors;
-//         for (let i = 0, len = reqInterceptors.length; i < len; i++) {
-//
-//         }
-//         reqInterceptors.forEach((interceptor) => {
-//             interceptor(resolve, reject);
-//         });
-//         let {
-//             data = {}, // 参数
-//             fn,
-//             url,
-//             timeout,
-//             responseType,
-//         } = config;
-//     });
-// }
-//
-// function run () {
-//
-// }
-//
-// curl.DEFAULT_CONFIG = {
-//     baseURI: '',
-//     timeout: 30 * 1000,
-//     responseType: 'json',
-//     method: 'POST',
-//     fn: 'request',
-//     headers: {
-//         'Content-Type': 'application/json;charset=UTF-8',
-//     },
-// };
-//
-// curl.interceptors = {
-//     request: {
-//         interceptors: [],
-//         use (interceptor) {
-//             this.interceptors.push(interceptor)
-//         },
-//     },
-//     response: {
-//         interceptors: [],
-//         use (interceptor) {
-//             this.interceptors.push(interceptor)
-//         },
-//     }
-// };
-//
-// curl.get = function(options = {}) {
-//     return curl(Object.assign({}, options, { method: 'GET' }));
-// };
-//
-// curl.post = function (options) {
-//     return curl(Object.assign({}, options, { method: 'POST' }));
-// };
-//
-// curl.upload = function (options) {
-//     return curl(Object.assign({}, options, { method: 'POST', fn: 'uploadFile' }));
-// };
-//
-// // curl.create = function (config = {}) {
-// //     return function (options = {}) {
-// //         return curl(Object.assign({}, config, options))
-// //     }
-// // };
-//
-// export default curl;
 
-
-function interceptorsManner (){
-    this.handler = [];
+function InterceptorsManner () {
+    this.handlers = [];
 }
 
-interceptorsManner.prototype.use = function(fulfilled, rejected){
-    this.handler.push({
-        fulfilled: fulfilled,
-        rejected: rejected
-    });
+InterceptorsManner.prototype.use = function (handler) {
+    // this.handlers.push({ fulfilled: fulfilled, rejected: rejected });
+    this.handlers.push(handler);
+    return this.handlers.length - 1;
 };
 
-function Curl () {
+InterceptorsManner.prototype.eject = function eject (id) {               //移除一个拦截器 id:该拦截器的索引
+    if (this.handlers[id]) {
+        this.handlers.splice(id, 1);
+    }
+};
 
+const DEFAULTS = {
+    baseUrl: '',
+    fn: 'request',
+    method: 'POST',
+    timeout: 30 * 1000,
+    dataType: 'json',
+};
+
+function Curl (config = {}) {
     this.interceptors = {
         //两个拦截器
-        request: new interceptorsManner(),
-        response: new interceptorsManner()
-    }
-
+        request: new InterceptorsManner(),
+        response: new InterceptorsManner()
+    };
+    this.defaults = Object.assign({}, DEFAULTS, config);
 }
 
-Curl.prototype.request = function () {
-    // 这儿的undefined是为了补位，因为拦截器的返回有两个
-    let chain = [dispatchRequest, undefined];
-    let promise = Promise.resolve();
+Curl.prototype.request = function (config = {}) {
+    config = Object.assign({ }, this.defaults, config);
+    let { baseUrl, url, fn, data = {} } = config;
+    if (!url.startsWith('http')) {
+        config.url = baseUrl + url;
+    }
+    if (fn === 'uploadFile') {
+        if (!config.header) {
+            config.header = {};
+        }
+        config.header['Content-Type'] = 'multipart/form-data';
+        config.formData = data;
+    }
+    let dispatchRequest = (options) => new Promise((resolve, reject) => {
+        wx[fn]({ ...options,  success: resolve, fail: reject });
+    });
+    let chain = [ dispatchRequest ];
+    let promise = Promise.resolve(config);
     // 将两个拦截器中的回调加入到chain数组中
-    this.interceptors.request.handler.forEach((interceptor)=>{
-        chain.unshift(interceptor.fulfilled, interceptor.rejected);
+    this.interceptors.request.handler.forEach((interceptor) => {
+        // chain.unshift(interceptor.fulfilled, interceptor.rejected);
+        chain.unshift(interceptor);
     });
-    this.interceptors.response.handler.forEach((interceptor)=>{
-        chain.push(interceptor.fulfilled, interceptor.rejected);
+    this.interceptors.response.handler.forEach((interceptor) => {
+        // chain.push(interceptor.fulfilled, interceptor.rejected);
+        chain.push(interceptor);
     });
-    while(chain.length){
+    while (chain.length){
         // promise.then的链式调用，下一个then中的chain为上一个中的返回值，每次会减去两个
         // 这样就实现了在请求的时候，先去调用请求拦截器的内容，再去请求接口，返回之后再去执行响应拦截器的内容
-        promise = promise.then(chain.shift(), chain.shift());
+        // promise = promise.then(chain.shift(), chain.shift());
+        promise = promise.then(chain.shift());
     }
+    return promise;
 };
 
-["get","post","delete"].forEach((method) => {
+['get', 'post', 'upload'].forEach((method) => {
     Curl.prototype[method] = function (url, config = {}) {
-        return this.request(Object.assign({}, config, {
-            method,
-            url,
-        }));
+        return this.request(Object.assign({}, config, { method: method.toLocaleUpperCase(), url, fn: method === 'upload' ? 'uploadFile' : 'request' }));
     };
 });
+
+export default Curl;
