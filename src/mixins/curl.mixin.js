@@ -12,7 +12,7 @@ const curl = new Curl({
 // 日志输出
 curl.interceptors.request.use((config) => new Promise((resolve, reject) => {
     let { url, method, data } = config;
-    console.log(`${url} ${method} 请求参数 => `, data);
+    console.log(`${url} [${method}] 请求参数 => `, data);
     resolve(config);
 }));
 
@@ -43,9 +43,14 @@ curl.interceptors.request.use((config) => new Promise((resolve, reject) => {
 }));
 
 curl.interceptors.response.use((response) => new Promise((resolve, reject) => {
-    let { requestConfig, statusCode } = response;
+    let { requestConfig, statusCode, data } = response;
+    delete response.requestConfig;
     let { url, method } = requestConfig;
-    console.log(`${url} ${method} 请求返回 => `);
+    if (statusCode !== 200 || !data) {
+        console.log(`${url} [${method}] 请求失败 => `, response);
+        return reject(`网络繁忙，请稍后再试[${statusCode}]`);
+    }
+    console.log(`${url} [${method}] 请求返回 => `, data);
     resolve(response);
 }));
 
