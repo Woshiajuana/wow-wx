@@ -1,5 +1,5 @@
 
-import Curl from 'source/lib/curl'
+import Curl from 'source/curl'
 import Loading from 'source/mixins/wx/loading.mixin'
 import EnvConfig from 'src/config/env.config'
 import ApiConfig from 'src/config/api.config'
@@ -49,7 +49,7 @@ export default {
                 Loading.loadingHide();
             }
             if (navLoading) {
-                Loading.loadingHide();
+                Loading.loadingHideNav();
             }
         });
     },

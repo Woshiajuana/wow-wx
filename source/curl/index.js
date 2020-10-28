@@ -23,7 +23,7 @@ const DEFAULTS = {
     dataType: 'json',
 };
 
-function Curl (config = {}) {
+function Index (config = {}) {
     this.interceptors = {
         //两个拦截器
         request: new InterceptorsManner(),
@@ -32,7 +32,7 @@ function Curl (config = {}) {
     this.defaults = Object.assign({}, DEFAULTS, config);
 }
 
-Curl.prototype.request = function (config = {}) {
+Index.prototype.request = function (config = {}) {
     config = Object.assign({ }, this.defaults, config);
     let { baseUrl, url, fn, data = {} } = config;
     if (!url.startsWith('http')) {
@@ -69,9 +69,9 @@ Curl.prototype.request = function (config = {}) {
 };
 
 ['get', 'post', 'upload'].forEach((method) => {
-    Curl.prototype[method] = function (url, config = {}) {
+    Index.prototype[method] = function (url, config = {}) {
         return this.request(Object.assign({}, config, { method: method.toLocaleUpperCase(), url, fn: method === 'upload' ? 'uploadFile' : 'request' }));
     };
 });
 
-export default Curl;
+export default Index;
