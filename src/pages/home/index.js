@@ -12,14 +12,17 @@ new WowPage({
         WowPage.wow$.mixins.Clipboard,
         WowPage.wow$.mixins.Curl,
     ],
+    x: 11111,
     onLoad (options) {
+        console.log(this.x);
         console.log('options1 => ', options);
     },
     handleTest1(){
         this.handleTest();
     },
     handleTest() {
-        this.curl(this.data.api$.DO_ORDER_REVIEW_COMMENT, {
+        console.log(this.x);
+        this.curl(this.data.api$.REQ_TEST, {
             name: 'a',
         }).then((res) => {
             console.log('请求成功 => ', res);
