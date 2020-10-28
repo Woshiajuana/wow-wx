@@ -11,7 +11,8 @@ const curl = new Curl({
 
 // 日志输出
 curl.interceptors.request.use((config) => new Promise((resolve, reject) => {
-    console.log('请求参数2', config);
+    let { url, method, data } = config;
+    console.log(`${url} ${method} 请求参数 => `, data);
     resolve(config);
 }));
 
@@ -35,14 +36,16 @@ curl.interceptors.request.use((config) => new Promise((resolve, reject) => {
         config.data = data;
     }).catch(() => {}).finally(() => {
         if (useToken && !data.authorization) {
-
+            return reject();
         }
     });
     resolve(config);
 }));
 
 curl.interceptors.response.use((response) => new Promise((resolve, reject) => {
-    console.log('请求报文', response);
+    let { requestConfig, statusCode } = response;
+    let { url, method } = requestConfig;
+    console.log(`${url} ${method} 请求返回 => `, data);
     resolve(response);
 }));
 

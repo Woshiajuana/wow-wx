@@ -46,7 +46,7 @@ Index.prototype.request = function (config = {}) {
         config.formData = data;
     }
     let dispatchRequest = (options) => new Promise((resolve, reject) => {
-        wx[fn]({ ...options,  success: resolve, fail: reject });
+        wx[fn]({ ...options, success: (res) => resolve({ ...res, requestConfig: config }), fail: (err) => reject({ ...err, requestConfig: config }) });
     });
     let chain = [ dispatchRequest ];
     let promise = Promise.resolve(config);
