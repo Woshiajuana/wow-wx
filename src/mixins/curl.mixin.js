@@ -17,11 +17,26 @@ curl.interceptors.request.use((config) => new Promise((resolve, reject) => {
 
 // 先判断是否需要 token
 curl.interceptors.request.use((config) => new Promise((resolve, reject) => {
-    let { data } = config;
+    let {
+        data,
+        useToken = true,
+        extend,
+    } = config;
     User.userGet().then((res) => {
-
+        let {
+            token,
+        } = res;
+        if (token && useToken) {
+            data = Object.assign({ authorization: token }, data);
+        }
+        if (typeof extend === 'function') {
+            data = Object.assign(data, (extend(res) || {}));
+        }
+        config.data = data;
     }).catch(() => {}).finally(() => {
+        if (useToken && !data.authorization) {
 
+        }
     });
     resolve(config);
 }));
