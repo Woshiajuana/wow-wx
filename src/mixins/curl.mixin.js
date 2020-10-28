@@ -20,7 +20,7 @@ curl.interceptors.request.use((config) => new Promise((resolve, reject) => {
 curl.interceptors.request.use((config) => new Promise((resolve, reject) => {
     let {
         data,
-        useToken = true,
+        useToken = false,
         extend,
     } = config;
     User.userGet().then((res) => {
@@ -36,16 +36,16 @@ curl.interceptors.request.use((config) => new Promise((resolve, reject) => {
         config.data = data;
     }).catch(() => {}).finally(() => {
         if (useToken && !data.authorization) {
-            return reject();
+            return reject('还未登录，请先登录');
         }
+        resolve(config);
     });
-    resolve(config);
 }));
 
 curl.interceptors.response.use((response) => new Promise((resolve, reject) => {
     let { requestConfig, statusCode } = response;
     let { url, method } = requestConfig;
-    console.log(`${url} ${method} 请求返回 => `, data);
+    console.log(`${url} ${method} 请求返回 => `);
     resolve(response);
 }));
 
