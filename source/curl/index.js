@@ -34,9 +34,9 @@ function Index (config = {}) {
 
 Index.prototype.request = function (config = {}) {
     config = Object.assign({ }, this.defaults, config);
-    let { baseUrl, url, fn, data = {} } = config;
+    let { baseURI, url, fn, data = {} } = config;
     if (!url.startsWith('http')) {
-        config.url = baseUrl + url;
+        config.url = baseURI + url;
     }
     if (fn === 'uploadFile') {
         if (!config.header) {
