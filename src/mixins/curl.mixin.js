@@ -1,21 +1,29 @@
 
 import Curl from 'source/curl'
 import Loading from 'source/mixins/wx/loading.mixin'
+import User from 'source/mixins/utils/user.mixin'
 import EnvConfig from 'src/config/env.config'
 import ApiConfig from 'src/config/api.config'
 
 const curl = new Curl({
-    baseUrl: EnvConfig.API_URL,
+    baseURI: EnvConfig.API_URL,
 });
 
+// 日志输出
 curl.interceptors.request.use((config) => new Promise((resolve, reject) => {
     console.log('请求参数2', config);
     resolve(config);
 }));
 
+// 先判断是否需要 token
 curl.interceptors.request.use((config) => new Promise((resolve, reject) => {
-    console.log('请求参数1', config);
-    resolve({...config, xx: 'xxxx'});
+    let { data } = config;
+    User.userGet().then((res) => {
+
+    }).catch(() => {}).finally(() => {
+
+    });
+    resolve(config);
 }));
 
 curl.interceptors.response.use((response) => new Promise((resolve, reject) => {
@@ -41,9 +49,9 @@ export default {
             Loading.loadingShowNav();
         }
         return curl.request({
+            ...options,
             url,
             data,
-            ...options,
         }).finally(() => {
             if (loading) {
                 Loading.loadingHide();

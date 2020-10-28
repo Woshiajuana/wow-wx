@@ -16,7 +16,7 @@ InterceptorsManner.prototype.eject = function eject (id) {               //ç§»é™
 };
 
 const DEFAULTS = {
-    baseUrl: '',
+    baseURI: '',
     fn: 'request',
     method: 'POST',
     timeout: 30 * 1000,
