@@ -2,3 +2,5 @@
 
 <button bindtap="handleTest">测试按钮</button>
 <button bindtap="handleTest1">测试按钮</button>
+
+<template-component></template-component>

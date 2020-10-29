@@ -18,6 +18,7 @@ class WowComponent extends Core {
         this.keys = filterFun
             ? filterFun([ ...FUNCTION_COMPONENT_KEYS ])
             : [ ...FUNCTION_COMPONENT_KEYS ];
+        let attached = this.options.attached;
         Object.assign(this.options, {
             get wow$ () { return App.wow$ },
             get App () { return App },
@@ -25,6 +26,9 @@ class WowComponent extends Core {
                 this.wow$ = App.wow$;
                 this.App = App;
                 // 在组件实例进入页面节点树时执行
+                if (attached) {
+                    attached.apply(this)
+                }
             },
         });
         this.generate('component');
