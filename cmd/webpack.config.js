@@ -31,9 +31,13 @@ const rootOutDirectoryAbsolutePath = path.join(cmdPath, rootOutputPath);
         const fileDirArr = (path.join(directory, path.basename(fullPath, fileExtName))).replace(rootDirectoryAbsolutePath, '').replace(/\\/g, '/').split('\/');
         const fileLastDir = fileDirArr[fileDirArr.length - 1];
         if (fileStat.isFile() && includeExtName.indexOf(fileExtName) > -1) {
+            if (fileDirArr[0] === 'views') {
+                fileDirArr.shift();
+            }
             let name = fileDirArr.join('/').replace('.js', '');
-            if (name.indexOf('mixin') === -1)
+            if (name.indexOf('mixin') === -1) {
                 entry[name] = fullPath;
+            }
         } else if (fileStat.isDirectory() && excludeDirectory.indexOf(fileLastDir) === -1) {
             walkFun(fullPath);
         }
@@ -48,6 +52,8 @@ let uglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({
         screw_ie8: true,
     }
 });
+
+console.log('entry => ', entry);
 
 const config = {
     entry: entry,
