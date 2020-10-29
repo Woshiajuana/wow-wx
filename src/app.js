@@ -5,7 +5,7 @@ import './project.config.json'
 import './app.scss'
 import './wxs/filter.wxs'
 
-import WowApp from 'source/lib/app'
+import WowApp from 'wow-wx/lib/app'
 
 const wowApp = new WowApp();
 
@@ -16,11 +16,7 @@ const formatKey = (key, cut) => {
 
 WowApp.requireDir(require.context('./mixins', true, /\.mixin\.js$/), (key, value) => {
     wowApp.use('mixins', formatKey(key, '.mixin'), value.default || value);
-// }).requireDir(require.context('./config', true, /\.config\.js$/), (key, value) => {
-//     wowApp.use('configs', formatKey(key, '.config'), value.default || value);
-// }).requireDir(require.context('./plugins', true, /\.plugin\.js$/), (key, value) => {
-//     wowApp.use('plugins', formatKey(key, '.plugin'), value.default || value);
-}).requireDir(require.context('source/mixins', true, /\.mixin\.js$/), (key, value) => {
+}).requireDir(require.context('wow-wx/mixins', true, /\.mixin\.js$/), (key, value) => {
     wowApp.use('mixins', formatKey(key, '.mixin'), value.default || value);
 });
 

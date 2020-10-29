@@ -24,7 +24,9 @@
     "url": "https://github.com/Woshiajuana/wow-wx/issues"
   },
   "homepage": "https://github.com/Woshiajuana/wow-wx#readme",
-  "dependencies": {},
+  "dependencies": {
+    "wow-wx": "^0.1.0"
+  },
   "devDependencies": {
     "wow-cmd": "0.0.17",
     "babel-core": "^6.23.1",
