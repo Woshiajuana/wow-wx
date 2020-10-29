@@ -53,8 +53,6 @@ let uglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({
     }
 });
 
-console.log('entry => ', entry);
-
 const config = {
     entry: entry,
     output: {

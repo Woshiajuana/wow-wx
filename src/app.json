@@ -12,5 +12,19 @@
         "navigationBarTitleText": "WOW-WX",
         "navigationBarTextStyle": "black",
         "navigationBarBackgroundColor": "#ffffff"
-    }
+    },
+    "module": [
+        "module/home/index",
+        "module/login/index"
+    ],
+    "subpackages": [
+        {
+            "root": "module",
+            "name": "module",
+            "pages": [
+                "home/index",
+                "login/index"
+            ]
+        }
+    ]
 }
