@@ -34,6 +34,7 @@ class Core {
         let loop;
         ;(loop = (mixins) => {
             mixins.forEach((item) => {
+                item = Object.assign({}, item);
                 let { mixins, data } = item;
                 delete item.mixins;
                 delete item.data;
@@ -46,7 +47,6 @@ class Core {
                 Core.mixinTarget(target, item, this.keys);
                 Object.assign(mixinOption, item);
             });
-
         })(mixins);
 
         // mixins.forEach((mixin) => {
@@ -57,6 +57,7 @@ class Core {
         //     Core.mixinTarget(target, mixin, this.keys);
         //     Object.assign(mixinOption, mixin);
         // });
+
         Core.mixinTarget(target, this.options, this.keys);
 
         if (type === 'component') {
