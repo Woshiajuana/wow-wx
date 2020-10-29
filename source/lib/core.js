@@ -30,14 +30,33 @@ class Core {
         // 混合数据
         let mixinData = {};
         let mixinOption = {};
-        mixins.forEach((mixin) => {
-            mixin = Object.assign({}, mixin);
-            if (mixin.data)
-                Object.assign(mixinData, mixin.data);
-            delete mixin.data;
-            Core.mixinTarget(target, mixin, this.keys);
-            Object.assign(mixinOption, mixin);
-        });
+
+        let loop;
+        ;(loop = (mixins) => {
+            mixins.forEach((item) => {
+                let { mixins, data } = item;
+                delete item.mixins;
+                delete item.data;
+                if (mixins) {
+                    loop(mixins)
+                }
+                if (data) {
+                    Object.assign(mixinData, data);
+                }
+                Core.mixinTarget(target, item, this.keys);
+                Object.assign(mixinOption, item);
+            });
+
+        })(mixins);
+
+        // mixins.forEach((mixin) => {
+        //     mixin = Object.assign({}, mixin);
+        //     if (mixin.data)
+        //         Object.assign(mixinData, mixin.data);
+        //     delete mixin.data;
+        //     Core.mixinTarget(target, mixin, this.keys);
+        //     Object.assign(mixinOption, mixin);
+        // });
         Core.mixinTarget(target, this.options, this.keys);
 
         if (type === 'component') {

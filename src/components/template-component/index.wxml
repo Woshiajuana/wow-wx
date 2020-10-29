@@ -1,4 +1,4 @@
 
-<view class="wrap" bindtap="test">
+<view class="wrap">
     <text>测试组件</text>
 </view>

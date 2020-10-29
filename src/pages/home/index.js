@@ -4,17 +4,15 @@ import './index.scss'
 import './index.wxml'
 
 import WowPage from 'source/lib/page'
-import m1 from './mixins1'
 import m2 from './mixins2'
 
 new WowPage({
     mixins: [
-        m1,
         m2,
         WowPage.wow$.mixins.Auth,
         WowPage.wow$.mixins.Modal,
         WowPage.wow$.mixins.Clipboard,
-        WowPage.wow$.mixins.Curl,
+        // WowPage.wow$.mixins.Curl,
     ],
     onLoad (options) {
         console.log('主体')
