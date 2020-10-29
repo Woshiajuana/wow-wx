@@ -7,3 +7,4 @@
 <button bindtap="handleTest">测试按钮</button>
 
 <template-component></template-component>
+<module-component></module-component>

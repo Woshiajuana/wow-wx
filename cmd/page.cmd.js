@@ -23,9 +23,9 @@ class Generate {
                 let full_path = path.join(directory, file);
                 let stat = fs.statSync(full_path);
                 let ext_name = path.extname(full_path);
+                let file_path = path.join(dir, path.basename(file, ext_name));
+                let file_path_arr = file_path.replace(/\\/g, '/').split('\/');
                 if (stat.isFile() && ext_name === '.wxml') {
-                    let file_path = path.join(dir, path.basename(file, ext_name));
-                    let file_path_arr = file_path.replace(/\\/g, '/').split('\/');
                     let file_path_name_arr = this._unique(file_path_arr);
                     let name = file_path_name_arr.join('_');
                     let key = file_path_arr[0];
@@ -49,7 +49,7 @@ class Generate {
                         module.pages.push(file_path_arr.join('/'));
                     }
                     this.router[name] = '/' + p;
-                } else if (stat.isDirectory()) {
+                } else if (stat.isDirectory() && ['components'].indexOf(file_path_arr[file_path_arr.length - 1]) === -1) {
                     let sub_dir = path.join(dir, file);
                     walk(sub_dir);
                 }
