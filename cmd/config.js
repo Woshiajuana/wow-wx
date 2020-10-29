@@ -25,6 +25,7 @@ const directoryConfig = {
     // 排除遍历的目录
     excludeDirectory: [
         'assets',
+        'wxs',
         'config',
         'mixins',
         'plugins',
