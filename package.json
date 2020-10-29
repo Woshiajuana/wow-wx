@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/Woshiajuana/wow-wx#readme",
   "dependencies": {
-    "wow-wx": "^0.1.0"
+    "wow-wx": "^0.1.1"
   },
   "devDependencies": {
     "wow-cmd": "0.0.17",
