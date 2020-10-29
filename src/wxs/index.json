@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "wow-wx",
+    "usingComponents": {
+        "template-component": "/components/template-component/index"
+    }
+}
