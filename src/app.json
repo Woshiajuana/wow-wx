@@ -13,10 +13,6 @@
         "navigationBarTextStyle": "black",
         "navigationBarBackgroundColor": "#ffffff"
     },
-    "module": [
-        "module/home/index",
-        "module/login/index"
-    ],
     "subpackages": [
         {
             "root": "module",

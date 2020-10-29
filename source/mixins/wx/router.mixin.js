@@ -1,4 +1,6 @@
 
+import Config from '../../config'
+
 export default {
     data: {
         params$: {},
@@ -30,7 +32,7 @@ function getParams (options) {
 }
 
 function handle(url, params, key, resolve, reject) {
-    const RouterConfig = getApp().wow$.configs.Router;
+    const RouterConfig = Config.routes;
     url = RouterConfig[url] || '';
     if(key !== 'switchTab')
         url = `${url}?params=${encodeURIComponent(JSON.stringify(params))}`;

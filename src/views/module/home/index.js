@@ -7,13 +7,10 @@ import WowPage from 'source/lib/page'
 
 new WowPage({
     mixins: [
-        WowPage.wow$.mixins.Auth,
-        WowPage.wow$.mixins.Modal,
-        WowPage.wow$.mixins.Clipboard,
-        WowPage.wow$.mixins.Curl,
-        WowPage.wow$.mixins.Jump,
+        WowPage.wow$.mixins.Router,
     ],
     onLoad (options) {
-
+        this.routerGetParams(options);
     },
 });
+
