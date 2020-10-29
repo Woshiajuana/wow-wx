@@ -31,6 +31,7 @@ class Generate {
                     let key = file_path_arr[0];
                     let p = file_path_arr.join('/');
                     if (key === 'pages') {
+                        name = name.replace('pages_', '');
                         // 主包
                         this.appJson.pages.push(p);
                     } else {
