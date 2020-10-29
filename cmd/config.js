@@ -57,9 +57,7 @@ const applicationConfig = {
                     prompt: '本地环境、资源配置',
                     config: {
                         STATIC_URL: `http://${ip}:${port}/static/`,
-                        // API_URL: 'http://192.168.2.117:8083/',
-                        // API_URL: 'http://s0000.iok.la:56950/',
-                        API_URL: 'https://xcx.xiaomiqiu.com/',
+                        API_URL: 'https://xcx.owulia.com/',
                     },
                 },
             },
@@ -72,7 +70,7 @@ const applicationConfig = {
                     prompt: '本地环境、资源配置',
                     config: {
                         STATIC_URL: `http://${ip}:${port}/static/`,
-                        API_URL: 'https://mall.jfpays.com/',
+                        API_URL: 'https://xcx.owulia.com/',
                     },
                 },
             },
@@ -85,7 +83,7 @@ const applicationConfig = {
                     prompt: '本地环境、资源配置',
                     config: {
                         STATIC_URL: `http://${ip}:${port}/static/`,
-                        API_URL: 'https://mall.jfpays.com/',
+                        API_URL: 'https://xcx.owulia.com/',
                     },
                 },
             },
