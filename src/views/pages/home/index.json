@@ -1,5 +1,5 @@
 {
-    "navigationBarTitleText": "wow-wx",
+    "navigationBarTitleText": "主页",
     "usingComponents": {
         "template-component": "/components/template-component/index"
     }

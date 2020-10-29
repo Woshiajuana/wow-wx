@@ -1,6 +1,12 @@
 
+import InputMixin from 'source/mixins/wx/input.mixin'
+import RouterMixin from 'source/mixins/wx/router.mixin'
 
 export default {
+    mixins: [
+        InputMixin,
+        RouterMixin,
+    ],
     jumpPageOrFireFn (e) {
         let { url, params, fn, item, async, sync, disabled, close = false, event, filter } = this.inputParams(e);
         if (disabled) {
