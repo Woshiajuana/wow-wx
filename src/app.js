@@ -29,7 +29,6 @@ wowApp.init({
         console.log('[APP ERROR] => ',msg);
     },
     onPageNotFound () {
-        let { Router } = this.wow$.plugins;
-        Router.root('home_index');
+        this.wow$.mixins.Router.routerPush('home_index');
     },
 });
