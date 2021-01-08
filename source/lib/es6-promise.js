@@ -1,8 +1,7 @@
 
 Promise.prototype.toast = function () {
     return this.catch(err => {
-        let { Modal, modal } = getApp().wow$.plugins;
-        if (modal) Modal = modal;
+        let { Modal } = getApp().wow$.mixins;
         if (Modal) Modal.toast(err);
     });
 };
