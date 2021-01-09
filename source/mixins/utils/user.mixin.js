@@ -79,10 +79,10 @@ export default {
     },
     userGet () {
         return Auth.getToken().then((user$) => {
-            this.setData({ user$ });
+            this.setData && this.setData({ user$ });
             return Promise.resolve(user$);
         }).catch((err) => {
-            this.setData({ user$: '' });
+            this.setData && this.setData({ user$: '' });
             return Promise.reject();
         })
     },
