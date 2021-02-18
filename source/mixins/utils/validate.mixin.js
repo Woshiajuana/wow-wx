@@ -24,7 +24,9 @@ export default {
                         value,
                         children,
                         children2,
+                        hidden,
                     } = item;
+                    if (hidden) return;
                     if (typeof value !== 'undefined')
                         result[key] = item.value;
                     if (children) loop(children);
