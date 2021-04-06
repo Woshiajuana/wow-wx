@@ -56,7 +56,7 @@ const Auth = {
     getUserInfo: (options) => new Promise((resolve, reject) => {
         wx.getSetting({
             success: (res) => {
-                if (!res.authSetting['scope.userInfo']) return reject({code: -1, errMsg: 'user no auth'});
+                // if (!res.authSetting['scope.userInfo']) return reject({code: -1, errMsg: 'user no auth'});
                 wx.getUserInfo({
                     success: res => {
                         resolve(res);
@@ -70,6 +70,22 @@ const Auth = {
                 reject({code: -1, errMsg: 'user no auth'})
             }
         });
+    }),
+
+    // 获取用户信息
+    getUserProfile: (options = {}) => new Promise((resolve, reject) => {
+        const fn = wx.getUserProfile || wx.getUserInfo;
+        fn({
+            desc: '用于完善会员资料',
+            ...options,
+            success: (res) => {
+                resolve(res);
+            },
+            fail: err => {
+                console.log('getUserProfile => ', err);
+                reject('');
+            }
+        })
     }),
 };
 
@@ -90,4 +106,5 @@ export default {
     userLogout: Auth.logout,
     userLogin: Auth.login,
     userGetInfo: Auth.getUserInfo,
+    userGetProfile: Auth.getUserProfile,
 }
