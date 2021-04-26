@@ -1,7 +1,8 @@
 
 export default {
     inputHandle (event) {
-        let { item = '', value, valkey = 'value' } = this.inputParams(event);
+        let { item = '', value, valkey = 'value', disabled } = this.inputParams(event);
+        if (disabled) return null;
         let callValue = value;
         if (typeof item !== 'object')  {
             this.setData({ [item]: value })
