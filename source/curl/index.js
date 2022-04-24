@@ -42,7 +42,7 @@ Curl.prototype.request = function (config = {}) {
         if (!config.header) {
             config.header = {};
         }
-        config.header['Content-Type'] = 'multipart/form-data';
+        // config.header['Content-Type'] = 'multipart/form-data';
         config.formData = data;
     }
     let dispatchRequest = (options) => new Promise((resolve, reject) => {
