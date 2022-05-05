@@ -1,44 +1,47 @@
 {
-    "name": "wow-wx",
-    "version": "0.1.12",
-    "description": "wow-wx",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/Woshiajuana/wow-wx.git"
-    },
-    "keywords": [
-        "wow",
-        "wow-wx",
-        "mini-program"
-    ],
-    "author": {
-        "name": "Ajuan",
-        "email": "zhigang.chen@owulia.com",
-        "url": "https://ajuan.owulia.com/"
-    },
-    "contributors": [
-        {
-            "name": "Ajuan",
-            "email": "zhigang.chen@owulia.com",
-            "url": "https://ajuan.owulia.com/"
-        }
-    ],
-    "maintainer": [
-        {
-            "name": "Ajuan",
-            "email": "zhigang.chen@owulia.com",
-            "url": "https://ajuan.owulia.com/"
-        }
-    ],
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/Woshiajuana/wow-wx/issues"
-    },
-    "homepage": "https://github.com/Woshiajuana/wow-wx#readme",
-    "devDependencies": {
+  "name": "wow-wx",
+  "version": "0.1.13",
+  "description": "wow-wx",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Woshiajuana/wow-wx.git"
+  },
+  "keywords": [
+    "wow",
+    "wow-wx",
+    "mini-program"
+  ],
+  "author": {
+    "name": "Ajuan",
+    "email": "zhigang.chen@owulia.com",
+    "url": "https://ajuan.owulia.com/"
+  },
+  "contributors": [
+    {
+      "name": "Ajuan",
+      "email": "zhigang.chen@owulia.com",
+      "url": "https://ajuan.owulia.com/"
     }
+  ],
+  "maintainer": [
+    {
+      "name": "Ajuan",
+      "email": "zhigang.chen@owulia.com",
+      "url": "https://ajuan.owulia.com/"
+    }
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Woshiajuana/wow-wx/issues"
+  },
+  "homepage": "https://github.com/Woshiajuana/wow-wx#readme",
+  "devDependencies": {},
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
 }

@@ -19,10 +19,10 @@ class WowPage extends Core {
         this.keys = filterFun
             ? filterFun([ ...FUNCTION_PAGE_KEYS ])
             : [ ...FUNCTION_PAGE_KEYS ];
-        Object.assign(this.options, {
-            get wow$ () { return App.wow$; },
-            get App () { return App },
-        });
+        // Object.assign(this.options, {
+        //     get wow$ () { return App.wow$; },
+        //     get App () { return App },
+        // });
         this.generate();
         return Page(this.options);
     }
