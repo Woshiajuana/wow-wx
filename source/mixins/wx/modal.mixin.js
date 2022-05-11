@@ -22,7 +22,7 @@ export default {
     /**
      * 小程序 提示模块
      * */
-    modalToast (options) {
+    modalToast (options, mask = false) {
         if (typeof options === 'undefined') {
             return null;
         }
@@ -32,7 +32,7 @@ export default {
         wx.showToast({
             duration: 3000,
             icon: 'none',
-            mask: true,
+            mask,
             title,
             ...opt,
         });
