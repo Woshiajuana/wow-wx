@@ -33,7 +33,7 @@ function getParams (options) {
 
 function handle(url, params, key, resolve, reject) {
     const RouterConfig = Config.routes;
-    url = RouterConfig[url] || '';
+    url = RouterConfig[url] || url;
     if(key !== 'switchTab')
         url = `${url}?params=${encodeURIComponent(JSON.stringify(params))}`;
     if (!url) return reject('未找到对应页面');
