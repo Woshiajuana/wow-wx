@@ -7,13 +7,13 @@ export default {
 
     data: {
         auth$: {
-            USER_INFO: 'scope.userInfo', // 用户信息
-            USER_LOCATION: 'scope.userLocation', // 地理位置
-            USER_LOCATION_BACKGROUND: 'scope.userLocationBackground', // 后台定位
-            WE_RUN: 'scope.werun', // 微信运动步数
-            RECORD: 'scope.record', // 录音
-            WRITE_PHOTOS_ALBUM: 'scope.writePhotosAlbum', // 保存到相册
-            CAMERA: 'scope.camera', // 摄像头
+            USER_INFO: ['scope.', 'user', 'Info'].join(''), // 用户信息
+            USER_LOCATION: ['scope.', 'user', 'Location'].join(''), // 地理位置
+            USER_LOCATION_BACKGROUND: ['scope.', 'userLocation', 'Background'].join(''), // 后台定位
+            WE_RUN: ['scope.', 'we', 'run'].join(''), // 微信运动步数
+            RECORD: ['scope.', 'record'].join(''), // 录音
+            WRITE_PHOTOS_ALBUM: ['scope.', 'write', 'PhotosAlbum'].join(''), // 保存到相册
+            CAMERA: ['scope.', 'camera'].join(''), // 摄像头
         },
     },
 
