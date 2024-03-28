@@ -7,7 +7,6 @@ export default {
     },
     routerGetParams (options) {
         let params$ = getParams(options);
-        console.log(params$);
         this.setData({ params$ });
     },
     routerPush: (url, params = {}, type = false) => new Promise((resolve, reject) => {

@@ -81,8 +81,7 @@ const Auth = {
             success: (res) => {
                 resolve(res);
             },
-            fail: err => {
-                console.log('getUserProfile => ', err);
+            fail: () => {
                 reject('');
             }
         })
